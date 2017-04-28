@@ -20,4 +20,4 @@ If you think that something is missing or not quite right you should either:
 ### 1: Using a common version control pattern accross all projects will reduce the friction associated with switching teams. Let's start with [Git-flow][2]
 
 [1]: https://github.com/moj-analytical-services/our-coding-standards/issues
-[2]: https://github.com/moj-analytical-services/our-coding-standards/tree/use_and_contribution#part-1-git-flow
+[2]: https://github.com/moj-analytical-services/our-coding-standards/blob/use_and_contribution/git_flow.md
