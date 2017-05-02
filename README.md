@@ -27,3 +27,11 @@ If you think that something is missing or not quite right you should either:
 ### 3: Code should be [correct, clear and concise](correct_clear_concise.md) - in that order
 
 ### 4: Optimise for [change](change_is_inevitable.md)
+
+### 5: Other team members [are users too](they_are_users_too.md) - treat them with respect
+
+### 6: [Share](share_the_knowledge.md) the knowledge
+
+### 7: [Everything fails](error_handling.md) at some point - be ready for it 
+
+### 8: Use packages from the [Tidyverse by default](tidyverse_by_default.md)
