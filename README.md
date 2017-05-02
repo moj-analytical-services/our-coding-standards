@@ -11,7 +11,8 @@ They are to guide future and current development - use your judgement, but in ge
 
 By establishing these ideas as common practice we will:
 1. Write high quality, maintainable, code
-2. Collaborate with one another effectively accross multiple projects
+2. Where possible, ensure our work is reusable
+3. Collaborate with one another effectively accross multiple projects
 
 ### Contributing to this repo
 
