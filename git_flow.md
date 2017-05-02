@@ -14,6 +14,8 @@ We have tweaked it a little from what is [described on GitHub][1]
 4. When you're ready, submit a pull request and wait for peer-review
 5. Once peer review is comeplete, and any comments addressed, merge into the master branch using a rebase
 
+The master branch should be 100% functional at all times, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/).
+
 If you want to test this out, clone this repo and make a contribution :)
 
 [1]: https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow
