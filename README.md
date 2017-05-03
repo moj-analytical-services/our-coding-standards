@@ -34,4 +34,4 @@ If you think that something is missing or not quite right you should either:
 
 ### 7: [Everything fails](error_handling.md) at some point - be ready for it 
 
-### 8: Use packages from the [Tidyverse by default](tidyverse_by_default.md)
+### 8: Use [sensible defaults](sensible_defaults.md) unless you have a great reason not to
