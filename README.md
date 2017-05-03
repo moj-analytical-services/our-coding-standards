@@ -29,7 +29,7 @@ By establishing these ideas as common practice we will:
 **8: Use [sensible defaults](sensible_defaults.md) unless you have a great reason not to**
 
 
-### Contributing
+## Contributing
 
 If you think that something is missing or not quite right you should either:
 1. [Raise an issue](https://github.com/moj-analytical-services/our-coding-standards/issues)
