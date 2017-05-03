@@ -32,4 +32,4 @@ By establishing these ideas as common practice we will:
 
 If you think that something is missing or not quite right you should either:
 1. [Raise an issue](https://github.com/moj-analytical-services/our-coding-standards/issues)
-2. Contribute directly using the [Git-flow](git_flow.md) pattern
+2. [Contribute directly](version_control_pattern.md)
