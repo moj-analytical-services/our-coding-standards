@@ -12,7 +12,7 @@ By establishing these ideas as common practice we will:
 
 ## Our coding standards and working practices
 
-**1: Use [the same version control pattern](verson_control_pattern.md) accross all projects**
+**1: Use [the same version control pattern](version_control_pattern.md) across all projects**
 
 **2: [Names have power](naming.md) and purpose, use them wisely**
 
