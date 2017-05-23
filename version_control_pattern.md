@@ -20,10 +20,11 @@ git checkout -b my-new-sensibly-named-branch
 ```
 3. Make some commits on the new branch.
 ```sh
-# Make some changes then stage them all.
-git add .
-# Or stage a specific file.
-git add README.md
+# Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.
+git add file1.txt
+git add file2.txt
+# etc.
+
 # Commit your changes using a descriptive commit message.
 git commit
 # If you got stuck in Vim, exit.
