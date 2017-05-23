@@ -23,14 +23,21 @@ git checkout -b my-new-sensibly-named-branch
 # Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.
 git add file1.txt
 git add file2.txt
-# etc.
+# etc
 
 # Commit your changes using a descriptive commit message.
 git commit
-# If you got stuck in Vim, exit.
-:wq
+
+# This will take you into your default text editor
+# Write a descriptive commit message
+
+# If you have not configured your text editor, you may get stuck in Vim
+# exit using the following command:
+:q!
+
 # Then configure your default text editor for Git
 git config --global core.editor <my-favourite-text-editor>
+
 # And try again
 git commit
 ```
@@ -41,7 +48,7 @@ git push origin my-new-sensibly-named-branch
 # then go to github, open a PR and invite at least one reviewer
 ```
 5. To make further changes, just make more commits on the same branch and push them to the remote repo again.
-6. Once peer review is comeplete, and any comments addressed, merge into the master branch using a rebase.
+6. Once peer review is complete, and any comments addressed, merge into the master branch using a [rebase](https://github.com/blog/2243-rebase-and-merge-pull-requests).
 
 The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests.
 
