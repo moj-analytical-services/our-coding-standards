@@ -13,6 +13,7 @@ This section sets out sensible defaults which you are expected to follow.  They 
      * Prefer tibbles to data.frames
      * Use ggplot2 rather than base graphics
      * Use the pipe `%>%` appropriately, but not always e.g. see [here](https://twitter.com/hadleywickham/status/603883121197514752).  
+     * Prefer `purrr` to the `apply` family of functions.  See [here](http://r4ds.had.co.nz/iteration.html#the-map-functions) 
 * Use [Packrat](https://rstudio.github.io/packrat/) for R dependencies - it's required by the Analytical Platform if you need to deploy your work.
 * R Packages are the [fundamental unit of reproducable R code.](http://r-pkgs.had.co.nz/) 
 
