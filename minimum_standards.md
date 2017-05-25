@@ -11,35 +11,6 @@ Existing guidance provides a framework for categorising your project into 'small
 
 This guidance sets minimum standards associated with these three categories.
 
-Activity | Level | Why
---- | --- | ---
-Code review | medium | Because we need someone to have checked the logic
-
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
 
 TODO:  Make this table interactive - user chooses the level of the project and table shows relevant information, making it into a checklist.
 
@@ -71,6 +42,7 @@ Non trivial functions are documented using the programming language's accepted s
 **Unit testing** ||
 Unit tests exist that test the overall model, but not individual functions | All | Unit tests 
 Unit tests exist at the function level, which test a range of parameters  | Medium + | 
+You should have reached code coverage of at least 75% | Medium + | Higher code coverage means that more routes through you code have been checked.  Low code coverage is a bad sign, high code coverage is not necessarily a good thing.
 
 ### Advice for re-usable, packages and modules:
 
