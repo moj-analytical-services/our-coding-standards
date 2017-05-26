@@ -14,13 +14,12 @@ This guidance sets minimum standards associated with these three categories.
 
 TODO:  Make this table interactive - user chooses the level of the project and table shows relevant information, making it into a checklist.
 
-
 Activity | Level | Why
 --- | --- | ---
 **Structure**||
 Clear separation of parameters, data, and code using a standard directory structure.  TODO:  Add project templates for R and Python | All | This separates the logic (the code) from the assumptions.  It should be easy for others to change parameters and data without needing to understand the codebase.  
 Code passess relevant linter | Medium + | Our code style will be consistent across projects and makes it easier for others to understand our code.
-Appropriate use of abstractions like functions, packages, modules etc, which has been reviewed by language expert. | Medium + | Makes code easier to understand, maintain, and extend.
+Appropriate use of abstractions like functions, packages, modules etc, which has been reviewed by language expert. Generally, most code should be factored out into functinos or other abstractions, and functions should be less than | Medium + | Makes code easier to understand, maintain, and extend.
 If using a notebook for write up, functions are factored out to maintain narrative. | Medium + | Makes the logic easier to follow
 **Reproducibility** ||
 If the output is a report, the write up is fully reproducible in rmarkdown, Jupyter notebooks, or equivalent | Medium + | If we need to review or update the output at a later date, we know how we came to earlier results.
@@ -40,9 +39,21 @@ A `README.md` file exists in the repository, which contains standard fields TODO
 Code is appropriately commented.  [Comments are for explaining why something is needed, not how it works.](https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4) |
 Non trivial functions are documented using the programming language's accepted standard e.g. Roxygen, PEP8.  TODO:  Add guide to commenting | 
 **Unit testing** ||
-Unit tests exist that test the overall model, but not individual functions | All | Unit tests 
+Unit tests exist that test the overall model, but not individual functions | All | Unit tests help give you confidence that your model does what you think it does
 Unit tests exist at the function level, which test a range of parameters  | Medium + | 
 You should have reached code coverage of at least 75% | Medium + | Higher code coverage means that more routes through you code have been checked.  Low code coverage is a bad sign, high code coverage is not necessarily a good thing.
+**Dependency Management** ||
+Your project should be tested on someone else's machine | Small + | There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
+Dependency management using Packrat, Pip freeze, or equivalent. | Small + | If your code depends on external packages, these change over time, and need to be enumerated.  This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.  
+**Refactoring** ||
+**Language specific** || 
+You must follow PEP8 | Python |
+Use a VirtualEnv | Python |
+Use Hadley's code style guide | R |
+
+
+
+
 
 ### Advice for re-usable, packages and modules:
 
