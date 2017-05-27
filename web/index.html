@@ -19,47 +19,48 @@
 
     <div class="container">
       <div class="form-group">
-        <label for="exampleSelect1">Select level</label>
-        <select class="form-control" id="exampleSelect1">
-          <option val="1">1</option>
-          <option val="2">2</option>
-          <option val="3">3</option>
-          <option val="4">4</option>
-          <option val="5">5</option>
+        <label for="risk_select">Select risk</label>
+        <select class="form-control" id="risk_select">
+          <option value="1">Low Risk</option>
+          <option value="2">Medium Risk</option>
+          <option value="3">High Risk</option>
         </select>
+
+        <label for="scale_select">Select scale</label>
+        <select class="form-control" id="scale_select">
+          <option value="1">Low Scale</option>
+          <option value="2">Medium Scale</option>
+          <option value="3">High Scale</option>
+        </select>
+
+        <label for="language_select">Select language</label>
+        <select multiple class="form-control" id="language_select">
+          <option value="python">Python</option>
+          <option value="r">R</option>
+          <option value="javascript">Javascript</option>
+
+        </select>
+        
       </div>
 
       <table id="checklist"></table>
     </div>
 
-    <div class="container">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>a</th>
-            <th>b</th>
-            <th>c</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>hello</td>
-            <td colspan="2">hello2</td>
-            
-          </tr>
-        </tbody>
-      </table>
-    </div>
     
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/underscore.js"></script>
-    <script src="js/d3.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="js/showdown.js"></script>
-    <script src="js/showdown_extensions.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/third_party/jquery.min.js"></script>
+    <script src="js/third_party/underscore.js"></script>
+    <script src="js/third_party/d3.js"></script>
+    <script src="js/third_party/tether.min.js"></script>
+    <script src="js/third_party/showdown.js"></script>
+    <script src="js/third_party/bootstrap.min.js"></script>
+    
+    <script src="js/custom/namespace.js"></script>
+    <script src="js/custom/showdown_extensions.js"></script>
+    <script src="js/custom/interface.js"></script>
+    <script src="js/custom/datamanager.js"></script>
+    <script src="js/custom/checklist.js"></script>
+    <script src="js/custom/main.js"></script>
     
     
   </body>
