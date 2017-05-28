@@ -1,6 +1,6 @@
 var CheckList = function() {
 
-    var transition_duration = 4000
+    var transition_duration = 1000
 
     var me = this;
 
@@ -36,6 +36,7 @@ var CheckList = function() {
         newrows = existingrows
             .enter()
             .append('tr')
+
             
         //Update existing cells 
         var existingcells = existingrows
@@ -44,44 +45,60 @@ var CheckList = function() {
             
 
         existingcells
-            .style("color", "orange")
+            .style("padding-top", "0.75rem")
+            .style("padding-bottom", "0.75rem")
+            .style("max-height", "200px")
             .html(function(d) {
                 return d.value
             })
-
-
 
         //Deal with new rows and cells 
         var newcells = newrows.selectAll("td")
                                 .data(function(d) {return d})
 
-        newcells.enter()
+        tds = newcells.enter()
                 .append('td')
-                .style("color", "green")
-                .html(function(d) {
-                    return d.value
-                })
 
-        
-         existingrows.exit()
-            .selectAll("td")
-            .html("")
-            // .style("display", "inline-block")
+        tds
+            .style("padding-top", "0px")
+            .style("padding-bottom", "0px")
+            .style("width", "33%")
             .transition()
             .duration(transition_duration)
-            .style("color", "red")
-            .style("size", 0)
-            .style("row-height", "0px")
+            .style("padding-top", "0.75rem")
+            .style("padding-bottom", "0.75rem")
 
             
+        tds
+            .append("div")
+            .html(function(d) {
+                return d.value
+            })
+            .style("max-height", "0px")
+            .style("overflow", "hidden")
+            .transition()
+            .duration(transition_duration)
+            .style("max-height", "200px")
+        
+         existingrows.exit()
+            .selectAll("div")
+            .transition()
+            .duration(transition_duration)
+            .style("overflow", "hidden")
+            .style("max-height", "0px")
+
+         existingrows.exit()
+            .selectAll("td")
+            .transition()
+            .duration(transition_duration)
+            .style("padding-top", "0px")
+            .style("padding-bottom", "0px")
+
 
         //Remove rows no longer present in data
         existingrows.exit()
-            .style("overflow", "hidden")
-            // .style("display", "inline-block")
             .transition(transition_duration)
             .duration(transition_duration)
-            .style("row-height", "0px")
             .remove()
         
 
