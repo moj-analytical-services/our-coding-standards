@@ -47,6 +47,7 @@ var CheckList = function() {
                 .append('td')
 
         newtds
+            .style("background-color", "#AFFAAF")
             .style("padding-top", "0px")
             .style("padding-bottom", "0px")
             .style("width", "33%")
@@ -65,6 +66,7 @@ var CheckList = function() {
             .duration(transition_duration)
             .style("padding-top", "0.75rem")
             .style("padding-bottom", "0.75rem")
+            .style("background-color", "white")
 
 
         updatetds 
@@ -89,6 +91,7 @@ var CheckList = function() {
             .duration(transition_duration)
             .style("padding-top", "0rem")
             .style("padding-bottom", "0rem")
+            .style("background-color", "#FDADAD")
 
          rows.exit()
             .selectAll("div")
