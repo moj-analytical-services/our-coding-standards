@@ -5,7 +5,7 @@ var CheckList = function() {
     var me = this;
 
     var table = d3.select("#checklist")
-    table.attr("class", "table table-striped table-bordered")
+    table.attr("class", "table table-bordered")
 
     var thead = table.append('thead')
     var tbody = table.append('tbody')
@@ -27,76 +27,80 @@ var CheckList = function() {
 
         var get_key = function(d) {return d[0].id}
 
-        //First update existing
-        var existingrows = tbody
+        //Bind new data
+        var rows = tbody
             .selectAll('tr')
             .data(me.rowdata, get_key)
         
         //Rows should include all entering and all updating rows
-        newrows = existingrows
+        newrows = rows
             .enter()
             .append('tr')
 
-            
-        //Update existing cells 
-        var existingcells = existingrows
-                                .selectAll('td')
-                                .data(function(d) {return d})
-            
-
-        existingcells
-            .style("padding-top", "0.75rem")
-            .style("padding-bottom", "0.75rem")
-            .style("max-height", "200px")
-            .html(function(d) {
-                return d.value
-            })
+        allrows = rows.merge(newrows)
 
         //Deal with new rows and cells 
-        var newcells = newrows.selectAll("td")
+        var tds = allrows.selectAll("td")
                                 .data(function(d) {return d})
 
-        tds = newcells.enter()
+        newtds = tds.enter()
                 .append('td')
 
-        tds
+        newtds
             .style("padding-top", "0px")
             .style("padding-bottom", "0px")
             .style("width", "33%")
+            
+
+        newtds
+            .append("div")
+            .style("max-height", "0px")
+            .style("overflow", "hidden")
+
+
+        updatetds = newtds.merge(tds)
+        
+        updatetds
             .transition()
             .duration(transition_duration)
             .style("padding-top", "0.75rem")
             .style("padding-bottom", "0.75rem")
 
-            
-        tds
-            .append("div")
+
+        updatetds 
+            .select("div")
             .html(function(d) {
                 return d.value
-            })
-            .style("max-height", "0px")
-            .style("overflow", "hidden")
+            })     
             .transition()
             .duration(transition_duration)
-            .style("max-height", "200px")
-        
-         existingrows.exit()
+            .style("max-height", function(d) {
+                var line_length = 40
+                var length = d.value.length
+                var lines = Math.ceil(length/line_length)
+                return lines * 30 + "px"
+            })     
+
+
+
+         rows.exit()
+            .selectAll("td")
+            .transition()
+            .duration(transition_duration)
+            .style("padding-top", "0rem")
+            .style("padding-bottom", "0rem")
+
+         rows.exit()
             .selectAll("div")
             .transition()
             .duration(transition_duration)
             .style("overflow", "hidden")
+            .style("height", "0px")
             .style("max-height", "0px")
-
-         existingrows.exit()
-            .selectAll("td")
-            .transition()
-            .duration(transition_duration)
-            .style("padding-top", "0px")
-            .style("padding-bottom", "0px")
 
 
         //Remove rows no longer present in data
-        existingrows.exit()
+        rows.exit()
             .transition(transition_duration)
             .duration(transition_duration)
             .remove()

@@ -22,7 +22,7 @@ var DataManager = function(csvdata) {
 
         _.each(["python", "r", "javascript"], function(this_language) {
             if (_.contains(OCS_APP.interface.language_array, this_language)) {
-                dict.value += row[this_language]
+                dict.value += " " + row[this_language]
             } 
         })
 
