@@ -18,32 +18,38 @@
     </div>
 
     <div class="container">
-      <div class="form-group">
-        <label for="risk_select">Select risk</label>
-        <select class="form-control" id="risk_select">
-          <option value="1">Low Risk</option>
-          <option value="2">Medium Risk</option>
-          <option value="3">High Risk</option>
-        </select>
-
-        <label for="scale_select">Select scale</label>
-        <select class="form-control" id="scale_select">
-          <option value="1">Low Scale</option>
-          <option value="2">Medium Scale</option>
-          <option value="3">High Scale</option>
-        </select>
-
-        <label for="language_select">Select language</label>
-        <select multiple class="form-control" id="language_select">
-          <option value="python">Python</option>
-          <option value="r">R</option>
-          <option value="javascript">Javascript</option>
-
-        </select>
-        
+      <div class="row">
+        <div class="col">
+          <label for="risk_select">Select risk</label>
+          <select class="form-control" id="risk_select">
+            <option value="1">Low Risk</option>
+            <option value="2">Medium Risk</option>
+            <option value="3">High Risk</option>
+          </select>        
+        </div>
+        <div class="col">
+          <label for="scale_select">Select scale</label>
+          <select class="form-control" id="scale_select">
+            <option value="1">Low Scale</option>
+            <option value="2">Medium Scale</option>
+            <option value="3">High Scale</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="language_select">Select language</label>
+          <select multiple class="form-control" id="language_select">
+            <option value="python">Python</option>
+            <option value="r">R</option>
+            <option value="javascript">Javascript</option>
+          </select>
+        </div>
       </div>
+    </div>
 
-      <table id="checklist"></table>
+    <div class="container">
+      <div class="row">
+        <table id="checklist"></table>
+      </div>
     </div>
 
     

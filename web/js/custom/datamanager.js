@@ -13,13 +13,15 @@ var DataManager = function(csvdata) {
 
     this.column_names = ["Activity", "Why", "Checkbox"]
 
+    
     this.row_to_activity = function(row) {
         var dict = {}
         dict.column = "activity"
         dict.value = row["activity"]
+        dict.id = row["id"]
 
         _.each(["python", "r", "javascript"], function(this_language) {
-            if (_.contains(OCS_APP.interface.languages, this_language)) {
+            if (_.contains(OCS_APP.interface.language_array, this_language)) {
                 dict.value += row[this_language]
             } 
         })
@@ -31,6 +33,7 @@ var DataManager = function(csvdata) {
         var dict = {}
         dict.column = "why"
         dict.value = row["why"]
+        dict.id = row["id"]
         return dict
     }
 
@@ -38,6 +41,7 @@ var DataManager = function(csvdata) {
         var dict = {}
         dict.column = "checkbox"
         dict.value = "☑"
+        dict.id = row["id"]
         return dict
     }
 
@@ -62,6 +66,8 @@ var DataManager = function(csvdata) {
             dict.column = "activity"
             dict.value = row["activity"]
             dict.colspan = 3
+            dict.id = row["id"]
+
             return [dict]
         }
     }
@@ -79,7 +85,7 @@ var DataManager = function(csvdata) {
 
         csvdata = _.filter(csvdata, function(row) {
             if (row.language == "") {return true}
-            if (_.contains(OCS_APP.interface.languages, row.language.toLowerCase())) {return true}
+            if (_.contains(OCS_APP.interface.language_array, row.language.toLowerCase())) {return true}
             return false
         })
 
