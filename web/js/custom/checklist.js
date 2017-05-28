@@ -1,5 +1,7 @@
 var CheckList = function() {
 
+    var transition_duration = 4000
+
     var me = this;
 
     var table = d3.select("#checklist")
@@ -21,52 +23,71 @@ var CheckList = function() {
     this.redraw = function() {
 
         //TODO add enter exit pattern, nested
-        this.rowdata = OCS_APP.datamanager.get_d3_data()
+        me.rowdata = OCS_APP.datamanager.get_d3_data()
 
-        //enter rows
-        //update rows
+        var get_key = function(d) {return d[0].id}
 
-        //enter cells
-        //update cells
-        //delete cells
-
-        //delete rows
-
-        var rows = tbody
+        //First update existing
+        var existingrows = tbody
             .selectAll('tr')
-            .data(this.rowdata)
-
+            .data(me.rowdata, get_key)
         
         //Rows should include all entering and all updating rows
-        rowsmerge = rows
+        newrows = existingrows
             .enter()
             .append('tr')
-            .merge(rows)
+            
+        //Update existing cells 
+        var existingcells = existingrows
+                                .selectAll('td')
+                                .data(function(d) {return d})
             
 
-        var cells = rowsmerge.selectAll('td')
-            .data(function(d) {return d})
-            
-        var cellsenter = cells.enter()
-            .append('td')
-
-        cells
-            .merge(cellsenter)
+        existingcells
+            .style("color", "orange")
             .html(function(d) {
                 return d.value
             })
 
-        cells.exit().remove()
 
-        rows.exit().remove()
+
+        //Deal with new rows and cells 
+        var newcells = newrows.selectAll("td")
+                                .data(function(d) {return d})
+
+        newcells.enter()
+                .append('td')
+                .style("color", "green")
+                .html(function(d) {
+                    return d.value
+                })
 
         
+         existingrows.exit()
+            .selectAll("td")
+            .html("")
+            // .style("display", "inline-block")
+            .transition()
+            .duration(transition_duration)
+            .style("color", "red")
+            .style("size", 0)
+            .style("row-height", "0px")
 
+            
+
+        //Remove rows no longer present in data
+        existingrows.exit()
+            .style("overflow", "hidden")
+            // .style("display", "inline-block")
+            .transition(transition_duration)
+            .duration(transition_duration)
+            .style("row-height", "0px")
+            .remove()
         
+
 
 
     }
 
-    
 
-}
+} 
