@@ -45,6 +45,8 @@ var CheckList = function() {
 
         newtds = tds.enter()
                 .append('td')
+                .attr("colspan", function(d) {return d.colspan})
+                
 
         newtds
             .style("background-color", "#AFFAAF")
@@ -66,13 +68,19 @@ var CheckList = function() {
             .duration(transition_duration)
             .style("padding-top", "0.75rem")
             .style("padding-bottom", "0.75rem")
-            .style("background-color", "white")
+            .style("background-color", function(d) {
+                if (d.colspan == 2) {
+                    return "#eceeef"
+                } else {
+                    return "white"
+                }
+            })
 
 
         updatetds 
             .select("div")
             .html(function(d) {
-                return d.value
+                return render_markdown(d.value)
             })     
             .transition()
             .duration(transition_duration)

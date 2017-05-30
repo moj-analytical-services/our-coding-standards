@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Starter Template for Bootstrap</title>
+    <title>Minimum coding standards</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -36,24 +36,24 @@
           </select>
         </div>
         <div class="col">
-          
-          <label for="language_select">Select language</label>
+          <label for="language_select">Select language(s)</label>
           <select multiple class="form-control" id="language_select">
             <option value="python">Python</option>
             <option value="r">R</option>
             <option value="javascript">Javascript</option>
           </select>
         </div>
+        <div class="col">
+            <button>Download checklist as markdown</button>
+        </div>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-4">
       <div class="row">
         <table id="checklist"></table>
       </div>
     </div>
-
-    
 
     <script src="js/third_party/jquery.min.js"></script>
     <script src="js/third_party/underscore.js"></script>
@@ -68,6 +68,7 @@
     <script src="js/custom/datamanager.js"></script>
     <script src="js/custom/checklist.js"></script>
     <script src="js/custom/main.js"></script>
+
     
     
   </body>

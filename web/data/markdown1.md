@@ -6,6 +6,8 @@ This page sets out how to implement existing guidance on AQA for for analytical 
 
 ## Existing guidance
 
-Existing guidance provides a framework for categorising your project into 'small', 'medium' or 'large', based on the impact of the analysis, and therefore the risks associated with errors.
+Existing guidance provides a framework for categorising your project into nine categories, based on the impact of the analysis and the risks associated with errors.
 
-This guidance sets minimum standards associated with these three categories.
+This guidance sets minimum standards associated with these categories.
+
+## Interactive checklist
