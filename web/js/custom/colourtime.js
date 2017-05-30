@@ -12,7 +12,7 @@ var ColourTime = function() {
         var colour = me.colourscale(i+elapsed*speed/200)
         var colour = d3.hsl(colour)
         if (d.colspan == 1 ) {
-            return colour.brighter(1.5)
+            return colour.brighter(1)
         } else if (d.colspan == 2) {
             return colour.darker(0.5)
         }
@@ -24,7 +24,7 @@ var ColourTime = function() {
         var colour = me.colourscale(i+elapsed*speed/200)
         var colour = d3.hsl(colour)
         if (d.colspan == 1 ) {
-            return colour.darker(2)
+            return colour.darker(2.5)
         } else if (d.colspan == 2) {
             return colour.brighter(1)
         }

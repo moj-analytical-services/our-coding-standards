@@ -72,6 +72,7 @@ var CheckList = function() {
         updatetds
             .transition()
             .duration(transition_duration)
+            .ease(d3.easeLinear)
             .style("padding-top", "0.75rem")
             .style("padding-bottom", "0.75rem")
             .style("background-color", function(d) {
