@@ -25,7 +25,6 @@ In practice, if similar code is seen repeatedly in a codebase, then this should 
 
 ### Reliance on global scope
 
-Side effects are bad, yo.
 
 ### Rolling your own solution 
 
