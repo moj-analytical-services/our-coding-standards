@@ -1,6 +1,6 @@
 var CheckList = function() {
 
-    var transition_duration = 500
+    var transition_duration = 1000
 
     var me = this;
     me.firstrun = true
@@ -23,7 +23,6 @@ var CheckList = function() {
 
     this.redraw = function() {
 
-        //TODO add enter exit pattern, nested
         me.rowdata = OCS_APP.datamanager.get_d3_data()
 
         var get_key = function(d) {return d[0].id}

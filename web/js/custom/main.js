@@ -27,6 +27,20 @@ $(function() {
         console.log(OCS_APP.table_to_markdown.get_markdown())
     })
 
+    $("#animate").on("click", function() {
+        if (OCS_APP.colourtime.running) {
+            OCS_APP.colourtime.stop()
+            $("#animate").text("Animate")
+            OCS_APP.checklist.redraw()
+        } else {
+            OCS_APP.colourtime.run()
+            $("#animate").text("Stop animation")
+            
+        }
+    })
+
+    
+
     d3.csv("data/table.csv")
         .row(function(row) {
             row.header_level = +row.header_level
@@ -37,6 +51,7 @@ $(function() {
             OCS_APP.datamanager = new DataManager(data)
             OCS_APP.checklist = new CheckList()
             OCS_APP.table_to_markdown = new TableToMarkdown()
+            OCS_APP.colourtime = new ColourTime()
             OCS_APP.checklist.redraw()
         });
 

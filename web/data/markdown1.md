@@ -1,4 +1,4 @@
-#  Minimum AQA Standards for code
+# Minimum AQA Standards for code
 
 This page sets out how to implement existing guidance on AQA for for analytical projects which are written primarily as code (i.e. in a programming langauge).  Existing guidance can be found here:
 
