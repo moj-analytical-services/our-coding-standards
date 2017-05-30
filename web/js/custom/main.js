@@ -8,10 +8,7 @@ function render_markdown(raw_md) {
 }
 
 
-//When the page is ready
-
-
-
+//When the page is ready...
 $(function() {
     var interface,
         checklist,
@@ -27,7 +24,7 @@ $(function() {
     })
 
     $("#download_markdown").on("click", function() {
-        OCS_APP.table_to_markdown.get_markdown()
+        console.log(OCS_APP.table_to_markdown.get_markdown())
     })
 
     d3.csv("data/table.csv")

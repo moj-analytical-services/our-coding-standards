@@ -1,8 +1,9 @@
 var CheckList = function() {
 
-    var transition_duration = 1000
+    var transition_duration = 500
 
     var me = this;
+    me.firstrun = true
 
     var table = d3.select("#checklist")
     table.attr("class", "table table-bordered")
@@ -43,16 +44,22 @@ var CheckList = function() {
         var tds = allrows.selectAll("td")
                                 .data(function(d) {return d})
 
+
         newtds = tds.enter()
                 .append('td')
                 .attr("colspan", function(d) {return d.colspan})
-                
+                .style("background-color", function(d) {
+                    if (me.firstrun) {
+                        return "white"
+                    } else {
+                        return "#C6EFCC"
+                    }
 
+                })
+                
         newtds
-            .style("background-color", "#AFFAAF")
             .style("padding-top", "0px")
             .style("padding-bottom", "0px")
-            .style("width", "33%")
             
 
         newtds
@@ -99,7 +106,7 @@ var CheckList = function() {
             .duration(transition_duration)
             .style("padding-top", "0rem")
             .style("padding-bottom", "0rem")
-            .style("background-color", "#FDADAD")
+            .style("background-color", "#EBCECE")
 
          rows.exit()
             .selectAll("div")
@@ -115,9 +122,8 @@ var CheckList = function() {
             .transition(transition_duration)
             .duration(transition_duration)
             .remove()
-        
 
-
+        me.firstrun = false
 
     }
 
