@@ -14,7 +14,7 @@ $(function() {
         checklist,
         dataholder
 
-    $.get("data/markdown1.md", function(raw_md) {
+    $.get("data/minimum_standards_blurb.md", function(raw_md) {
         
         $("#rendermd").html(render_markdown(raw_md))
     })
@@ -41,7 +41,7 @@ $(function() {
 
     
 
-    d3.csv("data/table.csv")
+    d3.csv("data/standards_table.csv")
         .row(function(row) {
             row.header_level = +row.header_level
             return row
