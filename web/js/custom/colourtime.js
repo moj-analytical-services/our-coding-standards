@@ -8,43 +8,51 @@ var ColourTime = function() {
     this.colourscale = d3.scaleSequential(d3.interpolateRainbow).domain([0,topdomain])
 
     var bg_c_fn = function(d,i, elapsed) {
-        
 
+        var colour = me.colourscale(i+elapsed*speed/200)
+        var colour = d3.hsl(colour)
+        if (d.colspan == 1 ) {
+            return colour.brighter(1.5)
+        } else if (d.colspan == 2) {
+            return colour.darker(0.5)
+        }
+
+    }
+
+    var fnt_c_fn = function(d,i, elapsed ){
+        var i = i + (topdomain/2)
+        var colour = me.colourscale(i+elapsed*speed/200)
+        var colour = d3.hsl(colour)
+        if (d.colspan == 1 ) {
+            return colour.darker(2)
+        } else if (d.colspan == 2) {
+            return colour.brighter(1)
+        }
+    }
+
+    var bd_c_fn = function(d,i, elapsed) {
+        var colour = me.colourscale(i+elapsed*speed/300)
+        var colour = d3.hsl(colour)
+        return colour       
     }
 
     this.run = function(delay) {
         me.running = true
 
-
+        d3.selectAll("td")
+                .transition()
+                .duration(2000)
+                .style("background-color", function(d,i) {return bg_c_fn(d,i,0)})
+                .style("color", function(d,i) {return fnt_c_fn(d,i, 0)})
+                .style("border-color", function(d,i) {return bd_c_fn(d,i, 0)})
 
         me.t = d3.timer(function(elapsed) {
             d3.selectAll("td")
-                .style("background-color", function(d,i) {
-                    var colour = me.colourscale(i+elapsed*speed/200)
-                    var colour = d3.hsl(colour)
-                    if (d.colspan == 1 ) {
-                        return colour.brighter(1.5)
-                    } else if (d.colspan == 2) {
-                        return colour.darker(0.5)
-                    }
-                })
-                .style("color", function(d,i) {
-                    var i = i + (topdomain/2)
-                    var colour = me.colourscale(i+elapsed*speed/200)
-                    var colour = d3.hsl(colour)
-                    if (d.colspan == 1 ) {
-                        return colour.darker(2)
-                    } else if (d.colspan == 2) {
-                        return colour.brighter(1)
-                    }
-                })
-                .style("border-color", function(d,i) {
-                    var colour = me.colourscale(i+elapsed*speed/300)
-                    var colour = d3.hsl(colour)
-                    return colour 
-                })
+                .style("background-color", function(d,i) {return bg_c_fn(d,i,elapsed)})
+                .style("color", function(d,i) {return fnt_c_fn(d,i, elapsed)})
+                .style("border-color", function(d,i) {return bd_c_fn(d,i, elapsed)})
             
-        }, delay)
+        }, 2000)
     }
 
     
