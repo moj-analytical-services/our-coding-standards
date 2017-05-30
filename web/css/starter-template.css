@@ -5,3 +5,17 @@ body {
   padding: 3rem 1.5rem;
   text-align: center;
 }
+
+.table tr td[colspan="2"] {
+    border-bottom: 2px solid #9D9D9D;
+    font-weight: bold;
+}
+
+.table tr td {
+    /*border-bottom: 1px solid #9D9D9D;*/
+}
+
+.table tr th {
+    /*border: 2px solid #9D9D9D;*/
+}
+

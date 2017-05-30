@@ -11,7 +11,7 @@ var DataManager = function(csvdata) {
     this.csvdata = csvdata
 
 
-    this.column_names = ["Activity", "Why", "Checkbox"]
+    this.column_names = ["Activity", "Why"]
 
     
     this.row_to_activity = function(row) {
@@ -19,10 +19,14 @@ var DataManager = function(csvdata) {
         dict.column = "activity"
         dict.value = row["activity"]
         dict.id = row["id"]
+        dict.colspan = 1
 
         _.each(["python", "r", "javascript"], function(this_language) {
+
             if (_.contains(OCS_APP.interface.language_array, this_language)) {
-                dict.value += " " + row[this_language]
+                if (row[this_language] != "") {
+                    dict.value += " " +  row[this_language]
+                }
             } 
         })
 
@@ -34,14 +38,7 @@ var DataManager = function(csvdata) {
         dict.column = "why"
         dict.value = row["why"]
         dict.id = row["id"]
-        return dict
-    }
-
-    this.row_to_checkbox = function(row) {
-        var dict = {}
-        dict.column = "checkbox"
-        dict.value = "☑"
-        dict.id = row["id"]
+        dict.colspan = 1
         return dict
     }
 
@@ -56,16 +53,15 @@ var DataManager = function(csvdata) {
         if (row.header_level == 1) {
             var activity = me.row_to_activity(row)
             var why = me.row_to_why(row)
-            var checkbox = me.row_to_checkbox(row)
 
-            return [activity, why, checkbox]
+            return [activity, why]
         }   
 
         if (row.header_level == 3) {
             var dict = {}
             dict.column = "activity"
             dict.value = row["activity"]
-            dict.colspan = 3
+            dict.colspan = 2
             dict.id = row["id"]
 
             return [dict]
