@@ -55,6 +55,8 @@ var CheckList = function() {
                     }
 
                 })
+                 .style("width", "33%")
+
                 
         newtds
             .style("padding-top", "0px")
