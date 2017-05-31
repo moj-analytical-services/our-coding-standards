@@ -12,11 +12,15 @@ var TableToMarkdown = function() {
 
         col1 = row[0].value
 
-        if (row.length == 2) {
-            col2 = row[1].value
+        if (row[0].colspan == 2) {
+            col1 = `**${col1}**`
         }
 
-        return(`|${col1}|${col2}|`)
+        if (row[0].colspan == 1) {
+            col2 = col2 + "✅❌"
+        }
+
+        return(`|${col1}|${col2}||`)
     }
 
     this.get_markdown = function() {
@@ -29,8 +33,8 @@ var TableToMarkdown = function() {
         
         var outputarray = []
 
-        outputarray.push(`|${column_names[0]}|${column_names[1]}|`)
-        outputarray.push("|---|---|")
+        outputarray.push(`|${column_names[0]}|Done (delete as appropriate)| Notes |`)
+        outputarray.push("|---|---|---|")
 
         _.each(me.rowdata, function(row) {
             this_md = row_to_md(row)
@@ -39,6 +43,26 @@ var TableToMarkdown = function() {
 
         return outputarray.join("\n")
 
+    }
+
+    this.download = function(animate) {
+
+        var text = me.get_markdown()
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', "my_personalised_checklist.md");
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+
+        //Animate for 30 seconds
+        if (animate) {
+            OCS_APP.colourtime.run(8000)
+        }
     }
 
 

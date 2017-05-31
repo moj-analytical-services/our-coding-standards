@@ -36,7 +36,7 @@ var ColourTime = function() {
         return colour       
     }
 
-    this.run = function(delay) {
+    this.run = function(howlong) {
         me.running = true
 
         d3.selectAll("td")
@@ -51,6 +51,11 @@ var ColourTime = function() {
                 .style("background-color", function(d,i) {return bg_c_fn(d,i,elapsed)})
                 .style("color", function(d,i) {return fnt_c_fn(d,i, elapsed)})
                 .style("border-color", function(d,i) {return bd_c_fn(d,i, elapsed)})
+
+            if (elapsed > howlong) {
+                me.stop();
+
+            }
             
         }, 2000)
     }
@@ -63,9 +68,12 @@ var ColourTime = function() {
             if (me.t != undefined) {
                 me.t.stop()
                 d3.selectAll("td")
-                .style("color", "")
-                .style("border-color", "")
+                    .style("color", "")
+                    .style("border-color", "")
+
+
             }
+            OCS_APP.checklist.redraw()
 
     }
 }
