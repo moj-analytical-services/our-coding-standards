@@ -24,20 +24,10 @@ $(function() {
     })
 
     $("#download_markdown").on("click", function() {
-        console.log(OCS_APP.table_to_markdown.get_markdown())
+        OCS_APP.table_to_markdown.download(true)
     })
 
-    $("#animate").on("click", function() {
-        if (OCS_APP.colourtime.running) {
-            OCS_APP.colourtime.stop()
-            $("#animate").text("Animate")
-            OCS_APP.checklist.redraw()
-        } else {
-            OCS_APP.colourtime.run()
-            $("#animate").text("Stop animation")
-            
-        }
-    })
+
 
     
 
