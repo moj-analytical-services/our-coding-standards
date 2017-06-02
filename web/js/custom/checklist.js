@@ -14,7 +14,9 @@ var CheckList = function() {
     var column_names = OCS_APP.datamanager.column_names
     this.rowdata = OCS_APP.datamanager.get_d3_data()
 
-    thead.append('tr')
+    var tr_head = thead.append('tr')
+
+    tr_head
         .selectAll('th')
         .data(column_names)
         .enter()
@@ -22,6 +24,18 @@ var CheckList = function() {
         .html(function(d) {return d})
 
     this.redraw = function() {
+
+        //Update column names
+
+        var ths = tr_head
+            .selectAll('th')
+            .data(OCS_APP.datamanager.column_names)
+
+        ths.enter()
+            .append('th')
+            .html(function(d) {return d})
+
+        ths.exit().remove()
 
         me.rowdata = OCS_APP.datamanager.get_d3_data()
 
@@ -55,12 +69,20 @@ var CheckList = function() {
                     }
 
                 })
-                 .style("width", "33%")
+                .style("width", function(d) {
+                    if (me.firstrun) {
+                        return d.perc_width
+                    } else {
+                        return "0%"
+                    }
+                })
+                 
 
                 
         newtds
             .style("padding-top", "0px")
             .style("padding-bottom", "0px")
+
             
 
         newtds
@@ -72,18 +94,37 @@ var CheckList = function() {
         updatetds = newtds.merge(tds)
         
         updatetds
+            .attr("colspan", function(d) {return d.colspan})
             .transition()
             .duration(transition_duration)
             .ease(d3.easeLinear)
+            .style("width", function(d) {
+                return d.perc_width
+            })
             .style("padding-top", "0.75rem")
             .style("padding-bottom", "0.75rem")
             .style("background-color", function(d) {
-                if (d.colspan == 2) {
+                if (d.colspan == OCS_APP.datamanager.get_num_rows()) {
                     return "#eceeef"
                 } else {
                     return "white"
                 }
             })
+            .style("border-bottom", function(d) {
+                if (d.colspan == OCS_APP.datamanager.get_num_rows()) {
+                    return "2px solid #9D9D9D"
+                } else {
+                    return ""
+                }
+            })
+            .style("font-weight", function(d) {
+                if (d.colspan == OCS_APP.datamanager.get_num_rows()) {
+                    return "bold"
+                } else {
+                    return ""
+                }
+            })
+
 
 
         updatetds 
@@ -99,6 +140,17 @@ var CheckList = function() {
                 var lines = Math.ceil(length/line_length)
                 return lines * 30 + "px"
             })     
+
+        tds.exit()
+            .select("div")
+            .style("width", "0%")
+            .transition()
+            .duration(transition_duration)
+
+        tds.exit()
+            .transition()
+            .duration(transition_duration)
+            .remove()
 
 
 
