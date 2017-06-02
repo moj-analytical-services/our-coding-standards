@@ -11,11 +11,8 @@ body {
     font-weight: bold;
 }
 
-.table tr td {
-    /*border-bottom: 1px solid #9D9D9D;*/
+span.detail_text {
+    color: #848484;
+    /*font-weight: lighter;*/
+    font-size: 0.8em 
 }
-
-.table tr th {
-    /*border: 2px solid #9D9D9D;*/
-}
-

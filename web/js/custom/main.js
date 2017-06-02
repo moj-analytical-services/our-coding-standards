@@ -15,7 +15,6 @@ $(function() {
         dataholder
 
     $.get("data/minimum_standards_blurb.md", function(raw_md) {
-        
         $("#rendermd").html(render_markdown(raw_md))
     })
 
@@ -32,9 +31,6 @@ $(function() {
         OCS_APP.table_to_markdown.download(true)
     })
 
-
-
-    
 
     d3.csv("data/standards_table.csv")
         .row(function(row) {

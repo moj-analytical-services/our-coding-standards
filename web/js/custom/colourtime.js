@@ -5,7 +5,9 @@ var ColourTime = function() {
     var speed = 1;
     var topdomain = 50
 
-    this.colourscale = d3.scaleSequential(d3.interpolateRainbow).domain([0,topdomain])
+    this.colourscale = d3
+        .scaleSequential(d3.interpolateRainbow)
+        .domain([0,topdomain])
 
     var bg_c_fn = function(d,i, elapsed) {
 
@@ -13,7 +15,7 @@ var ColourTime = function() {
         var colour = d3.hsl(colour)
         if (d.colspan == 1 ) {
             return colour.brighter(1)
-        } else if (d.colspan == 2) {
+        } else if (d.colspan == OCS_APP.datamanager.get_num_rows()) {
             return colour.darker(0.5)
         }
 
@@ -47,6 +49,7 @@ var ColourTime = function() {
                 .style("border-color", function(d,i) {return bd_c_fn(d,i, 0)})
 
         me.t = d3.timer(function(elapsed) {
+
             d3.selectAll("td")
                 .style("background-color", function(d,i) {return bg_c_fn(d,i,elapsed)})
                 .style("color", function(d,i) {return fnt_c_fn(d,i, elapsed)})
@@ -54,7 +57,6 @@ var ColourTime = function() {
 
             if (elapsed > howlong) {
                 me.stop();
-
             }
             
         }, 2000)
