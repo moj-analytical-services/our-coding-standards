@@ -16,5 +16,12 @@ Interface.prototype = {
     },
     get language_array() {
     	return $("#language_select").val()
-    }
+    },
+    get detail_toggle() {
+        return $("#details_toggle").is(":checked")
+    },
+    get getting_started_toggle() {
+        return $("#getting_started_toggle").is(":checked")
+    },
+
 }

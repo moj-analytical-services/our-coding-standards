@@ -23,6 +23,11 @@ $(function() {
         OCS_APP.checklist.redraw()
     })
 
+    $("#details_toggle, #getting_started_toggle").on("click", function() {
+        console.log(OCS_APP.interface.getting_started_toggle)
+        OCS_APP.checklist.redraw()
+    })
+
     $("#download_markdown").on("click", function() {
         OCS_APP.table_to_markdown.download(true)
     })
