@@ -26,20 +26,26 @@ var CheckList = function() {
     this.redraw = function() {
 
         //Update column names
-
         var ths = tr_head
             .selectAll('th')
             .data(OCS_APP.datamanager.column_names)
 
-        ths.enter()
-            .append('th')
-            .html(function(d) {return d})
+        function update_th_html() {
+            ths.enter()
+                .append('th')
+                .html(function(d) {return d})
+        }
+
+        setTimeout(update_th_html, transition_duration)
 
         ths.exit().remove()
 
         me.rowdata = OCS_APP.datamanager.get_d3_data()
 
-        var get_key = function(d) {return d[0].id}
+        var get_key = function(d) {
+
+            return d[0].id
+        }
 
         //Bind new data
         var rows = tbody
@@ -55,8 +61,7 @@ var CheckList = function() {
 
         //Deal with new rows and cells 
         var tds = allrows.selectAll("td")
-                                .data(function(d) {return d})
-
+                    .data(function(d) {return d})
 
         newtds = tds.enter()
                 .append('td')
@@ -73,22 +78,20 @@ var CheckList = function() {
                     if (me.firstrun) {
                         return d.perc_width
                     } else {
-                        return "0%"
+                        return d.perc_width
                     }
                 })
-                 
-
                 
         newtds
             .style("padding-top", "0px")
             .style("padding-bottom", "0px")
 
-            
-
-        newtds
+        var divs = newtds
             .append("div")
             .style("max-height", "0px")
             .style("overflow", "hidden")
+            .style("max-width", "0px")
+
 
 
         updatetds = newtds.merge(tds)
@@ -125,8 +128,6 @@ var CheckList = function() {
                 }
             })
 
-
-
         updatetds 
             .select("div")
             .html(function(d) {
@@ -139,20 +140,21 @@ var CheckList = function() {
                 var length = d.value.length
                 var lines = Math.ceil(length/line_length)
                 return lines * 30 + "px"
-            })     
+            }) 
+            .style("max-width", "700px")
+           
+        tds.exit()
+            .style("width", "0px")
+            .transition()
+            .duration(transition_duration)
+            .style("background-color", "#EBCECE")
+            .remove()
 
         tds.exit()
             .select("div")
-            .style("width", "0%")
             .transition()
             .duration(transition_duration)
-
-        tds.exit()
-            .transition()
-            .duration(transition_duration)
-            .remove()
-
-
+            .style("max-width", "0px")
 
          rows.exit()
             .selectAll("td")
@@ -171,7 +173,6 @@ var CheckList = function() {
             .style("max-height", "0px")
 
 
-        //Remove rows no longer present in data
         rows.exit()
             .transition(transition_duration)
             .duration(transition_duration)

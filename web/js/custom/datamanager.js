@@ -29,8 +29,12 @@ var DataManager = function(csvdata) {
 
     this.row_to_activity = function(row) {
         var dict = {}
+
         dict.column = "activity"
         dict.value = row["activity"]
+        if (OCS_APP.interface.detail_toggle) {
+         dict.value += ` <span class="detail_text">${row["before_start"]}</span>`   
+        }
         dict.id = row["id"]
         dict.colspan = 1
 
@@ -89,6 +93,8 @@ var DataManager = function(csvdata) {
             if (OCS_APP.interface.getting_started_toggle) {
                 return_array.push(before_start)
             }
+
+        
 
             return return_array
         }   

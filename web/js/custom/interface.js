@@ -12,6 +12,7 @@ Interface.prototype = {
         return +d3.select("#scale_select").property("value")
     },
     get overall_level() {
+        console.log(this.risk_level + this.scale_level - 1)
         return this.risk_level + this.scale_level - 1
     },
     get language_array() {
