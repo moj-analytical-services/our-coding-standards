@@ -1,6 +1,6 @@
 var CheckList = function() {
 
-    var transition_duration = 1000
+    var transition_duration = 500
 
     var me = this;
     me.firstrun = true
@@ -147,7 +147,7 @@ var CheckList = function() {
             .style("width", "0px")
             .transition()
             .duration(transition_duration)
-            .style("background-color", "#EBCECE")
+            .style("background-color", "#FFFFFF")
             .remove()
 
         tds.exit()

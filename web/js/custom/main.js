@@ -28,7 +28,7 @@ $(function() {
     })
 
     $("#download_markdown").on("click", function() {
-        OCS_APP.table_to_markdown.download(true)
+        OCS_APP.table_to_markdown.download(false)
     })
 
 
