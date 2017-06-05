@@ -33,7 +33,7 @@ var DataManager = function(csvdata) {
         dict.column = "activity"
         dict.value = row["activity"]
         if (OCS_APP.interface.detail_toggle) {
-         dict.value += ` <span class="detail_text">${row["before_start"]}</span>`   
+         dict.value += ` <span class="detail_text">${row["further_details"]}</span>`   
         }
         dict.id = row["id"]
         dict.colspan = 1
