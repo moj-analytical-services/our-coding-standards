@@ -29,7 +29,7 @@ By establishing these ideas as common practice we will:
 **8: Use [sensible defaults](sensible_defaults.md) unless you have a great reason not to**
 
 **9: Where practical, [include a git hash](include_git_hash.md) in
-the output of programs to promote reproducible analysis.
+the output of programs to promote reproducible analysis.**
 
 ## And some guidance on...
 
