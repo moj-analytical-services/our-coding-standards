@@ -10,4 +10,8 @@ Existing guidance provides a framework for categorising your project into nine c
 
 This guidance sets minimum standards associated with these categories.
 
+## When does this guidance apply?
+
+This guidance applies to work that we deliver to our customers.  You may perform exploratory data analysis for your own use, and commit this code to Github without adhering to these minimum standards.  In this case you should tag the repository as 'exploratory' and make a note of this in your readme.  Create a separate repository for the final analysis that will be delivered to customers, which will then be subject to these minimum standards.
+
 ## Interactive checklist
