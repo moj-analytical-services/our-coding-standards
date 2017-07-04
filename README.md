@@ -40,6 +40,9 @@ All projects should meet our proportionate minimum coding standards, which can b
 
 **2: Manual [quality assurance](quality_assurance.md)**
 
+**3: Writing an amazing [README.md](
+README_template.md) for your project **
+
 ## Contributing
 
 If you think that something is missing or not quite right you should either:
