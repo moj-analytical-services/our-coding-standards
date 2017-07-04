@@ -30,6 +30,11 @@ Explain how to run the tests for this program.
 If you have a set of automated tests how does a new user run them?
 ### End-to-end tests
 What do these test? Why?
+### Analytical Quality Assurance
+Describe the AQA that has been performed on this project.
+This should have a link to the AQA checklist markdown file - you can get a 
+template from the [Coding Standards Site](
+https://moj-analytical-services.github.io/our-coding-standards/web/).
 
 ## Authors
 A list of people who wrote the project.
