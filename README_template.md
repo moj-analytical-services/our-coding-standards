@@ -1,6 +1,10 @@
 # Project Name
 One paragraph description of the project goes here.
 
+## Customer
+Who was the primary customer of this work (including their unit/team/role).
+What was the question it was trying to answer?
+
 ## Written in
 Programming Language
 Using the folowing libraries:
