@@ -20,6 +20,10 @@ dependencies.
 End this section with a simple example of how to get your project to do
 something useful.
 
+## Data
+What data does the project use? Where was it sourced from? Is there a script
+that can regenerate the data?
+
 ## Tests
 Explain how to run the tests for this program.
 ### Automated Tests?
