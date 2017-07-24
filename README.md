@@ -28,9 +28,7 @@ By establishing these ideas as common practice we will:
 
 **8: Use [sensible defaults](sensible_defaults.md) unless you have a great reason not to**
 
-**9: Your work should be reproducible, it should be simple to replicate your work
-on someone else's machine. You may want to, [include a git hash](
-include_git_hash.md) in the output.**
+**9: Analyses should be [simple and easy to reproduce](reproducibility.md) on another machine.**
 
 ## And some guidance on...
 

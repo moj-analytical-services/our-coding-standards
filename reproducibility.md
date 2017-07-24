@@ -1,11 +1,13 @@
-# Include a git hash
+# Some tips on making your analyses simple to reproduce
+
+## Include a git hash
 
 If practical, the output of your code should include the git hash
 of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code 
 that was used to generate it.
 
-## R
+### R
 You can access the git hash using either of the following code:
 snippets.
 ```{r}
@@ -21,7 +23,7 @@ or
 print(system("git rev-parse --short HEAD", intern = TRUE))
 ```
 
-## Python
+### Python
 You can access the git hash using the following code:
 ```import subprocess
 
