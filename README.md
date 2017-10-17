@@ -30,6 +30,10 @@ By establishing these ideas as common practice we will:
 
 **9: Analyses should be [simple and easy to reproduce](reproducibility.md) on another machine.**
 
+## Minimum Standards checklist
+
+All projects should meet our proportionate minimum coding standards, which can be found [here](https://moj-analytical-services.github.io/our-coding-standards/web/).
+
 ## And some guidance on...
 
 **1: [Reviewing](reviewing_a_pull_request.md) a pull request**
