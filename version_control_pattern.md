@@ -30,17 +30,19 @@ git commit
 
 # This will take you into your default text editor
 # Write a descriptive commit message
-
-# If you have not configured your text editor, you may get stuck in Vim
-# exit using the following command:
-:q!
-
-# Then configure your default text editor for Git
+```
+>**Note:**
+>If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: `:q!`. Then configure your default text editor for Git
+```sh
 git config --global core.editor <my-favourite-text-editor>
-
-# And try again
+ # Then try again
 git commit
 ```
+>You can also commit and add a message to that commit at the same time
+```sh
+git commit -m "A useful message explaining my changes"
+```
+
 4. When you're ready, submit a pull request and wait for peer-review.
 ```sh
 # push your branch to the remote repo
@@ -52,6 +54,9 @@ git push origin my-new-sensibly-named-branch
 
 The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests.
 
+For some further reading we strongly suggest reading this [article][2] that explains these git commands and others in a bit more detail.
+
 If you want to test this out, clone this repo and make a contribution :)
 
 [1]: https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow
+[2]: https://gist.github.com/blackfalcon/8428401
