@@ -47,6 +47,7 @@ git push origin my-new-sensibly-named-branch
 ```
 5. To make further changes, just make more commits on the same branch and push them to the remote repo again.
 6. Once peer review is complete, and any comments addressed, merge into the master branch using a [rebase](https://github.com/blog/2243-rebase-and-merge-pull-requests).
+7. The version of master on Github is now ahead of the version of master on your local machine.  Bring your local version up to date using `git checkout master`, `git pull`.  You are now in sync with Github, and ready to start a new branch.
 
 The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests.
 
