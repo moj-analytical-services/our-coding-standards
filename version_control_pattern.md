@@ -38,10 +38,6 @@ git config --global core.editor <my-favourite-text-editor>
  # Then try again
 git commit
 ```
->You can also commit and add a message to that commit at the same time
-```sh
-git commit -m "A useful message explaining my changes"
-```
 
 4. When you're ready, submit a pull request and wait for peer-review.
 ```sh
