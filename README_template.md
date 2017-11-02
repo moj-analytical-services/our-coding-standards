@@ -23,8 +23,5 @@ This should have a link to the AQA checklist markdown file - you can get a
 template from the [Coding Standards Site](
 https://moj-analytical-services.github.io/our-coding-standards/web/).
 
-### Automated Tests?
-If you have a set of automated tests how does a new user run them?
-### End-to-end tests
-What do these test? Why?
-
+###  Tests?
+If you have a set of tests how does a new user run them?
