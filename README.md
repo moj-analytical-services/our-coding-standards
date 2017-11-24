@@ -1,16 +1,20 @@
-## The purpose of this repo
+## Our Coding Standards
 
-These ideas are stated in no particular order, and are *always* open to debate. In fact, you are encouraged to contribute. 
-All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.
-They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
-They are to guide future and current development - use your judgement, but in general only rewrite existing code if you really have to. 
+This repo contains Analytical Service Directorate's (ASD's) Coding Standards.  
 
-By establishing these ideas as common practice we will:
-1. Write high quality, maintainable, code
-2. Where possible, ensure our work is reusable
-3. Collaborate with one another effectively accross multiple projects
+These are split into two sections:
 
-## Our coding standards and working practices
+* Prescriptive minimum coding standards for analytical projects, and
+* A set of principles for working on code projects in ASD
+
+## Our minimum standards checklist
+
+All projects should meet our proportionate minimum coding standards, which can be found [here](https://moj-analytical-services.github.io/our-coding-standards/web/).
+
+## Our coding principles
+
+The following coding principles have been developed to help achieve the following objectives. (I) Ensure we write high quality, maintainable, code;  (II) Where possible, ensure our work is reusable; and (III) Collaborate with one another effectively accross multiple projects.
+
 
 **1: Use [the same version control pattern](version_control_pattern.md) across all projects**
 
@@ -30,11 +34,14 @@ By establishing these ideas as common practice we will:
 
 **9: Analyses should be [simple and easy to reproduce](reproducibility.md) on another machine.**
 
-## Minimum Standards checklist
+These ideas are stated in no particular order, and are *always* open to debate. In fact, you are encouraged to contribute. 
 
-All projects should meet our proportionate minimum coding standards, which can be found [here](https://moj-analytical-services.github.io/our-coding-standards/web/).
+All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.
 
-## And some guidance on...
+They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
+
+
+## Further guidance
 
 **1: [Reviewing](reviewing_a_pull_request.md) a pull request**
 
