@@ -1,6 +1,6 @@
-# Git-flow
+# Github-flow
 
-### Git-Flow is a working practice, for use with any version control system, that helps to:
+### Github-Flow is a working practice that helps to:
 1. Maintain overall code quality
 2. Facilitate collaboration on a single project
 3. Protect the codebase
