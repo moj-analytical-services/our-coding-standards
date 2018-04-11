@@ -55,5 +55,5 @@ For some further reading we strongly suggest reading this [article][2] that expl
 
 If you want to test this out, clone this repo and make a contribution :)
 
-[1]: https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow
+[1]: https://guides.github.com/introduction/flow/
 [2]: https://gist.github.com/blackfalcon/8428401
