@@ -7,7 +7,7 @@
 
 We have tweaked it a little from what is [described on GitHub][1] 
 
-### There are 5 basic steps to our process:
+### There are 6 steps to our process:
 1. Create or clone a repo.
 ```sh
 # For example, to clone this repo.
