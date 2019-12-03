@@ -29,5 +29,13 @@ If you're on the receiving end of feedback, from anyone at all, this is... **a c
 
 ### Unit testing {#unittest}
 
-Use testthat and shinytest for unit testing.
-LINKS.
+Use testthat and shinytest for unit testing. The following might be helpful:  
+* Nice [intro to using testthat][9]  
+* Another [intro to testthat][10]  
+* [Example of using testthat][11]  
+
+[9]:https://katherinemwood.github.io/post/testthat/
+[10]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
+[11]:https://github.com/RobinL/costmodelr/tree/master/tests
+
+

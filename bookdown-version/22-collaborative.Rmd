@@ -8,10 +8,11 @@ output: html_document
 ### Version Control {#versioncontrol}
 
 #### Github-Flow is a working practice that helps to: {-}
-2. Facilitate collaboration on a single project
-3. Protect the codebase
+1. Maintain overall code quality  
+2. Facilitate collaboration on a single project  
+3. Protect the codebase  
 
-We have tweaked it a little from what is [described on GitHub][1] 
+We have tweaked it a little from what is [described on GitHub][4] 
 
 #### There are 6 steps to our process: {-}
 1. Create or clone a repo.
@@ -66,12 +67,21 @@ Make sure that you reference the issue in your pull request, by using the hash (
 
 The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests.
 
-For some further reading we strongly suggest reading this [article][2] that explains these git commands and others in a bit more detail.
+For some further reading we strongly suggest reading this [article][5] that explains these git commands and others in a bit more detail.
 
 If you want to test this out, clone this repo and make a contribution :)
 
-[1]: https://guides.github.com/introduction/flow/
-[2]: https://gist.github.com/blackfalcon/8428401
+[4]: https://guides.github.com/introduction/flow/
+[5]: https://gist.github.com/blackfalcon/8428401
+[6]:https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html
+[7]:https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github
+[8]:https://guides.github.com/introduction/git-handbook/
+
+#### Useful links for using github {-#gitlink}
+
+* [A guide to getting started with github][6]  
+* Github guide on [analytical platform guidance][7]  
+* List of basic [git commands][8] 
 
 ### Share the knowledge {#knowledge}
 If you have knowledge which is unique to you, it is your responsibility to share it.
