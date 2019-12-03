@@ -73,7 +73,7 @@ If you want to test this out, clone this repo and make a contribution :)
 [1]: https://guides.github.com/introduction/flow/
 [2]: https://gist.github.com/blackfalcon/8428401
 
-#### Share the knowledge {-#knowledge}
+### Share the knowledge {#knowledge}
 If you have knowledge which is unique to you, it is your responsibility to share it.
 We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
 You could also present your work at Display DaSH.

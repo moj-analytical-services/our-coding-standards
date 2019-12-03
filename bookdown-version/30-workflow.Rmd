@@ -1,0 +1,16 @@
+---
+title: ''
+output: html_document
+---
+# Workflow {#wf}
+
+The recommended workflow for coding projects in DASD is:
+
+Create/clone [github repo](#versioncontrol)  
+Create [issue](#versioncontrol)  
+Create [branch](#versioncontrol)  
+Set up [dependency management](#projdep)  
+Build in [unit testing](#unittest)  
+Commit [changes](#versioncontrol)  
+[Pull request/QA](#review)  
+
