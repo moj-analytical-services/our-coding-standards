@@ -1,0 +1,10 @@
+---
+title: ''
+output: html_document
+---
+
+## Minimum Standards Table {#msctable}
+
+```{r url, out.width="100%", echo=FALSE}
+knitr::include_url("https://moj-analytical-services.github.io/our-coding-standards/web/", height = 5000)
+```

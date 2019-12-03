@@ -1,0 +1,39 @@
+---
+title: ''
+output: html_document
+---
+
+# Coding Principles {#principles}
+
+The following coding principles have been developed to help achieve the following objectives. (I) Ensure we write high quality, maintainable, code;  (II) Where possible, ensure our work is reusable; and (III) Collaborate with one another effectively accross multiple projects.
+
+Code should be:
+
+**1. Reproducible**  
+
+* Optimise for [change](#change)  
+* Analyses should be [simple and easy to reproduce](#reproduce) on another machine.
+
+**2. Collaborative**  
+
+* Use [the same version control pattern](#versioncontrol) across all projects  
+* [Share](#knowledge) the knowledge  
+
+**3. Accurate**  
+
+* QA section  
+
+**4. Understandable**  
+
+* [Names have power](#names) and purpose, use them wisely  
+* Code should be [correct, clear and concise](#ccc) - in that order  
+* Other team members [are users too](#understand) - treat them with respect  
+* [Everything fails](#error) at some point - be ready for it  
+* Use [sensible defaults](#defaults) unless you have a great reason not to  
+
+
+These ideas are stated in no particular order, and are *always* open to debate. In fact, you are encouraged to contribute. 
+
+All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.
+
+They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
