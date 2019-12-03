@@ -3,7 +3,7 @@ title: ''
 output: html_document
 ---
 
-# Minimum Coding Standards {#msc}
+# Minimum Coding Standards {#mcs}
 
 ## Minimum Standards Checklist {#mcschecklist}
 

@@ -8,6 +8,17 @@ biblio-style: apalike
 link-citations: yes
 description: "These are the DASD coding standards."
 ---
+# Reviewer notes
+
+This document is an early attempt at restructuring the current coding standards. At present, every part of the existing coding standards has been incorporated into this document. This is unlikely to be the case for the final product, but I didn't want to lose any essential information early on.
+
+The minimum coding standards have been incorporated into the document [here](#mcstable). The formatting and sizing of the embedded html file isn't ideal at present, but provides an illustration of what could be done. Do we even still need the minimum coding standards? Can we easily put all the requirements in one place rather than splitting into two?
+
+In addition, further information will be added at later stages - particularly in the form of links to external sites that will support the beginner in understanding some of the concepts.
+
+This document hasn't been spellchecked or rigorously tested yet (e.g. that links work etc.). This will be done at a later stage when structure has been agreed.
+
+I've also added a section with the recommended [workflow](#wf). I wonder if this would ideally be brought up to the front of the beginning of the document to illustrate to beginners how each of the sections of the principles fits into their project work?
 
 # Introduction {#intro}
 
@@ -15,7 +26,7 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 
 ## Motivation {#motivation}
 
--- Filler Text --
+**Filler Text**  
 Within DASD we use coding standards to ensure that all the code we produce is:  
   
 * Reproducible 
@@ -23,12 +34,9 @@ Within DASD we use coding standards to ensure that all the code we produce is:
 * Accurate
 * Understandble
 
-Break it down by each section.
-High quality: how do adopting CS make the code high quality?
-Understandable: how do adopting CS make the code understandable?
-Reproducible: how do adopting CS make the code repdocuible?
+Why do we want these things? And how will adopting these coding standards enable us to acheive these characteristics for our coding?
 
-## Structure {#structure}
+## Guidance structure {#structure}
 
 The coding standards are split into two sections:
 
@@ -38,19 +46,9 @@ The coding standards are split into two sections:
 The minimum coding standards are required for all projects.
 The principles have been developed as examples of best practice.
 
-
-
-## Further guidance {#guidance}
-
-#**1: [Reviewing](reviewing_a_pull_request.md) a pull request**
-
-#**2: Manual [quality assurance](quality_assurance.md)**
-
-#**3: Writing an amazing [README.md](README_template.md) for your project**
-
 ## Contributing {#contributing}
 
 If you think that something is missing or not quite right you should either:
-1. [Contribute directly](#vcp)
+1. [Contribute directly](#versioncontrol)
 2. [Raise an issue](https://github.com/moj-analytical-services/our-coding-standards/issues)
 

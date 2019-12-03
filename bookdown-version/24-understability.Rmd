@@ -5,6 +5,10 @@ output: html_document
 
 ## Understandable {#understand}
 
+### Include a README {#readme}
+
+By writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).
+
 ### Use sensible defaults {#defaults}
 
 There are often many ways of tackling a given problem.  As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
@@ -56,16 +60,16 @@ Use unicode.  This means you should convert inputs that include non-ASCII charac
 ### Separate functions out {#functions}
 
 ### Coding style {#style}
-#### Apply a linter {-#linter}
+#### Apply a linter {#linter}
 
-#### Names have power and purpose - use them wisely {-#names}
+#### Names have power and purpose - use them wisely {#names}
 
 * Don’t be cute or jokey when naming things.
 * Names convey meaning - well-named functions & variables can remove the need for a comment and make life a little easier for other readers, including your future self!
 * Avoid meaningless names like ‘obj’ / ‘result’ / ‘foo’.
 * Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear
 
-#### Code should be correct, clear, concise - in that order {-#ccc}
+#### Code should be correct, clear, concise - in that order {#ccc}
 
 * Correct means demonstrably correct - with tests (ideally) and / or documented [Quality Assurance](quality_assurance.md).  Automated tests are ideal because they allow the code to be refactored with confidence.
 * All fixes & new features should include tests to prevent regressions (i.e. reappearance of the bug you just fixed).
@@ -77,12 +81,12 @@ Use unicode.  This means you should convert inputs that include non-ASCII charac
 
 > Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
 
-#### Everything fails at some point {-#errors}
+#### Everything fails at some point {#errors}
 Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.
 
-#### Other team members are users too - treat them with respect {-#users}
+#### Other team members are users too - treat them with respect {#users}
 If you have to explain how your code works, then your code is not clear enough.
 Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
 Comments are for explaining why something is needed, not how it works.

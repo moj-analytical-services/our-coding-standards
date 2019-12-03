@@ -27,6 +27,7 @@ Code should be:
 
 **4. [Understandable](#understand)**  
 
+* Write a [README](#readme) for your project  
 * Use [sensible defaults](#defaults) unless you have a great reason not to
 * Write [functions](#functions) where needed  
 * [Stylistic](#style):  
