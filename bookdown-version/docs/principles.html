@@ -143,18 +143,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="msc.html"><a href="msc.html#msctable"><i class="fa fa-check"></i><b>2.2</b> Minimum Standards Table</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i><b>3</b> Coding Principles</a><ul>
-<li class="chapter" data-level="3.1" data-path="principles.html"><a href="principles.html#reproduce"><i class="fa fa-check"></i><b>3.1</b> Reproducibiltiy</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="principles.html"><a href="principles.html#manage-project-dependencies"><i class="fa fa-check"></i><b>3.1.1</b> Manage project dependencies</a></li>
-<li class="chapter" data-level="3.1.2" data-path="principles.html"><a href="principles.html#optimize-for-change"><i class="fa fa-check"></i><b>3.1.2</b> Optimize for change</a></li>
+<li class="chapter" data-level="3.1" data-path="principles.html"><a href="principles.html#reproduce"><i class="fa fa-check"></i><b>3.1</b> Reproducibile</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="principles.html"><a href="principles.html#projdep"><i class="fa fa-check"></i><b>3.1.1</b> Manage project dependencies</a></li>
+<li class="chapter" data-level="3.1.2" data-path="principles.html"><a href="principles.html#change"><i class="fa fa-check"></i><b>3.1.2</b> Optimize for change</a></li>
+<li class="chapter" data-level="3.1.3" data-path="principles.html"><a href="principles.html#githash"><i class="fa fa-check"></i><b>3.1.3</b> Reproducing on another machine</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="principles.html"><a href="principles.html#collaborate"><i class="fa fa-check"></i><b>3.2</b> Collaboration</a><ul>
+<li class="chapter" data-level="3.2" data-path="principles.html"><a href="principles.html#collaborate"><i class="fa fa-check"></i><b>3.2</b> Collaborative</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="principles.html"><a href="principles.html#versioncontrol"><i class="fa fa-check"></i><b>3.2.1</b> Version Control</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="principles.html"><a href="principles.html#accurate"><i class="fa fa-check"></i><b>3.3</b> Accuracy</a></li>
-<li class="chapter" data-level="3.4" data-path="principles.html"><a href="principles.html#understand"><i class="fa fa-check"></i><b>3.4</b> Understandability</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="principles.html"><a href="principles.html#use-sensible-defaults"><i class="fa fa-check"></i><b>3.4.1</b> Use sensible defaults</a></li>
-<li class="chapter" data-level="3.4.2" data-path="principles.html"><a href="principles.html#separate-functions-out"><i class="fa fa-check"></i><b>3.4.2</b> Separate functions out</a></li>
-<li class="chapter" data-level="3.4.3" data-path="principles.html"><a href="principles.html#coding-style"><i class="fa fa-check"></i><b>3.4.3</b> Coding style</a></li>
+<li class="chapter" data-level="3.3" data-path="principles.html"><a href="principles.html#accurate"><i class="fa fa-check"></i><b>3.3</b> Accurate</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="principles.html"><a href="principles.html#review"><i class="fa fa-check"></i><b>3.3.1</b> Review</a></li>
+<li class="chapter" data-level="3.3.2" data-path="principles.html"><a href="principles.html#unittest"><i class="fa fa-check"></i><b>3.3.2</b> Unit testing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="principles.html"><a href="principles.html#understand"><i class="fa fa-check"></i><b>3.4</b> Understandable</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="principles.html"><a href="principles.html#defaults"><i class="fa fa-check"></i><b>3.4.1</b> Use sensible defaults</a></li>
+<li class="chapter" data-level="3.4.2" data-path="principles.html"><a href="principles.html#functions"><i class="fa fa-check"></i><b>3.4.2</b> Separate functions out</a></li>
+<li class="chapter" data-level="3.4.3" data-path="principles.html"><a href="principles.html#style"><i class="fa fa-check"></i><b>3.4.3</b> Coding style</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -181,50 +185,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Coding Principles</h1>
 <p>The following coding principles have been developed to help achieve the following objectives. (I) Ensure we write high quality, maintainable, code; (II) Where possible, ensure our work is reusable; and (III) Collaborate with one another effectively accross multiple projects.</p>
 <p>Code should be:</p>
-<p><strong>1. Reproducible</strong></p>
+<p><strong>1. <a href="principles.html#reproduce">Reproducible</a></strong></p>
 <ul>
-<li>Optimise for <a href="#change">change</a><br />
+<li>Manage <a href="principles.html#projdep">project dependencies</a></li>
+<li>Optimise for <a href="principles.html#change">change</a><br />
 </li>
-<li>Analyses should be <a href="principles.html#reproduce">simple and easy to reproduce</a> on another machine.</li>
+<li>Analyses should be <a href="principles.html#githash">simple and easy to reproduce</a> on another machine.</li>
 </ul>
-<p><strong>2. Collaborative</strong></p>
+<p><strong>2. <a href="principles.html#collaborate">Collaborative</a></strong></p>
 <ul>
-<li>Use <a href="principles.html#versioncontrol">the same version control pattern</a> across all projects<br />
+<li>Use the <a href="principles.html#versioncontrol">github workflow</a> across all projects<br />
 </li>
-<li><a href="#knowledge">Share</a> the knowledge</li>
+<li><a href="principles.html#knowledge">Share</a> the knowledge</li>
 </ul>
-<p><strong>3. Accurate</strong></p>
+<p><strong>3. <a href="principles.html#accurate">Accurate</a></strong></p>
 <ul>
-<li>QA section</li>
+<li>Ensure code is <a href="principles.html#review">reviewed</a></li>
+<li>Complete <a href="principles.html#unittest">unit testing</a></li>
 </ul>
-<p><strong>4. Understandable</strong></p>
+<p><strong>4. <a href="principles.html#understand">Understandable</a></strong></p>
 <ul>
-<li><a href="#names">Names have power</a> and purpose, use them wisely<br />
+<li>Use <a href="principles.html#defaults">sensible defaults</a> unless you have a great reason not to</li>
+<li>Write <a href="principles.html#functions">functions</a> where needed<br />
 </li>
-<li>Code should be <a href="#ccc">correct, clear and concise</a> - in that order<br />
+<li><a href="principles.html#style">Stylistic</a>:
+<ul>
+<li>Apply a <a href="principles.html#linter">linter</a></li>
+<li>Ensure <a href="principles.html#names">variable names</a> are meaningful</li>
+<li>Code should be <a href="principles.html#ccc">correct, clear and concise</a></li>
+<li><a href="principles.html#errors">Handle errors</a><br />
 </li>
-<li>Other team members <a href="principles.html#understand">are users too</a> - treat them with respect<br />
-</li>
-<li><a href="#error">Everything fails</a> at some point - be ready for it<br />
-</li>
-<li>Use <a href="#defaults">sensible defaults</a> unless you have a great reason not to</li>
+<li>Other team members <a href="principles.html#users">are users too</a> - treat them with respect</li>
+</ul></li>
 </ul>
 <p>These ideas are stated in no particular order, and are <em>always</em> open to debate. In fact, you are encouraged to contribute.</p>
 <p>All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.</p>
 <p>They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.</p>
 
 <div id="reproduce" class="section level2">
-<h2><span class="header-section-number">3.1</span> Reproducibiltiy</h2>
-<div id="manage-project-dependencies" class="section level3">
+<h2><span class="header-section-number">3.1</span> Reproducibile</h2>
+<div id="projdep" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Manage project dependencies</h3>
 </div>
-<div id="optimize-for-change" class="section level3">
+<div id="change" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Optimize for change</h3>
 <ul>
 <li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
 <li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
 <li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
 </ul>
+</div>
+<div id="githash" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Reproducing on another machine</h3>
 <div id="include-a-git-hash" class="section level4 unnumbered">
 <h4>Include a git hash</h4>
 <p>Some tips on making your analyses simple to reproduce</p>
@@ -243,10 +255,10 @@ snippets.</p>
 <pre><code>## Warning: &#39;head.git_repository&#39; is deprecated.
 ## Use &#39;repository_head&#39; instead.
 ## See help(&quot;Deprecated&quot;)</code></pre>
-<pre><code>## [971692] (Local) (HEAD) nikki-restructure</code></pre>
+<pre><code>## [be1429] (Local) (HEAD) nikki-restructure</code></pre>
 <p>or</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="principles.html#cb4-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;9716927&quot;</code></pre>
+<pre><code>## [1] &quot;be14290&quot;</code></pre>
 </div>
 <div id="python" class="section level5 unnumbered">
 <h5>Python</h5>
@@ -262,7 +274,7 @@ return subprocess.check_output([‘git’, ‘rev-parse’, ‘–short’, ‘H
 </div>
 </div>
 <div id="collaborate" class="section level2">
-<h2><span class="header-section-number">3.2</span> Collaboration</h2>
+<h2><span class="header-section-number">3.2</span> Collaborative</h2>
 <div id="versioncontrol" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Version Control</h3>
 <div id="github-flow-is-a-working-practice-that-helps-to" class="section level4 unnumbered">
@@ -323,7 +335,7 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 <p>For some further reading we strongly suggest reading this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
 <p>If you want to test this out, clone this repo and make a contribution :)</p>
 </div>
-<div id="share-the-knowledge" class="section level4 unnumbered">
+<div id="knowledge" class="section level4 unnumbered">
 <h4>Share the knowledge</h4>
 <p>If you have knowledge which is unique to you, it is your responsibility to share it.
 We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
@@ -336,16 +348,32 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </div>
 </div>
 <div id="accurate" class="section level2">
-<h2><span class="header-section-number">3.3</span> Accuracy</h2>
-<ul>
-<li>Ensure sure code is reviewed using a pull request</li>
-<li>Use testthat and shinytest for unit testing</li>
-</ul>
+<h2><span class="header-section-number">3.3</span> Accurate</h2>
+<div id="review" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Review</h3>
+<p>Ensure that code is reviewed: initiate this through a pull request. Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.</p>
+<div id="performing-good-peer-review" class="section level4 unnumbered">
+<h4>Performing good peer review</h4>
+<p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
+<p>1: Do I understand what the code is doing? <a href="principles.html#users">Did it need to be explained</a> to me? <a href="principles.html#ccc">Could it be simpler</a>?</p>
+<p>2: Are they using <a href="principles.html#defaults">packages / libraries sensibly</a>?</p>
+<p>3: Does it need to be <a href="principles.html#ccc">tested</a> (and is it tested with sufficient coverage)?</p>
+<p>4: <a href="principles.html#ccc">Does it work</a>? Does it work on my machine?</p>
+<p>5: Are there edge cases that might <a href="principles.html#errors">break The Thing</a>?</p>
+<p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
+<p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong> :)</p>
+</div>
+</div>
+<div id="unittest" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Unit testing</h3>
+<p>Use testthat and shinytest for unit testing.
+LINKS.</p>
 
 </div>
+</div>
 <div id="understand" class="section level2">
-<h2><span class="header-section-number">3.4</span> Understandability</h2>
-<div id="use-sensible-defaults" class="section level3">
+<h2><span class="header-section-number">3.4</span> Understandable</h2>
+<div id="defaults" class="section level3">
 <h3><span class="header-section-number">3.4.1</span> Use sensible defaults</h3>
 <p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
 <p>This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
@@ -417,15 +445,15 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </ul>
 </div>
 </div>
-<div id="separate-functions-out" class="section level3">
+<div id="functions" class="section level3">
 <h3><span class="header-section-number">3.4.2</span> Separate functions out</h3>
 </div>
-<div id="coding-style" class="section level3">
+<div id="style" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> Coding style</h3>
-<div id="apply-a-linter" class="section level4 unnumbered">
+<div id="linter" class="section level4 unnumbered">
 <h4>Apply a linter</h4>
 </div>
-<div id="names-have-power-and-purpose---use-them-wisely" class="section level4 unnumbered">
+<div id="names" class="section level4 unnumbered">
 <h4>Names have power and purpose - use them wisely</h4>
 <ul>
 <li>Don’t be cute or jokey when naming things.</li>
@@ -434,7 +462,7 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 <li>Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear</li>
 </ul>
 </div>
-<div id="code-should-be-correct-clear-concise---in-that-order" class="section level4 unnumbered">
+<div id="ccc" class="section level4 unnumbered">
 <h4>Code should be correct, clear, concise - in that order</h4>
 <ul>
 <li>Correct means demonstrably correct - with tests (ideally) and / or documented <a href="quality_assurance.md">Quality Assurance</a>. Automated tests are ideal because they allow the code to be refactored with confidence.</li>
@@ -450,13 +478,13 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 <p>Good code is its own best documentation. As you’re about to add a comment, ask yourself, “How can I improve the code so that this comment isn’t needed?” Improve the code and then document it to make it even clearer.” - Steve McConnell</p>
 </blockquote>
 </div>
-<div id="everything-fails-at-some-point" class="section level4 unnumbered">
+<div id="errors" class="section level4 unnumbered">
 <h4>Everything fails at some point</h4>
 <p>Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.</p>
 </div>
-<div id="other-team-members-are-users-too---treat-them-with-respect" class="section level4 unnumbered">
+<div id="users" class="section level4 unnumbered">
 <h4>Other team members are users too - treat them with respect</h4>
 <p>If you have to explain how your code works, then your code is not clear enough.
 Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).

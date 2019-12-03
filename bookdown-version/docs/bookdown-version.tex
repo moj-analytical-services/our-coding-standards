@@ -234,48 +234,62 @@ The following coding principles have been developed to help achieve the followin
 
 Code should be:
 
-\textbf{1. Reproducible}
+\textbf{1. \protect\hyperlink{reproduce}{Reproducible}}
 
 \begin{itemize}
 \tightlist
+\item
+  Manage \protect\hyperlink{projdep}{project dependencies}
 \item
   Optimise for \protect\hyperlink{change}{change}\\
 \item
-  Analyses should be \protect\hyperlink{reproduce}{simple and easy to reproduce} on another machine.
+  Analyses should be \protect\hyperlink{githash}{simple and easy to reproduce} on another machine.
 \end{itemize}
 
-\textbf{2. Collaborative}
+\textbf{2. \protect\hyperlink{collaborate}{Collaborative}}
 
 \begin{itemize}
 \tightlist
 \item
-  Use \protect\hyperlink{versioncontrol}{the same version control pattern} across all projects\\
+  Use the \protect\hyperlink{versioncontrol}{github workflow} across all projects\\
 \item
   \protect\hyperlink{knowledge}{Share} the knowledge
 \end{itemize}
 
-\textbf{3. Accurate}
+\textbf{3. \protect\hyperlink{accurate}{Accurate}}
 
 \begin{itemize}
 \tightlist
 \item
-  QA section
+  Ensure code is \protect\hyperlink{review}{reviewed}
+\item
+  Complete \protect\hyperlink{unittest}{unit testing}
 \end{itemize}
 
-\textbf{4. Understandable}
+\textbf{4. \protect\hyperlink{understand}{Understandable}}
 
 \begin{itemize}
 \tightlist
 \item
-  \protect\hyperlink{names}{Names have power} and purpose, use them wisely\\
-\item
-  Code should be \protect\hyperlink{ccc}{correct, clear and concise} - in that order\\
-\item
-  Other team members \protect\hyperlink{understand}{are users too} - treat them with respect\\
-\item
-  \protect\hyperlink{error}{Everything fails} at some point - be ready for it\\
-\item
   Use \protect\hyperlink{defaults}{sensible defaults} unless you have a great reason not to
+\item
+  Write \protect\hyperlink{functions}{functions} where needed\\
+\item
+  \protect\hyperlink{style}{Stylistic}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Apply a \protect\hyperlink{linter}{linter}
+  \item
+    Ensure \protect\hyperlink{names}{variable names} are meaningful
+  \item
+    Code should be \protect\hyperlink{ccc}{correct, clear and concise}
+  \item
+    \protect\hyperlink{errors}{Handle errors}\\
+  \item
+    Other team members \protect\hyperlink{users}{are users too} - treat them with respect
+  \end{itemize}
 \end{itemize}
 
 These ideas are stated in no particular order, and are \emph{always} open to debate. In fact, you are encouraged to contribute.
@@ -285,13 +299,13 @@ All development is a trade-off between competing pressures, these principles are
 They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
 
 \hypertarget{reproduce}{%
-\section{Reproducibiltiy}\label{reproduce}}
+\section{Reproducibile}\label{reproduce}}
 
-\hypertarget{manage-project-dependencies}{%
-\subsection{Manage project dependencies}\label{manage-project-dependencies}}
+\hypertarget{projdep}{%
+\subsection{Manage project dependencies}\label{projdep}}
 
-\hypertarget{optimize-for-change}{%
-\subsection{Optimize for change}\label{optimize-for-change}}
+\hypertarget{change}{%
+\subsection{Optimize for change}\label{change}}
 
 \begin{itemize}
 \tightlist
@@ -302,6 +316,9 @@ They are guidance, not The Law - there will always be edge cases, but you should
 \item
   Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
 \end{itemize}
+
+\hypertarget{githash}{%
+\subsection{Reproducing on another machine}\label{githash}}
 
 \hypertarget{include-a-git-hash}{%
 \subsubsection*{Include a git hash}\label{include-a-git-hash}}
@@ -337,7 +354,7 @@ snippets.
 \end{verbatim}
 
 \begin{verbatim}
-## [971692] (Local) (HEAD) nikki-restructure
+## [be1429] (Local) (HEAD) nikki-restructure
 \end{verbatim}
 
 or
@@ -349,7 +366,7 @@ or
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "9716927"
+## [1] "be14290"
 \end{verbatim}
 
 \hypertarget{python}{%
@@ -366,7 +383,7 @@ def get\_git\_revision\_short\_hash():
 return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
 
 \hypertarget{collaborate}{%
-\section{Collaboration}\label{collaborate}}
+\section{Collaborative}\label{collaborate}}
 
 \hypertarget{versioncontrol}{%
 \subsection{Version Control}\label{versioncontrol}}
@@ -493,8 +510,8 @@ For some further reading we strongly suggest reading this \href{https://gist.git
 
 If you want to test this out, clone this repo and make a contribution :)
 
-\hypertarget{share-the-knowledge}{%
-\subsubsection*{Share the knowledge}\label{share-the-knowledge}}
+\hypertarget{knowledge}{%
+\subsubsection*{Share the knowledge}\label{knowledge}}
 \addcontentsline{toc}{subsubsection}{Share the knowledge}
 
 If you have knowledge which is unique to you, it is your responsibility to share it.
@@ -505,21 +522,44 @@ All non-throwaway code should be reviewed - no-one is 100\% right, 100\% of the 
 Be aware that `throwaway' code has a nasty habit of somehow ending up in completed products.
 
 \hypertarget{accurate}{%
-\section{Accuracy}\label{accurate}}
+\section{Accurate}\label{accurate}}
 
-\begin{itemize}
-\tightlist
-\item
-  Ensure sure code is reviewed using a pull request
-\item
-  Use testthat and shinytest for unit testing
-\end{itemize}
+\hypertarget{review}{%
+\subsection{Review}\label{review}}
+
+Ensure that code is reviewed: initiate this through a pull request. Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.
+
+\hypertarget{performing-good-peer-review}{%
+\subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
+\addcontentsline{toc}{subsubsection}{Performing good peer review}
+
+When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start\ldots{}
+
+1: Do I understand what the code is doing? \protect\hyperlink{users}{Did it need to be explained} to me? \protect\hyperlink{ccc}{Could it be simpler}?
+
+2: Are they using \protect\hyperlink{defaults}{packages / libraries sensibly}?
+
+3: Does it need to be \protect\hyperlink{ccc}{tested} (and is it tested with sufficient coverage)?
+
+4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?
+
+5: Are there edge cases that might \protect\hyperlink{errors}{break The Thing}?
+
+If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
+
+If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!} :)
+
+\hypertarget{unittest}{%
+\subsection{Unit testing}\label{unittest}}
+
+Use testthat and shinytest for unit testing.
+LINKS.
 
 \hypertarget{understand}{%
-\section{Understandability}\label{understand}}
+\section{Understandable}\label{understand}}
 
-\hypertarget{use-sensible-defaults}{%
-\subsection{Use sensible defaults}\label{use-sensible-defaults}}
+\hypertarget{defaults}{%
+\subsection{Use sensible defaults}\label{defaults}}
 
 There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
 
@@ -641,18 +681,18 @@ Use unicode. This means you should convert inputs that include non-ASCII charact
   If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)
 \end{itemize}
 
-\hypertarget{separate-functions-out}{%
-\subsection{Separate functions out}\label{separate-functions-out}}
+\hypertarget{functions}{%
+\subsection{Separate functions out}\label{functions}}
 
-\hypertarget{coding-style}{%
-\subsection{Coding style}\label{coding-style}}
+\hypertarget{style}{%
+\subsection{Coding style}\label{style}}
 
-\hypertarget{apply-a-linter}{%
-\subsubsection*{Apply a linter}\label{apply-a-linter}}
+\hypertarget{linter}{%
+\subsubsection*{Apply a linter}\label{linter}}
 \addcontentsline{toc}{subsubsection}{Apply a linter}
 
-\hypertarget{names-have-power-and-purpose---use-them-wisely}{%
-\subsubsection*{Names have power and purpose - use them wisely}\label{names-have-power-and-purpose---use-them-wisely}}
+\hypertarget{names}{%
+\subsubsection*{Names have power and purpose - use them wisely}\label{names}}
 \addcontentsline{toc}{subsubsection}{Names have power and purpose - use them wisely}
 
 \begin{itemize}
@@ -667,8 +707,8 @@ Use unicode. This means you should convert inputs that include non-ASCII charact
   Use single-letter variables only where the letter represents a well-known mathematical property (e.g.~e = mc\^{}2), or where their meaning is otherwise clear
 \end{itemize}
 
-\hypertarget{code-should-be-correct-clear-concise---in-that-order}{%
-\subsubsection*{Code should be correct, clear, concise - in that order}\label{code-should-be-correct-clear-concise---in-that-order}}
+\hypertarget{ccc}{%
+\subsubsection*{Code should be correct, clear, concise - in that order}\label{ccc}}
 \addcontentsline{toc}{subsubsection}{Code should be correct, clear, concise - in that order}
 
 \begin{itemize}
@@ -693,16 +733,16 @@ Use unicode. This means you should convert inputs that include non-ASCII charact
 Good code is its own best documentation. As you're about to add a comment, ask yourself, ``How can I improve the code so that this comment isn't needed?'' Improve the code and then document it to make it even clearer.'' - Steve McConnell
 \end{quote}
 
-\hypertarget{everything-fails-at-some-point}{%
-\subsubsection*{Everything fails at some point}\label{everything-fails-at-some-point}}
+\hypertarget{errors}{%
+\subsubsection*{Everything fails at some point}\label{errors}}
 \addcontentsline{toc}{subsubsection}{Everything fails at some point}
 
 Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don't let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.
 
-\hypertarget{other-team-members-are-users-too---treat-them-with-respect}{%
-\subsubsection*{Other team members are users too - treat them with respect}\label{other-team-members-are-users-too---treat-them-with-respect}}
+\hypertarget{users}{%
+\subsubsection*{Other team members are users too - treat them with respect}\label{users}}
 \addcontentsline{toc}{subsubsection}{Other team members are users too - treat them with respect}
 
 If you have to explain how your code works, then your code is not clear enough.
