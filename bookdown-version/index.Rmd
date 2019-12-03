@@ -1,0 +1,56 @@
+--- 
+title: "DASD Coding Standards"
+author: "Data Science Hub"
+date: "`r Sys.Date()`" #change this??
+site: bookdown::bookdown_site
+documentclass: book
+#bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "These are the DASD coding standards."
+---
+
+# Introduction {#intro}
+
+This repo contains Data and Analytical Service Directorate's (DASD's) Coding Standards.  
+
+## Motivation {#motivation}
+
+-- Filler Text --
+Within DASD we use coding standards to ensure that all the code we produce is:  
+  
+* High quality  
+* Understandable/collaborative  
+* Reproducible  
+
+Break it down by each section.
+High quality: how do adopting CS make the code high quality?
+Understandable: how do adopting CS make the code understandable?
+Reproducible: how do adopting CS make the code repdocuible?
+
+## Structure {#structure}
+
+The coding standards are split into two sections:
+
+* Prescriptive minimum coding standards for analytical projects, and
+* A set of principles for working on code projects in DASD
+
+The minimum coding standards are required for all projects.
+The principles have been developed as examples of best practice.
+
+
+
+## Further guidance {#guidance}
+
+#**1: [Reviewing](reviewing_a_pull_request.md) a pull request**
+
+#**2: Manual [quality assurance](quality_assurance.md)**
+
+#**3: Writing an amazing [README.md](README_template.md) for your project**
+
+## Contributing {#contributing}
+
+If you think that something is missing or not quite right you should either:
+1. [Contribute directly](#vcp)
+2. [Raise an issue](https://github.com/moj-analytical-services/our-coding-standards/issues)
+
