@@ -307,6 +307,11 @@ They are guidance, not The Law - there will always be edge cases, but you should
 \hypertarget{projdep}{%
 \subsection{Manage project dependencies}\label{projdep}}
 
+Previously packrat was more widely used, but lots of people seem to use conda now.\\
+* \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}\\
+* \href{https://rstudio.github.io/packrat/}{Packrat}\\
+* \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}
+
 \hypertarget{change}{%
 \subsection{Optimize for change}\label{change}}
 
@@ -357,7 +362,7 @@ snippets.
 \end{verbatim}
 
 \begin{verbatim}
-## [13c221] (Local) (HEAD) nikki-restructure
+## [b7bf29] (Local) (HEAD) nikki-restructure
 \end{verbatim}
 
 or
@@ -369,7 +374,7 @@ or
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "13c221e"
+## [1] "b7bf29f"
 \end{verbatim}
 
 \hypertarget{python}{%
@@ -397,10 +402,11 @@ return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
 \tightlist
 \item
-  Facilitate collaboration on a single project
+  Maintain overall code quality\\
+\item
+  Facilitate collaboration on a single project\\
 \item
   Protect the codebase
 \end{enumerate}
@@ -513,6 +519,20 @@ For some further reading we strongly suggest reading this \href{https://gist.git
 
 If you want to test this out, clone this repo and make a contribution :)
 
+\hypertarget{gitlink}{%
+\subsubsection*{Useful links for using github}\label{gitlink}}
+\addcontentsline{toc}{subsubsection}{Useful links for using github}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html}{A guide to getting started with github}\\
+\item
+  Github guide on \href{https://user-guidance.services.alpha.mojanalytics.xyz/github.html\#creating-your-project-repo-on-github}{analytical platform guidance}\\
+\item
+  List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
+\end{itemize}
+
 \hypertarget{knowledge}{%
 \subsection{Share the knowledge}\label{knowledge}}
 
@@ -554,8 +574,10 @@ If you're on the receiving end of feedback, from anyone at all, this is\ldots{} 
 \hypertarget{unittest}{%
 \subsection{Unit testing}\label{unittest}}
 
-Use testthat and shinytest for unit testing.
-LINKS.
+Use testthat and shinytest for unit testing. The following might be helpful:\\
+* Nice \href{https://katherinemwood.github.io/post/testthat/}{intro to using testthat}\\
+* Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
+* \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
 
 \hypertarget{understand}{%
 \section{Understandable}\label{understand}}
@@ -691,11 +713,26 @@ Use unicode. This means you should convert inputs that include non-ASCII charact
 \hypertarget{functions}{%
 \subsection{Separate functions out}\label{functions}}
 
+If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}.
+
 \hypertarget{style}{%
 \subsection{Coding style}\label{style}}
 
 \hypertarget{linter}{%
 \subsubsection{Apply a linter}\label{linter}}
+
+Apply a linter to easily review your code formatting.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} (for use in R)
+\end{itemize}
+
+\hypertarget{package-name}{%
+\subsubsection{Package name}\label{package-name}}
+
+It's best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().
 
 \hypertarget{names}{%
 \subsubsection{Names have power and purpose - use them wisely}\label{names}}

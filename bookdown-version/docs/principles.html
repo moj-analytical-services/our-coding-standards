@@ -231,6 +231,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Reproducibile</h2>
 <div id="projdep" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Manage project dependencies</h3>
+<p>Previously packrat was more widely used, but lots of people seem to use conda now.<br />
+* <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a><br />
+* <a href="https://rstudio.github.io/packrat/">Packrat</a><br />
+* <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a></p>
 </div>
 <div id="change" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Optimize for change</h3>
@@ -260,10 +264,10 @@ snippets.</p>
 <pre><code>## Warning: &#39;head.git_repository&#39; is deprecated.
 ## Use &#39;repository_head&#39; instead.
 ## See help(&quot;Deprecated&quot;)</code></pre>
-<pre><code>## [13c221] (Local) (HEAD) nikki-restructure</code></pre>
+<pre><code>## [b7bf29] (Local) (HEAD) nikki-restructure</code></pre>
 <p>or</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="principles.html#cb4-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;13c221e&quot;</code></pre>
+<pre><code>## [1] &quot;b7bf29f&quot;</code></pre>
 </div>
 <div id="python" class="section level5 unnumbered">
 <h5>Python</h5>
@@ -284,8 +288,11 @@ return subprocess.check_output([‘git’, ‘rev-parse’, ‘–short’, ‘H
 <h3><span class="header-section-number">4.2.1</span> Version Control</h3>
 <div id="github-flow-is-a-working-practice-that-helps-to" class="section level4 unnumbered">
 <h4>Github-Flow is a working practice that helps to:</h4>
-<ol start="2" style="list-style-type: decimal">
-<li>Facilitate collaboration on a single project</li>
+<ol style="list-style-type: decimal">
+<li>Maintain overall code quality<br />
+</li>
+<li>Facilitate collaboration on a single project<br />
+</li>
 <li>Protect the codebase</li>
 </ol>
 <p>We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a></p>
@@ -340,6 +347,16 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 <p>For some further reading we strongly suggest reading this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
 <p>If you want to test this out, clone this repo and make a contribution :)</p>
 </div>
+<div id="gitlink" class="section level4 unnumbered">
+<h4>Useful links for using github</h4>
+<ul>
+<li><a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html">A guide to getting started with github</a><br />
+</li>
+<li>Github guide on <a href="https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github">analytical platform guidance</a><br />
+</li>
+<li>List of basic <a href="https://guides.github.com/introduction/git-handbook/">git commands</a></li>
+</ul>
+</div>
 </div>
 <div id="knowledge" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Share the knowledge</h3>
@@ -371,8 +388,10 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </div>
 <div id="unittest" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Unit testing</h3>
-<p>Use testthat and shinytest for unit testing.
-LINKS.</p>
+<p>Use testthat and shinytest for unit testing. The following might be helpful:<br />
+* Nice <a href="https://katherinemwood.github.io/post/testthat/">intro to using testthat</a><br />
+* Another <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">intro to testthat</a><br />
+* <a href="https://github.com/RobinL/costmodelr/tree/master/tests">Example of using testthat</a></p>
 
 </div>
 </div>
@@ -456,14 +475,23 @@ LINKS.</p>
 </div>
 <div id="functions" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Separate functions out</h3>
+<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>.</p>
 </div>
 <div id="style" class="section level3">
 <h3><span class="header-section-number">4.4.4</span> Coding style</h3>
 <div id="linter" class="section level4">
 <h4><span class="header-section-number">4.4.4.1</span> Apply a linter</h4>
+<p>Apply a linter to easily review your code formatting.</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> (for use in R)</li>
+</ul>
+</div>
+<div id="package-name" class="section level4">
+<h4><span class="header-section-number">4.4.4.2</span> Package name</h4>
+<p>It’s best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().</p>
 </div>
 <div id="names" class="section level4">
-<h4><span class="header-section-number">4.4.4.2</span> Names have power and purpose - use them wisely</h4>
+<h4><span class="header-section-number">4.4.4.3</span> Names have power and purpose - use them wisely</h4>
 <ul>
 <li>Don’t be cute or jokey when naming things.</li>
 <li>Names convey meaning - well-named functions &amp; variables can remove the need for a comment and make life a little easier for other readers, including your future self!</li>
@@ -472,7 +500,7 @@ LINKS.</p>
 </ul>
 </div>
 <div id="ccc" class="section level4">
-<h4><span class="header-section-number">4.4.4.3</span> Code should be correct, clear, concise - in that order</h4>
+<h4><span class="header-section-number">4.4.4.4</span> Code should be correct, clear, concise - in that order</h4>
 <ul>
 <li>Correct means demonstrably correct - with tests (ideally) and / or documented <a href="quality_assurance.md">Quality Assurance</a>. Automated tests are ideal because they allow the code to be refactored with confidence.</li>
 <li>All fixes &amp; new features should include tests to prevent regressions (i.e. reappearance of the bug you just fixed).</li>
@@ -488,13 +516,13 @@ LINKS.</p>
 </blockquote>
 </div>
 <div id="errors" class="section level4">
-<h4><span class="header-section-number">4.4.4.4</span> Everything fails at some point</h4>
+<h4><span class="header-section-number">4.4.4.5</span> Everything fails at some point</h4>
 <p>Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.</p>
 </div>
 <div id="users" class="section level4">
-<h4><span class="header-section-number">4.4.4.5</span> Other team members are users too - treat them with respect</h4>
+<h4><span class="header-section-number">4.4.4.6</span> Other team members are users too - treat them with respect</h4>
 <p>If you have to explain how your code works, then your code is not clear enough.
 Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
 Comments are for explaining why something is needed, not how it works.

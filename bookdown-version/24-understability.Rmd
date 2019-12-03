@@ -58,9 +58,20 @@ Use unicode.  This means you should convert inputs that include non-ASCII charac
 * If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)
 
 ### Separate functions out {#functions}
+If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13].
+
+[13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
 ### Coding style {#style}
 #### Apply a linter {#linter}
+Apply a linter to easily review your code formatting.  
+
+* [Lintr][12] (for use in R)
+
+[12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
+
+#### Package name
+It's best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().
 
 #### Names have power and purpose - use them wisely {#names}
 
