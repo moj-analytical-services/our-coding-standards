@@ -9,28 +9,33 @@ The following coding principles have been developed to help achieve the followin
 
 Code should be:
 
-**1. Reproducible**  
+**1. [Reproducible](#reproduce)**  
 
+* Manage [project dependencies](#projdep)
 * Optimise for [change](#change)  
-* Analyses should be [simple and easy to reproduce](#reproduce) on another machine.
+* Analyses should be [simple and easy to reproduce](#githash) on another machine.
 
-**2. Collaborative**  
+**2. [Collaborative](#collaborate)**  
 
-* Use [the same version control pattern](#versioncontrol) across all projects  
+* Use the [github workflow](#versioncontrol) across all projects  
 * [Share](#knowledge) the knowledge  
 
-**3. Accurate**  
+**3. [Accurate](#accurate)**  
 
-* QA section  
+* Ensure code is [reviewed](#review)
+* Complete [unit testing](#unittest)
 
-**4. Understandable**  
+**4. [Understandable](#understand)**  
 
-* [Names have power](#names) and purpose, use them wisely  
-* Code should be [correct, clear and concise](#ccc) - in that order  
-* Other team members [are users too](#understand) - treat them with respect  
-* [Everything fails](#error) at some point - be ready for it  
-* Use [sensible defaults](#defaults) unless you have a great reason not to  
-
+* Use [sensible defaults](#defaults) unless you have a great reason not to
+* Write [functions](#functions) where needed  
+* [Stylistic](#style):  
+  - Apply a [linter](#linter)
+  - Ensure [variable names](#names) are meaningful 
+  - Code should be [correct, clear and concise](#ccc) 
+  - [Handle errors](#errors)  
+  - Other team members [are users too](#users) - treat them with respect  
+  
 
 These ideas are stated in no particular order, and are *always* open to debate. In fact, you are encouraged to contribute. 
 

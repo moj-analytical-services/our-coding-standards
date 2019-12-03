@@ -3,7 +3,31 @@ title: ''
 output: html_document
 ---
 
-## Accuracy {#accurate}
+## Accurate {#accurate}
 
-* Ensure sure code is reviewed using a pull request
-* Use testthat and shinytest for unit testing
+### Review {#review}
+Ensure that code is reviewed: initiate this through a pull request. Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.
+
+#### Performing good peer review {-}
+
+When you review someone's pull request you become the gatekeeper to the master branch - this is a _very_ important job!  If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start...
+
+1: Do I understand what the code is doing? [Did it need to be explained](#users) to me? [Could it be simpler](#ccc)?
+
+2: Are they using [packages / libraries sensibly](#defaults)?
+
+3: Does it need to be [tested](#ccc) (and is it tested with sufficient coverage)?
+
+4: [Does it work](#ccc)? Does it work on my machine?
+
+5: Are there edge cases that might [break The Thing](#errors)?
+
+If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something.  So _don't hold back_.
+
+If you're on the receiving end of feedback, from anyone at all, this is... **a chance to learn!** :)
+
+
+### Unit testing {#unittest}
+
+Use testthat and shinytest for unit testing.
+LINKS.
