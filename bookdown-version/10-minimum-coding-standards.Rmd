@@ -5,7 +5,7 @@ output: html_document
 
 # Minimum Coding Standards {#msc}
 
-## Minimum standards checklist {#mcschecklist}
+## Minimum Standards Checklist {#mcschecklist}
 
 All projects should meet our proportionate minimum coding standards, which can be found [here](https://moj-analytical-services.github.io/our-coding-standards/web/).
 
