@@ -1,0 +1,185 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={DASD Coding Standards},
+            pdfauthor={Data Science Hub},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{DASD Coding Standards}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Data Science Hub}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2019-12-03}
+
+\usepackage{booktabs}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+This repo contains Data and Analytical Service Directorate's (DASD's) Coding Standards.
+
+\hypertarget{motivation}{%
+\section{Motivation}\label{motivation}}
+
+-- Filler Text --
+Within DASD we use coding standards to ensure that all the code we produce is:
+
+\begin{itemize}
+\tightlist
+\item
+  High quality\\
+\item
+  Understandable/collaborative\\
+\item
+  Reproducible
+\end{itemize}
+
+Break it down by each section.
+High quality: how do adopting CS make the code high quality?
+Understandable: how do adopting CS make the code understandable?
+Reproducible: how do adopting CS make the code repdocuible?
+
+\hypertarget{structure}{%
+\section{Structure}\label{structure}}
+
+The coding standards are split into two sections:
+
+\begin{itemize}
+\tightlist
+\item
+  Prescriptive minimum coding standards for analytical projects, and
+\item
+  A set of principles for working on code projects in DASD
+\end{itemize}
+
+The minimum coding standards are required for all projects.
+The principles have been developed as examples of best practice.
+
+\hypertarget{guidance}{%
+\section{Further guidance}\label{guidance}}
+
+\#\textbf{1: \href{reviewing_a_pull_request.md}{Reviewing} a pull request}
+
+\#\textbf{2: Manual \href{quality_assurance.md}{quality assurance}}
+
+\#\textbf{3: Writing an amazing \href{README_template.md}{README.md} for your project}
+
+\hypertarget{contributing}{%
+\section{Contributing}\label{contributing}}
+
+If you think that something is missing or not quite right you should either:
+1. \protect\hyperlink{vcp}{Contribute directly}
+2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
+
+\hypertarget{msc}{%
+\chapter{Minimum Coding Standards}\label{msc}}
+
+\hypertarget{mcschecklist}{%
+\section{Minimum standards checklist}\label{mcschecklist}}
+
+All projects should meet our proportionate minimum coding standards, which can be found \href{https://moj-analytical-services.github.io/our-coding-standards/web/}{here}.
+
+This checklist covers:
+
+\begin{itemize}
+\tightlist
+\item
+  Code structure\\
+\item
+  Reproducibility\\
+\item
+  Development workflow\\
+\item
+  Documentation\\
+\item
+  Unit testing\\
+\item
+  Dependency management\\
+\item
+  Packages and versions
+\end{itemize}
+
+
+\end{document}

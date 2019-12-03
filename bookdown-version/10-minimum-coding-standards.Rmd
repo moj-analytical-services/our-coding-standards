@@ -1,0 +1,20 @@
+---
+title: ''
+output: html_document
+---
+
+# Minimum Coding Standards {#msc}
+
+## Minimum standards checklist {#mcschecklist}
+
+All projects should meet our proportionate minimum coding standards, which can be found [here](https://moj-analytical-services.github.io/our-coding-standards/web/).
+
+This checklist covers: 
+  
+* Code structure  
+* Reproducibility  
+* Development workflow  
+* Documentation  
+* Unit testing  
+* Dependency management  
+* Packages and versions  
