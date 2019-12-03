@@ -3,17 +3,17 @@ title: ''
 output: html_document
 ---
 
+## Collaboration {#collaborate}
 
-## Version Control {#versioncontrol}
+### Version Control {#versioncontrol}
 
-### Github-Flow is a working practice that helps to:
-1. Maintain overall code quality
+#### Github-Flow is a working practice that helps to: {-}
 2. Facilitate collaboration on a single project
 3. Protect the codebase
 
 We have tweaked it a little from what is [described on GitHub][1] 
 
-### There are 6 steps to our process:
+#### There are 6 steps to our process: {-}
 1. Create or clone a repo.
 ```sh
 # For example, to clone this repo.
@@ -72,3 +72,11 @@ If you want to test this out, clone this repo and make a contribution :)
 
 [1]: https://guides.github.com/introduction/flow/
 [2]: https://gist.github.com/blackfalcon/8428401
+
+#### Share the knowledge {-}
+If you have knowledge which is unique to you, it is your responsibility to share it.
+We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
+You could also present your work at Display DaSH.
+If you produce something reusable, package it & share it with others.
+All non-throwaway code should be reviewed - no-one is 100% right, 100% of the time.
+Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in completed products.

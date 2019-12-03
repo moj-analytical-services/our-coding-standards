@@ -1,0 +1,9 @@
+---
+title: ''
+output: html_document
+---
+
+## Accuracy {#accurate}
+
+* Ensure sure code is reviewed using a pull request
+* Use testthat and shinytest for unit testing
