@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Coding Principles | DASD Coding Standards</title>
   <meta name="description" content="These are the DASD coding standards." />
-  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Coding Principles | DASD Coding Standards" />
   <meta property="og:type" content="book" />
@@ -146,7 +146,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="principles.html"><a href="principles.html#reproduce"><i class="fa fa-check"></i><b>4.1</b> Reproducibile</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="principles.html"><a href="principles.html#projdep"><i class="fa fa-check"></i><b>4.1.1</b> Manage project dependencies</a></li>
 <li class="chapter" data-level="4.1.2" data-path="principles.html"><a href="principles.html#change"><i class="fa fa-check"></i><b>4.1.2</b> Optimize for change</a></li>
-<li class="chapter" data-level="4.1.3" data-path="principles.html"><a href="principles.html#githash"><i class="fa fa-check"></i><b>4.1.3</b> Reproducing on another machine</a></li>
+<li class="chapter" data-level="4.1.3" data-path="principles.html"><a href="principles.html#format"><i class="fa fa-check"></i><b>4.1.3</b> Format</a></li>
+<li class="chapter" data-level="4.1.4" data-path="principles.html"><a href="principles.html#githash"><i class="fa fa-check"></i><b>4.1.4</b> Reproducing on another machine</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="principles.html"><a href="principles.html#collaborate"><i class="fa fa-check"></i><b>4.2</b> Collaborative</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="principles.html"><a href="principles.html#versioncontrol"><i class="fa fa-check"></i><b>4.2.1</b> Version Control</a></li>
@@ -157,10 +158,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="principles.html"><a href="principles.html#unittest"><i class="fa fa-check"></i><b>4.3.2</b> Unit testing</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="principles.html"><a href="principles.html#understand"><i class="fa fa-check"></i><b>4.4</b> Understandable</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="principles.html"><a href="principles.html#readme"><i class="fa fa-check"></i><b>4.4.1</b> Include a README</a></li>
+<li class="chapter" data-level="4.4.1" data-path="principles.html"><a href="principles.html#readme"><i class="fa fa-check"></i><b>4.4.1</b> Documentation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="principles.html"><a href="principles.html#defaults"><i class="fa fa-check"></i><b>4.4.2</b> Use sensible defaults</a></li>
-<li class="chapter" data-level="4.4.3" data-path="principles.html"><a href="principles.html#functions"><i class="fa fa-check"></i><b>4.4.3</b> Separate functions out</a></li>
-<li class="chapter" data-level="4.4.4" data-path="principles.html"><a href="principles.html#style"><i class="fa fa-check"></i><b>4.4.4</b> Coding style</a></li>
+<li class="chapter" data-level="4.4.3" data-path="principles.html"><a href="principles.html#structure2"><i class="fa fa-check"></i><b>4.4.3</b> Code structure</a></li>
+<li class="chapter" data-level="4.4.4" data-path="principles.html"><a href="principles.html#functions"><i class="fa fa-check"></i><b>4.4.4</b> Abstractions</a></li>
+<li class="chapter" data-level="4.4.5" data-path="principles.html"><a href="principles.html#style"><i class="fa fa-check"></i><b>4.4.5</b> Coding style</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
@@ -244,8 +246,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
 </ul>
 </div>
+<div id="format" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Format</h3>
+<p>If the output is a report, the write up is fully reproducible, or as close as possible.
+* Avoid workflows that require manually copying and pasting results between documents.<br />
+* Your code should be <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md">DRY</a><br />
+* For Python, consider using Jupyter notebooks. For R, use <code>rmarkdown</code></p>
+</div>
 <div id="githash" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Reproducing on another machine</h3>
+<h3><span class="header-section-number">4.1.4</span> Reproducing on another machine</h3>
+<p>Your project should be tested on someone else’s machine There may be software or other dependencies installed on your machine that mean the project doesn’t work on others’ machines.</p>
+<p>Your dependencies are explicitly managed.
+If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others’ machines, and that it will work on your machine in a year’s time.
+For Python, use a Virtual Environment
+For R, use packrat
+For javascript, include third party library dependencies in the project as <code>.js</code> files</p>
 <div id="include-a-git-hash" class="section level4 unnumbered">
 <h4>Include a git hash</h4>
 <p>Some tips on making your analyses simple to reproduce</p>
@@ -264,10 +279,10 @@ snippets.</p>
 <pre><code>## Warning: &#39;head.git_repository&#39; is deprecated.
 ## Use &#39;repository_head&#39; instead.
 ## See help(&quot;Deprecated&quot;)</code></pre>
-<pre><code>## [b7bf29] (Local) (HEAD) nikki-restructure</code></pre>
+<pre><code>## [8dd5fd] (Local) (HEAD) nikki-rewrite</code></pre>
 <p>or</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="principles.html#cb4-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;b7bf29f&quot;</code></pre>
+<pre><code>## [1] &quot;8dd5fd0&quot;</code></pre>
 </div>
 <div id="python" class="section level5 unnumbered">
 <h5>Python</h5>
@@ -286,6 +301,12 @@ return subprocess.check_output([‘git’, ‘rev-parse’, ‘–short’, ‘H
 <h2><span class="header-section-number">4.2</span> Collaborative</h2>
 <div id="versioncontrol" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Version Control</h3>
+<p>Code is version controlled using Git and checked into Github.
+You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a>
+You are able to maintain a continuously quality controlled ‘master’ version of the code, whilst also being able to test new features and functionality.</p>
+<p>The ‘Master’ branch is protected, and contains only QAed code
+When you create your git project using <code>git init</code>, immediately branch off to a development branch e.g. using <code>git checkout -b dev</code>, and work on this branch.<br />
+Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
 <div id="github-flow-is-a-working-practice-that-helps-to" class="section level4 unnumbered">
 <h4>Github-Flow is a working practice that helps to:</h4>
 <ol style="list-style-type: decimal">
@@ -374,6 +395,13 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 <div id="review" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Review</h3>
 <p>Ensure that code is reviewed: initiate this through a pull request. Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.</p>
+<p>All code has been subject to code review.<br />
+For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.</p>
+<p>All code has been subject to code review.
+This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
+You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.</p>
 <div id="performing-good-peer-review" class="section level4 unnumbered">
 <h4>Performing good peer review</h4>
 <p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
@@ -392,14 +420,24 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 * Nice <a href="https://katherinemwood.github.io/post/testthat/">intro to using testthat</a><br />
 * Another <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">intro to testthat</a><br />
 * <a href="https://github.com/RobinL/costmodelr/tree/master/tests">Example of using testthat</a></p>
+<p>Unit tests exist that test the overall codebase, but not individual functions.
+Unit tests help give you confidence that your model does what you think it does
+There are various approaches to unit testing in Python. Consider using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> in the Python core library. Another option is <a href="https://docs.pytest.org/en/latest/">pytest</a>. See also <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">here</a>
+In R, you should use the <a href="https://github.com/hadley/testthat">testthat</a> package for unit testing.<br />
+You can find examples of how to do unit testing <a href="https://github.com/ukgovdatascience/eesectors/tree/master/tests">here</a> and <a href="https://github.com/RobinL/costmodelr/tree/master/tests">here</a> See <a href="http://busypeoples.github.io/post/testing-d3-with-jasmine/">here</a> for testing with javascript</p>
+<p>Unit tests exist at the function level, which test a range of parameters.<br />
+The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
+For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</p>
 
 </div>
 </div>
 <div id="understand" class="section level2">
 <h2><span class="header-section-number">4.4</span> Understandable</h2>
 <div id="readme" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Include a README</h3>
+<h3><span class="header-section-number">4.4.1</span> Documentation</h3>
+<p>Include a README</p>
 <p>By writing a README for your project you’re helping others (and your future self) to be able to understand and run your project. Find our template README <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md">here</a>.</p>
+<p>You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.</p>
 </div>
 <div id="defaults" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Use sensible defaults</h3>
@@ -411,6 +449,8 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 <li>You should target <a href="http://vita.had.co.nz/papers/tidy-data.html">tidy</a> data structures as part of your work. You should attempt to convert incoming data into tidy format as quickly as possible, and any data that is output that may be used in other projects should be in tidy format.</li>
 <li>If there is a standardised directory structure for your type of project, using it will help people find things. [TODO: Add examples]</li>
 </ul>
+<p>You have used the <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md">sensible defaults</a>, unless you have a good reason not to and have agreed this with your line manager
+There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
 </div>
 <div id="r-1" class="section level4 unnumbered">
 <h4>R</h4>
@@ -473,25 +513,47 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </ul>
 </div>
 </div>
+<div id="structure2" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Code structure</h3>
+<p>There should be clear logical separation of parameters, assumptions, data and code.<br />
+* MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].<br />
+* Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a ‘data’ folder within the project folder.[Link to github with example project structure]<br />
+* Prefer text format (e.g. csv) to Excel<br />
+* It should be easy for others to change parameters and data without needed to understand the full codebase.</p>
+</div>
 <div id="functions" class="section level3">
-<h3><span class="header-section-number">4.4.3</span> Separate functions out</h3>
-<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>.</p>
+<h3><span class="header-section-number">4.4.4</span> Abstractions</h3>
+<p>Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes codeeasier to understand, maintain and extend.
+For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple <code>.js</code> files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.</p>
+<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
+<p>All non trivial functions are documented using the programming language’s accepted standard.
+This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments.
+For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.
+For R, use <code>roxygen2</code> to document your functions.</p>
+<p><em>Cut this?</em>
+If using a notebook (e.g. an R or Jupyter notebook) for your write up, functions are factored out to maintain narrative. Notebooks can also be useful for other purposes, such as functioning as a way of describing exploratory analysis. Where notebooks are used for this type of purpose, they can be more free-form. This makes your logic easier to follow For Python, code should be factored out into modules. For R, factor out code either into a <code>source()</code>ed <code>.R</code> file or a package</p>
 </div>
 <div id="style" class="section level3">
-<h3><span class="header-section-number">4.4.4</span> Coding style</h3>
+<h3><span class="header-section-number">4.4.5</span> Coding style</h3>
+<p>For R, follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a>
+For Python, follow [PEP8]</p>
+<p>An easy way to check your code formatting is to…</p>
 <div id="linter" class="section level4">
-<h4><span class="header-section-number">4.4.4.1</span> Apply a linter</h4>
-<p>Apply a linter to easily review your code formatting.</p>
+<h4><span class="header-section-number">4.4.5.1</span> Apply a linter</h4>
+<p>Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.</p>
+<p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
 <ul>
-<li><a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> (for use in R)</li>
+<li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a><br />
+</li>
+<li>For Python, use [pylint] and follow [PEP8]</li>
 </ul>
 </div>
 <div id="package-name" class="section level4">
-<h4><span class="header-section-number">4.4.4.2</span> Package name</h4>
+<h4><span class="header-section-number">4.4.5.2</span> Package name</h4>
 <p>It’s best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().</p>
 </div>
 <div id="names" class="section level4">
-<h4><span class="header-section-number">4.4.4.3</span> Names have power and purpose - use them wisely</h4>
+<h4><span class="header-section-number">4.4.5.3</span> Names have power and purpose - use them wisely</h4>
 <ul>
 <li>Don’t be cute or jokey when naming things.</li>
 <li>Names convey meaning - well-named functions &amp; variables can remove the need for a comment and make life a little easier for other readers, including your future self!</li>
@@ -500,7 +562,7 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </ul>
 </div>
 <div id="ccc" class="section level4">
-<h4><span class="header-section-number">4.4.4.4</span> Code should be correct, clear, concise - in that order</h4>
+<h4><span class="header-section-number">4.4.5.4</span> Code should be correct, clear, concise - in that order</h4>
 <ul>
 <li>Correct means demonstrably correct - with tests (ideally) and / or documented <a href="quality_assurance.md">Quality Assurance</a>. Automated tests are ideal because they allow the code to be refactored with confidence.</li>
 <li>All fixes &amp; new features should include tests to prevent regressions (i.e. reappearance of the bug you just fixed).</li>
@@ -514,15 +576,18 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 <blockquote>
 <p>Good code is its own best documentation. As you’re about to add a comment, ask yourself, “How can I improve the code so that this comment isn’t needed?” Improve the code and then document it to make it even clearer.” - Steve McConnell</p>
 </blockquote>
+<p>Code is appropriately commented.
+[Comments are for explaining why something is needed, not how it works.] (<a href="https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4" class="uri">https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4</a>)
+Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.</p>
 </div>
 <div id="errors" class="section level4">
-<h4><span class="header-section-number">4.4.4.5</span> Everything fails at some point</h4>
+<h4><span class="header-section-number">4.4.5.5</span> Everything fails at some point</h4>
 <p>Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.</p>
 </div>
 <div id="users" class="section level4">
-<h4><span class="header-section-number">4.4.4.6</span> Other team members are users too - treat them with respect</h4>
+<h4><span class="header-section-number">4.4.5.6</span> Other team members are users too - treat them with respect</h4>
 <p>If you have to explain how your code works, then your code is not clear enough.
 Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
 Comments are for explaining why something is needed, not how it works.
@@ -554,6 +619,7 @@ Make your commit messages as <a href="https://robots.thoughtbot.com/5-useful-tip
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -572,6 +638,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

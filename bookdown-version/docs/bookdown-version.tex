@@ -325,8 +325,24 @@ Previously packrat was more widely used, but lots of people seem to use conda no
   Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
 \end{itemize}
 
+\hypertarget{format}{%
+\subsection{Format}\label{format}}
+
+If the output is a report, the write up is fully reproducible, or as close as possible.
+* Avoid workflows that require manually copying and pasting results between documents.\\
+* Your code should be \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md}{DRY}\\
+* For Python, consider using Jupyter notebooks. For R, use \texttt{rmarkdown}
+
 \hypertarget{githash}{%
 \subsection{Reproducing on another machine}\label{githash}}
+
+Your project should be tested on someone else's machine There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
+
+Your dependencies are explicitly managed.
+If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.
+For Python, use a Virtual Environment
+For R, use packrat
+For javascript, include third party library dependencies in the project as \texttt{.js} files
 
 \hypertarget{include-a-git-hash}{%
 \subsubsection*{Include a git hash}\label{include-a-git-hash}}
@@ -362,7 +378,7 @@ snippets.
 \end{verbatim}
 
 \begin{verbatim}
-## [b7bf29] (Local) (HEAD) nikki-restructure
+## [8dd5fd] (Local) (HEAD) nikki-rewrite
 \end{verbatim}
 
 or
@@ -374,7 +390,7 @@ or
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "b7bf29f"
+## [1] "8dd5fd0"
 \end{verbatim}
 
 \hypertarget{python}{%
@@ -395,6 +411,14 @@ return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
 
 \hypertarget{versioncontrol}{%
 \subsection{Version Control}\label{versioncontrol}}
+
+Code is version controlled using Git and checked into Github.
+You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
+You are able to maintain a continuously quality controlled `master' version of the code, whilst also being able to test new features and functionality.
+
+The `Master' branch is protected, and contains only QAed code
+When you create your git project using \texttt{git\ init}, immediately branch off to a development branch e.g.~using \texttt{git\ checkout\ -b\ dev}, and work on this branch.\\
+Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
 \hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
 \subsubsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
@@ -551,6 +575,15 @@ Be aware that `throwaway' code has a nasty habit of somehow ending up in complet
 
 Ensure that code is reviewed: initiate this through a pull request. Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.
 
+All code has been subject to code review.\\
+For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+
+All code has been subject to code review.
+This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
+You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+
 \hypertarget{performing-good-peer-review}{%
 \subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
 \addcontentsline{toc}{subsubsection}{Performing good peer review}
@@ -579,13 +612,27 @@ Use testthat and shinytest for unit testing. The following might be helpful:\\
 * Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
 * \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
 
+Unit tests exist that test the overall codebase, but not individual functions.
+Unit tests help give you confidence that your model does what you think it does
+There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
+In R, you should use the \href{https://github.com/hadley/testthat}{testthat} package for unit testing.\\
+You can find examples of how to do unit testing \href{https://github.com/ukgovdatascience/eesectors/tree/master/tests}{here} and \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here} See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
+
+Unit tests exist at the function level, which test a range of parameters.\\
+The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
+For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
+
 \hypertarget{understand}{%
 \section{Understandable}\label{understand}}
 
 \hypertarget{readme}{%
-\subsection{Include a README}\label{readme}}
+\subsection{Documentation}\label{readme}}
+
+Include a README
 
 By writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md}{here}.
+
+You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.
 
 \hypertarget{defaults}{%
 \subsection{Use sensible defaults}\label{defaults}}
@@ -605,6 +652,9 @@ This section sets out sensible defaults which you are expected to follow. They a
 \item
   If there is a standardised directory structure for your type of project, using it will help people find things. {[}TODO: Add examples{]}
 \end{itemize}
+
+You have used the \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md}{sensible defaults}, unless you have a good reason not to and have agreed this with your line manager
+There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
 
 \hypertarget{r-1}{%
 \subsubsection*{R}\label{r-1}}
@@ -710,23 +760,52 @@ Use unicode. This means you should convert inputs that include non-ASCII charact
   If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)
 \end{itemize}
 
-\hypertarget{functions}{%
-\subsection{Separate functions out}\label{functions}}
+\hypertarget{structure2}{%
+\subsection{Code structure}\label{structure2}}
 
-If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}.
+There should be clear logical separation of parameters, assumptions, data and code.\\
+* MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}Link to ap guidance{]}.\\
+* Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a `data' folder within the project folder.{[}Link to github with example project structure{]}\\
+* Prefer text format (e.g.~csv) to Excel\\
+* It should be easy for others to change parameters and data without needed to understand the full codebase.
+
+\hypertarget{functions}{%
+\subsection{Abstractions}\label{functions}}
+
+Where appropriate, abstractions should be used if possible, e.g.~functions, packages, modules etc. This makes codeeasier to understand, maintain and extend.
+For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple \texttt{.js} files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.
+
+If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}. As a general rule, functions should be less than about 50 lines long.
+
+All non trivial functions are documented using the programming language's accepted standard.
+This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments.
+For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and particularly \href{https://www.python.org/dev/peps/pep-0257/}{PEP257}.
+For R, use \texttt{roxygen2} to document your functions.
+
+\emph{Cut this?}
+If using a notebook (e.g.~an R or Jupyter notebook) for your write up, functions are factored out to maintain narrative. Notebooks can also be useful for other purposes, such as functioning as a way of describing exploratory analysis. Where notebooks are used for this type of purpose, they can be more free-form. This makes your logic easier to follow For Python, code should be factored out into modules. For R, factor out code either into a \texttt{source()}ed \texttt{.R} file or a package
 
 \hypertarget{style}{%
 \subsection{Coding style}\label{style}}
 
+For R, follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}
+For Python, follow {[}PEP8{]}
+
+An easy way to check your code formatting is to\ldots{}
+
 \hypertarget{linter}{%
 \subsubsection{Apply a linter}\label{linter}}
 
-Apply a linter to easily review your code formatting.
+Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
+
+In RStudio, the keyboard shortcut `ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} (for use in R)
+  For R use \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} and follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}\\
+\item
+  For Python, use {[}pylint{]} and follow {[}PEP8{]}
 \end{itemize}
 
 \hypertarget{package-name}{%
@@ -773,6 +852,10 @@ It's best practice to use the package name when calling a function. For example,
 \begin{quote}
 Good code is its own best documentation. As you're about to add a comment, ask yourself, ``How can I improve the code so that this comment isn't needed?'' Improve the code and then document it to make it even clearer.'' - Steve McConnell
 \end{quote}
+
+Code is appropriately commented.
+{[}Comments are for explaining why something is needed, not how it works.{]} (\url{https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md\#L4})
+Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function's documentation than in a comment.
 
 \hypertarget{errors}{%
 \subsubsection{Everything fails at some point}\label{errors}}
