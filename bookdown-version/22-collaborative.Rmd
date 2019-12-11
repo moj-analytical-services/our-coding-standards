@@ -7,6 +7,15 @@ output: html_document
 
 ### Version Control {#versioncontrol}
 
+Code is version controlled using Git and checked into Github.
+You can find a guide to using Git with R [here](http://happygitwithr.com/)
+You are able to maintain a continuously quality controlled 'master' version of the code, whilst also being able to test new features and functionality.
+
+The 'Master' branch is protected, and contains only QAed code 
+When you create your git project using `git init`, immediately branch off to a development branch e.g. using `git checkout -b dev`, and work on this branch.  
+Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+
+
 #### Github-Flow is a working practice that helps to: {-}
 1. Maintain overall code quality  
 2. Facilitate collaboration on a single project  

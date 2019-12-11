@@ -5,9 +5,12 @@ output: html_document
 
 ## Understandable {#understand}
 
-### Include a README {#readme}
+### Documentation {#readme}
+Include a README 
 
 By writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).
+
+You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.
 
 ### Use sensible defaults {#defaults}
 
@@ -18,6 +21,10 @@ This section sets out sensible defaults which you are expected to follow.  They 
 #### General {-}
 * You should target [tidy](http://vita.had.co.nz/papers/tidy-data.html) data structures as part of your work.  You should attempt to convert incoming data into tidy format as quickly as possible, and any data that is output that may be used in other projects should be in tidy format.
 * If there is a standardised directory structure for your type of project, using it will help people find things. [TODO: Add examples]
+
+You have used the [sensible defaults](https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md), unless you have a good reason not to and have agreed this with your line manager 
+There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
+
 
 #### R {-}
 * Default to packages from the [Tidyverse](http://tidyverse.org/), because they have been carefully designed to work together effectively as part of a modern data analysis workflow.  More info can be found here: [R for Data Science by Hadley Wickham](http://r4ds.had.co.nz).  For example:
@@ -57,18 +64,49 @@ Use unicode.  This means you should convert inputs that include non-ASCII charac
 #### Finally {-}
 * If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)
 
-### Separate functions out {#functions}
-If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13].
+### Code structure {#structure2}
+There should be clear logical separation of parameters, assumptions, data and code.  
+* MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].  
+* Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a 'data' folder within the project folder.[Link to github with example project structure]  
+* Prefer text format (e.g. csv) to Excel  
+* It should be easy for others to change parameters and data without needed to understand the full codebase.  
+
+### Abstractions {#functions}
+
+Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes codeeasier to understand, maintain and extend.
+For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple `.js` files.  For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data. 
+
+
+If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
+
+All non trivial functions are documented using the programming language’s accepted standard. 
+This means that other users can understand your code more easily.  If your functions are short and well documented, there is often little need for additional code comments. 
+For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).
+For R, use `roxygen2` to document your functions.
+
+
+*Cut this?*
+If using a notebook (e.g. an R or Jupyter notebook) for your write up, functions are factored out to maintain narrative. Notebooks can also be useful for other purposes, such as functioning as a way of describing exploratory analysis.  Where notebooks are used for this type of purpose, they can be more free-form. This makes your logic easier to follow For Python, code should be factored out into modules. For R, factor out code either into a `source()`ed `.R` file or a package
 
 [13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
 ### Coding style {#style}
-#### Apply a linter {#linter}
-Apply a linter to easily review your code formatting.  
 
-* [Lintr][12] (for use in R)
+For R, follow [Hadley's Style Guide][14]
+For Python, follow [PEP8]
+
+An easy way to check your code formatting is to...
+
+#### Apply a linter {#linter}
+Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
+
+In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
+
+* For R use [Lintr][12] and follow [Hadley's Style Guide][14]  
+* For Python, use [pylint] and follow [PEP8]
 
 [12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
+[14]:http://adv-r.had.co.nz/Style.html
 
 #### Package name
 It's best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().
@@ -91,6 +129,11 @@ It's best practice to use the package name when calling a function. For example,
 * Use code comments judiciously:
 
 > Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
+
+Code is appropriately commented. 
+[Comments are for explaining why something is needed, not how it works.] (https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4) 
+Appropriate use of comments means it is easier to understand how code works at a later date.  Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.
+
 
 #### Everything fails at some point {#errors}
 Accept this and code defensively when calling other services.
