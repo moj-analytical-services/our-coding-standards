@@ -26,25 +26,32 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 
 ## Motivation {#motivation}
 
-**Filler Text**  
-Within DASD we use coding standards to ensure that all the code we produce is:  
-  
-* Reproducible 
-* Collaborative
-* Accurate
-* Understandble
+The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects.
 
-Why do we want these things? And how will adopting these coding standards enable us to acheive these characteristics for our coding?
+Coding practices should aim to create code that is:  
+
+* Reproducible
+    + Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results. 
+* Collaborative  
+    + Projects should be structured in such a way that we can collaborate effectively across multiple projects  
+    
+    + Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.  
+    
+* Accurate  
+    + Code should be error free and appropriately quality assured.  
+    
+    
+* Understandable  
+
+    + Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.
 
 ## Guidance structure {#structure}
 
-The coding standards are split into two sections:
+The first part of this document contains the four coding principles, with additional details on the practical actions people should take to achieve these.
 
-* Prescriptive minimum coding standards for analytical projects, and
-* A set of principles for working on code projects in DASD
+There is the recommended workflow for coding projects - this can be used to aid understanding of the steps that should be taken in a project and how the coding principles fit into the project lifecycle.
 
-The minimum coding standards are required for all projects.
-The principles have been developed as examples of best practice.
+The final section includes a checklist of actions to be taken to achieve the principles. This is a condensed list of the material covered in the coding principles section.
 
 ## Contributing {#contributing}
 
