@@ -432,6 +432,8 @@ For data vis in Javascript, you need unit tests of routines that manipulate your
 </div>
 <div id="collaborate" class="section level2">
 <h2><span class="header-section-number">3.3</span> Collaborative</h2>
+<p>It is vital that we’re able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.</p>
+<p>Part of this is <a href="principles.html#projdep">managing dependencies</a> so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.</p>
 <div id="versioncontrol" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Version Control</h3>
 <p>Code is version controlled using Git and checked into Github.
@@ -440,6 +442,7 @@ You are able to maintain a continuously quality controlled ‘master’ version 
 <p>The ‘Master’ branch is protected, and contains only QAed code
 When you create your git project using <code>git init</code>, immediately branch off to a development branch e.g. using <code>git checkout -b dev</code>, and work on this branch.<br />
 Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
+<p>We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.</p>
 <div id="github-flow-is-a-working-practice-that-helps-to" class="section level4 unnumbered">
 <h4>Github-Flow is a working practice that helps to:</h4>
 <ol style="list-style-type: decimal">
@@ -514,12 +517,12 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 </div>
 <div id="knowledge" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Share the knowledge</h3>
-<p>If you have knowledge which is unique to you, it is your responsibility to share it.
-We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
-You could also present your work at Display DaSH.
-If you produce something reusable, package it &amp; share it with others.
-All non-throwaway code should be reviewed - no-one is 100% right, 100% of the time.
-Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in completed products.</p>
+<p>We also collaborate through sharing knowledge. If you produce something reusable, package it &amp; share it with others.</p>
+<p>There are a number of channels through which coding knowledge is shared in DASD:<br />
+* Slack channels (key channels are: <a href="https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS">#data_science</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1PUCG719">#r</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1Q09V86S">#python</a>)<br />
+* Coffee and Coding (resources <a href="https://github.com/moj-analytical-services/Coffee-and-Coding">here</a>)<br />
+* <a href="https://trello.com/b/zAwm6sCc/dasd-training">DASD training Trello</a><br />
+* <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit">R learning resources</a></p>
 
 </div>
 </div>
@@ -545,9 +548,8 @@ more reproducible, there is no ambiguity about the specific code that was used t
 <p>You can access the git hash using either of the following code:
 snippets.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="principles.html#cb6-1"></a><span class="kw">library</span>(git2r)</span>
-<span id="cb6-2"><a href="principles.html#cb6-2"></a></span>
-<span id="cb6-3"><a href="principles.html#cb6-3"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
-<span id="cb6-4"><a href="principles.html#cb6-4"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
+<span id="cb6-2"><a href="principles.html#cb6-2"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
+<span id="cb6-3"><a href="principles.html#cb6-3"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
 <p>or</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="principles.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 </div>
@@ -555,12 +557,10 @@ snippets.</p>
 <h5>Python</h5>
 <p>You can access the git hash using the following code:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="principles.html#cb8-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb8-2"><a href="principles.html#cb8-2"></a></span>
-<span id="cb8-3"><a href="principles.html#cb8-3"></a><span class="kw">def</span> get_git_revision_hash():</span>
-<span id="cb8-4"><a href="principles.html#cb8-4"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
-<span id="cb8-5"><a href="principles.html#cb8-5"></a></span>
-<span id="cb8-6"><a href="principles.html#cb8-6"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
-<span id="cb8-7"><a href="principles.html#cb8-7"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
+<span id="cb8-2"><a href="principles.html#cb8-2"></a><span class="kw">def</span> get_git_revision_hash():</span>
+<span id="cb8-3"><a href="principles.html#cb8-3"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
+<span id="cb8-4"><a href="principles.html#cb8-4"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
+<span id="cb8-5"><a href="principles.html#cb8-5"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
 </div>
 </div>
 </div>
