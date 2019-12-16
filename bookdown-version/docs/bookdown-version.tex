@@ -593,6 +593,10 @@ For data vis in Javascript, you need unit tests of routines that manipulate your
 \hypertarget{collaborate}{%
 \section{Collaborative}\label{collaborate}}
 
+It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
+
+Part of this is \protect\hyperlink{projdep}{managing dependencies} so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
+
 \hypertarget{versioncontrol}{%
 \subsection{Version Control}\label{versioncontrol}}
 
@@ -603,6 +607,8 @@ You are able to maintain a continuously quality controlled `master' version of t
 The `Master' branch is protected, and contains only QAed code
 When you create your git project using \texttt{git\ init}, immediately branch off to a development branch e.g.~using \texttt{git\ checkout\ -b\ dev}, and work on this branch.\\
 Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+
+We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
 
 \hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
 \subsubsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
@@ -744,12 +750,13 @@ If you want to test this out, clone this repo and make a contribution :)
 \hypertarget{knowledge}{%
 \subsection{Share the knowledge}\label{knowledge}}
 
-If you have knowledge which is unique to you, it is your responsibility to share it.
-We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
-You could also present your work at Display DaSH.
-If you produce something reusable, package it \& share it with others.
-All non-throwaway code should be reviewed - no-one is 100\% right, 100\% of the time.
-Be aware that `throwaway' code has a nasty habit of somehow ending up in completed products.
+We also collaborate through sharing knowledge. If you produce something reusable, package it \& share it with others.
+
+There are a number of channels through which coding knowledge is shared in DASD:\\
+* Slack channels (key channels are: \href{https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS}{\#data\_science}, \href{https://app.slack.com/client/T1PU1AP6D/C1PUCG719}{\#r}, \href{https://app.slack.com/client/T1PU1AP6D/C1Q09V86S}{\#python})\\
+* Coffee and Coding (resources \href{https://github.com/moj-analytical-services/Coffee-and-Coding}{here})\\
+* \href{https://trello.com/b/zAwm6sCc/dasd-training}{DASD training Trello}\\
+* \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}
 
 \hypertarget{reproduce}{%
 \section{Reproducible}\label{reproduce}}
@@ -788,7 +795,6 @@ snippets.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(git2r)}
-
 \NormalTok{repo <-}\StringTok{ }\KeywordTok{repository}\NormalTok{(}\StringTok{"."}\NormalTok{)}
 \KeywordTok{print}\NormalTok{(}\KeywordTok{repository_head}\NormalTok{(repo))}
 \end{Highlighting}
@@ -811,10 +817,8 @@ You can access the git hash using the following code:
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ subprocess}
-
 \KeywordTok{def}\NormalTok{ get_git_revision_hash():}
     \ControlFlowTok{return}\NormalTok{ subprocess.check_output([}\StringTok{'git'}\NormalTok{, }\StringTok{'rev-parse'}\NormalTok{, }\StringTok{'HEAD'}\NormalTok{])}
-
 \KeywordTok{def}\NormalTok{ get_git_revision_short_hash():}
     \ControlFlowTok{return}\NormalTok{ subprocess.check_output([}\StringTok{'git'}\NormalTok{, }\StringTok{'rev-parse'}\NormalTok{, }\StringTok{'--short'}\NormalTok{, }\StringTok{'HEAD'}\NormalTok{])}
 \end{Highlighting}

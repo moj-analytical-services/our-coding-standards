@@ -5,6 +5,10 @@ output: html_document
 
 ## Collaborative {#collaborate}
 
+It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
+
+Part of this is [managing dependencies](#projdep) so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
+
 ### Version Control {#versioncontrol}
 
 Code is version controlled using Git and checked into Github.
@@ -15,6 +19,7 @@ The 'Master' branch is protected, and contains only QAed code
 When you create your git project using `git init`, immediately branch off to a development branch e.g. using `git checkout -b dev`, and work on this branch.  
 Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
+We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
 
 #### Github-Flow is a working practice that helps to: {-}
 1. Maintain overall code quality  
@@ -93,9 +98,18 @@ If you want to test this out, clone this repo and make a contribution :)
 * List of basic [git commands][8] 
 
 ### Share the knowledge {#knowledge}
-If you have knowledge which is unique to you, it is your responsibility to share it.
-We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
-You could also present your work at Display DaSH.
-If you produce something reusable, package it & share it with others.
-All non-throwaway code should be reviewed - no-one is 100% right, 100% of the time.
-Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in completed products.
+
+We also collaborate through sharing knowledge. If you produce something reusable, package it & share it with others.
+
+There are a number of channels through which coding knowledge is shared in DASD:  
+* Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233])  
+* Coffee and Coding (resources [here][234])  
+* [DASD training Trello][235]  
+* [R learning resources][236]
+
+[231]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
+[232]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
+[233]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S
+[234]: https://github.com/moj-analytical-services/Coffee-and-Coding
+[235]: https://trello.com/b/zAwm6sCc/dasd-training
+[236]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
