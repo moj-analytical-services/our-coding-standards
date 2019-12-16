@@ -32,28 +32,28 @@ more reproducible, there is no ambiguity about the specific code that was used t
 ##### R {-}
 You can access the git hash using either of the following code:
 snippets.
-```{r}
+```{r, results="hide"}
 library(git2r)
-
 repo <- repository(".")
-print(head(repo))
+print(repository_head(repo))
 ```
 
 or
 
-```{r}
+```{r, results="hide"}
 print(system("git rev-parse --short HEAD", intern = TRUE))
 ```
 
 ##### Python {-}
 You can access the git hash using the following code:
-```import subprocess
 
+``` {python}
+import subprocess
 def get_git_revision_hash():
     return subprocess.check_output(['git', 'rev-parse', 'HEAD'])
-
 def get_git_revision_short_hash():
-    return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])```
+    return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])
+```
 
 ### Format
 

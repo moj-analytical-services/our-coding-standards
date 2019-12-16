@@ -154,11 +154,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="principles.html"><a href="principles.html#versioncontrol"><i class="fa fa-check"></i><b>3.3.1</b> Version Control</a></li>
 <li class="chapter" data-level="3.3.2" data-path="principles.html"><a href="principles.html#knowledge"><i class="fa fa-check"></i><b>3.3.2</b> Share the knowledge</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="principles.html"><a href="principles.html#reproduce"><i class="fa fa-check"></i><b>3.4</b> Reproducibile</a><ul>
+<li class="chapter" data-level="3.4" data-path="principles.html"><a href="principles.html#reproduce"><i class="fa fa-check"></i><b>3.4</b> Reproducible</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="principles.html"><a href="principles.html#projdep"><i class="fa fa-check"></i><b>3.4.1</b> Manage project dependencies</a></li>
-<li class="chapter" data-level="3.4.2" data-path="principles.html"><a href="principles.html#change"><i class="fa fa-check"></i><b>3.4.2</b> Optimize for change</a></li>
-<li class="chapter" data-level="3.4.3" data-path="principles.html"><a href="principles.html#format"><i class="fa fa-check"></i><b>3.4.3</b> Format</a></li>
-<li class="chapter" data-level="3.4.4" data-path="principles.html"><a href="principles.html#githash"><i class="fa fa-check"></i><b>3.4.4</b> Reproducing on another machine</a></li>
+<li class="chapter" data-level="3.4.2" data-path="principles.html"><a href="principles.html#format"><i class="fa fa-check"></i><b>3.4.2</b> Format</a></li>
+<li class="chapter" data-level="3.4.3" data-path="principles.html"><a href="principles.html#change"><i class="fa fa-check"></i><b>3.4.3</b> Optimize for change</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>4</b> Workflow</a></li>
@@ -525,44 +524,22 @@ Be aware that ‘throwaway’ code has a nasty habit of somehow ending up in com
 </div>
 </div>
 <div id="reproduce" class="section level2">
-<h2><span class="header-section-number">3.4</span> Reproducibile</h2>
+<h2><span class="header-section-number">3.4</span> Reproducible</h2>
+<p>We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).</p>
+<p>There are a number of steps that we can take to ensure that our code is as reproducible as possible.</p>
 <div id="projdep" class="section level3">
 <h3><span class="header-section-number">3.4.1</span> Manage project dependencies</h3>
-<p>Previously packrat was more widely used, but lots of people seem to use conda now.<br />
-* <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a><br />
-* <a href="https://rstudio.github.io/packrat/">Packrat</a><br />
-* <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a></p>
-</div>
-<div id="change" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Optimize for change</h3>
-<ul>
-<li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
-<li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
-<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
-</ul>
-</div>
-<div id="format" class="section level3">
-<h3><span class="header-section-number">3.4.3</span> Format</h3>
-<p>If the output is a report, the write up is fully reproducible, or as close as possible.
-* Avoid workflows that require manually copying and pasting results between documents.<br />
-* Your code should be <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md">DRY</a><br />
-* For Python, consider using Jupyter notebooks. For R, use <code>rmarkdown</code></p>
-</div>
-<div id="githash" class="section level3">
-<h3><span class="header-section-number">3.4.4</span> Reproducing on another machine</h3>
-<p>Your project should be tested on someone else’s machine There may be software or other dependencies installed on your machine that mean the project doesn’t work on others’ machines.</p>
-<p>Your dependencies are explicitly managed.
-If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others’ machines, and that it will work on your machine in a year’s time.
-For Python, use a Virtual Environment
-For R, use packrat
+<p>Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won’t work on others’ machines or may not work on your machine at a later date (e.g. as external packages are updated over time). To ensure that this doesn’t become an issue for your project, you should use some kind of dependency management tool.</p>
+<div id="dependency-management-tools" class="section level4 unnumbered">
+<h4>Dependency management tools</h4>
+<p>For Python, use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>.
+For R, you can use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>, <a href="https://rstudio.github.io/packrat/">Packrat</a> or <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>.
 For javascript, include third party library dependencies in the project as <code>.js</code> files</p>
-<div id="include-a-git-hash" class="section level4 unnumbered">
+</div>
+<div id="githash" class="section level4 unnumbered">
 <h4>Include a git hash</h4>
-<p>Some tips on making your analyses simple to reproduce</p>
-<p>If practical, the output of your code should include the git hash
-of the code that produced it. By doing so, the analysis should be
-more reproducible, there is no ambiguity about the specific code
-that was used to generate it.</p>
+<p>If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
+more reproducible, there is no ambiguity about the specific code that was used to generate it.</p>
 <div id="r-1" class="section level5 unnumbered">
 <h5>R</h5>
 <p>You can access the git hash using either of the following code:
@@ -570,26 +547,40 @@ snippets.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="principles.html#cb6-1"></a><span class="kw">library</span>(git2r)</span>
 <span id="cb6-2"><a href="principles.html#cb6-2"></a></span>
 <span id="cb6-3"><a href="principles.html#cb6-3"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
-<span id="cb6-4"><a href="principles.html#cb6-4"></a><span class="kw">print</span>(<span class="kw">head</span>(repo))</span></code></pre></div>
-<pre><code>## Warning: &#39;head.git_repository&#39; is deprecated.
-## Use &#39;repository_head&#39; instead.
-## See help(&quot;Deprecated&quot;)</code></pre>
-<pre><code>## [ad25db] (Local) (HEAD) nikki-rewrite</code></pre>
+<span id="cb6-4"><a href="principles.html#cb6-4"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="principles.html#cb9-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;ad25dbb&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="principles.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 </div>
 <div id="python-1" class="section level5 unnumbered">
 <h5>Python</h5>
-<p>You can access the git hash using the following code:
-```import subprocess</p>
-<p>def get_git_revision_hash():
-return subprocess.check_output([‘git’, ‘rev-parse’, ‘HEAD’])</p>
-<p>def get_git_revision_short_hash():
-return subprocess.check_output([‘git’, ‘rev-parse’, ‘–short’, ‘HEAD’])```</p>
+<p>You can access the git hash using the following code:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="principles.html#cb8-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb8-2"><a href="principles.html#cb8-2"></a></span>
+<span id="cb8-3"><a href="principles.html#cb8-3"></a><span class="kw">def</span> get_git_revision_hash():</span>
+<span id="cb8-4"><a href="principles.html#cb8-4"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
+<span id="cb8-5"><a href="principles.html#cb8-5"></a></span>
+<span id="cb8-6"><a href="principles.html#cb8-6"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
+<span id="cb8-7"><a href="principles.html#cb8-7"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="format" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Format</h3>
+<p>If the output is a report, the write up should be fully reproducible, or as close as possible.</p>
+<ul>
+<li>Avoid workflows that require manually copying and pasting results between documents.<br />
+</li>
+<li>For Python, consider using Jupyter notebooks. For R, use <code>rmarkdown</code>.</li>
+</ul>
+</div>
+<div id="change" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Optimize for change</h3>
+<ul>
+<li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
+<li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
+<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
+</ul>
 
-</div>
-</div>
 </div>
 </div>
 </div>

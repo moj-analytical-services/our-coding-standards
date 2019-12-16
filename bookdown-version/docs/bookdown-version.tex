@@ -752,58 +752,31 @@ All non-throwaway code should be reviewed - no-one is 100\% right, 100\% of the 
 Be aware that `throwaway' code has a nasty habit of somehow ending up in completed products.
 
 \hypertarget{reproduce}{%
-\section{Reproducibile}\label{reproduce}}
+\section{Reproducible}\label{reproduce}}
+
+We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).
+
+There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
 \hypertarget{projdep}{%
 \subsection{Manage project dependencies}\label{projdep}}
 
-Previously packrat was more widely used, but lots of people seem to use conda now.\\
-* \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}\\
-* \href{https://rstudio.github.io/packrat/}{Packrat}\\
-* \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}
+Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won't work on others' machines or may not work on your machine at a later date (e.g.~as external packages are updated over time). To ensure that this doesn't become an issue for your project, you should use some kind of dependency management tool.
 
-\hypertarget{change}{%
-\subsection{Optimize for change}\label{change}}
+\hypertarget{dependency-management-tools}{%
+\subsubsection*{Dependency management tools}\label{dependency-management-tools}}
+\addcontentsline{toc}{subsubsection}{Dependency management tools}
 
-\begin{itemize}
-\tightlist
-\item
-  Don't try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
-\item
-  Don't prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
-\item
-  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
-\end{itemize}
-
-\hypertarget{format}{%
-\subsection{Format}\label{format}}
-
-If the output is a report, the write up is fully reproducible, or as close as possible.
-* Avoid workflows that require manually copying and pasting results between documents.\\
-* Your code should be \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md}{DRY}\\
-* For Python, consider using Jupyter notebooks. For R, use \texttt{rmarkdown}
-
-\hypertarget{githash}{%
-\subsection{Reproducing on another machine}\label{githash}}
-
-Your project should be tested on someone else's machine There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
-
-Your dependencies are explicitly managed.
-If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.
-For Python, use a Virtual Environment
-For R, use packrat
+For Python, use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}.
+For R, you can use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}, \href{https://rstudio.github.io/packrat/}{Packrat} or \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}.
 For javascript, include third party library dependencies in the project as \texttt{.js} files
 
-\hypertarget{include-a-git-hash}{%
-\subsubsection*{Include a git hash}\label{include-a-git-hash}}
+\hypertarget{githash}{%
+\subsubsection*{Include a git hash}\label{githash}}
 \addcontentsline{toc}{subsubsection}{Include a git hash}
 
-Some tips on making your analyses simple to reproduce
-
-If practical, the output of your code should include the git hash
-of the code that produced it. By doing so, the analysis should be
-more reproducible, there is no ambiguity about the specific code
-that was used to generate it.
+If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
+more reproducible, there is no ambiguity about the specific code that was used to generate it.
 
 \hypertarget{r-1}{%
 \paragraph{R}\label{r-1}}
@@ -817,19 +790,9 @@ snippets.
 \KeywordTok{library}\NormalTok{(git2r)}
 
 \NormalTok{repo <-}\StringTok{ }\KeywordTok{repository}\NormalTok{(}\StringTok{"."}\NormalTok{)}
-\KeywordTok{print}\NormalTok{(}\KeywordTok{head}\NormalTok{(repo))}
+\KeywordTok{print}\NormalTok{(}\KeywordTok{repository_head}\NormalTok{(repo))}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## Warning: 'head.git_repository' is deprecated.
-## Use 'repository_head' instead.
-## See help("Deprecated")
-\end{verbatim}
-
-\begin{verbatim}
-## [ad25db] (Local) (HEAD) nikki-rewrite
-\end{verbatim}
 
 or
 
@@ -839,22 +802,49 @@ or
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] "ad25dbb"
-\end{verbatim}
-
 \hypertarget{python-1}{%
 \paragraph{Python}\label{python-1}}
 \addcontentsline{toc}{paragraph}{Python}
 
 You can access the git hash using the following code:
-```import subprocess
 
-def get\_git\_revision\_hash():
-return subprocess.check\_output({[}`git', `rev-parse', `HEAD'{]})
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ subprocess}
 
-def get\_git\_revision\_short\_hash():
-return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
+\KeywordTok{def}\NormalTok{ get_git_revision_hash():}
+    \ControlFlowTok{return}\NormalTok{ subprocess.check_output([}\StringTok{'git'}\NormalTok{, }\StringTok{'rev-parse'}\NormalTok{, }\StringTok{'HEAD'}\NormalTok{])}
+
+\KeywordTok{def}\NormalTok{ get_git_revision_short_hash():}
+    \ControlFlowTok{return}\NormalTok{ subprocess.check_output([}\StringTok{'git'}\NormalTok{, }\StringTok{'rev-parse'}\NormalTok{, }\StringTok{'--short'}\NormalTok{, }\StringTok{'HEAD'}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{format}{%
+\subsection{Format}\label{format}}
+
+If the output is a report, the write up should be fully reproducible, or as close as possible.
+
+\begin{itemize}
+\tightlist
+\item
+  Avoid workflows that require manually copying and pasting results between documents.\\
+\item
+  For Python, consider using Jupyter notebooks. For R, use \texttt{rmarkdown}.
+\end{itemize}
+
+\hypertarget{change}{%
+\subsection{Optimize for change}\label{change}}
+
+\begin{itemize}
+\tightlist
+\item
+  Don't try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
+\item
+  Don't prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
+\item
+  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
+\end{itemize}
 
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
