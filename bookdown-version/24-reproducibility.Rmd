@@ -3,52 +3,31 @@ title: ''
 output: html_document
 ---
 
-## Reproducibile {#reproduce}
+## Reproducible {#reproduce}
+
+We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).
+
+There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
 ### Manage project dependencies {#projdep}
-Previously packrat was more widely used, but lots of people seem to use conda now.  
-* [Conda][1]  
-* [Packrat][2]  
-* [Renv][3]
 
+Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won't work on others' machines or may not work on your machine at a later date (e.g. as external packages are updated over time). To ensure that this doesn't become an issue for your project, you should use some kind of dependency management tool.
 
+#### Dependency management tools {-}
+
+For Python, use [Conda][1].
+For R, you can use [Conda][1], [Packrat][2] or [Renv][3]. 
+For javascript, include third party library dependencies in the project as `.js` files
 
 [1]:https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf
 [2]:https://rstudio.github.io/packrat/
 [3]:https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/
 
-### Optimize for change {#change}
-* Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
-* Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
-* Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere.  Without overcomplicating things, write your code with this in mind.  For example, use relative paths (e.g. `./file_in_the_project_directory.R` rather than `/Users/my_username/development/my_project/file_in_the_project_directory.R`)
 
-### Format
+#### Include a git hash {-#githash}
 
-If the output is a report, the write up is fully reproducible, or as close as possible. 
-* Avoid workflows that require manually copying and pasting results between documents.    
-* Your code should be [DRY](https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md)  
-* For Python, consider using Jupyter notebooks. For R, use `rmarkdown`
-
-
-### Reproducing on another machine {#githash}
-
-Your project should be tested on someone else's machine There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
-
-Your dependencies are explicitly managed. 
-If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.
-For Python, use a Virtual Environment 
-For R, use packrat 
-For javascript, include third party library dependencies in the project as `.js` files
-
-
-#### Include a git hash {-}
-
-Some tips on making your analyses simple to reproduce
-
-If practical, the output of your code should include the git hash
-of the code that produced it. By doing so, the analysis should be
-more reproducible, there is no ambiguity about the specific code 
-that was used to generate it.
+If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
+more reproducible, there is no ambiguity about the specific code that was used to generate it.
 
 ##### R {-}
 You can access the git hash using either of the following code:
@@ -75,3 +54,17 @@ def get_git_revision_hash():
 
 def get_git_revision_short_hash():
     return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])```
+
+### Format
+
+If the output is a report, the write up should be fully reproducible, or as close as possible.  
+
+* Avoid workflows that require manually copying and pasting results between documents.    
+* For Python, consider using Jupyter notebooks. For R, use `rmarkdown`.  
+
+### Optimize for change {#change}
+* Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
+* Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
+* Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere.  Without overcomplicating things, write your code with this in mind.  For example, use relative paths (e.g. `./file_in_the_project_directory.R` rather than `/Users/my_username/development/my_project/file_in_the_project_directory.R`)
+
+

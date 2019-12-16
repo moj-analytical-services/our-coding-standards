@@ -155,18 +155,47 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 \hypertarget{motivation}{%
 \section{Motivation}\label{motivation}}
 
-The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects.
+The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
 
-Coding practices should aim to create code that is:\\
-* Reproducible\\
-+ Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.
-* Collaborative
-+ Projects should be structured in such a way that we can collaborate effectively across multiple projects\\
-+ Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.
-* Accurate\\
-+ Code should be error free and appropriately quality assured.
-* Understandable\\
-+ Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.
+Coding practices should aim to create code that is:
+
+\begin{itemize}
+\tightlist
+\item
+  Reproducible
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.\\
+  \end{itemize}
+\item
+  Collaborative
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Projects should be structured in such a way that we can collaborate effectively across multiple projects
+  \item
+    Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.\\
+  \end{itemize}
+\item
+  Accurate
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Code should be error free and appropriately quality assured.\\
+  \end{itemize}
+\item
+  Understandable
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{structure}{%
 \section{Guidance structure}\label{structure}}
@@ -180,50 +209,23 @@ The final section includes a checklist of actions to be taken to achieve the pri
 \hypertarget{contributing}{%
 \section{Contributing}\label{contributing}}
 
-If you think that something is missing or not quite right you should either:
-1. \protect\hyperlink{versioncontrol}{Contribute directly}
+If you think that something is missing or not quite right you should either:\\
+1. \protect\hyperlink{versioncontrol}{Contribute directly}\\
 2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
 
 \hypertarget{principles}{%
 \chapter{Coding Principles}\label{principles}}
 
-The following coding principles have been developed to help achieve the following objectives. (I) Ensure we write high quality, maintainable, code; (II) Where possible, ensure our work is reusable; and (III) Collaborate with one another effectively accross multiple projects.
+The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
+
+Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.
+
+They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
 
 Code should be:
+{[}\textbf{Update after rewriting individual sections}{]}
 
-\textbf{1. \protect\hyperlink{reproduce}{Reproducible}}
-
-\begin{itemize}
-\tightlist
-\item
-  Manage \protect\hyperlink{projdep}{project dependencies}
-\item
-  Optimise for \protect\hyperlink{change}{change}\\
-\item
-  Analyses should be \protect\hyperlink{githash}{simple and easy to reproduce} on another machine.
-\end{itemize}
-
-\textbf{2. \protect\hyperlink{collaborate}{Collaborative}}
-
-\begin{itemize}
-\tightlist
-\item
-  Use the \protect\hyperlink{versioncontrol}{github workflow} across all projects\\
-\item
-  \protect\hyperlink{knowledge}{Share} the knowledge
-\end{itemize}
-
-\textbf{3. \protect\hyperlink{accurate}{Accurate}}
-
-\begin{itemize}
-\tightlist
-\item
-  Ensure code is \protect\hyperlink{review}{reviewed}
-\item
-  Complete \protect\hyperlink{unittest}{unit testing}
-\end{itemize}
-
-\textbf{4. \protect\hyperlink{understand}{Understandable}}
+\textbf{1. \protect\hyperlink{understand}{Understandable}}
 
 \begin{itemize}
 \tightlist
@@ -251,332 +253,37 @@ Code should be:
   \end{itemize}
 \end{itemize}
 
-These ideas are stated in no particular order, and are \emph{always} open to debate. In fact, you are encouraged to contribute.
-
-All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.
-
-They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
-
-\hypertarget{reproduce}{%
-\section{Reproducibile}\label{reproduce}}
-
-\hypertarget{projdep}{%
-\subsection{Manage project dependencies}\label{projdep}}
-
-Previously packrat was more widely used, but lots of people seem to use conda now.\\
-* \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}\\
-* \href{https://rstudio.github.io/packrat/}{Packrat}\\
-* \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}
-
-\hypertarget{change}{%
-\subsection{Optimize for change}\label{change}}
+\textbf{2. \protect\hyperlink{accurate}{Accurate}}
 
 \begin{itemize}
 \tightlist
 \item
-  Don't try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
+  Ensure code is \protect\hyperlink{review}{reviewed}
 \item
-  Don't prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
-\item
-  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
+  Complete \protect\hyperlink{unittest}{unit testing}
 \end{itemize}
 
-\hypertarget{format}{%
-\subsection{Format}\label{format}}
-
-If the output is a report, the write up is fully reproducible, or as close as possible.
-* Avoid workflows that require manually copying and pasting results between documents.\\
-* Your code should be \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md}{DRY}\\
-* For Python, consider using Jupyter notebooks. For R, use \texttt{rmarkdown}
-
-\hypertarget{githash}{%
-\subsection{Reproducing on another machine}\label{githash}}
-
-Your project should be tested on someone else's machine There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
-
-Your dependencies are explicitly managed.
-If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.
-For Python, use a Virtual Environment
-For R, use packrat
-For javascript, include third party library dependencies in the project as \texttt{.js} files
-
-\hypertarget{include-a-git-hash}{%
-\subsubsection*{Include a git hash}\label{include-a-git-hash}}
-\addcontentsline{toc}{subsubsection}{Include a git hash}
-
-Some tips on making your analyses simple to reproduce
-
-If practical, the output of your code should include the git hash
-of the code that produced it. By doing so, the analysis should be
-more reproducible, there is no ambiguity about the specific code
-that was used to generate it.
-
-\hypertarget{r}{%
-\paragraph{R}\label{r}}
-\addcontentsline{toc}{paragraph}{R}
-
-You can access the git hash using either of the following code:
-snippets.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(git2r)}
-
-\NormalTok{repo <-}\StringTok{ }\KeywordTok{repository}\NormalTok{(}\StringTok{"."}\NormalTok{)}
-\KeywordTok{print}\NormalTok{(}\KeywordTok{head}\NormalTok{(repo))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Warning: 'head.git_repository' is deprecated.
-## Use 'repository_head' instead.
-## See help("Deprecated")
-\end{verbatim}
-
-\begin{verbatim}
-## [5aee5c] (Local) (HEAD) nikki-rewrite
-\end{verbatim}
-
-or
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{print}\NormalTok{(}\KeywordTok{system}\NormalTok{(}\StringTok{"git rev-parse --short HEAD"}\NormalTok{, }\DataTypeTok{intern =} \OtherTok{TRUE}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "5aee5c7"
-\end{verbatim}
-
-\hypertarget{python}{%
-\paragraph{Python}\label{python}}
-\addcontentsline{toc}{paragraph}{Python}
-
-You can access the git hash using the following code:
-```import subprocess
-
-def get\_git\_revision\_hash():
-return subprocess.check\_output({[}`git', `rev-parse', `HEAD'{]})
-
-def get\_git\_revision\_short\_hash():
-return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
-
-\hypertarget{collaborate}{%
-\section{Collaborative}\label{collaborate}}
-
-\hypertarget{versioncontrol}{%
-\subsection{Version Control}\label{versioncontrol}}
-
-Code is version controlled using Git and checked into Github.
-You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
-You are able to maintain a continuously quality controlled `master' version of the code, whilst also being able to test new features and functionality.
-
-The `Master' branch is protected, and contains only QAed code
-When you create your git project using \texttt{git\ init}, immediately branch off to a development branch e.g.~using \texttt{git\ checkout\ -b\ dev}, and work on this branch.\\
-Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
-
-\hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
-\subsubsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
-\addcontentsline{toc}{subsubsection}{Github-Flow is a working practice that helps to:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Maintain overall code quality\\
-\item
-  Facilitate collaboration on a single project\\
-\item
-  Protect the codebase
-\end{enumerate}
-
-We have tweaked it a little from what is \href{https://guides.github.com/introduction/flow/}{described on GitHub}
-
-\hypertarget{there-are-6-steps-to-our-process}{%
-\subsubsection*{There are 6 steps to our process:}\label{there-are-6-steps-to-our-process}}
-\addcontentsline{toc}{subsubsection}{There are 6 steps to our process:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Create or clone a repo.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# For example, to clone this repo.}
-\FunctionTok{git}\NormalTok{ clone git@github.com:moj-analytical-services/our-coding-standards.git}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  Create an issue in Github that describes what you're working on
-  To create an issue, use \href{https://guides.github.com/features/issues/}{the Github website}.
-\item
-  Create a new branch for the work you're about to do, with a name corresponding to the issue
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# To create a new branch and switch onto it.}
-\FunctionTok{git}\NormalTok{ checkout -b my-new-sensibly-named-branch}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  Make some commits on the new branch.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.}
-\FunctionTok{git}\NormalTok{ add file1.txt}
-\FunctionTok{git}\NormalTok{ add file2.txt}
-\CommentTok{# etc}
-
-\CommentTok{# Commit your changes using a descriptive commit message.}
-\FunctionTok{git}\NormalTok{ commit}
-
-\CommentTok{# This will take you into your default text editor}
-\CommentTok{# Write a descriptive commit message}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{quote}
-\textbf{Note:}
-If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: \texttt{:q!}. Then configure your default text editor for Git
-\end{quote}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{git}\NormalTok{ config --global core.editor }\OperatorTok{<}\NormalTok{my-favourite-text-editor}\OperatorTok{>}
- \CommentTok{# Then try again}
-\FunctionTok{git}\NormalTok{ commit}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  When you're ready, submit a pull request and wait for peer-review.
-\end{enumerate}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# push your branch to the remote repo}
-\FunctionTok{git}\NormalTok{ push origin my-new-sensibly-named-branch}
-\CommentTok{# then go to github, open a PR and invite at least one reviewer}
-\end{Highlighting}
-\end{Shaded}
-
-Make sure that you reference the issue in your pull request, by using the hash (\#) symbol - see \href{https://help.github.com/articles/autolinked-references-and-urls/}{here} for further guidance. This makes it easy in future to see what changes were made to the code in response to the issue.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\item
-  To make further changes, just make more commits on the same branch and push them to the remote repo again.
-\item
-  Once peer review is complete, and any comments addressed, merge into the master branch using a \href{https://github.com/blog/2243-rebase-and-merge-pull-requests}{rebase}.
-\item
-  The version of master on Github is now ahead of the version of master on your local machine. Bring your local version up to date using \texttt{git\ checkout\ master}, \texttt{git\ pull}. You are now in sync with Github, and ready to start a new branch.
-\end{enumerate}
-
-The \textbf{master branch should be 100\% functional at all times}, on any machine. Please ensure it is \href{https://help.github.com/articles/about-protected-branches/}{protected} and that your tests and / or linters run automatically on all pull requests.
-
-For some further reading we strongly suggest reading this \href{https://gist.github.com/blackfalcon/8428401}{article} that explains these git commands and others in a bit more detail.
-
-If you want to test this out, clone this repo and make a contribution :)
-
-\hypertarget{gitlink}{%
-\subsubsection*{Useful links for using github}\label{gitlink}}
-\addcontentsline{toc}{subsubsection}{Useful links for using github}
+\textbf{3. \protect\hyperlink{collaborate}{Collaborative}}
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html}{A guide to getting started with github}\\
+  Use the \protect\hyperlink{versioncontrol}{github workflow} across all projects\\
 \item
-  Github guide on \href{https://user-guidance.services.alpha.mojanalytics.xyz/github.html\#creating-your-project-repo-on-github}{analytical platform guidance}\\
-\item
-  List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
+  \protect\hyperlink{knowledge}{Share} the knowledge
 \end{itemize}
 
-\hypertarget{knowledge}{%
-\subsection{Share the knowledge}\label{knowledge}}
+\textbf{4. \protect\hyperlink{reproduce}{Reproducible}}
 
-If you have knowledge which is unique to you, it is your responsibility to share it.
-We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
-You could also present your work at Display DaSH.
-If you produce something reusable, package it \& share it with others.
-All non-throwaway code should be reviewed - no-one is 100\% right, 100\% of the time.
-Be aware that `throwaway' code has a nasty habit of somehow ending up in completed products.
-
-\hypertarget{accurate}{%
-\section{Accurate}\label{accurate}}
-
-\hypertarget{review}{%
-\subsection{Review}\label{review}}
-
-Ensure that code is reviewed: initiate this through a pull request. Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.
-
-All code has been subject to code review.\\
-For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
-
-All code has been subject to code review.
-This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
-You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
-
-\hypertarget{performing-good-peer-review}{%
-\subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
-\addcontentsline{toc}{subsubsection}{Performing good peer review}
-
-When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start\ldots{}
-
-1: Do I understand what the code is doing? \protect\hyperlink{users}{Did it need to be explained} to me? \protect\hyperlink{ccc}{Could it be simpler}?
-
-2: Are they using \protect\hyperlink{defaults}{packages / libraries sensibly}?
-
-3: Does it need to be \protect\hyperlink{ccc}{tested} (and is it tested with sufficient coverage)?
-
-4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?
-
-5: Are there edge cases that might \protect\hyperlink{errors}{break The Thing}?
-
-If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
-
-If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!} :)
-
-\hypertarget{unittest}{%
-\subsection{Unit testing}\label{unittest}}
-
-Use testthat and shinytest for unit testing. The following might be helpful:\\
-* Nice \href{https://katherinemwood.github.io/post/testthat/}{intro to using testthat}\\
-* Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
-* \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
-
-Unit tests exist that test the overall codebase, but not individual functions.
-Unit tests help give you confidence that your model does what you think it does
-There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
-In R, you should use the \href{https://github.com/hadley/testthat}{testthat} package for unit testing.\\
-You can find examples of how to do unit testing \href{https://github.com/ukgovdatascience/eesectors/tree/master/tests}{here} and \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here} See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
-
-Unit tests exist at the function level, which test a range of parameters.\\
-The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
+\begin{itemize}
+\tightlist
+\item
+  Manage \protect\hyperlink{projdep}{project dependencies}
+\item
+  Optimise for \protect\hyperlink{change}{change}\\
+\item
+  Analyses should be \protect\hyperlink{githash}{simple and easy to reproduce} on another machine.
+\end{itemize}
 
 \hypertarget{understand}{%
 \section{Understandable}\label{understand}}
@@ -612,8 +319,8 @@ This section sets out sensible defaults which you are expected to follow. They a
 You have used the \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md}{sensible defaults}, unless you have a good reason not to and have agreed this with your line manager
 There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
 
-\hypertarget{r-1}{%
-\subsubsection*{R}\label{r-1}}
+\hypertarget{r}{%
+\subsubsection*{R}\label{r}}
 \addcontentsline{toc}{subsubsection}{R}
 
 \begin{itemize}
@@ -638,8 +345,8 @@ There are often many ways of tackling a given problem. As a team, it makes sense
   R Packages are the \href{http://r-pkgs.had.co.nz/}{fundamental unit of reproducable R code.}
 \end{itemize}
 
-\hypertarget{python-1}{%
-\subsubsection*{Python}\label{python-1}}
+\hypertarget{python}{%
+\subsubsection*{Python}\label{python}}
 \addcontentsline{toc}{subsubsection}{Python}
 
 \begin{itemize}
@@ -827,6 +534,327 @@ If you have to explain how your code works, then your code is not clear enough.
 Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
 Comments are for explaining why something is needed, not how it works.
 Make your commit messages as \href{https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message}{informative as possible}
+
+\hypertarget{accurate}{%
+\section{Accurate}\label{accurate}}
+
+\hypertarget{review}{%
+\subsection{Review}\label{review}}
+
+Ensure that code is reviewed: initiate this through a pull request. Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.
+
+All code has been subject to code review.\\
+For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+
+All code has been subject to code review.
+This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
+You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+
+\hypertarget{performing-good-peer-review}{%
+\subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
+\addcontentsline{toc}{subsubsection}{Performing good peer review}
+
+When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start\ldots{}
+
+1: Do I understand what the code is doing? \protect\hyperlink{users}{Did it need to be explained} to me? \protect\hyperlink{ccc}{Could it be simpler}?
+
+2: Are they using \protect\hyperlink{defaults}{packages / libraries sensibly}?
+
+3: Does it need to be \protect\hyperlink{ccc}{tested} (and is it tested with sufficient coverage)?
+
+4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?
+
+5: Are there edge cases that might \protect\hyperlink{errors}{break The Thing}?
+
+If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
+
+If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!} :)
+
+\hypertarget{unittest}{%
+\subsection{Unit testing}\label{unittest}}
+
+Use testthat and shinytest for unit testing. The following might be helpful:\\
+* Nice \href{https://katherinemwood.github.io/post/testthat/}{intro to using testthat}\\
+* Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
+* \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
+
+Unit tests exist that test the overall codebase, but not individual functions.
+Unit tests help give you confidence that your model does what you think it does
+There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
+In R, you should use the \href{https://github.com/hadley/testthat}{testthat} package for unit testing.\\
+You can find examples of how to do unit testing \href{https://github.com/ukgovdatascience/eesectors/tree/master/tests}{here} and \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here} See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
+
+Unit tests exist at the function level, which test a range of parameters.\\
+The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
+For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
+
+\hypertarget{collaborate}{%
+\section{Collaborative}\label{collaborate}}
+
+\hypertarget{versioncontrol}{%
+\subsection{Version Control}\label{versioncontrol}}
+
+Code is version controlled using Git and checked into Github.
+You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
+You are able to maintain a continuously quality controlled `master' version of the code, whilst also being able to test new features and functionality.
+
+The `Master' branch is protected, and contains only QAed code
+When you create your git project using \texttt{git\ init}, immediately branch off to a development branch e.g.~using \texttt{git\ checkout\ -b\ dev}, and work on this branch.\\
+Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+
+\hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
+\subsubsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
+\addcontentsline{toc}{subsubsection}{Github-Flow is a working practice that helps to:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Maintain overall code quality\\
+\item
+  Facilitate collaboration on a single project\\
+\item
+  Protect the codebase
+\end{enumerate}
+
+We have tweaked it a little from what is \href{https://guides.github.com/introduction/flow/}{described on GitHub}
+
+\hypertarget{there-are-6-steps-to-our-process}{%
+\subsubsection*{There are 6 steps to our process:}\label{there-are-6-steps-to-our-process}}
+\addcontentsline{toc}{subsubsection}{There are 6 steps to our process:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create or clone a repo.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# For example, to clone this repo.}
+\FunctionTok{git}\NormalTok{ clone git@github.com:moj-analytical-services/our-coding-standards.git}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Create an issue in Github that describes what you're working on
+  To create an issue, use \href{https://guides.github.com/features/issues/}{the Github website}.
+\item
+  Create a new branch for the work you're about to do, with a name corresponding to the issue
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# To create a new branch and switch onto it.}
+\FunctionTok{git}\NormalTok{ checkout -b my-new-sensibly-named-branch}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Make some commits on the new branch.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.}
+\FunctionTok{git}\NormalTok{ add file1.txt}
+\FunctionTok{git}\NormalTok{ add file2.txt}
+\CommentTok{# etc}
+
+\CommentTok{# Commit your changes using a descriptive commit message.}
+\FunctionTok{git}\NormalTok{ commit}
+
+\CommentTok{# This will take you into your default text editor}
+\CommentTok{# Write a descriptive commit message}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Note:}
+If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: \texttt{:q!}. Then configure your default text editor for Git
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ config --global core.editor }\OperatorTok{<}\NormalTok{my-favourite-text-editor}\OperatorTok{>}
+ \CommentTok{# Then try again}
+\FunctionTok{git}\NormalTok{ commit}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  When you're ready, submit a pull request and wait for peer-review.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# push your branch to the remote repo}
+\FunctionTok{git}\NormalTok{ push origin my-new-sensibly-named-branch}
+\CommentTok{# then go to github, open a PR and invite at least one reviewer}
+\end{Highlighting}
+\end{Shaded}
+
+Make sure that you reference the issue in your pull request, by using the hash (\#) symbol - see \href{https://help.github.com/articles/autolinked-references-and-urls/}{here} for further guidance. This makes it easy in future to see what changes were made to the code in response to the issue.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  To make further changes, just make more commits on the same branch and push them to the remote repo again.
+\item
+  Once peer review is complete, and any comments addressed, merge into the master branch using a \href{https://github.com/blog/2243-rebase-and-merge-pull-requests}{rebase}.
+\item
+  The version of master on Github is now ahead of the version of master on your local machine. Bring your local version up to date using \texttt{git\ checkout\ master}, \texttt{git\ pull}. You are now in sync with Github, and ready to start a new branch.
+\end{enumerate}
+
+The \textbf{master branch should be 100\% functional at all times}, on any machine. Please ensure it is \href{https://help.github.com/articles/about-protected-branches/}{protected} and that your tests and / or linters run automatically on all pull requests.
+
+For some further reading we strongly suggest reading this \href{https://gist.github.com/blackfalcon/8428401}{article} that explains these git commands and others in a bit more detail.
+
+If you want to test this out, clone this repo and make a contribution :)
+
+\hypertarget{gitlink}{%
+\subsubsection*{Useful links for using github}\label{gitlink}}
+\addcontentsline{toc}{subsubsection}{Useful links for using github}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html}{A guide to getting started with github}\\
+\item
+  Github guide on \href{https://user-guidance.services.alpha.mojanalytics.xyz/github.html\#creating-your-project-repo-on-github}{analytical platform guidance}\\
+\item
+  List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
+\end{itemize}
+
+\hypertarget{knowledge}{%
+\subsection{Share the knowledge}\label{knowledge}}
+
+If you have knowledge which is unique to you, it is your responsibility to share it.
+We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
+You could also present your work at Display DaSH.
+If you produce something reusable, package it \& share it with others.
+All non-throwaway code should be reviewed - no-one is 100\% right, 100\% of the time.
+Be aware that `throwaway' code has a nasty habit of somehow ending up in completed products.
+
+\hypertarget{reproduce}{%
+\section{Reproducibile}\label{reproduce}}
+
+\hypertarget{projdep}{%
+\subsection{Manage project dependencies}\label{projdep}}
+
+Previously packrat was more widely used, but lots of people seem to use conda now.\\
+* \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}\\
+* \href{https://rstudio.github.io/packrat/}{Packrat}\\
+* \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}
+
+\hypertarget{change}{%
+\subsection{Optimize for change}\label{change}}
+
+\begin{itemize}
+\tightlist
+\item
+  Don't try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.
+\item
+  Don't prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
+\item
+  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
+\end{itemize}
+
+\hypertarget{format}{%
+\subsection{Format}\label{format}}
+
+If the output is a report, the write up is fully reproducible, or as close as possible.
+* Avoid workflows that require manually copying and pasting results between documents.\\
+* Your code should be \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/correct_clear_concise.md}{DRY}\\
+* For Python, consider using Jupyter notebooks. For R, use \texttt{rmarkdown}
+
+\hypertarget{githash}{%
+\subsection{Reproducing on another machine}\label{githash}}
+
+Your project should be tested on someone else's machine There may be software or other dependencies installed on your machine that mean the project doesn't work on others' machines.
+
+Your dependencies are explicitly managed.
+If your code depends on external packages, these change over time, and need to be enumerated. This guarantees that your code will work on others' machines, and that it will work on your machine in a year's time.
+For Python, use a Virtual Environment
+For R, use packrat
+For javascript, include third party library dependencies in the project as \texttt{.js} files
+
+\hypertarget{include-a-git-hash}{%
+\subsubsection*{Include a git hash}\label{include-a-git-hash}}
+\addcontentsline{toc}{subsubsection}{Include a git hash}
+
+Some tips on making your analyses simple to reproduce
+
+If practical, the output of your code should include the git hash
+of the code that produced it. By doing so, the analysis should be
+more reproducible, there is no ambiguity about the specific code
+that was used to generate it.
+
+\hypertarget{r-1}{%
+\paragraph{R}\label{r-1}}
+\addcontentsline{toc}{paragraph}{R}
+
+You can access the git hash using either of the following code:
+snippets.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(git2r)}
+
+\NormalTok{repo <-}\StringTok{ }\KeywordTok{repository}\NormalTok{(}\StringTok{"."}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(}\KeywordTok{head}\NormalTok{(repo))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 'head.git_repository' is deprecated.
+## Use 'repository_head' instead.
+## See help("Deprecated")
+\end{verbatim}
+
+\begin{verbatim}
+## [ad25db] (Local) (HEAD) nikki-rewrite
+\end{verbatim}
+
+or
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print}\NormalTok{(}\KeywordTok{system}\NormalTok{(}\StringTok{"git rev-parse --short HEAD"}\NormalTok{, }\DataTypeTok{intern =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ad25dbb"
+\end{verbatim}
+
+\hypertarget{python-1}{%
+\paragraph{Python}\label{python-1}}
+\addcontentsline{toc}{paragraph}{Python}
+
+You can access the git hash using the following code:
+```import subprocess
+
+def get\_git\_revision\_hash():
+return subprocess.check\_output({[}`git', `rev-parse', `HEAD'{]})
+
+def get\_git\_revision\_short\_hash():
+return subprocess.check\_output({[}`git', `rev-parse', `--short', `HEAD'{]})```
 
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
