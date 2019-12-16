@@ -26,7 +26,7 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 
 ## Motivation {#motivation}
 
-The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects.
+The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].
 
 Coding practices should aim to create code that is:  
 
@@ -50,7 +50,7 @@ The final section includes a checklist of actions to be taken to achieve the pri
 
 ## Contributing {#contributing}
 
-If you think that something is missing or not quite right you should either:
-1. [Contribute directly](#versioncontrol)
+If you think that something is missing or not quite right you should either:  
+1. [Contribute directly](#versioncontrol)  
 2. [Raise an issue](https://github.com/moj-analytical-services/our-coding-standards/issues)
 

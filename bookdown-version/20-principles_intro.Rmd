@@ -5,27 +5,16 @@ output: html_document
 
 # Coding Principles {#principles}
 
-The following coding principles have been developed to help achieve the following objectives. (I) Ensure we write high quality, maintainable, code;  (II) Where possible, ensure our work is reusable; and (III) Collaborate with one another effectively accross multiple projects.
+The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].
+
+Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.
+
+They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
 
 Code should be:
+[**Update after rewriting individual sections**]
 
-**1. [Reproducible](#reproduce)**  
-
-* Manage [project dependencies](#projdep)
-* Optimise for [change](#change)  
-* Analyses should be [simple and easy to reproduce](#githash) on another machine.
-
-**2. [Collaborative](#collaborate)**  
-
-* Use the [github workflow](#versioncontrol) across all projects  
-* [Share](#knowledge) the knowledge  
-
-**3. [Accurate](#accurate)**  
-
-* Ensure code is [reviewed](#review)
-* Complete [unit testing](#unittest)
-
-**4. [Understandable](#understand)**  
+**1. [Understandable](#understand)**  
 
 * Write a [README](#readme) for your project  
 * Use [sensible defaults](#defaults) unless you have a great reason not to
@@ -36,10 +25,21 @@ Code should be:
   - Code should be [correct, clear and concise](#ccc) 
   - [Handle errors](#errors)  
   - Other team members [are users too](#users) - treat them with respect  
-  
 
-These ideas are stated in no particular order, and are *always* open to debate. In fact, you are encouraged to contribute. 
+**2. [Accurate](#accurate)**  
 
-All development is a trade-off between competing pressures, these principles are meant to help you decide which trade-offs are acceptable.
+* Ensure code is [reviewed](#review)
+* Complete [unit testing](#unittest)
 
-They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
+
+**3. [Collaborative](#collaborate)**  
+
+* Use the [github workflow](#versioncontrol) across all projects  
+* [Share](#knowledge) the knowledge  
+
+
+**4. [Reproducible](#reproduce)**  
+
+* Manage [project dependencies](#projdep)
+* Optimise for [change](#change)  
+* Analyses should be [simple and easy to reproduce](#githash) on another machine.
