@@ -28,6 +28,8 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 
 The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].
 
+The purpose of this document is to raise awareness of/hgihlight key coding principles and to briefly explain why we should code in such a way. These coding standards are by no means a list of rules, but seek to provide guidance on how we can achieve 'best practice' in our coding. The more of these you follow, the easier life will be for you and your colleagues. These are open for discussion....
+
 Coding practices should aim to create code that is:  
 
 * Reproducible

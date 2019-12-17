@@ -147,8 +147,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.5" data-path="principles.html"><a href="principles.html#style"><i class="fa fa-check"></i><b>3.1.5</b> Coding style</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="principles.html"><a href="principles.html#accurate"><i class="fa fa-check"></i><b>3.2</b> Accurate</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="principles.html"><a href="principles.html#review"><i class="fa fa-check"></i><b>3.2.1</b> Review</a></li>
-<li class="chapter" data-level="3.2.2" data-path="principles.html"><a href="principles.html#unittest"><i class="fa fa-check"></i><b>3.2.2</b> Unit testing</a></li>
+<li class="chapter" data-level="3.2.1" data-path="principles.html"><a href="principles.html#unittest"><i class="fa fa-check"></i><b>3.2.1</b> Unit testing</a></li>
+<li class="chapter" data-level="3.2.2" data-path="principles.html"><a href="principles.html#review"><i class="fa fa-check"></i><b>3.2.2</b> Project Review</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="principles.html"><a href="principles.html#collaborate"><i class="fa fa-check"></i><b>3.3</b> Collaborative</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="principles.html"><a href="principles.html#versioncontrol"><i class="fa fa-check"></i><b>3.3.1</b> Version Control</a></li>
@@ -391,30 +391,10 @@ Make your commit messages as <a href="https://robots.thoughtbot.com/5-useful-tip
 </div>
 <div id="accurate" class="section level2">
 <h2><span class="header-section-number">3.2</span> Accurate</h2>
-<div id="review" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Review</h3>
-<p>Ensure that code is reviewed: initiate this through a pull request. Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.</p>
-<p>All code has been subject to code review.<br />
-For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.</p>
-<p>All code has been subject to code review.
-This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
-You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.</p>
-<div id="performing-good-peer-review" class="section level4 unnumbered">
-<h4>Performing good peer review</h4>
-<p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
-<p>1: Do I understand what the code is doing? <a href="principles.html#users">Did it need to be explained</a> to me? <a href="principles.html#ccc">Could it be simpler</a>?</p>
-<p>2: Are they using <a href="principles.html#defaults">packages / libraries sensibly</a>?</p>
-<p>3: Does it need to be <a href="principles.html#ccc">tested</a> (and is it tested with sufficient coverage)?</p>
-<p>4: <a href="principles.html#ccc">Does it work</a>? Does it work on my machine?</p>
-<p>5: Are there edge cases that might <a href="principles.html#errors">break The Thing</a>?</p>
-<p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
-<p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong> :)</p>
-</div>
-</div>
+<p>Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.</p>
 <div id="unittest" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Unit testing</h3>
+<h3><span class="header-section-number">3.2.1</span> Unit testing</h3>
+<p>[<strong>AMEND THIS AFTER LOOKING AT COFFEE AND CODING MATERIALS FROM 06/12</strong>]</p>
 <p>Use testthat and shinytest for unit testing. The following might be helpful:<br />
 * Nice <a href="https://katherinemwood.github.io/post/testthat/">intro to using testthat</a><br />
 * Another <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">intro to testthat</a><br />
@@ -427,7 +407,27 @@ You can find examples of how to do unit testing <a href="https://github.com/ukgo
 <p>Unit tests exist at the function level, which test a range of parameters.<br />
 The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
 For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</p>
+</div>
+<div id="review" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Project Review</h3>
+<p>Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+For smaller projects, the review only needs to be a simple read-through and sanity check.</p>
+<p>Ensure that code is reviewed: initiate this through a pull request.</p>
+<p>Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.</p>
+<p>All code has been subject to code review.
+This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.</p>
+<div id="performing-good-peer-review" class="section level4 unnumbered">
+<h4>Performing good peer review</h4>
+<p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
+<p>1: Do I understand what the code is doing? <a href="principles.html#users">Did it need to be explained</a> to me? <a href="principles.html#ccc">Could it be simpler</a>?</p>
+<p>2: Are they using <a href="principles.html#defaults">packages / libraries sensibly</a>?</p>
+<p>3: Does it need to be <a href="principles.html#ccc">tested</a> (and is it tested with sufficient coverage)?</p>
+<p>4: <a href="principles.html#ccc">Does it work</a>? Does it work on my machine?</p>
+<p>5: Are there edge cases that might <a href="principles.html#errors">break The Thing</a>?</p>
+<p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
+<p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong> :)</p>
 
+</div>
 </div>
 </div>
 <div id="collaborate" class="section level2">

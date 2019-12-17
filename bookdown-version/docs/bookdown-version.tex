@@ -538,19 +538,40 @@ Make your commit messages as \href{https://robots.thoughtbot.com/5-useful-tips-f
 \hypertarget{accurate}{%
 \section{Accurate}\label{accurate}}
 
+Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.
+
+\hypertarget{unittest}{%
+\subsection{Unit testing}\label{unittest}}
+
+{[}\textbf{AMEND THIS AFTER LOOKING AT COFFEE AND CODING MATERIALS FROM 06/12}{]}
+
+Use testthat and shinytest for unit testing. The following might be helpful:\\
+* Nice \href{https://katherinemwood.github.io/post/testthat/}{intro to using testthat}\\
+* Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
+* \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
+
+Unit tests exist that test the overall codebase, but not individual functions.
+Unit tests help give you confidence that your model does what you think it does
+There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
+In R, you should use the \href{https://github.com/hadley/testthat}{testthat} package for unit testing.\\
+You can find examples of how to do unit testing \href{https://github.com/ukgovdatascience/eesectors/tree/master/tests}{here} and \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here} See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
+
+Unit tests exist at the function level, which test a range of parameters.\\
+The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
+For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
+
 \hypertarget{review}{%
-\subsection{Review}\label{review}}
+\subsection{Project Review}\label{review}}
 
-Ensure that code is reviewed: initiate this through a pull request. Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.
-
-All code has been subject to code review.\\
-For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
 Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+For smaller projects, the review only needs to be a simple read-through and sanity check.
+
+Ensure that code is reviewed: initiate this through a pull request.
+
+Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
 
 All code has been subject to code review.
 This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
-You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
 
 \hypertarget{performing-good-peer-review}{%
 \subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
@@ -571,24 +592,6 @@ When you review someone's pull request you become the gatekeeper to the master b
 If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
 
 If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!} :)
-
-\hypertarget{unittest}{%
-\subsection{Unit testing}\label{unittest}}
-
-Use testthat and shinytest for unit testing. The following might be helpful:\\
-* Nice \href{https://katherinemwood.github.io/post/testthat/}{intro to using testthat}\\
-* Another \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{intro to testthat}\\
-* \href{https://github.com/RobinL/costmodelr/tree/master/tests}{Example of using testthat}
-
-Unit tests exist that test the overall codebase, but not individual functions.
-Unit tests help give you confidence that your model does what you think it does
-There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
-In R, you should use the \href{https://github.com/hadley/testthat}{testthat} package for unit testing.\\
-You can find examples of how to do unit testing \href{https://github.com/ukgovdatascience/eesectors/tree/master/tests}{here} and \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here} See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
-
-Unit tests exist at the function level, which test a range of parameters.\\
-The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
 
 \hypertarget{collaborate}{%
 \section{Collaborative}\label{collaborate}}
