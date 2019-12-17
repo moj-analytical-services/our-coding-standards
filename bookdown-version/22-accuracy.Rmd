@@ -5,18 +5,47 @@ output: html_document
 
 ## Accurate {#accurate}
 
-### Review {#review}
-Ensure that code is reviewed: initiate this through a pull request. Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.
+Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.
 
-All code has been subject to code review.  
-For smaller projects, this is a simple read-through and sanity check You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once. 
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+### Unit testing {#unittest}
 
-All code has been subject to code review. 
-This process has been managed through pull requests, and this evidenced in Github.  This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request. 
-You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once. 
-Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
+Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][222]. [AMEND] - do we need to expand beyond unit testing?
 
+As a broad description, unit tests should exist to check that your actual results match your expected results, in particular, testing any functions you create.
+
+[AMEND] What exactly are we expecting people to test?
+Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided). 
+
+There are a number of tools to enable unit testing.
+
+#### Testing in R {-}
+
+In R, consider using the [testthat][221] package. For an introduction to using testthat, try reading this [blog post][9] from Inattentional Coffee or this [Towards Data Science post][10]. For an example unit tests within a project, see [here][11].
+
+[9]:https://katherinemwood.github.io/post/testthat/
+[10]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
+[11]:https://github.com/RobinL/costmodelr/tree/master/tests
+[221]: https://github.com/r-lib/testthat
+[222]: https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project
+
+#### Testing in Python {-}
+
+There are various approaches to unit testing in Python.  Consider using [unittest](https://docs.python.org/3/library/unittest.html) in the Python core library.  Another option is [pytest](https://docs.pytest.org/en/latest/).  See also [here](http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/) 
+
+#### Testing in Javascript {-}
+
+See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript
+
+For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)
+
+
+### Project Review {#review}
+
+Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.
+
+Code reviews should be initiated through the creation of a pull request [LINK]. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request. 
+
+Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once. 
 
 #### Performing good peer review {-}
 
@@ -34,27 +63,6 @@ When you review someone's pull request you become the gatekeeper to the master b
 
 If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something.  So _don't hold back_.
 
-If you're on the receiving end of feedback, from anyone at all, this is... **a chance to learn!** :)
+If you're on the receiving end of feedback, from anyone at all, this is... **a chance to learn!**
 
-
-### Unit testing {#unittest}
-
-Use testthat and shinytest for unit testing. The following might be helpful:  
-* Nice [intro to using testthat][9]  
-* Another [intro to testthat][10]  
-* [Example of using testthat][11]  
-
-[9]:https://katherinemwood.github.io/post/testthat/
-[10]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
-[11]:https://github.com/RobinL/costmodelr/tree/master/tests
-
-Unit tests exist that test the overall codebase, but not individual functions. 
-Unit tests help give you confidence that your model does what you think it does 
-There are various approaches to unit testing in Python.  Consider using [unittest](https://docs.python.org/3/library/unittest.html) in the Python core library.  Another option is [pytest](https://docs.pytest.org/en/latest/).  See also [here](http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/) 
-In R, you should use the [testthat](https://github.com/hadley/testthat) package for unit testing.  
-You can find examples of how to do unit testing [here](https://github.com/ukgovdatascience/eesectors/tree/master/tests) and [here](https://github.com/RobinL/costmodelr/tree/master/tests) See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript
-
-Unit tests exist at the function level, which test a range of parameters.   
-The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided). 
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)
 
