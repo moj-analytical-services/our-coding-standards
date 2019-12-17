@@ -13,6 +13,8 @@ There are a number of channels through which coding knowledge is shared in DASD:
 * [DASD training Trello][235]  
 * [R learning resources][236]
 
+**PLACEHOLDER** - something on cross-departmental resources/code.
+
 [231]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
 [232]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
 [233]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S

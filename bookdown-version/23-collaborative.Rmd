@@ -9,7 +9,7 @@ It is vital that we're able to collaborate across projects, to share both worklo
 
 A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.
 
-## Version Control {#versioncontrol}
+## Version control {#versioncontrol}
 Code should be version controlled using Git and checked into Github.
 You can find a guide to using Git with R [here](http://happygitwithr.com/)
 
@@ -95,6 +95,10 @@ If you want to test this out, clone this repo and make a contribution!
 * [A guide to getting started with github][6]  
 * Github guide on [analytical platform guidance][7]  
 * List of basic [git commands][8] 
+
+## Cross-team working {#crossteamworking}
+
+**POPULATE THIS**
 
 ## Share the knowledge {#knowledge}
 
