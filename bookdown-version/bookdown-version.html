@@ -1555,7 +1555,7 @@ div.tocify {
 <div id="structure" class="section level2 unnumbered">
 <h2>Document structure</h2>
 <p>The first part of this document contains the four <a href="#principles">coding principles</a>, with details on the practical actions that can be taken to help us follow the principles.</p>
-<p>The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an <a href="#wf">example workflow</a>, a <a href="#checklist">project checklist</a> and a <a href="#ksresources">knowledge share resource list</a>.</p>
+<p>The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project life-cycle. This includes an <a href="#wf">example workflow</a>, a <a href="#checklist">project checklist</a> and a <a href="#ksresources">knowledge share resource list</a>.</p>
 </div>
 <div id="contributing" class="section level2 unnumbered">
 <h2>Contributing</h2>
@@ -1605,7 +1605,7 @@ div.tocify {
 <h3>Data</h3>
 <ul>
 <li><p>MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [<strong>POPULATE</strong> with link to ap guidance].</p></li>
-<li><p>Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a ‘data’ folder within the project folder.[<strong>POPULATE</strong> with link to github with example project structure]</p></li>
+<li><p>Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a ‘data’ folder within the project folder.[<strong>POPULATE</strong> with link to Github with example project structure]</p></li>
 <li><p>Prefer text format (e.g. csv) to Excel<br />
 </p></li>
 <li><p>It should be easy for others to change parameters and data without needed to understand the full codebase.</p></li>
@@ -1678,7 +1678,7 @@ div.tocify {
 </tr>
 <tr class="odd">
 <td>Encoding and CSVs</td>
-<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass <a href="https://csvlint.io/">this</a> csv linter.</td>
+<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output CSVs should pass <a href="https://csvlint.io/">this</a> csv linter.</td>
 </tr>
 <tr class="even">
 <td>SQL</td>
@@ -1787,7 +1787,7 @@ div.tocify {
 <p>4: <a href="#ccc">Does it work</a>? Does it work on my machine?(#projdep)</p>
 <p>5: Are there edge cases that might <a href="#unittest">break</a> it?</p>
 <p><strong>AMEND</strong> - update and merge with <a href="#defaults">section above</a> * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
-<p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
+<p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or over-complicated something. So <em>don’t hold back</em>.</p>
 <p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong></p>
 <!--chapter:end:22-accuracy.Rmd-->
 </div>
@@ -1803,11 +1803,12 @@ div.tocify {
 <p>Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. [<strong>POPULATE</strong> with a link?]</p>
 <div id="flow" class="section level3 unnumbered">
 <h3>Github-Flow</h3>
-<p>Github-Flow is a working practice that helps to: 1. Maintain overall code quality<br />
+<p>Github-Flow is a working practice that helps to:<br />
+1. Maintain overall code quality<br />
 2. Facilitate collaboration on a single project<br />
 3. Protect the codebase</p>
 <p>We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a></p>
-<p>[<strong>AMEND</strong> - check that this is all up-tp-date and correct. Update links where needed.]</p>
+<p>[<strong>AMEND</strong> - check that this is all up-to-date and correct. Update links where needed.]</p>
 <p>There are 6 steps to our process:</p>
 <ol style="list-style-type: decimal">
 <li>Create or clone a repo.</li>
@@ -1844,7 +1845,7 @@ git commit</code></pre>
 </ol>
 <pre class="sh"><code>push your branch to the remote repo
 git push origin my-new-sensibly-named-branch
-then go to github, open a PR and invite at least one reviewer</code></pre>
+then go to Github, open a PR and invite at least one reviewer</code></pre>
 <p>Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see <a href="https://help.github.com/articles/autolinked-references-and-urls/">here</a> for further guidance. This makes it easy in future to see what changes were made to the code in response to the issue.</p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>To make further changes, just make more commits on the same branch and push them to the remote repo again.</p></li>
@@ -1865,6 +1866,10 @@ then go to github, open a PR and invite at least one reviewer</code></pre>
 <li>List of basic <a href="https://guides.github.com/introduction/git-handbook/">git commands</a></li>
 </ul>
 </div>
+</div>
+<div id="crossteamworking" class="section level2">
+<h2>Cross-team working</h2>
+<p><strong>POPULATE THIS</strong></p>
 </div>
 <div id="knowledge" class="section level2">
 <h2>Share the knowledge</h2>
@@ -1951,7 +1956,7 @@ def get_git_revision_short_hash():
 <ul>
 <li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
 <li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
-<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
+<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
 </ul>
 <!--chapter:end:24-reproducibility.Rmd-->
 </div>
@@ -1962,9 +1967,9 @@ def get_git_revision_short_hash():
 </div>
 <div id="wf" class="section level1">
 <h1>Workflow</h1>
-<p>The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project lifecycle.</p>
+<p>The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.</p>
 <ol style="list-style-type: decimal">
-<li><strong>Create/clone <a href="#versioncontrol">github repo</a></strong><br />
+<li><strong>Create/clone <a href="#versioncontrol">Github repo</a></strong><br />
 </li>
 </ol>
 <ul>
@@ -1990,7 +1995,7 @@ def get_git_revision_short_hash():
 </li>
 </ol>
 <ul>
-<li>Managing your project dependencies means that your project is more likely to be rerunnable in the future and on others’ machine.<br />
+<li>Managing your project dependencies means that your project is more likely to be re-runnable in the future and on others’ machine.<br />
 </li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
@@ -2006,7 +2011,7 @@ def get_git_revision_short_hash():
 </li>
 </ol>
 <ul>
-<li>Commiting your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.<br />
+<li>Committing your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.<br />
 </li>
 </ul>
 <ol start="7" style="list-style-type: decimal">
@@ -2031,6 +2036,7 @@ def get_git_revision_short_hash():
 * Coffee and Coding (resources <a href="https://github.com/moj-analytical-services/Coffee-and-Coding">here</a>)<br />
 * <a href="https://trello.com/b/zAwm6sCc/dasd-training">DASD training Trello</a><br />
 * <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit">R learning resources</a></p>
+<p><strong>PLACEHOLDER</strong> - something on cross-departmental resources/code.</p>
 <!--chapter:end:34-training.Rmd-->
 </div>
 

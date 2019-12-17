@@ -148,7 +148,7 @@ These coding principles are by no means a list of rules, but seek to provide gui
 
 The first part of this document contains the four \protect\hyperlink{principles}{coding principles}, with details on the practical actions that can be taken to help us follow the principles.
 
-The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
+The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project life-cycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
 
 \hypertarget{contributing}{%
 \section*{Contributing}\label{contributing}}
@@ -227,7 +227,7 @@ There should be clear logical separation of parameters, assumptions, data and co
 \item
   MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}\textbf{POPULATE} with link to ap guidance{]}.
 \item
-  Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a `data' folder within the project folder.{[}\textbf{POPULATE} with link to github with example project structure{]}
+  Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a `data' folder within the project folder.{[}\textbf{POPULATE} with link to Github with example project structure{]}
 \item
   Prefer text format (e.g.~csv) to Excel\\
 \item
@@ -338,7 +338,7 @@ Python\strut
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 Encoding and CSVs\strut
 \end{minipage} & \begin{minipage}[t]{0.67\columnwidth}\raggedright
-Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass \href{https://csvlint.io/}{this} csv linter.\strut
+Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output CSVs should pass \href{https://csvlint.io/}{this} csv linter.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 SQL\strut
@@ -500,7 +500,7 @@ When you review someone's pull request you become the gatekeeper to the master b
 \textbf{AMEND} - update and merge with \protect\hyperlink{defaults}{section above}
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up \href{https://travis-ci.org/}{TravisCI} on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
-If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
+If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or over-complicated something. So \emph{don't hold back}.
 
 If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!}
 
@@ -523,14 +523,14 @@ Within DASD we follow Github-Flow for our projects. Further information and guid
 \subsection*{Github-Flow}\label{flow}}
 \addcontentsline{toc}{subsection}{Github-Flow}
 
-Github-Flow is a working practice that helps to:
+Github-Flow is a working practice that helps to:\\
 1. Maintain overall code quality\\
 2. Facilitate collaboration on a single project\\
 3. Protect the codebase
 
 We have tweaked it a little from what is \href{https://guides.github.com/introduction/flow/}{described on GitHub}
 
-{[}\textbf{AMEND} - check that this is all up-tp-date and correct. Update links where needed.{]}
+{[}\textbf{AMEND} - check that this is all up-to-date and correct. Update links where needed.{]}
 
 There are 6 steps to our process:
 
@@ -613,7 +613,7 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 \begin{Highlighting}[]
 \ExtensionTok{push}\NormalTok{ your branch to the remote repo}
 \FunctionTok{git}\NormalTok{ push origin my-new-sensibly-named-branch}
-\KeywordTok{then} \ExtensionTok{go}\NormalTok{ to github, open a PR and invite at least one reviewer}
+\KeywordTok{then} \ExtensionTok{go}\NormalTok{ to Github, open a PR and invite at least one reviewer}
 \end{Highlighting}
 \end{Shaded}
 
@@ -649,6 +649,11 @@ If you want to test this out, clone this repo and make a contribution!
 \item
   List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
 \end{itemize}
+
+\hypertarget{crossteamworking}{%
+\section{Cross-team working}\label{crossteamworking}}
+
+\textbf{POPULATE THIS}
 
 \hypertarget{knowledge}{%
 \section{Share the knowledge}\label{knowledge}}
@@ -775,7 +780,7 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \item
   Don't prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.
 \item
-  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
+  Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
 \end{itemize}
 
 \hypertarget{resources}{%
@@ -784,13 +789,13 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
 
-The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project lifecycle.
+The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{Create/clone \protect\hyperlink{versioncontrol}{github repo}}\\
+  \textbf{Create/clone \protect\hyperlink{versioncontrol}{Github repo}}\\
 \end{enumerate}
 
 \begin{itemize}
@@ -838,7 +843,7 @@ The following is the recommended workflow for coding projects in DASD. It has be
 \begin{itemize}
 \tightlist
 \item
-  Managing your project dependencies means that your project is more likely to be rerunnable in the future and on others' machine.\\
+  Managing your project dependencies means that your project is more likely to be re-runnable in the future and on others' machine.\\
 \end{itemize}
 
 \begin{enumerate}
@@ -866,7 +871,7 @@ The following is the recommended workflow for coding projects in DASD. It has be
 \begin{itemize}
 \tightlist
 \item
-  Commiting your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.\\
+  Committing your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.\\
 \end{itemize}
 
 \begin{enumerate}
@@ -898,6 +903,8 @@ There are a number of channels through which coding knowledge is shared in DASD:
 * Coffee and Coding (resources \href{https://github.com/moj-analytical-services/Coffee-and-Coding}{here})\\
 * \href{https://trello.com/b/zAwm6sCc/dasd-training}{DASD training Trello}\\
 * \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}
+
+\textbf{PLACEHOLDER} - something on cross-departmental resources/code.
 
 
 \end{document}
