@@ -5,16 +5,17 @@ output:
     toc: true
     theme: united
 ---
-
-## Understandable {#understand}
+ 
+ 
+# Understandable {#understand}
 
 It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. [Amend]
 
 
-### Code structure {#structure2}
+## Code structure {#structure2}
 There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.  
 
-#### Data {-}
+### Data {-}
 
 * MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].  
 
@@ -23,7 +24,7 @@ There should be clear logical separation of parameters, assumptions, data and co
 * Prefer text format (e.g. csv) to Excel  
 * It should be easy for others to change parameters and data without needed to understand the full codebase.  
 
-#### Documentation {-#readme}
+### Documentation {-#readme}
 
 * Your project should include a README - by writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).  
 
@@ -35,7 +36,7 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 * Try to make your commit messages as informative as possible
 
-#### Abstractions {-#functions}
+### Abstractions {-#functions}
 
 Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes code easier to understand, maintain and extend.
 
@@ -50,9 +51,9 @@ For R, use `roxygen2` to document your functions.
 
 [13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
-### Coding style
+## Coding style
 
-#### Defaults {#defaults}
+### Defaults {#defaults}
 
 There are often many ways of tackling a given problem.  As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow.  They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
 
@@ -86,11 +87,11 @@ There are often many ways of tackling a given problem.  As a team, it makes sens
 |                         | * Use QGIS if you need a GUI.       | 
 +-------------------------+---------------------------------------------------------------+
 
-#### Coding Style {-#style}
+### Coding Style {-#style}
 
 In addition to the above coding defaults, the following actions will help you to write understandable code.
 
-#### Naming conventions {#names}
+### Naming conventions {#names}
 
 * Don’t be cute or jokey when naming things.
 * Names convey meaning - well-named functions & variables can remove the need for a comment and make life a little easier for other readers, including your future self!
@@ -98,7 +99,7 @@ In addition to the above coding defaults, the following actions will help you to
 * Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear
 
 
-#### Clear and concise code {#ccc}
+### Clear and concise code {#ccc}
 
 * Choose clarity over cleverness - use advanced language tricks with care.
 * Code should be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) - which stands for 'Don’t Repeat Yourself'. - The [‘Rule of Three’](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.  
@@ -109,7 +110,7 @@ In addition to the above coding defaults, the following actions will help you to
 
 Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date.  Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.
 
-#### Apply a linter {#linter}
+### Apply a linter {#linter}
 Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
 
 In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
@@ -120,7 +121,7 @@ In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and aut
 [12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
 [14]:http://adv-r.had.co.nz/Style.html
 
-#### Helpful error messages {#errors}
+### Helpful error messages {#errors}
 Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.

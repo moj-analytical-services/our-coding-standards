@@ -134,21 +134,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{reviewer-notes}{%
-\chapter{Reviewer notes}\label{reviewer-notes}}
-
-This document is an early attempt at restructuring the current coding standards. At present, every part of the existing coding standards has been incorporated into this document. This is unlikely to be the case for the final product, but I didn't want to lose any essential information early on.
-
-The minimum coding standards have been incorporated into the document \protect\hyperlink{mcstable}{here}. The formatting and sizing of the embedded html file isn't ideal at present, but provides an illustration of what could be done. Do we even still need the minimum coding standards? Can we easily put all the requirements in one place rather than splitting into two?
-
-In addition, further information will be added at later stages - particularly in the form of links to external sites that will support the beginner in understanding some of the concepts.
-
-This document hasn't been spellchecked or rigorously tested yet (e.g.~that links work etc.). This will be done at a later stage when structure has been agreed.
-
-I've also added a section with the recommended \protect\hyperlink{wf}{workflow}. I wonder if this would ideally be brought up to the front of the beginning of the document to illustrate to beginners how each of the sections of the principles fits into their project work?
-
 \hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\chapter*{Introduction}\label{intro}}
+\addcontentsline{toc}{chapter}{Introduction}
 
 This document contains the Data and Analytical Service Directorate's (DASD) coding standards.
 
@@ -215,8 +203,12 @@ If you think that something is missing or not quite right you should either:\\
 1. \protect\hyperlink{versioncontrol}{Contribute directly}\\
 2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
 
+\hypertarget{part-principles}{%
+\part{Principles}\label{part-principles}}
+
 \hypertarget{principles}{%
-\chapter{Coding Principles}\label{principles}}
+\chapter*{Coding Principles}\label{principles}}
+\addcontentsline{toc}{chapter}{Coding Principles}
 
 The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
 
@@ -288,18 +280,18 @@ Code should be:
 \end{itemize}
 
 \hypertarget{understand}{%
-\section{Understandable}\label{understand}}
+\chapter{Understandable}\label{understand}}
 
 It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. {[}Amend{]}
 
 \hypertarget{structure2}{%
-\subsection{Code structure}\label{structure2}}
+\section{Code structure}\label{structure2}}
 
 There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.
 
 \hypertarget{data}{%
-\subsubsection*{Data}\label{data}}
-\addcontentsline{toc}{subsubsection}{Data}
+\subsection*{Data}\label{data}}
+\addcontentsline{toc}{subsection}{Data}
 
 \begin{itemize}
 \item
@@ -313,8 +305,8 @@ There should be clear logical separation of parameters, assumptions, data and co
 \end{itemize}
 
 \hypertarget{readme}{%
-\subsubsection*{Documentation}\label{readme}}
-\addcontentsline{toc}{subsubsection}{Documentation}
+\subsection*{Documentation}\label{readme}}
+\addcontentsline{toc}{subsection}{Documentation}
 
 \begin{itemize}
 \item
@@ -330,8 +322,8 @@ There should be clear logical separation of parameters, assumptions, data and co
 \end{itemize}
 
 \hypertarget{functions}{%
-\subsubsection*{Abstractions}\label{functions}}
-\addcontentsline{toc}{subsubsection}{Abstractions}
+\subsection*{Abstractions}\label{functions}}
+\addcontentsline{toc}{subsection}{Abstractions}
 
 Where appropriate, abstractions should be used if possible, e.g.~functions, packages, modules etc. This makes code easier to understand, maintain and extend.
 
@@ -345,10 +337,10 @@ For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and par
 For R, use \texttt{roxygen2} to document your functions.
 
 \hypertarget{coding-style}{%
-\subsection{Coding style}\label{coding-style}}
+\section{Coding style}\label{coding-style}}
 
 \hypertarget{defaults}{%
-\subsubsection{Defaults}\label{defaults}}
+\subsection{Defaults}\label{defaults}}
 
 There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
 
@@ -422,13 +414,13 @@ GIS\strut
 \end{longtable}
 
 \hypertarget{style}{%
-\subsubsection*{Coding Style}\label{style}}
-\addcontentsline{toc}{subsubsection}{Coding Style}
+\subsection*{Coding Style}\label{style}}
+\addcontentsline{toc}{subsection}{Coding Style}
 
 In addition to the above coding defaults, the following actions will help you to write understandable code.
 
 \hypertarget{names}{%
-\subsubsection{Naming conventions}\label{names}}
+\subsection{Naming conventions}\label{names}}
 
 \begin{itemize}
 \tightlist
@@ -443,7 +435,7 @@ In addition to the above coding defaults, the following actions will help you to
 \end{itemize}
 
 \hypertarget{ccc}{%
-\subsubsection{Clear and concise code}\label{ccc}}
+\subsection{Clear and concise code}\label{ccc}}
 
 \begin{itemize}
 \tightlist
@@ -464,7 +456,7 @@ Good code is its own best documentation. As you're about to add a comment, ask y
 Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function's documentation than in a comment.
 
 \hypertarget{linter}{%
-\subsubsection{Apply a linter}\label{linter}}
+\subsection{Apply a linter}\label{linter}}
 
 Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
 
@@ -479,19 +471,19 @@ In RStudio, the keyboard shortcut `ctrl+shift+A' will reformat your code and aut
 \end{itemize}
 
 \hypertarget{errors}{%
-\subsubsection{Helpful error messages}\label{errors}}
+\subsection{Helpful error messages}\label{errors}}
 
 Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don't let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.
 
 \hypertarget{accurate}{%
-\section{Accurate}\label{accurate}}
+\chapter{Accurate}\label{accurate}}
 
 Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.
 
 \hypertarget{unittest}{%
-\subsection{Unit testing}\label{unittest}}
+\section{Unit testing}\label{unittest}}
 
 Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the \href{https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06\%20Testing\%20as\%20part\%20of\%20an\%20Analytical\%20Project}{Coffee and Coding `Testing' session}. {[}AMEND{]} - do we need to expand beyond unit testing?
 
@@ -506,27 +498,27 @@ Unit tests should test, as a minimum, any functions you create. Unit tests exist
 There are a number of tools to enable unit testing.
 
 \hypertarget{testing-in-r}{%
-\subsubsection*{Testing in R}\label{testing-in-r}}
-\addcontentsline{toc}{subsubsection}{Testing in R}
+\subsection*{Testing in R}\label{testing-in-r}}
+\addcontentsline{toc}{subsection}{Testing in R}
 
 In R, consider using the \href{https://github.com/r-lib/testthat}{testthat} package. For an introduction to using testthat, try reading this \href{https://katherinemwood.github.io/post/testthat/}{blog post} from Inattentional Coffee or this \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{Towards Data Science post}. For an example unit tests within a project, see \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here}.
 
 \hypertarget{testing-in-python}{%
-\subsubsection*{Testing in Python}\label{testing-in-python}}
-\addcontentsline{toc}{subsubsection}{Testing in Python}
+\subsection*{Testing in Python}\label{testing-in-python}}
+\addcontentsline{toc}{subsection}{Testing in Python}
 
 There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
 
 \hypertarget{testing-in-javascript}{%
-\subsubsection*{Testing in Javascript}\label{testing-in-javascript}}
-\addcontentsline{toc}{subsubsection}{Testing in Javascript}
+\subsection*{Testing in Javascript}\label{testing-in-javascript}}
+\addcontentsline{toc}{subsection}{Testing in Javascript}
 
 See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
 
 For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
 
 \hypertarget{review}{%
-\subsection{Project Review}\label{review}}
+\section{Project Review}\label{review}}
 
 Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.
 
@@ -535,8 +527,8 @@ Code reviews should be initiated through the creation of a pull request {[}LINK{
 Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
 
 \hypertarget{performing-good-peer-review}{%
-\subsubsection*{Performing good peer review}\label{performing-good-peer-review}}
-\addcontentsline{toc}{subsubsection}{Performing good peer review}
+\subsection*{Performing good peer review}\label{performing-good-peer-review}}
+\addcontentsline{toc}{subsection}{Performing good peer review}
 
 When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start\ldots{}
 
@@ -558,14 +550,14 @@ If you're reviewing the code of a more experienced coder, this is \textbf{a chan
 If you're on the receiving end of feedback, from anyone at all, this is\ldots{} \textbf{a chance to learn!}
 
 \hypertarget{collaborate}{%
-\section{Collaborative}\label{collaborate}}
+\chapter{Collaborative}\label{collaborate}}
 
 It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
 
 Part of this is \protect\hyperlink{projdep}{managing dependencies} so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
 
 \hypertarget{versioncontrol}{%
-\subsection{Version Control}\label{versioncontrol}}
+\section{Version Control}\label{versioncontrol}}
 
 Code is version controlled using Git and checked into Github.
 You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
@@ -578,8 +570,8 @@ Merge code into master using pull requests in github. A protected master branch 
 We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
 
 \hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
-\subsubsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
-\addcontentsline{toc}{subsubsection}{Github-Flow is a working practice that helps to:}
+\subsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
+\addcontentsline{toc}{subsection}{Github-Flow is a working practice that helps to:}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -595,8 +587,8 @@ We follow ``github flow'', to keep branches small and short-lived, and ensure kn
 We have tweaked it a little from what is \href{https://guides.github.com/introduction/flow/}{described on GitHub}
 
 \hypertarget{there-are-6-steps-to-our-process}{%
-\subsubsection*{There are 6 steps to our process:}\label{there-are-6-steps-to-our-process}}
-\addcontentsline{toc}{subsubsection}{There are 6 steps to our process:}
+\subsection*{There are 6 steps to our process:}\label{there-are-6-steps-to-our-process}}
+\addcontentsline{toc}{subsection}{There are 6 steps to our process:}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -607,7 +599,7 @@ We have tweaked it a little from what is \href{https://guides.github.com/introdu
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# For example, to clone this repo.}
+\ExtensionTok{For}\NormalTok{ example, to clone this repo.}
 \FunctionTok{git}\NormalTok{ clone git@github.com:moj-analytical-services/our-coding-standards.git}
 \end{Highlighting}
 \end{Shaded}
@@ -624,7 +616,7 @@ We have tweaked it a little from what is \href{https://guides.github.com/introdu
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# To create a new branch and switch onto it.}
+\ExtensionTok{To}\NormalTok{ create a new branch and switch onto it.}
 \FunctionTok{git}\NormalTok{ checkout -b my-new-sensibly-named-branch}
 \end{Highlighting}
 \end{Shaded}
@@ -639,16 +631,16 @@ We have tweaked it a little from what is \href{https://guides.github.com/introdu
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.}
-\FunctionTok{git}\NormalTok{ add file1.txt}
-\FunctionTok{git}\NormalTok{ add file2.txt}
-\CommentTok{# etc}
+\ExtensionTok{Make}\NormalTok{ some changes then stage each file you}\StringTok{'ve changed - e.g. file1.txt and file2.txt.}
+\StringTok{git add file1.txt}
+\StringTok{git add file2.txt}
+\StringTok{etc}
 
-\CommentTok{# Commit your changes using a descriptive commit message.}
-\FunctionTok{git}\NormalTok{ commit}
+\StringTok{Commit your changes using a descriptive commit message.}
+\StringTok{git commit}
 
-\CommentTok{# This will take you into your default text editor}
-\CommentTok{# Write a descriptive commit message}
+\StringTok{This will take you into your default text editor}
+\StringTok{Write a descriptive commit message}
 \end{Highlighting}
 \end{Shaded}
 
@@ -660,7 +652,7 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{git}\NormalTok{ config --global core.editor }\OperatorTok{<}\NormalTok{my-favourite-text-editor}\OperatorTok{>}
- \CommentTok{# Then try again}
+ \ExtensionTok{Then}\NormalTok{ try again}
 \FunctionTok{git}\NormalTok{ commit}
 \end{Highlighting}
 \end{Shaded}
@@ -675,9 +667,9 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# push your branch to the remote repo}
+\ExtensionTok{push}\NormalTok{ your branch to the remote repo}
 \FunctionTok{git}\NormalTok{ push origin my-new-sensibly-named-branch}
-\CommentTok{# then go to github, open a PR and invite at least one reviewer}
+\KeywordTok{then} \ExtensionTok{go}\NormalTok{ to github, open a PR and invite at least one reviewer}
 \end{Highlighting}
 \end{Shaded}
 
@@ -701,8 +693,8 @@ For some further reading we strongly suggest reading this \href{https://gist.git
 If you want to test this out, clone this repo and make a contribution :)
 
 \hypertarget{gitlink}{%
-\subsubsection*{Useful links for using github}\label{gitlink}}
-\addcontentsline{toc}{subsubsection}{Useful links for using github}
+\subsection*{Useful links for using github}\label{gitlink}}
+\addcontentsline{toc}{subsection}{Useful links for using github}
 
 \begin{itemize}
 \tightlist
@@ -714,8 +706,7 @@ If you want to test this out, clone this repo and make a contribution :)
   List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
 \end{itemize}
 
-\hypertarget{knowledge}{%
-\subsection{Share the knowledge}\label{knowledge}}
+\#\#Share the knowledge \{\#knowledge\}
 
 We also collaborate through sharing knowledge. If you produce something reusable, package it \& share it with others.
 
@@ -726,35 +717,35 @@ There are a number of channels through which coding knowledge is shared in DASD:
 * \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}
 
 \hypertarget{reproduce}{%
-\section{Reproducible}\label{reproduce}}
+\chapter{Reproducible}\label{reproduce}}
 
 We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).
 
 There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
 \hypertarget{projdep}{%
-\subsection{Manage project dependencies}\label{projdep}}
+\section{Manage project dependencies}\label{projdep}}
 
 Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won't work on others' machines or may not work on your machine at a later date (e.g.~as external packages are updated over time). To ensure that this doesn't become an issue for your project, you should use some kind of dependency management tool.
 
 \hypertarget{dependency-management-tools}{%
-\subsubsection*{Dependency management tools}\label{dependency-management-tools}}
-\addcontentsline{toc}{subsubsection}{Dependency management tools}
+\subsection*{Dependency management tools}\label{dependency-management-tools}}
+\addcontentsline{toc}{subsection}{Dependency management tools}
 
 For Python, use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}.
 For R, you can use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}, \href{https://rstudio.github.io/packrat/}{Packrat} or \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}.
 For javascript, include third party library dependencies in the project as \texttt{.js} files
 
 \hypertarget{githash}{%
-\subsubsection*{Include a git hash}\label{githash}}
-\addcontentsline{toc}{subsubsection}{Include a git hash}
+\subsection*{Include a git hash}\label{githash}}
+\addcontentsline{toc}{subsection}{Include a git hash}
 
 If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.
 
 \hypertarget{r}{%
-\paragraph{R}\label{r}}
-\addcontentsline{toc}{paragraph}{R}
+\subsubsection*{R}\label{r}}
+\addcontentsline{toc}{subsubsection}{R}
 
 You can access the git hash using either of the following code:
 snippets.
@@ -776,8 +767,8 @@ or
 \end{Shaded}
 
 \hypertarget{python}{%
-\paragraph{Python}\label{python}}
-\addcontentsline{toc}{paragraph}{Python}
+\subsubsection*{Python}\label{python}}
+\addcontentsline{toc}{subsubsection}{Python}
 
 You can access the git hash using the following code:
 
@@ -792,7 +783,7 @@ You can access the git hash using the following code:
 \end{Shaded}
 
 \hypertarget{format}{%
-\subsection{Format}\label{format}}
+\section{Format}\label{format}}
 
 If the output is a report, the write up should be fully reproducible, or as close as possible.
 
@@ -805,7 +796,7 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \end{itemize}
 
 \hypertarget{change}{%
-\subsection{Optimize for change}\label{change}}
+\section{Optimize for change}\label{change}}
 
 \begin{itemize}
 \tightlist
@@ -816,6 +807,9 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \item
   Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
 \end{itemize}
+
+\hypertarget{part-resources}{%
+\part{Resources}\label{part-resources}}
 
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
@@ -829,6 +823,19 @@ Set up \protect\hyperlink{projdep}{dependency management}\\
 Build in \protect\hyperlink{unittest}{unit testing}\\
 Commit \protect\hyperlink{versioncontrol}{changes}\\
 \protect\hyperlink{review}{Pull request/QA}
+
+\hypertarget{reviewer-notes}{%
+\chapter{Reviewer notes}\label{reviewer-notes}}
+
+This document is an early attempt at restructuring the current coding standards. At present, every part of the existing coding standards has been incorporated into this document. This is unlikely to be the case for the final product, but I didn't want to lose any essential information early on.
+
+The minimum coding standards have been incorporated into the document \protect\hyperlink{mcstable}{here}. The formatting and sizing of the embedded html file isn't ideal at present, but provides an illustration of what could be done. Do we even still need the minimum coding standards? Can we easily put all the requirements in one place rather than splitting into two?
+
+In addition, further information will be added at later stages - particularly in the form of links to external sites that will support the beginner in understanding some of the concepts.
+
+This document hasn't been spellchecked or rigorously tested yet (e.g.~that links work etc.). This will be done at a later stage when structure has been agreed.
+
+I've also added a section with the recommended \protect\hyperlink{wf}{workflow}. I wonder if this would ideally be brought up to the front of the beginning of the document to illustrate to beginners how each of the sections of the principles fits into their project work?
 
 
 \end{document}

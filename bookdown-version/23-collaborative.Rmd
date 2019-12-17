@@ -3,13 +3,13 @@ title: ''
 output: html_document
 ---
 
-## Collaborative {#collaborate}
+# Collaborative {#collaborate}
 
 It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
 
 Part of this is [managing dependencies](#projdep) so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
 
-### Version Control {#versioncontrol}
+## Version Control {#versioncontrol}
 
 Code is version controlled using Git and checked into Github.
 You can find a guide to using Git with R [here](http://happygitwithr.com/)
@@ -21,17 +21,17 @@ Merge code into master using pull requests in github. A protected master branch 
 
 We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
 
-#### Github-Flow is a working practice that helps to: {-}
+### Github-Flow is a working practice that helps to: {-}
 1. Maintain overall code quality  
 2. Facilitate collaboration on a single project  
 3. Protect the codebase  
 
 We have tweaked it a little from what is [described on GitHub][4] 
 
-#### There are 6 steps to our process: {-}
+### There are 6 steps to our process: {-}
 1. Create or clone a repo.
 ```sh
-# For example, to clone this repo.
+For example, to clone this repo.
 git clone git@github.com:moj-analytical-services/our-coding-standards.git
 ```
 
@@ -40,36 +40,36 @@ To create an issue, use [the Github website](https://guides.github.com/features/
 
 3. Create a new branch for the work you're about to do, with a name corresponding to the issue
 ```sh
-# To create a new branch and switch onto it.
+To create a new branch and switch onto it.
 git checkout -b my-new-sensibly-named-branch
 ```
 
 4. Make some commits on the new branch.
 ```sh
-# Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.
+Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.
 git add file1.txt
 git add file2.txt
-# etc
+etc
 
-# Commit your changes using a descriptive commit message.
+Commit your changes using a descriptive commit message.
 git commit
 
-# This will take you into your default text editor
-# Write a descriptive commit message
+This will take you into your default text editor
+Write a descriptive commit message
 ```
 >**Note:**
 >If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: `:q!`. Then configure your default text editor for Git
 ```sh
 git config --global core.editor <my-favourite-text-editor>
- # Then try again
+ Then try again
 git commit
 ```
 
 5. When you're ready, submit a pull request and wait for peer-review.
 ```sh
-# push your branch to the remote repo
+push your branch to the remote repo
 git push origin my-new-sensibly-named-branch
-# then go to github, open a PR and invite at least one reviewer
+then go to github, open a PR and invite at least one reviewer
 ```
 Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see [here](https://help.github.com/articles/autolinked-references-and-urls/) for further guidance.  This makes it easy in future to see what changes were made to the code in response to the issue.
 
@@ -91,13 +91,13 @@ If you want to test this out, clone this repo and make a contribution :)
 [7]:https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github
 [8]:https://guides.github.com/introduction/git-handbook/
 
-#### Useful links for using github {-#gitlink}
+### Useful links for using github {-#gitlink}
 
 * [A guide to getting started with github][6]  
 * Github guide on [analytical platform guidance][7]  
 * List of basic [git commands][8] 
 
-### Share the knowledge {#knowledge}
+##Share the knowledge {#knowledge}
 
 We also collaborate through sharing knowledge. If you produce something reusable, package it & share it with others.
 
