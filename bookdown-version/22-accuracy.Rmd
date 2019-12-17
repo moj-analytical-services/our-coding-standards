@@ -3,11 +3,11 @@ title: ''
 output: html_document
 ---
 
-## Accurate {#accurate}
+# Accurate {#accurate}
 
 Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.
 
-### Unit testing {#unittest}
+## Unit testing {#unittest}
 
 Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][222]. [AMEND] - do we need to expand beyond unit testing?
 
@@ -21,7 +21,7 @@ Unit tests should test, as a minimum, any functions you create. Unit tests exist
 
 There are a number of tools to enable unit testing.
 
-#### Testing in R {-}
+### Testing in R {-}
 
 In R, consider using the [testthat][221] package. For an introduction to using testthat, try reading this [blog post][9] from Inattentional Coffee or this [Towards Data Science post][10]. For an example unit tests within a project, see [here][11].
 
@@ -31,18 +31,18 @@ In R, consider using the [testthat][221] package. For an introduction to using t
 [221]: https://github.com/r-lib/testthat
 [222]: https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project
 
-#### Testing in Python {-}
+### Testing in Python {-}
 
 There are various approaches to unit testing in Python.  Consider using [unittest](https://docs.python.org/3/library/unittest.html) in the Python core library.  Another option is [pytest](https://docs.pytest.org/en/latest/).  See also [here](http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/) 
 
-#### Testing in Javascript {-}
+### Testing in Javascript {-}
 
 See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript
 
 For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)
 
 
-### Project Review {#review}
+## Project Review {#review}
 
 Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.
 
@@ -50,7 +50,7 @@ Code reviews should be initiated through the creation of a pull request [LINK]. 
 
 Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once. 
 
-#### Performing good peer review {-}
+### Performing good peer review {-}
 
 When you review someone's pull request you become the gatekeeper to the master branch - this is a _very_ important job!  If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start...
 

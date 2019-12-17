@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>DASD Coding Standards</title>
+  <title>Chapter 4 Reproducible | DASD Coding Standards</title>
   <meta name="description" content="These are the DASD coding standards." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="DASD Coding Standards" />
+  <meta property="og:title" content="Chapter 4 Reproducible | DASD Coding Standards" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="DASD Coding Standards" />
+  <meta name="twitter:title" content="Chapter 4 Reproducible | DASD Coding Standards" />
   
   <meta name="twitter:description" content="These are the DASD coding standards." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="principles.html"/>
+<link rel="prev" href="collaborate.html"/>
+<link rel="next" href="wf.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -202,65 +202,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">DASD Coding Standards</h1>
-<p class="author"><em>Data Science Hub</em></p>
+<div id="reproduce" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Reproducible</h1>
+<p>We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).</p>
+<p>There are a number of steps that we can take to ensure that our code is as reproducible as possible.</p>
+<div id="projdep" class="section level2">
+<h2><span class="header-section-number">4.1</span> Manage project dependencies</h2>
+<p>Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won’t work on others’ machines or may not work on your machine at a later date (e.g. as external packages are updated over time). To ensure that this doesn’t become an issue for your project, you should use some kind of dependency management tool.</p>
+<div id="dependency-management-tools" class="section level3 unnumbered">
+<h3>Dependency management tools</h3>
+<p>For Python, use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>.
+For R, you can use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>, <a href="https://rstudio.github.io/packrat/">Packrat</a> or <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>.
+For javascript, include third party library dependencies in the project as <code>.js</code> files</p>
 </div>
-<div id="intro" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<p>This document contains the Data and Analytical Service Directorate’s (DASD) coding standards.</p>
-<div id="motivation" class="section level2">
-<h2><span class="header-section-number">0.1</span> Motivation</h2>
-<p>The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].</p>
-<p>The purpose of this document is to raise awareness of/hgihlight key coding principles and to briefly explain why we should code in such a way. These coding standards are by no means a list of rules, but seek to provide guidance on how we can achieve ‘best practice’ in our coding. The more of these you follow, the easier life will be for you and your colleagues. These are open for discussion….</p>
-<p>Coding practices should aim to create code that is:</p>
+<div id="githash" class="section level3 unnumbered">
+<h3>Include a git hash</h3>
+<p>If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
+more reproducible, there is no ambiguity about the specific code that was used to generate it.</p>
+<div id="r" class="section level4 unnumbered">
+<h4>R</h4>
+<p>You can access the git hash using either of the following code:
+snippets.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="reproduce.html#cb6-1"></a><span class="kw">library</span>(git2r)</span>
+<span id="cb6-2"><a href="reproduce.html#cb6-2"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
+<span id="cb6-3"><a href="reproduce.html#cb6-3"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="reproduce.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+</div>
+<div id="python" class="section level4 unnumbered">
+<h4>Python</h4>
+<p>You can access the git hash using the following code:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="reproduce.html#cb8-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb8-2"><a href="reproduce.html#cb8-2"></a><span class="kw">def</span> get_git_revision_hash():</span>
+<span id="cb8-3"><a href="reproduce.html#cb8-3"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
+<span id="cb8-4"><a href="reproduce.html#cb8-4"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
+<span id="cb8-5"><a href="reproduce.html#cb8-5"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="format" class="section level2">
+<h2><span class="header-section-number">4.2</span> Format</h2>
+<p>If the output is a report, the write up should be fully reproducible, or as close as possible.</p>
 <ul>
-<li>Reproducible
-<ul>
-<li>Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.<br />
+<li>Avoid workflows that require manually copying and pasting results between documents.<br />
 </li>
-</ul></li>
-<li>Collaborative
-<ul>
-<li>Projects should be structured in such a way that we can collaborate effectively across multiple projects</li>
-<li>Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.<br />
-</li>
-</ul></li>
-<li>Accurate
-<ul>
-<li>Code should be error free and appropriately quality assured.<br />
-</li>
-</ul></li>
-<li>Understandable
-<ul>
-<li>Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.</li>
-</ul></li>
+<li>For Python, consider using Jupyter notebooks. For R, use <code>rmarkdown</code>.</li>
 </ul>
 </div>
-<div id="structure" class="section level2">
-<h2><span class="header-section-number">0.2</span> Guidance structure</h2>
-<p>The first part of this document contains the four coding principles, with additional details on the practical actions people should take to achieve these.</p>
-<p>There is the recommended workflow for coding projects - this can be used to aid understanding of the steps that should be taken in a project and how the coding principles fit into the project lifecycle.</p>
-<p>The final section includes a checklist of actions to be taken to achieve the principles. This is a condensed list of the material covered in the coding principles section.</p>
-</div>
-<div id="contributing" class="section level2">
-<h2><span class="header-section-number">0.3</span> Contributing</h2>
-<p>If you think that something is missing or not quite right you should either:<br />
-1. <a href="collaborate.html#versioncontrol">Contribute directly</a><br />
-2. <a href="https://github.com/moj-analytical-services/our-coding-standards/issues">Raise an issue</a></p>
+<div id="change" class="section level2">
+<h2><span class="header-section-number">4.3</span> Optimize for change</h2>
+<ul>
+<li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
+<li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
+<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
+</ul>
 
 </div>
 </div>
 
 
 
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="principles.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="collaborate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wf.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

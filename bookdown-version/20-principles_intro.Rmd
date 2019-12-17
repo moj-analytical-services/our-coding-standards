@@ -3,7 +3,9 @@ title: ''
 output: html_document
 ---
 
-# Coding Principles {#principles}
+# (PART) Principles {-}
+
+# Coding Principles {-#principles}
 
 The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].
 
