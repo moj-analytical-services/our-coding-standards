@@ -23,7 +23,7 @@
 }{}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={DASD Coding Standards},
+            pdftitle={DASD Coding Principles},
             pdfauthor={Data Science Hub},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -116,7 +116,7 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{DASD Coding Standards}
+  \title{DASD Coding Principles}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
     \author{Data Science Hub}
@@ -138,14 +138,40 @@
 \chapter*{Introduction}\label{intro}}
 \addcontentsline{toc}{chapter}{Introduction}
 
-This document contains the Data and Analytical Service Directorate's (DASD) coding standards.
+This document contains the Data and Analytical Service Directorate's (DASD) coding principles. These have been developed to help DASD adopt a standard approach for coding projects, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively.
 
-\hypertarget{motivation}{%
-\section{Motivation}\label{motivation}}
+These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve `best practice' in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encourage to contribute to the discussion.
 
-The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
+\hypertarget{structure}{%
+\section*{Guidance structure}\label{structure}}
+\addcontentsline{toc}{section}{Guidance structure}
 
-The purpose of this document is to raise awareness of/hgihlight key coding principles and to briefly explain why we should code in such a way. These coding standards are by no means a list of rules, but seek to provide guidance on how we can achieve `best practice' in our coding. The more of these you follow, the easier life will be for you and your colleagues. These are open for discussion\ldots.
+The first part of this document contains the four coding principles, with details on the practical actions that can be taken to ensure projects follow the principles.
+
+The section part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
+
+\hypertarget{contributing}{%
+\section*{Contributing}\label{contributing}}
+\addcontentsline{toc}{section}{Contributing}
+
+If you think that something is missing or not quite right you should either:\\
+1. \protect\hyperlink{versioncontrol}{Contribute directly}\\
+2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
+
+\hypertarget{part-principles}{%
+\part{Principles}\label{part-principles}}
+
+\hypertarget{principles}{%
+\chapter*{Coding Principles}\label{principles}}
+\addcontentsline{toc}{chapter}{Coding Principles}
+
+The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
+
+Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.
+
+They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 Coding practices should aim to create code that is:
 
@@ -187,34 +213,7 @@ Coding practices should aim to create code that is:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{structure}{%
-\section{Guidance structure}\label{structure}}
-
-The first part of this document contains the four coding principles, with additional details on the practical actions people should take to achieve these.
-
-There is the recommended workflow for coding projects - this can be used to aid understanding of the steps that should be taken in a project and how the coding principles fit into the project lifecycle.
-
-The final section includes a checklist of actions to be taken to achieve the principles. This is a condensed list of the material covered in the coding principles section.
-
-\hypertarget{contributing}{%
-\section{Contributing}\label{contributing}}
-
-If you think that something is missing or not quite right you should either:\\
-1. \protect\hyperlink{versioncontrol}{Contribute directly}\\
-2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
-
-\hypertarget{part-principles}{%
-\part{Principles}\label{part-principles}}
-
-\hypertarget{principles}{%
-\chapter*{Coding Principles}\label{principles}}
-\addcontentsline{toc}{chapter}{Coding Principles}
-
-The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
-
-Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.
-
-They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 Code should be:
 {[}\textbf{Update after rewriting individual sections}{]}
@@ -706,7 +705,8 @@ If you want to test this out, clone this repo and make a contribution :)
   List of basic \href{https://guides.github.com/introduction/git-handbook/}{git commands}
 \end{itemize}
 
-\#\#Share the knowledge \{\#knowledge\}
+\hypertarget{knowledge}{%
+\section{Share the knowledge}\label{knowledge}}
 
 We also collaborate through sharing knowledge. If you produce something reusable, package it \& share it with others.
 
@@ -814,28 +814,120 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
 
-The recommended workflow for coding projects in DASD is:
+The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project lifecycle.
 
-Create/clone \protect\hyperlink{versioncontrol}{github repo}\\
-Create \protect\hyperlink{versioncontrol}{issue}\\
-Create \protect\hyperlink{versioncontrol}{branch}\\
-Set up \protect\hyperlink{projdep}{dependency management}\\
-Build in \protect\hyperlink{unittest}{unit testing}\\
-Commit \protect\hyperlink{versioncontrol}{changes}\\
-\protect\hyperlink{review}{Pull request/QA}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Create/clone \protect\hyperlink{versioncontrol}{github repo}}\\
+\end{enumerate}
 
-\hypertarget{reviewer-notes}{%
-\chapter{Reviewer notes}\label{reviewer-notes}}
+\begin{itemize}
+\tightlist
+\item
+  By storing your code in a repo you're making it easier for others to collaborate on your project, to use pieces of your code elsewhere and ensures that your project will be accessible in the future.
+\end{itemize}
 
-This document is an early attempt at restructuring the current coding standards. At present, every part of the existing coding standards has been incorporated into this document. This is unlikely to be the case for the final product, but I didn't want to lose any essential information early on.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Create \protect\hyperlink{versioncontrol}{issue}}\\
+\end{enumerate}
 
-The minimum coding standards have been incorporated into the document \protect\hyperlink{mcstable}{here}. The formatting and sizing of the embedded html file isn't ideal at present, but provides an illustration of what could be done. Do we even still need the minimum coding standards? Can we easily put all the requirements in one place rather than splitting into two?
+\begin{itemize}
+\tightlist
+\item
+  Using issues to communicate what you're working on helps to coordinate tasks between team members and creates a record of completed work, useful for quality assurance purposes.
+\end{itemize}
 
-In addition, further information will be added at later stages - particularly in the form of links to external sites that will support the beginner in understanding some of the concepts.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Create \protect\hyperlink{versioncontrol}{branch}}\\
+\end{enumerate}
 
-This document hasn't been spellchecked or rigorously tested yet (e.g.~that links work etc.). This will be done at a later stage when structure has been agreed.
+\begin{itemize}
+\tightlist
+\item
+  Creating a branch means that several people can work on a project simultaneously and protects the main codebase from any unwanted changes.\\
+\end{itemize}
 
-I've also added a section with the recommended \protect\hyperlink{wf}{workflow}. I wonder if this would ideally be brought up to the front of the beginning of the document to illustrate to beginners how each of the sections of the principles fits into their project work?
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Set up \protect\hyperlink{projdep}{dependency management}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Managing your project dependencies means that your project is more likely to be rerunnable in the future and on others' machine.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \textbf{Build in \protect\hyperlink{unittest}{unit testing}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Unit tests provide confidence that your code is correct and can be used to pinpoint issues where they occur, making fixes quicker and easier.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  \textbf{Commit \protect\hyperlink{versioncontrol}{changes}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Commiting your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \textbf{\protect\hyperlink{review}{Pull request and code review}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Ensuring that your code is reviewed provides confidence in the accuracy of your code and the opportunity to share knowledge with colleagues.
+\end{itemize}
+
+\hypertarget{checklist}{%
+\chapter{Project Checklist}\label{checklist}}
+
+\textbf{POPULATE} project checklist
+
+\hypertarget{ksresources}{%
+\chapter{Knowledge Share Resources}\label{ksresources}}
+
+\textbf{POPULATE} fully
+
+There are a number of channels through which coding knowledge is shared in DASD:\\
+* Slack channels (key channels are: \href{https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS}{\#data\_science}, \href{https://app.slack.com/client/T1PU1AP6D/C1PUCG719}{\#r}, \href{https://app.slack.com/client/T1PU1AP6D/C1Q09V86S}{\#python})\\
+* Coffee and Coding (resources \href{https://github.com/moj-analytical-services/Coffee-and-Coding}{here})\\
+* \href{https://trello.com/b/zAwm6sCc/dasd-training}{DASD training Trello}\\
+* \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}
 
 
 \end{document}

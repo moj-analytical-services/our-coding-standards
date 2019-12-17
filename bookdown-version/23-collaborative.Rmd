@@ -97,7 +97,7 @@ If you want to test this out, clone this repo and make a contribution :)
 * Github guide on [analytical platform guidance][7]  
 * List of basic [git commands][8] 
 
-##Share the knowledge {#knowledge}
+## Share the knowledge {#knowledge}
 
 We also collaborate through sharing knowledge. If you produce something reusable, package it & share it with others.
 
