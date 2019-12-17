@@ -1551,11 +1551,11 @@ div.tocify {
 <div id="intro" class="section level1 unnumbered">
 <h1>Introduction</h1>
 <p>This document contains the Data and Analytical Service Directorate’s (DASD) coding principles. These have been developed to help DASD adopt a standard approach for coding projects, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively.</p>
-<p>These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve ‘best practice’ in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encourage to contribute to the discussion.</p>
+<p>These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve ‘best practice’ in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encouraged to contribute to the discussion.</p>
 <div id="structure" class="section level2 unnumbered">
-<h2>Guidance structure</h2>
-<p>The first part of this document contains the four coding principles, with details on the practical actions that can be taken to ensure projects follow the principles.</p>
-<p>The section part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an <a href="#wf">example workflow</a>, a <a href="#checklist">project checklist</a> and a <a href="#ksresources">knowledge share resource list</a>.</p>
+<h2>Document structure</h2>
+<p>The first part of this document contains the four <a href="#principles">coding principles</a>, with details on the practical actions that can be taken to help us follow the principles.</p>
+<p>The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an <a href="#wf">example workflow</a>, a <a href="#checklist">project checklist</a> and a <a href="#ksresources">knowledge share resource list</a>.</p>
 </div>
 <div id="contributing" class="section level2 unnumbered">
 <h2>Contributing</h2>
@@ -1570,83 +1570,42 @@ div.tocify {
 </div>
 <div id="principles" class="section level1 unnumbered">
 <h1>Coding Principles</h1>
-<p>The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].</p>
-<p>Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.</p>
-<p>They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.</p>
-<hr />
-<p>Coding practices should aim to create code that is:</p>
-<ul>
-<li>Reproducible
-<ul>
-<li>Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.<br />
-</li>
-</ul></li>
-<li>Collaborative
-<ul>
-<li>Projects should be structured in such a way that we can collaborate effectively across multiple projects</li>
-<li>Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.<br />
-</li>
-</ul></li>
-<li>Accurate
-<ul>
-<li>Code should be error free and appropriately quality assured.<br />
-</li>
-</ul></li>
-<li>Understandable
-<ul>
-<li>Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.</li>
-</ul></li>
-</ul>
-<hr />
-<p>Code should be: [<strong>Update after rewriting individual sections</strong>]</p>
+<p>We want to aim for code that is:</p>
 <p><strong>1. <a href="#understand">Understandable</a></strong></p>
 <ul>
-<li>Write a <a href="#readme">README</a> for your project<br />
+<li>Projects should be <a href="#structure2">structured</a> with clear logical separation of parameters, assumptions, data and code, with appropriate documentation.<br />
 </li>
-<li>Use <a href="#defaults">sensible defaults</a> unless you have a great reason not to</li>
-<li>Write <a href="#functions">functions</a> where needed<br />
-</li>
-<li><a href="#style">Stylistic</a>:
-<ul>
-<li>Apply a <a href="#linter">linter</a></li>
-<li>Ensure <a href="#names">variable names</a> are meaningful</li>
-<li>Code should be <a href="#ccc">correct, clear and concise</a></li>
-<li><a href="#errors">Handle errors</a><br />
-</li>
-<li>Other team members <a href="#users">are users too</a> - treat them with respect</li>
-</ul></li>
+<li>As far as possible, code should follow the <a href="#style">style guidance</a> outlined.</li>
 </ul>
 <p><strong>2. <a href="#accurate">Accurate</a></strong></p>
 <ul>
-<li>Ensure code is <a href="#review">reviewed</a></li>
-<li>Complete <a href="#unittest">unit testing</a></li>
+<li>Projects should include <a href="#unittest">unit testing</a>.</li>
+<li>All code should be <a href="#review">reviewed</a>.</li>
 </ul>
 <p><strong>3. <a href="#collaborate">Collaborative</a></strong></p>
 <ul>
-<li>Use the <a href="#versioncontrol">github workflow</a> across all projects<br />
-</li>
-<li><a href="#knowledge">Share</a> the knowledge</li>
+<li>Projects should follow the <a href="#versioncontrol">github workflow</a>.</li>
+<li>Knowledge should be <a href="#knowledge">shared</a>.</li>
 </ul>
 <p><strong>4. <a href="#reproduce">Reproducible</a></strong></p>
 <ul>
-<li>Manage <a href="#projdep">project dependencies</a></li>
-<li>Optimise for <a href="#change">change</a><br />
-</li>
-<li>Analyses should be <a href="#githash">simple and easy to reproduce</a> on another machine.</li>
+<li><a href="#projdep">Project dependencies</a> should be managed.</li>
+<li>The <a href="#format">format</a> of the output should be chosen with reproducibility in mind.</li>
+<li>Projects should be <a href="#change">optimized for change</a>.</li>
 </ul>
 <!--chapter:end:20-principles_intro.Rmd-->
 </div>
 <div id="understand" class="section level1">
 <h1>Understandable</h1>
-<p>It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. [Amend]</p>
+<p>It is crucial that we write code in a way that can be understood easily by others (and our future selves!) and passed on to other staff with minimal additional instruction.</p>
 <div id="structure2" class="section level2">
 <h2>Code structure</h2>
 <p>There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.</p>
 <div id="data" class="section level3 unnumbered">
 <h3>Data</h3>
 <ul>
-<li><p>MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].</p></li>
-<li><p>Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a ‘data’ folder within the project folder.[Link to github with example project structure]</p></li>
+<li><p>MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [<strong>POPULATE</strong> with link to ap guidance].</p></li>
+<li><p>Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a ‘data’ folder within the project folder.[<strong>POPULATE</strong> with link to github with example project structure]</p></li>
 <li><p>Prefer text format (e.g. csv) to Excel<br />
 </p></li>
 <li><p>It should be easy for others to change parameters and data without needed to understand the full codebase.</p></li>
@@ -1656,25 +1615,28 @@ div.tocify {
 <h3>Documentation</h3>
 <ul>
 <li><p>Your project should include a README - by writing a README for your project you’re helping others (and your future self) to be able to understand and run your project. Find our template README <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md">here</a>.</p></li>
-<li><p>You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.</p></li>
-<li><p>Any functions you create should have appropriate documentation</p></li>
-<li><p>Your code should be appropriately commented</p></li>
-<li><p>Try to make your commit messages as informative as possible</p></li>
+<li><p>You should add a description to your Github repository and tag it with appropriate tags This will allow your project to be discoverable and reusable by others.</p></li>
+<li><p>Any functions you create should have appropriate documentation [<strong>POPULATE</strong> with link to how to do this.]</p></li>
+<li><p>Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works.</p></li>
+<li><p>Try to make your commit messages as informative as possible.</p></li>
 </ul>
 </div>
 <div id="functions" class="section level3 unnumbered">
 <h3>Abstractions</h3>
-<p>Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes code easier to understand, maintain and extend.</p>
-<p>For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple <code>.js</code> files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.</p>
-<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
-<p>All non trivial functions are documented using the programming language’s accepted standard. This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments. For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>. For R, use <code>roxygen2</code> to document your functions.</p>
+<p>Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.</p>
+<p>If you end up using a piece of code three times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
+<p>All non trivial functions are documented using the programming language’s accepted standard:<br />
+* For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.<br />
+* For R, use <code>roxygen2</code>. If your functions are short and well documented, there is often little need for additional code comments. [<strong>AMEND</strong> - check links here?]</p>
 </div>
 </div>
-<div id="coding-style" class="section level2">
-<h2>Coding style</h2>
-<div id="defaults" class="section level3">
+<div id="style" class="section level2">
+<h2>Code style</h2>
+<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
+<div id="defaults" class="section level3 unnumbered">
 <h3>Defaults</h3>
-<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
+<p>This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
+<p>[<strong>AMEND</strong> - check accuracy of these suggestions - are they still in date?]</p>
 <table>
 <colgroup>
 <col width="28%"></col>
@@ -1689,7 +1651,18 @@ div.tocify {
 <tbody>
 <tr class="odd">
 <td>R</td>
-<td>Follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a> * Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>. For example: * Prefer tibbles to data.frames * Use ggplot2 rather than base graphics * Use the pipe <code>%&gt;%</code> appropriately, but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>. * Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a> * Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate() * Use <a href="https://rstudio.github.io/packrat/">Packrat</a> for R dependencies - it’s required by the Analytical Platform if you need to deploy your work. * R Packages are the <a href="http://r-pkgs.had.co.nz/">fundamental unit of reproducable R code.</a></td>
+<td><ul>
+<li>Follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a></li>
+<li>Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>. For example:
+<ul>
+<li>Prefer tibbles to data.frames</li>
+<li>Use ggplot2 rather than base graphics</li>
+<li>Use the pipe <code>%&gt;%</code> appropriately, but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>.</li>
+<li>Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a></li>
+</ul></li>
+<li>Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()</li>
+<li>R Packages are the <a href="http://r-pkgs.had.co.nz/">fundamental unit of reproducable R code.</a></li>
+</ul></td>
 </tr>
 <tr class="even">
 <td>Python</td>
@@ -1721,12 +1694,9 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-</div>
-<div id="style" class="section level3 unnumbered">
-<h3>Coding Style</h3>
 <p>In addition to the above coding defaults, the following actions will help you to write understandable code.</p>
 </div>
-<div id="names" class="section level3">
+<div id="names" class="section level3 unnumbered">
 <h3>Naming conventions</h3>
 <ul>
 <li>Don’t be cute or jokey when naming things.</li>
@@ -1735,13 +1705,12 @@ div.tocify {
 <li>Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear</li>
 </ul>
 </div>
-<div id="ccc" class="section level3">
+<div id="ccc" class="section level3 unnumbered">
 <h3>Clear and concise code</h3>
 <ul>
 <li>Choose clarity over cleverness - use advanced language tricks with care.</li>
-<li>Code should be <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> - which stands for ‘Don’t Repeat Yourself’. - The <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">‘Rule of Three’</a> is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.<br />
-</li>
-<li>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by …</li>
+<li>Code should be <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> - which stands for ‘Don’t Repeat Yourself’. - The <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">‘Rule of Three’</a> is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity. [<strong>AMEND</strong> - remove? populate links?]</li>
+<li>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by …[<strong>POPULATE</strong>]</li>
 <li>Use code comments judiciously:</li>
 </ul>
 <blockquote>
@@ -1749,19 +1718,19 @@ div.tocify {
 </blockquote>
 <p>Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.</p>
 </div>
-<div id="linter" class="section level3">
-<h3>Apply a linter</h3>
+<div id="linter" class="section level3 unnumbered">
+<h3>Linters</h3>
 <p>Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.</p>
 <p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
 <ul>
 <li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a><br />
 </li>
-<li>For Python, use [pylint] and follow [PEP8]</li>
+<li>For Python, use [pylint] and follow [PEP8] <strong>POPULATE</strong> links</li>
 </ul>
 </div>
-<div id="errors" class="section level3">
-<h3>Helpful error messages</h3>
-<p>Accept this and code defensively when calling other services. Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience. Aim to provide useful information to end users and people working on the code, when something fails.</p>
+<div id="errors" class="section level3 unnumbered">
+<h3>Error messages</h3>
+<p>Errors will occur, so code defensively when calling other services. For example, every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience. Aim to provide useful information to end users and people working on the code when something fails.</p>
 <!--chapter:end:21-understability.Rmd-->
 </div>
 </div>
@@ -1771,39 +1740,53 @@ div.tocify {
 <p>Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.</p>
 <div id="unittest" class="section level2">
 <h2>Unit testing</h2>
-<p>Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project">Coffee and Coding ‘Testing’ session</a>. [AMEND] - do we need to expand beyond unit testing?</p>
-<p>As a broad description, unit tests should exist to check that your actual results match your expected results, in particular, testing any functions you create.</p>
-<p>[AMEND] What exactly are we expecting people to test? Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided).</p>
-<p>[AMEND] * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
+<p>Testing our code helps to ensure that it is both correct and robust. For further guidance on what you should test, see the <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project">Coffee and Coding ‘Testing’ session</a>. [<strong>AMEND</strong> - do we need to expand this section beyond unit testing?]</p>
+<p>As a broad description, unit tests should exist to check that your actual results match your expected results.</p>
+<p>[<strong>AMEND</strong>] What exactly are we expecting people to test?</p>
+<p>Unit tests should test, as a minimum, any functions you create. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided).</p>
+<p>[<strong>AMEND</strong> - this is no longer current] You should ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
 <p>There are a number of tools to enable unit testing.</p>
-<div id="testing-in-r" class="section level3 unnumbered">
-<h3>Testing in R</h3>
-<p>In R, consider using the <a href="https://github.com/r-lib/testthat">testthat</a> package. For an introduction to using testthat, try reading this <a href="https://katherinemwood.github.io/post/testthat/">blog post</a> from Inattentional Coffee or this <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">Towards Data Science post</a>. For an example unit tests within a project, see <a href="https://github.com/RobinL/costmodelr/tree/master/tests">here</a>.</p>
-</div>
-<div id="testing-in-python" class="section level3 unnumbered">
-<h3>Testing in Python</h3>
-<p>There are various approaches to unit testing in Python. Consider using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> in the Python core library. Another option is <a href="https://docs.pytest.org/en/latest/">pytest</a>. See also <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">here</a></p>
-</div>
-<div id="testing-in-javascript" class="section level3 unnumbered">
-<h3>Testing in Javascript</h3>
-<p>See <a href="http://busypeoples.github.io/post/testing-d3-with-jasmine/">here</a> for testing with javascript</p>
-<p>For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</p>
-</div>
+<table>
+<colgroup>
+<col width="21%"></col>
+<col width="78%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R</td>
+<td>In R, consider using the <a href="https://github.com/r-lib/testthat">testthat</a> package. For an introduction to using testthat, try reading this <a href="https://katherinemwood.github.io/post/testthat/">blog post</a> from Inattentional Coffee or this <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">Towards Data Science post</a>. For an example unit tests within a project, see <a href="https://github.com/RobinL/costmodelr/tree/master/tests">here</a>.</td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>There are various approaches to unit testing in Python. Consider using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> in the Python core library. Another option is <a href="https://docs.pytest.org/en/latest/">pytest</a>. See also <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">here</a></td>
+</tr>
+<tr class="odd">
+<td>Javascript</td>
+<td>See <a href="http://busypeoples.github.io/post/testing-d3-with-jasmine/">here</a> for testing with javascript. For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="review" class="section level2">
-<h2>Project Review</h2>
+<h2>Project review</h2>
 <p>Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.</p>
-<p>Code reviews should be initiated through the creation of a pull request [LINK]. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.</p>
+<p>Code reviews should be initiated through the creation of a <a href="#flow">pull request</a>. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.</p>
 <p>Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.</p>
 <div id="performing-good-peer-review" class="section level3 unnumbered">
 <h3>Performing good peer review</h3>
-<p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
-<p>1: Do I understand what the code is doing? <a href="#users">Did it need to be explained</a> to me? <a href="#ccc">Could it be simpler</a>?</p>
+<p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start:</p>
+<p>1: Do I understand what the code is doing? <a href="#ccc">Did it need to be explained</a> to me? <a href="#ccc">Could it be simpler</a>?</p>
 <p>2: Are they using <a href="#defaults">packages / libraries sensibly</a>?</p>
-<p>3: Does it need to be <a href="#ccc">tested</a> (and is it tested with sufficient coverage)?</p>
-<p>4: <a href="#ccc">Does it work</a>? Does it work on my machine?</p>
-<p>5: Are there edge cases that might <a href="#errors">break The Thing</a>?</p>
-<p>[AMEND] * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
+<p>3: Does it need to be <a href="#unittest">tested</a> (and is it tested with sufficient coverage)?</p>
+<p>4: <a href="#ccc">Does it work</a>? Does it work on my machine?(#projdep)</p>
+<p>5: Are there edge cases that might <a href="#unittest">break</a> it?</p>
+<p><strong>AMEND</strong> - update and merge with <a href="#defaults">section above</a> * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
 <p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
 <p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong></p>
 <!--chapter:end:22-accuracy.Rmd-->
@@ -1813,26 +1796,19 @@ div.tocify {
 <div id="collaborate" class="section level1">
 <h1>Collaborative</h1>
 <p>It is vital that we’re able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.</p>
-<p>Part of this is <a href="#projdep">managing dependencies</a> so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.</p>
+<p>A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.</p>
 <div id="versioncontrol" class="section level2">
 <h2>Version Control</h2>
-<p>Code is version controlled using Git and checked into Github. You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a> You are able to maintain a continuously quality controlled ‘master’ version of the code, whilst also being able to test new features and functionality.</p>
-<p>The ‘Master’ branch is protected, and contains only QAed code When you create your git project using <code>git init</code>, immediately branch off to a development branch e.g. using <code>git checkout -b dev</code>, and work on this branch.<br />
-Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
-<p>We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.</p>
-<div id="github-flow-is-a-working-practice-that-helps-to" class="section level3 unnumbered">
-<h3>Github-Flow is a working practice that helps to:</h3>
-<ol style="list-style-type: decimal">
-<li>Maintain overall code quality<br />
-</li>
-<li>Facilitate collaboration on a single project<br />
-</li>
-<li>Protect the codebase</li>
-</ol>
+<p>Code should be version controlled using Git and checked into Github. You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a></p>
+<p>Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. [<strong>POPULATE</strong> with a link?]</p>
+<div id="flow" class="section level3 unnumbered">
+<h3>Github-Flow</h3>
+<p>Github-Flow is a working practice that helps to: 1. Maintain overall code quality<br />
+2. Facilitate collaboration on a single project<br />
+3. Protect the codebase</p>
 <p>We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a></p>
-</div>
-<div id="there-are-6-steps-to-our-process" class="section level3 unnumbered">
-<h3>There are 6 steps to our process:</h3>
+<p>[<strong>AMEND</strong> - check that this is all up-tp-date and correct. Update links where needed.]</p>
+<p>There are 6 steps to our process:</p>
 <ol style="list-style-type: decimal">
 <li>Create or clone a repo.</li>
 </ol>
@@ -1875,12 +1851,12 @@ then go to github, open a PR and invite at least one reviewer</code></pre>
 <li><p>Once peer review is complete, and any comments addressed, merge into the master branch using a <a href="https://github.com/blog/2243-rebase-and-merge-pull-requests">rebase</a>.</p></li>
 <li><p>The version of master on Github is now ahead of the version of master on your local machine. Bring your local version up to date using <code>git checkout master</code>, <code>git pull</code>. You are now in sync with Github, and ready to start a new branch.</p></li>
 </ol>
-<p>The <strong>master branch should be 100% functional at all times</strong>, on any machine. Please ensure it is <a href="https://help.github.com/articles/about-protected-branches/">protected</a> and that your tests and / or linters run automatically on all pull requests.</p>
+<p>The <strong>master branch should be 100% functional at all times</strong>, on any machine. Please ensure it is <a href="https://help.github.com/articles/about-protected-branches/">protected</a> and that your tests and / or linters run automatically on all pull requests [<strong>POPULATE</strong> with linnk to automating tests and linters]. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
 <p>For some further reading we strongly suggest reading this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
-<p>If you want to test this out, clone this repo and make a contribution :)</p>
+<p>If you want to test this out, clone this repo and make a contribution!</p>
 </div>
 <div id="gitlink" class="section level3 unnumbered">
-<h3>Useful links for using github</h3>
+<h3>Useful Github links</h3>
 <ul>
 <li><a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html">A guide to getting started with github</a><br />
 </li>
@@ -1892,7 +1868,7 @@ then go to github, open a PR and invite at least one reviewer</code></pre>
 </div>
 <div id="knowledge" class="section level2">
 <h2>Share the knowledge</h2>
-<p>We also collaborate through sharing knowledge. If you produce something reusable, package it &amp; share it with others.</p>
+<p>We also collaborate through sharing knowledge. If you produce something reusable, please package it and share it with others.</p>
 <p>There are a number of channels through which coding knowledge is shared in DASD:<br />
 * Slack channels (key channels are: <a href="https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS">#data_science</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1PUCG719">#r</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1Q09V86S">#python</a>)<br />
 * Coffee and Coding (resources <a href="https://github.com/moj-analytical-services/Coffee-and-Coding">here</a>)<br />
@@ -1903,17 +1879,43 @@ then go to github, open a PR and invite at least one reviewer</code></pre>
 </div>
 <div id="reproduce" class="section level1">
 <h1>Reproducible</h1>
-<p>We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).</p>
+<p>We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and so that it can be easily reused by others in their own projects (<strong>AMEND</strong> - delete this last one?).</p>
 <p>There are a number of steps that we can take to ensure that our code is as reproducible as possible.</p>
 <div id="projdep" class="section level2">
 <h2>Manage project dependencies</h2>
 <p>Your project will depend on an number of external factors, such as software or packages. These dependencies may mean that your project won’t work on others’ machines or may not work on your machine at a later date (e.g. as external packages are updated over time). To ensure that this doesn’t become an issue for your project, you should use some kind of dependency management tool.</p>
 <div id="dependency-management-tools" class="section level3 unnumbered">
 <h3>Dependency management tools</h3>
-<p>For Python, use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>. For R, you can use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>, <a href="https://rstudio.github.io/packrat/">Packrat</a> or <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>. For javascript, include third party library dependencies in the project as <code>.js</code> files</p>
+<table>
+<colgroup>
+<col width="20%"></col>
+<col width="79%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R</td>
+<td>Use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>, <a href="https://rstudio.github.io/packrat/">Packrat</a> or <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>. [<strong>AMEND</strong> - add comment on which is preferable?]</td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>Use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a></td>
+</tr>
+<tr class="odd">
+<td>Javascript</td>
+<td>Include third party library dependencies in the project as <code>.js</code> files</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="githash" class="section level3 unnumbered">
 <h3>Include a git hash</h3>
+<p>[<strong>AMEND</strong> - is this still relevant/current?]</p>
 <p>If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be more reproducible, there is no ambiguity about the specific code that was used to generate it.</p>
 <div id="r" class="section level4 unnumbered">
 <h4>R</h4>
@@ -1954,7 +1956,7 @@ def get_git_revision_short_hash():
 <!--chapter:end:24-reproducibility.Rmd-->
 </div>
 </div>
-<div id="part-resources" class="section level1 unnumbered">
+<div id="resources" class="section level1 unnumbered">
 <h1>(PART) Resources</h1>
 <!--chapter:end:30-resources.Rmd-->
 </div>

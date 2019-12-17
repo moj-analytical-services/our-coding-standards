@@ -4,4 +4,4 @@ output: html_document
 ---
 
 
-# (PART) Resources {-}
+# (PART) Resources {-#resources}

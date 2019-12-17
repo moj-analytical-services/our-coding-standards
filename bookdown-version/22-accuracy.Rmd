@@ -9,21 +9,28 @@ Code should be error free and appropriately quality assured. Alongside simple se
 
 ## Unit testing {#unittest}
 
-Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][222]. [AMEND] - do we need to expand beyond unit testing?
+Testing our code helps to ensure that it is both correct and robust. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][222]. [**AMEND** - do we need to expand this section beyond unit testing?]
 
-As a broad description, unit tests should exist to check that your actual results match your expected results, in particular, testing any functions you create.
+As a broad description, unit tests should exist to check that your actual results match your expected results.
 
-[AMEND] What exactly are we expecting people to test?
-Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided). 
+[**AMEND**] What exactly are we expecting people to test?
 
-[AMEND]
-* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
+Unit tests should test, as a minimum, any functions you create. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided). 
+
+[**AMEND** - this is no longer current]
+You should ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
 There are a number of tools to enable unit testing.
 
-### Testing in R {-}
-
-In R, consider using the [testthat][221] package. For an introduction to using testthat, try reading this [blog post][9] from Inattentional Coffee or this [Towards Data Science post][10]. For an example unit tests within a project, see [here][11].
++---------------+--------------------------------------------------------+
+| Language      | Tools                                  | 
++===============+========================================================+
+| R             | In R, consider using the [testthat][221] package. For an introduction to using testthat, try reading this [blog post][9] from Inattentional Coffee or this [Towards Data Science post][10]. For an example unit tests within a project, see [here][11]. |
++---------------+--------------------------------------------------------+
+| Python        | There are various approaches to unit testing in Python.  Consider using [unittest](https://docs.python.org/3/library/unittest.html) in the Python core library.  Another option is [pytest](https://docs.pytest.org/en/latest/).  See also [here](http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/) |
++---------------+--------------------------------------------------------+
+| Javascript    | See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript. For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.) |
++---------------+--------------------------------------------------------+
 
 [9]:https://katherinemwood.github.io/post/testthat/
 [10]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
@@ -31,40 +38,30 @@ In R, consider using the [testthat][221] package. For an introduction to using t
 [221]: https://github.com/r-lib/testthat
 [222]: https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project
 
-### Testing in Python {-}
 
-There are various approaches to unit testing in Python.  Consider using [unittest](https://docs.python.org/3/library/unittest.html) in the Python core library.  Another option is [pytest](https://docs.pytest.org/en/latest/).  See also [here](http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/) 
-
-### Testing in Javascript {-}
-
-See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript
-
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)
-
-
-## Project Review {#review}
+## Project review {#review}
 
 Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.
 
-Code reviews should be initiated through the creation of a pull request [LINK]. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request. 
+Code reviews should be initiated through the creation of a [pull request](#flow). The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request. 
 
 Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once. 
 
 ### Performing good peer review {-}
 
-When you review someone's pull request you become the gatekeeper to the master branch - this is a _very_ important job!  If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start...
+When you review someone's pull request you become the gatekeeper to the master branch - this is a *very* important job!  If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start:
 
-1: Do I understand what the code is doing? [Did it need to be explained](#users) to me? [Could it be simpler](#ccc)?
+1: Do I understand what the code is doing? [Did it need to be explained](#ccc) to me? [Could it be simpler](#ccc)?
 
 2: Are they using [packages / libraries sensibly](#defaults)?
 
-3: Does it need to be [tested](#ccc) (and is it tested with sufficient coverage)?
+3: Does it need to be [tested](#unittest) (and is it tested with sufficient coverage)?
 
-4: [Does it work](#ccc)? Does it work on my machine?
+4: [Does it work](#ccc)? Does it work on my machine?(#projdep)
 
-5: Are there edge cases that might [break The Thing](#errors)?
+5: Are there edge cases that might [break](#unittest) it?
 
-[AMEND]
+**AMEND** - update and merge with [section above](#defaults)
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
 If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something.  So _don't hold back_.

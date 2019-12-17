@@ -5,7 +5,7 @@ output: html_document
 
 # Reproducible {#reproduce}
 
-We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).
+We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and so that it can be easily reused by others in their own projects (**AMEND** - delete this last one?).
 
 There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
@@ -15,9 +15,15 @@ Your project will depend on an number of external factors, such as software or p
 
 ### Dependency management tools {-}
 
-For Python, use [Conda][1].
-For R, you can use [Conda][1], [Packrat][2] or [Renv][3]. 
-For javascript, include third party library dependencies in the project as `.js` files
++--------------+--------------------------------------------------------+
+| Language     | Tools                                  | 
++==============+========================================================+
+| R            | Use [Conda][1], [Packrat][2] or [Renv][3]. [**AMEND** - add comment on which is preferable?] |
++--------------+--------------------------------------------------------+
+| Python       | Use [Conda][1] |
++--------------+--------------------------------------------------------+
+| Javascript   | Include third party library dependencies in the project as `.js` files |
++--------------+--------------------------------------------------------+
 
 [1]:https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf
 [2]:https://rstudio.github.io/packrat/
@@ -25,6 +31,8 @@ For javascript, include third party library dependencies in the project as `.js`
 
 
 ### Include a git hash {-#githash}
+
+[**AMEND** - is this still relevant/current?]
 
 If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.
@@ -55,7 +63,7 @@ def get_git_revision_short_hash():
     return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])
 ```
 
-## Format
+## Format {#format}
 
 If the output is a report, the write up should be fully reproducible, or as close as possible.  
 

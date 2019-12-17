@@ -7,28 +7,27 @@ output: html_document
 
 It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
 
-Part of this is [managing dependencies](#projdep) so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
+A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.
 
 ## Version Control {#versioncontrol}
-
-Code is version controlled using Git and checked into Github.
+Code should be version controlled using Git and checked into Github.
 You can find a guide to using Git with R [here](http://happygitwithr.com/)
-You are able to maintain a continuously quality controlled 'master' version of the code, whilst also being able to test new features and functionality.
 
-The 'Master' branch is protected, and contains only QAed code 
-When you create your git project using `git init`, immediately branch off to a development branch e.g. using `git checkout -b dev`, and work on this branch.  
-Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. [**POPULATE** with a link?]
 
-We follow “github flow”, to keep branches small and short-lived, and ensure knowledge is shared.
+### Github-Flow{-#flow}  
 
-### Github-Flow is a working practice that helps to: {-}
+Github-Flow is a working practice that helps to:  
 1. Maintain overall code quality  
 2. Facilitate collaboration on a single project  
 3. Protect the codebase  
 
 We have tweaked it a little from what is [described on GitHub][4] 
 
-### There are 6 steps to our process: {-}
+[**AMEND** - check that this is all up-tp-date and correct. Update links where needed.]
+
+There are 6 steps to our process:  
+
 1. Create or clone a repo.
 ```sh
 For example, to clone this repo.
@@ -79,11 +78,11 @@ Make sure that you reference the issue in your pull request, by using the hash (
 
 8. The version of master on Github is now ahead of the version of master on your local machine.  Bring your local version up to date using `git checkout master`, `git pull`.  You are now in sync with Github, and ready to start a new branch.
 
-The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests.
+The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests [**POPULATE** with linnk to automating tests and linters].  A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
 For some further reading we strongly suggest reading this [article][5] that explains these git commands and others in a bit more detail.
 
-If you want to test this out, clone this repo and make a contribution :)
+If you want to test this out, clone this repo and make a contribution!
 
 [4]: https://guides.github.com/introduction/flow/
 [5]: https://gist.github.com/blackfalcon/8428401
@@ -91,7 +90,7 @@ If you want to test this out, clone this repo and make a contribution :)
 [7]:https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github
 [8]:https://guides.github.com/introduction/git-handbook/
 
-### Useful links for using github {-#gitlink}
+### Useful Github links {-#gitlink}
 
 * [A guide to getting started with github][6]  
 * Github guide on [analytical platform guidance][7]  
@@ -99,7 +98,7 @@ If you want to test this out, clone this repo and make a contribution :)
 
 ## Share the knowledge {#knowledge}
 
-We also collaborate through sharing knowledge. If you produce something reusable, package it & share it with others.
+We also collaborate through sharing knowledge. If you produce something reusable, please package it and share it with others.
 
 There are a number of channels through which coding knowledge is shared in DASD:  
 * Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233])  
