@@ -24,7 +24,7 @@ Github-Flow is a working practice that helps to:
 
 We have tweaked it a little from what is [described on GitHub][4] 
 
-[**AMEND** - check that this is all up-tp-date and correct. Update links where needed.]
+[**AMEND** - check that this is all up-to-date and correct. Update links where needed.]
 
 There are 6 steps to our process:  
 
@@ -68,7 +68,7 @@ git commit
 ```sh
 push your branch to the remote repo
 git push origin my-new-sensibly-named-branch
-then go to github, open a PR and invite at least one reviewer
+then go to Github, open a PR and invite at least one reviewer
 ```
 Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see [here](https://help.github.com/articles/autolinked-references-and-urls/) for further guidance.  This makes it easy in future to see what changes were made to the code in response to the issue.
 

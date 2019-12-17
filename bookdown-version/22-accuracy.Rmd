@@ -64,7 +64,7 @@ When you review someone's pull request you become the gatekeeper to the master b
 **AMEND** - update and merge with [section above](#defaults)
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
-If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something.  So _don't hold back_.
+If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or over-complicated something.  So _don't hold back_.
 
 If you're on the receiving end of feedback, from anyone at all, this is... **a chance to learn!**
 

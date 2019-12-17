@@ -25,7 +25,7 @@ These coding principles are by no means a list of rules, but seek to provide gui
 
 The first part of this document contains the four [coding principles](#principles), with details on the practical actions that can be taken to help us follow the principles.
 
-The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an [example workflow](#wf), a [project checklist](#checklist) and a [knowledge share resource list](#ksresources). 
+The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project life-cycle. This includes an [example workflow](#wf), a [project checklist](#checklist) and a [knowledge share resource list](#ksresources). 
 
 ## Contributing {-#contributing}
 
