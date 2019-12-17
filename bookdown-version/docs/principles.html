@@ -140,11 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i><b>3</b> Coding Principles</a><ul>
 <li class="chapter" data-level="3.1" data-path="principles.html"><a href="principles.html#understand"><i class="fa fa-check"></i><b>3.1</b> Understandable</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="principles.html"><a href="principles.html#readme"><i class="fa fa-check"></i><b>3.1.1</b> Documentation</a></li>
-<li class="chapter" data-level="3.1.2" data-path="principles.html"><a href="principles.html#defaults"><i class="fa fa-check"></i><b>3.1.2</b> Use sensible defaults</a></li>
-<li class="chapter" data-level="3.1.3" data-path="principles.html"><a href="principles.html#structure2"><i class="fa fa-check"></i><b>3.1.3</b> Code structure</a></li>
-<li class="chapter" data-level="3.1.4" data-path="principles.html"><a href="principles.html#functions"><i class="fa fa-check"></i><b>3.1.4</b> Abstractions</a></li>
-<li class="chapter" data-level="3.1.5" data-path="principles.html"><a href="principles.html#style"><i class="fa fa-check"></i><b>3.1.5</b> Coding style</a></li>
+<li class="chapter" data-level="3.1.1" data-path="principles.html"><a href="principles.html#structure2"><i class="fa fa-check"></i><b>3.1.1</b> Code structure</a></li>
+<li class="chapter" data-level="3.1.2" data-path="principles.html"><a href="principles.html#coding-style"><i class="fa fa-check"></i><b>3.1.2</b> Coding style</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="principles.html"><a href="principles.html#accurate"><i class="fa fa-check"></i><b>3.2</b> Accurate</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="principles.html"><a href="principles.html#unittest"><i class="fa fa-check"></i><b>3.2.1</b> Unit testing</a></li>
@@ -202,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Code should be <a href="principles.html#ccc">correct, clear and concise</a></li>
 <li><a href="principles.html#errors">Handle errors</a><br />
 </li>
-<li>Other team members <a href="principles.html#users">are users too</a> - treat them with respect</li>
+<li>Other team members <a href="#users">are users too</a> - treat them with respect</li>
 </ul></li>
 </ul>
 <p><strong>2. <a href="principles.html#accurate">Accurate</a></strong></p>
@@ -226,127 +223,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="understand" class="section level2">
 <h2><span class="header-section-number">3.1</span> Understandable</h2>
-<div id="readme" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Documentation</h3>
-<p>Include a README</p>
-<p>By writing a README for your project you’re helping others (and your future self) to be able to understand and run your project. Find our template README <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md">here</a>.</p>
-<p>You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.</p>
-</div>
-<div id="defaults" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Use sensible defaults</h3>
-<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
-<p>This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
-<div id="general" class="section level4 unnumbered">
-<h4>General</h4>
+<p>It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. [Amend]</p>
+<div id="structure2" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Code structure</h3>
+<p>There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.</p>
+<div id="data" class="section level4 unnumbered">
+<h4>Data</h4>
 <ul>
-<li>You should target <a href="http://vita.had.co.nz/papers/tidy-data.html">tidy</a> data structures as part of your work. You should attempt to convert incoming data into tidy format as quickly as possible, and any data that is output that may be used in other projects should be in tidy format.</li>
-<li>If there is a standardised directory structure for your type of project, using it will help people find things. [TODO: Add examples]</li>
-</ul>
-<p>You have used the <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md">sensible defaults</a>, unless you have a good reason not to and have agreed this with your line manager
-There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
-</div>
-<div id="r" class="section level4 unnumbered">
-<h4>R</h4>
-<ul>
-<li>Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>. For example:
-<ul>
-<li>Prefer tibbles to data.frames</li>
-<li>Use ggplot2 rather than base graphics</li>
-<li>Use the pipe <code>%&gt;%</code> appropriately, but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>.<br />
-</li>
-<li>Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a></li>
-</ul></li>
-<li>Use <a href="https://rstudio.github.io/packrat/">Packrat</a> for R dependencies - it’s required by the Analytical Platform if you need to deploy your work.</li>
-<li>R Packages are the <a href="http://r-pkgs.had.co.nz/">fundamental unit of reproducable R code.</a></li>
+<li><p>MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].</p></li>
+<li><p>Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a ‘data’ folder within the project folder.[Link to github with example project structure]</p></li>
+<li><p>Prefer text format (e.g. csv) to Excel<br />
+</p></li>
+<li><p>It should be easy for others to change parameters and data without needed to understand the full codebase.</p></li>
 </ul>
 </div>
-<div id="python" class="section level4 unnumbered">
-<h4>Python</h4>
+<div id="readme" class="section level4 unnumbered">
+<h4>Documentation</h4>
 <ul>
+<li><p>Your project should include a README - by writing a README for your project you’re helping others (and your future self) to be able to understand and run your project. Find our template README <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md">here</a>.</p></li>
+<li><p>You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.</p></li>
+<li><p>Any functions you create should have appropriate documentation</p></li>
+<li><p>Your code should be appropriately commented</p></li>
+<li><p>Try to make your commit messages as informative as possible</p></li>
+</ul>
+</div>
+<div id="functions" class="section level4 unnumbered">
+<h4>Abstractions</h4>
+<p>Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes code easier to understand, maintain and extend.</p>
+<p>For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple <code>.js</code> files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.</p>
+<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
+<p>All non trivial functions are documented using the programming language’s accepted standard.
+This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments.
+For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.
+For R, use <code>roxygen2</code> to document your functions.</p>
+</div>
+</div>
+<div id="coding-style" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Coding style</h3>
+<div id="defaults" class="section level4">
+<h4><span class="header-section-number">3.1.2.1</span> Defaults</h4>
+<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Language</th>
+<th>Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R</td>
+<td>Follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a>
+* Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>. For example:
+* Prefer tibbles to data.frames
+* Use ggplot2 rather than base graphics
+* Use the pipe <code>%&gt;%</code> appropriately, but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>.
+* Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a>
+* Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()
+* Use <a href="https://rstudio.github.io/packrat/">Packrat</a> for R dependencies - it’s required by the Analytical Platform if you need to deploy your work.
+* R Packages are the <a href="http://r-pkgs.had.co.nz/">fundamental unit of reproducable R code.</a></td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td><ul>
+<li>Follow [PEP8]</li>
 <li>Use Python 3</li>
 <li>Use pandas for data analysis</li>
 <li>Use <code>loc</code> and <code>iloc</code> to write to data frames</li>
 <li>Use Altair for basic data visualisation</li>
 <li>Use Scikit Learn for machine learning</li>
 <li>Use SQLAlchemy and pandas for database interactions, rather than writing your own SQL</li>
-</ul>
-</div>
-<div id="encoding-and-csvs" class="section level4 unnumbered">
-<h4>Encoding and CSVs</h4>
-<p>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass <a href="https://csvlint.io/">this</a> csv linter.</p>
-</div>
-<div id="sql" class="section level4 unnumbered">
-<h4>SQL</h4>
-<ul>
-<li>Use Postgres or SQLite where possible, rather than other SQL database backends.</li>
-</ul>
-</div>
-<div id="gis" class="section level4 unnumbered">
-<h4>GIS</h4>
-<ul>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Encoding and CSVs</td>
+<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass <a href="https://csvlint.io/">this</a> csv linter.</td>
+</tr>
+<tr class="even">
+<td>SQL</td>
+<td>Use Postgres or SQLite where possible, rather than other SQL database backends.</td>
+</tr>
+<tr class="odd">
+<td>GIS</td>
+<td><ul>
 <li>Use PostGIS as your GIS backend</li>
 <li>Prefer conducting your GIS analysis in code, e.g. using SQL, rather than point and click in a GUI</li>
 <li>Use QGIS if you need a GUI.</li>
-</ul>
+</ul></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="javascript" class="section level4 unnumbered">
-<h4>Javascript</h4>
-<ul>
-<li>Use Vega or Vega-lite for pre-constructed charting</li>
-<li>Use d3.js for custom charting</li>
-<li>Use leaflet.js for mapping.</li>
-<li>Use Bootstrap as a style template</li>
-<li>Use underscore.js for data manipulation</li>
-</ul>
-</div>
-<div id="finally" class="section level4 unnumbered">
-<h4>Finally</h4>
-<ul>
-<li>If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)</li>
-</ul>
-</div>
-</div>
-<div id="structure2" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> Code structure</h3>
-<p>There should be clear logical separation of parameters, assumptions, data and code.<br />
-* MOJ data should never be committed to the Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].<br />
-* Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a ‘data’ folder within the project folder.[Link to github with example project structure]<br />
-* Prefer text format (e.g. csv) to Excel<br />
-* It should be easy for others to change parameters and data without needed to understand the full codebase.</p>
-</div>
-<div id="functions" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> Abstractions</h3>
-<p>Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes codeeasier to understand, maintain and extend.
-For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple <code>.js</code> files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.</p>
-<p>If you end up using a piece of code 3 times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
-<p>All non trivial functions are documented using the programming language’s accepted standard.
-This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments.
-For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.
-For R, use <code>roxygen2</code> to document your functions.</p>
-<p><em>Cut this?</em>
-If using a notebook (e.g. an R or Jupyter notebook) for your write up, functions are factored out to maintain narrative. Notebooks can also be useful for other purposes, such as functioning as a way of describing exploratory analysis. Where notebooks are used for this type of purpose, they can be more free-form. This makes your logic easier to follow For Python, code should be factored out into modules. For R, factor out code either into a <code>source()</code>ed <code>.R</code> file or a package</p>
-</div>
-<div id="style" class="section level3">
-<h3><span class="header-section-number">3.1.5</span> Coding style</h3>
-<p>For R, follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a>
-For Python, follow [PEP8]</p>
-<p>An easy way to check your code formatting is to…</p>
-<div id="linter" class="section level4">
-<h4><span class="header-section-number">3.1.5.1</span> Apply a linter</h4>
-<p>Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.</p>
-<p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
-<ul>
-<li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a><br />
-</li>
-<li>For Python, use [pylint] and follow [PEP8]</li>
-</ul>
-</div>
-<div id="package-name" class="section level4">
-<h4><span class="header-section-number">3.1.5.2</span> Package name</h4>
-<p>It’s best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().</p>
+<div id="style" class="section level4 unnumbered">
+<h4>Coding Style</h4>
+<p>In addition to the above coding defaults, the following actions will help you to write understandable code.</p>
 </div>
 <div id="names" class="section level4">
-<h4><span class="header-section-number">3.1.5.3</span> Names have power and purpose - use them wisely</h4>
+<h4><span class="header-section-number">3.1.2.2</span> Naming conventions</h4>
 <ul>
 <li>Don’t be cute or jokey when naming things.</li>
 <li>Names convey meaning - well-named functions &amp; variables can remove the need for a comment and make life a little easier for other readers, including your future self!</li>
@@ -355,36 +332,34 @@ For Python, follow [PEP8]</p>
 </ul>
 </div>
 <div id="ccc" class="section level4">
-<h4><span class="header-section-number">3.1.5.4</span> Code should be correct, clear, concise - in that order</h4>
+<h4><span class="header-section-number">3.1.2.3</span> Clear and concise code</h4>
 <ul>
-<li>Correct means demonstrably correct - with tests (ideally) and / or documented <a href="quality_assurance.md">Quality Assurance</a>. Automated tests are ideal because they allow the code to be refactored with confidence.</li>
-<li>All fixes &amp; new features should include tests to prevent regressions (i.e. reappearance of the bug you just fixed).</li>
 <li>Choose clarity over cleverness - use advanced language tricks with care.</li>
 <li>Code should be <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> - which stands for ‘Don’t Repeat Yourself’. - The <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">‘Rule of Three’</a> is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.<br />
 </li>
-<li>To help with clarity and establish patterns within the team, please use either the <a href="https://pypi.python.org/pypi/pep8">PEP8</a> style guide (for Python) or <a href="https://github.com/jimhester/lintr">LintR</a> (for R). The relavant linters will help you with this.</li>
-<li>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts.</li>
+<li>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by …</li>
 <li>Use code comments judiciously:</li>
 </ul>
 <blockquote>
 <p>Good code is its own best documentation. As you’re about to add a comment, ask yourself, “How can I improve the code so that this comment isn’t needed?” Improve the code and then document it to make it even clearer.” - Steve McConnell</p>
 </blockquote>
-<p>Code is appropriately commented.
-[Comments are for explaining why something is needed, not how it works.] (<a href="https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4" class="uri">https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4</a>)
-Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.</p>
+<p>Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.</p>
+</div>
+<div id="linter" class="section level4">
+<h4><span class="header-section-number">3.1.2.4</span> Apply a linter</h4>
+<p>Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.</p>
+<p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
+<ul>
+<li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="http://adv-r.had.co.nz/Style.html">Hadley’s Style Guide</a><br />
+</li>
+<li>For Python, use [pylint] and follow [PEP8]</li>
+</ul>
 </div>
 <div id="errors" class="section level4">
-<h4><span class="header-section-number">3.1.5.5</span> Everything fails at some point</h4>
+<h4><span class="header-section-number">3.1.2.5</span> Helpful error messages</h4>
 <p>Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.</p>
-</div>
-<div id="users" class="section level4">
-<h4><span class="header-section-number">3.1.5.6</span> Other team members are users too - treat them with respect</h4>
-<p>If you have to explain how your code works, then your code is not clear enough.
-Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
-Comments are for explaining why something is needed, not how it works.
-Make your commit messages as <a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">informative as possible</a></p>
 
 </div>
 </div>
@@ -394,38 +369,44 @@ Make your commit messages as <a href="https://robots.thoughtbot.com/5-useful-tip
 <p>Code should be error free and appropriately quality assured. Alongside simple sense-checking, two of the key mechanisms for ensuring that code is accurate are unit testing and project review.</p>
 <div id="unittest" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Unit testing</h3>
-<p>[<strong>AMEND THIS AFTER LOOKING AT COFFEE AND CODING MATERIALS FROM 06/12</strong>]</p>
-<p>Use testthat and shinytest for unit testing. The following might be helpful:<br />
-* Nice <a href="https://katherinemwood.github.io/post/testthat/">intro to using testthat</a><br />
-* Another <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">intro to testthat</a><br />
-* <a href="https://github.com/RobinL/costmodelr/tree/master/tests">Example of using testthat</a></p>
-<p>Unit tests exist that test the overall codebase, but not individual functions.
-Unit tests help give you confidence that your model does what you think it does
-There are various approaches to unit testing in Python. Consider using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> in the Python core library. Another option is <a href="https://docs.pytest.org/en/latest/">pytest</a>. See also <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">here</a>
-In R, you should use the <a href="https://github.com/hadley/testthat">testthat</a> package for unit testing.<br />
-You can find examples of how to do unit testing <a href="https://github.com/ukgovdatascience/eesectors/tree/master/tests">here</a> and <a href="https://github.com/RobinL/costmodelr/tree/master/tests">here</a> See <a href="http://busypeoples.github.io/post/testing-d3-with-jasmine/">here</a> for testing with javascript</p>
-<p>Unit tests exist at the function level, which test a range of parameters.<br />
-The purpose of these granular tests is to ensure the code continues to give the correct answer ion a range of cases, and even in edge cases (where unusual inputs are provided).
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</p>
+<p>Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project">Coffee and Coding ‘Testing’ session</a>. [AMEND] - do we need to expand beyond unit testing?</p>
+<p>As a broad description, unit tests should exist to check that your actual results match your expected results, in particular, testing any functions you create.</p>
+<p>[AMEND] What exactly are we expecting people to test?
+Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided).</p>
+<p>[AMEND]
+* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
+<p>There are a number of tools to enable unit testing.</p>
+<div id="testing-in-r" class="section level4 unnumbered">
+<h4>Testing in R</h4>
+<p>In R, consider using the <a href="https://github.com/r-lib/testthat">testthat</a> package. For an introduction to using testthat, try reading this <a href="https://katherinemwood.github.io/post/testthat/">blog post</a> from Inattentional Coffee or this <a href="https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211">Towards Data Science post</a>. For an example unit tests within a project, see <a href="https://github.com/RobinL/costmodelr/tree/master/tests">here</a>.</p>
+</div>
+<div id="testing-in-python" class="section level4 unnumbered">
+<h4>Testing in Python</h4>
+<p>There are various approaches to unit testing in Python. Consider using <a href="https://docs.python.org/3/library/unittest.html">unittest</a> in the Python core library. Another option is <a href="https://docs.pytest.org/en/latest/">pytest</a>. See also <a href="http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/">here</a></p>
+</div>
+<div id="testing-in-javascript" class="section level4 unnumbered">
+<h4>Testing in Javascript</h4>
+<p>See <a href="http://busypeoples.github.io/post/testing-d3-with-jasmine/">here</a> for testing with javascript</p>
+<p>For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.)</p>
+</div>
 </div>
 <div id="review" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Project Review</h3>
-<p>Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring.
-For smaller projects, the review only needs to be a simple read-through and sanity check.</p>
-<p>Ensure that code is reviewed: initiate this through a pull request.</p>
+<p>Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.</p>
+<p>Code reviews should be initiated through the creation of a pull request [LINK]. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.</p>
 <p>Remember that it’s always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.</p>
-<p>All code has been subject to code review.
-This process has been managed through pull requests, and this evidenced in Github. This should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.</p>
 <div id="performing-good-peer-review" class="section level4 unnumbered">
 <h4>Performing good peer review</h4>
 <p>When you review someone’s pull request you become the gatekeeper to the master branch - this is a <em>very</em> important job! If you’re tasked with this and you’re wondering how to proceed asking yourself these questions is a good place to start…</p>
-<p>1: Do I understand what the code is doing? <a href="principles.html#users">Did it need to be explained</a> to me? <a href="principles.html#ccc">Could it be simpler</a>?</p>
+<p>1: Do I understand what the code is doing? <a href="#users">Did it need to be explained</a> to me? <a href="principles.html#ccc">Could it be simpler</a>?</p>
 <p>2: Are they using <a href="principles.html#defaults">packages / libraries sensibly</a>?</p>
 <p>3: Does it need to be <a href="principles.html#ccc">tested</a> (and is it tested with sufficient coverage)?</p>
 <p>4: <a href="principles.html#ccc">Does it work</a>? Does it work on my machine?</p>
 <p>5: Are there edge cases that might <a href="principles.html#errors">break The Thing</a>?</p>
+<p>[AMEND]
+* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up <a href="https://travis-ci.org/">TravisCI</a> on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts</p>
 <p>If you’re reviewing the code of a more experienced coder, this is <strong>a chance to learn</strong> and you have <em>every</em> right to ask for an explanation if there’s something that is unclear. It’s in everyone’s interest that you understand what you’re reading and it could well be that you don’t yet understand it because the author has made a mistake or overcomplicated something. So <em>don’t hold back</em>.</p>
-<p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong> :)</p>
+<p>If you’re on the receiving end of feedback, from anyone at all, this is… <strong>a chance to learn!</strong></p>
 
 </div>
 </div>
@@ -543,7 +524,7 @@ For javascript, include third party library dependencies in the project as <code
 <h4>Include a git hash</h4>
 <p>If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.</p>
-<div id="r-1" class="section level5 unnumbered">
+<div id="r" class="section level5 unnumbered">
 <h5>R</h5>
 <p>You can access the git hash using either of the following code:
 snippets.</p>
@@ -553,7 +534,7 @@ snippets.</p>
 <p>or</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="principles.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 </div>
-<div id="python-1" class="section level5 unnumbered">
+<div id="python" class="section level5 unnumbered">
 <h5>Python</h5>
 <p>You can access the git hash using the following code:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="principles.html#cb8-1"></a><span class="im">import</span> subprocess</span>
