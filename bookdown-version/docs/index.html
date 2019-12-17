@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>DASD Coding Standards</title>
-  <meta name="description" content="These are the DASD coding standards." />
+  <title>DASD Coding Principles</title>
+  <meta name="description" content="These are the DASD coding principles." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="DASD Coding Standards" />
+  <meta property="og:title" content="DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="These are the DASD coding standards." />
+  <meta property="og:description" content="These are the DASD coding principles." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="DASD Coding Standards" />
+  <meta name="twitter:title" content="DASD Coding Principles" />
   
-  <meta name="twitter:description" content="These are the DASD coding standards." />
+  <meta name="twitter:description" content="These are the DASD coding principles." />
   
 
 <meta name="author" content="Data Science Hub" />
@@ -133,9 +133,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#motivation"><i class="fa fa-check"></i><b>0.1</b> Motivation</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>0.2</b> Guidance structure</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i><b>0.3</b> Contributing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Guidance structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
 <li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
@@ -170,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#there-are-6-steps-to-our-process"><i class="fa fa-check"></i>There are 6 steps to our process:</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful links for using github</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
 <li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
@@ -181,7 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Resources</b></span></li>
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
-<li class="chapter" data-level="6" data-path="reviewer-notes.html"><a href="reviewer-notes.html"><i class="fa fa-check"></i><b>6</b> Reviewer notes</a></li>
+<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
+<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -194,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Standards</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Principles</a>
           </h1>
         </div>
 
@@ -203,48 +204,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">DASD Coding Standards</h1>
+<h1 class="title">DASD Coding Principles</h1>
 <p class="author"><em>Data Science Hub</em></p>
 </div>
 <div id="intro" class="section level1 unnumbered">
 <h1>Introduction</h1>
-<p>This document contains the Data and Analytical Service Directorate’s (DASD) coding standards.</p>
-<div id="motivation" class="section level2">
-<h2><span class="header-section-number">0.1</span> Motivation</h2>
-<p>The DASD coding standards have been developed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].</p>
-<p>The purpose of this document is to raise awareness of/hgihlight key coding principles and to briefly explain why we should code in such a way. These coding standards are by no means a list of rules, but seek to provide guidance on how we can achieve ‘best practice’ in our coding. The more of these you follow, the easier life will be for you and your colleagues. These are open for discussion….</p>
-<p>Coding practices should aim to create code that is:</p>
-<ul>
-<li>Reproducible
-<ul>
-<li>Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.<br />
-</li>
-</ul></li>
-<li>Collaborative
-<ul>
-<li>Projects should be structured in such a way that we can collaborate effectively across multiple projects</li>
-<li>Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.<br />
-</li>
-</ul></li>
-<li>Accurate
-<ul>
-<li>Code should be error free and appropriately quality assured.<br />
-</li>
-</ul></li>
-<li>Understandable
-<ul>
-<li>Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.</li>
-</ul></li>
-</ul>
+<p>This document contains the Data and Analytical Service Directorate’s (DASD) coding principles. These have been developed to help DASD adopt a standard approach for coding projects, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively.</p>
+<p>These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve ‘best practice’ in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encourage to contribute to the discussion.</p>
+<div id="structure" class="section level2 unnumbered">
+<h2>Guidance structure</h2>
+<p>The first part of this document contains the four coding principles, with details on the practical actions that can be taken to ensure projects follow the principles.</p>
+<p>The section part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an <a href="wf.html#wf">example workflow</a>, a <a href="checklist.html#checklist">project checklist</a> and a <a href="ksresources.html#ksresources">knowledge share resource list</a>.</p>
 </div>
-<div id="structure" class="section level2">
-<h2><span class="header-section-number">0.2</span> Guidance structure</h2>
-<p>The first part of this document contains the four coding principles, with additional details on the practical actions people should take to achieve these.</p>
-<p>There is the recommended workflow for coding projects - this can be used to aid understanding of the steps that should be taken in a project and how the coding principles fit into the project lifecycle.</p>
-<p>The final section includes a checklist of actions to be taken to achieve the principles. This is a condensed list of the material covered in the coding principles section.</p>
-</div>
-<div id="contributing" class="section level2">
-<h2><span class="header-section-number">0.3</span> Contributing</h2>
+<div id="contributing" class="section level2 unnumbered">
+<h2>Contributing</h2>
 <p>If you think that something is missing or not quite right you should either:<br />
 1. <a href="collaborate.html#versioncontrol">Contribute directly</a><br />
 2. <a href="https://github.com/moj-analytical-services/our-coding-standards/issues">Raise an issue</a></p>

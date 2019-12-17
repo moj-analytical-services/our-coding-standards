@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Workflow | DASD Coding Standards</title>
-  <meta name="description" content="These are the DASD coding standards." />
+  <title>Chapter 5 Workflow | DASD Coding Principles</title>
+  <meta name="description" content="These are the DASD coding principles." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Workflow | DASD Coding Standards" />
+  <meta property="og:title" content="Chapter 5 Workflow | DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="These are the DASD coding standards." />
+  <meta property="og:description" content="These are the DASD coding principles." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Workflow | DASD Coding Standards" />
+  <meta name="twitter:title" content="Chapter 5 Workflow | DASD Coding Principles" />
   
-  <meta name="twitter:description" content="These are the DASD coding standards." />
+  <meta name="twitter:description" content="These are the DASD coding principles." />
   
 
 <meta name="author" content="Data Science Hub" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="reproduce.html"/>
-<link rel="next" href="reviewer-notes.html"/>
+<link rel="next" href="checklist.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -133,9 +133,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#motivation"><i class="fa fa-check"></i><b>0.1</b> Motivation</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>0.2</b> Guidance structure</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i><b>0.3</b> Contributing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Guidance structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
 <li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
@@ -170,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#there-are-6-steps-to-our-process"><i class="fa fa-check"></i>There are 6 steps to our process:</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful links for using github</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
 <li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
@@ -181,7 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Resources</b></span></li>
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
-<li class="chapter" data-level="6" data-path="reviewer-notes.html"><a href="reviewer-notes.html"><i class="fa fa-check"></i><b>6</b> Reviewer notes</a></li>
+<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
+<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -194,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Standards</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Principles</a>
           </h1>
         </div>
 
@@ -204,14 +205,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="wf" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Workflow</h1>
-<p>The recommended workflow for coding projects in DASD is:</p>
-<p>Create/clone <a href="collaborate.html#versioncontrol">github repo</a><br />
-Create <a href="collaborate.html#versioncontrol">issue</a><br />
-Create <a href="collaborate.html#versioncontrol">branch</a><br />
-Set up <a href="reproduce.html#projdep">dependency management</a><br />
-Build in <a href="accurate.html#unittest">unit testing</a><br />
-Commit <a href="collaborate.html#versioncontrol">changes</a><br />
-<a href="accurate.html#review">Pull request/QA</a></p>
+<p>The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project lifecycle.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Create/clone <a href="collaborate.html#versioncontrol">github repo</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>By storing your code in a repo you’re making it easier for others to collaborate on your project, to use pieces of your code elsewhere and ensures that your project will be accessible in the future.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Create <a href="collaborate.html#versioncontrol">issue</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Using issues to communicate what you’re working on helps to coordinate tasks between team members and creates a record of completed work, useful for quality assurance purposes.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Create <a href="collaborate.html#versioncontrol">branch</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Creating a branch means that several people can work on a project simultaneously and protects the main codebase from any unwanted changes.<br />
+</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Set up <a href="reproduce.html#projdep">dependency management</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Managing your project dependencies means that your project is more likely to be rerunnable in the future and on others’ machine.<br />
+</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Build in <a href="accurate.html#unittest">unit testing</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Unit tests provide confidence that your code is correct and can be used to pinpoint issues where they occur, making fixes quicker and easier.<br />
+</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Commit <a href="collaborate.html#versioncontrol">changes</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Commiting your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.<br />
+</li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li><strong><a href="accurate.html#review">Pull request and code review</a></strong><br />
+</li>
+</ol>
+<ul>
+<li>Ensuring that your code is reviewed provides confidence in the accuracy of your code and the opportunity to share knowledge with colleagues.</li>
+</ul>
 
 </div>
             </section>
@@ -220,7 +267,7 @@ Commit <a href="collaborate.html#versioncontrol">changes</a><br />
         </div>
       </div>
 <a href="reproduce.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="reviewer-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

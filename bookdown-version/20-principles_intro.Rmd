@@ -13,6 +13,22 @@ Note that the specific actions recommended within this document, although groupe
 
 They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
 
+---------------------------------------------------
+
+Coding practices should aim to create code that is:  
+
+* Reproducible
+  + Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.  
+* Collaborative
+  + Projects should be structured in such a way that we can collaborate effectively across multiple projects
+  + Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.  
+* Accurate
+  + Code should be error free and appropriately quality assured.    
+* Understandable
+  + Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.
+
+---------------------------------------------------
+
 Code should be:
 [**Update after rewriting individual sections**]
 

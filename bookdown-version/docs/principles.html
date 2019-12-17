@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Coding Principles | DASD Coding Standards</title>
-  <meta name="description" content="These are the DASD coding standards." />
+  <title>Coding Principles | DASD Coding Principles</title>
+  <meta name="description" content="These are the DASD coding principles." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Coding Principles | DASD Coding Standards" />
+  <meta property="og:title" content="Coding Principles | DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="These are the DASD coding standards." />
+  <meta property="og:description" content="These are the DASD coding principles." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Coding Principles | DASD Coding Standards" />
+  <meta name="twitter:title" content="Coding Principles | DASD Coding Principles" />
   
-  <meta name="twitter:description" content="These are the DASD coding standards." />
+  <meta name="twitter:description" content="These are the DASD coding principles." />
   
 
 <meta name="author" content="Data Science Hub" />
@@ -133,9 +133,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#motivation"><i class="fa fa-check"></i><b>0.1</b> Motivation</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>0.2</b> Guidance structure</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i><b>0.3</b> Contributing</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Guidance structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
 <li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
@@ -170,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#there-are-6-steps-to-our-process"><i class="fa fa-check"></i>There are 6 steps to our process:</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful links for using github</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
 <li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
@@ -181,7 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Resources</b></span></li>
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
-<li class="chapter" data-level="6" data-path="reviewer-notes.html"><a href="reviewer-notes.html"><i class="fa fa-check"></i><b>6</b> Reviewer notes</a></li>
+<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
+<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -194,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Standards</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Principles</a>
           </h1>
         </div>
 
@@ -207,6 +208,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects [AMEND].</p>
 <p>Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.</p>
 <p>They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.</p>
+<hr />
+<p>Coding practices should aim to create code that is:</p>
+<ul>
+<li>Reproducible
+<ul>
+<li>Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.<br />
+</li>
+</ul></li>
+<li>Collaborative
+<ul>
+<li>Projects should be structured in such a way that we can collaborate effectively across multiple projects</li>
+<li>Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.<br />
+</li>
+</ul></li>
+<li>Accurate
+<ul>
+<li>Code should be error free and appropriately quality assured.<br />
+</li>
+</ul></li>
+<li>Understandable
+<ul>
+<li>Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.</li>
+</ul></li>
+</ul>
+<hr />
 <p>Code should be:
 [<strong>Update after rewriting individual sections</strong>]</p>
 <p><strong>1. <a href="understand.html#understand">Understandable</a></strong></p>
@@ -235,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Use the <a href="collaborate.html#versioncontrol">github workflow</a> across all projects<br />
 </li>
-<li><a href="#knowledge">Share</a> the knowledge</li>
+<li><a href="collaborate.html#knowledge">Share</a> the knowledge</li>
 </ul>
 <p><strong>4. <a href="reproduce.html#reproduce">Reproducible</a></strong></p>
 <ul>
