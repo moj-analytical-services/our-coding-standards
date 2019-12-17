@@ -4,20 +4,20 @@ output: html_document
 ---
 # Workflow {#wf}
 
-The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project lifecycle.  
+The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.  
 
-1. **Create/clone [github repo](#versioncontrol)**  
+1. **Create/clone [Github repo](#versioncontrol)**  
   - By storing your code in a repo you're making it easier for others to collaborate on your project, to use pieces of your code elsewhere and ensures that your project will be accessible in the future.
 2. **Create [issue](#versioncontrol)**  
   - Using issues to communicate what you're working on helps to coordinate tasks between team members and creates a record of completed work, useful for quality assurance purposes. 
 3. **Create [branch](#versioncontrol)**  
   - Creating a branch means that several people can work on a project simultaneously and protects the main codebase from any unwanted changes.  
 4. **Set up [dependency management](#projdep)**  
-  - Managing your project dependencies means that your project is more likely to be rerunnable in the future and on others' machine.  
+  - Managing your project dependencies means that your project is more likely to be re-runnable in the future and on others' machine.  
 5. **Build in [unit testing](#unittest)**  
   - Unit tests provide confidence that your code is correct and can be used to pinpoint issues where they occur, making fixes quicker and easier.  
 6. **Commit [changes](#versioncontrol)**  
-  - Commiting your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.  
+  - Committing your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.  
 7. **[Pull request and code review](#review)**  
   - Ensuring that your code is reviewed provides confidence in the accuracy of your code and the opportunity to share knowledge with colleagues. 
 
