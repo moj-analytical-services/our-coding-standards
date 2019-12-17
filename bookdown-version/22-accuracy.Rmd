@@ -16,6 +16,9 @@ As a broad description, unit tests should exist to check that your actual result
 [AMEND] What exactly are we expecting people to test?
 Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided). 
 
+[AMEND]
+* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
+
 There are a number of tools to enable unit testing.
 
 #### Testing in R {-}
@@ -60,6 +63,9 @@ When you review someone's pull request you become the gatekeeper to the master b
 4: [Does it work](#ccc)? Does it work on my machine?
 
 5: Are there edge cases that might [break The Thing](#errors)?
+
+[AMEND]
+* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
 If you're reviewing the code of a more experienced coder, this is **a chance to learn** and you have _every_ right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something.  So _don't hold back_.
 

@@ -1,81 +1,45 @@
 ---
 title: ''
-output: html_document
+output:
+  html_document:
+    toc: true
+    theme: united
 ---
 
 ## Understandable {#understand}
 
-### Documentation {#readme}
-Include a README 
+It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. [Amend]
 
-By writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).
-
-You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.
-
-### Use sensible defaults {#defaults}
-
-There are often many ways of tackling a given problem.  As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
-
-This section sets out sensible defaults which you are expected to follow.  They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
-
-#### General {-}
-* You should target [tidy](http://vita.had.co.nz/papers/tidy-data.html) data structures as part of your work.  You should attempt to convert incoming data into tidy format as quickly as possible, and any data that is output that may be used in other projects should be in tidy format.
-* If there is a standardised directory structure for your type of project, using it will help people find things. [TODO: Add examples]
-
-You have used the [sensible defaults](https://github.com/moj-analytical-services/our-coding-standards/blob/master/sensible_defaults.md), unless you have a good reason not to and have agreed this with your line manager 
-There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
-
-
-#### R {-}
-* Default to packages from the [Tidyverse](http://tidyverse.org/), because they have been carefully designed to work together effectively as part of a modern data analysis workflow.  More info can be found here: [R for Data Science by Hadley Wickham](http://r4ds.had.co.nz).  For example:
-     * Prefer tibbles to data.frames
-     * Use ggplot2 rather than base graphics
-     * Use the pipe `%>%` appropriately, but not always e.g. see [here](https://twitter.com/hadleywickham/status/603883121197514752).  
-     * Prefer `purrr` to the `apply` family of functions.  See [here](http://r4ds.had.co.nz/iteration.html#the-map-functions) 
-* Use [Packrat](https://rstudio.github.io/packrat/) for R dependencies - it's required by the Analytical Platform if you need to deploy your work.
-* R Packages are the [fundamental unit of reproducable R code.](http://r-pkgs.had.co.nz/) 
-
-#### Python {-}
-* Use Python 3
-* Use pandas for data analysis
-* Use `loc` and `iloc` to write to data frames
-* Use Altair for basic data visualisation
-* Use Scikit Learn for machine learning
-* Use SQLAlchemy and pandas for database interactions, rather than writing your own SQL
-
-#### Encoding and CSVs {-}
-Use unicode.  This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass [this](https://csvlint.io/) csv linter.
-
-#### SQL {-}
-* Use Postgres or SQLite where possible, rather than other SQL database backends.
-
-#### GIS {-}
-* Use PostGIS as your GIS backend
-* Prefer conducting your GIS analysis in code, e.g. using SQL, rather than point and click in a GUI
-* Use QGIS if you need a GUI.
-
-#### Javascript {-}
-* Use Vega or Vega-lite for pre-constructed charting
-* Use d3.js for custom charting
-* Use leaflet.js for mapping.
-* Use Bootstrap as a style template
-* Use underscore.js for data manipulation
-
-#### Finally {-}
-* If you think of something else we should be doing or using by default, please clone the repo and submit a pull request featuring that addition :)
 
 ### Code structure {#structure2}
-There should be clear logical separation of parameters, assumptions, data and code.  
+There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.  
+
+#### Data {-}
+
 * MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [Link to ap guidance].  
+
 * Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a 'data' folder within the project folder.[Link to github with example project structure]  
+
 * Prefer text format (e.g. csv) to Excel  
 * It should be easy for others to change parameters and data without needed to understand the full codebase.  
 
-### Abstractions {#functions}
+#### Documentation {-#readme}
 
-Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes codeeasier to understand, maintain and extend.
+* Your project should include a README - by writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).  
+
+* You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.  
+
+* Any functions you create should have appropriate documentation  
+
+* Your code should be appropriately commented
+
+* Try to make your commit messages as informative as possible
+
+#### Abstractions {-#functions}
+
+Where appropriate, abstractions should be used if possible, e.g. functions, packages, modules etc. This makes code easier to understand, maintain and extend.
+
 For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple `.js` files.  For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data. 
-
 
 If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
 
@@ -84,18 +48,66 @@ This means that other users can understand your code more easily.  If your funct
 For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).
 For R, use `roxygen2` to document your functions.
 
-
-*Cut this?*
-If using a notebook (e.g. an R or Jupyter notebook) for your write up, functions are factored out to maintain narrative. Notebooks can also be useful for other purposes, such as functioning as a way of describing exploratory analysis.  Where notebooks are used for this type of purpose, they can be more free-form. This makes your logic easier to follow For Python, code should be factored out into modules. For R, factor out code either into a `source()`ed `.R` file or a package
-
 [13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
-### Coding style {#style}
+### Coding style
 
-For R, follow [Hadley's Style Guide][14]
-For Python, follow [PEP8]
+#### Defaults {#defaults}
 
-An easy way to check your code formatting is to...
+There are often many ways of tackling a given problem.  As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow.  They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
+
++-------------------------+---------------------------------------------------------------+
+| Language                | Defaults                                                      | 
++=========================+===============================================================+
+| R                       | Follow [Hadley's Style Guide][14] |
+|                         | * Default to packages from the [Tidyverse](http://tidyverse.org/), because they have been carefully designed to work together effectively as part of a modern data analysis workflow.  More info can be found here: [R for Data Science by Hadley Wickham](http://r4ds.had.co.nz).  For example: |
+|                         |    * Prefer tibbles to data.frames |
+|                         |    * Use ggplot2 rather than base graphics |
+|                         |    * Use the pipe `%>%` appropriately, but not always e.g. see [here](https://twitter.com/hadleywickham/status/603883121197514752).  |
+|                         |    * Prefer `purrr` to the `apply` family of functions.  See [here](http://r4ds.had.co.nz/iteration.html#the-map-functions) |
+|                         |  * Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate() |
+|                         |  * Use [Packrat](https://rstudio.github.io/packrat/) for R dependencies - it's required by the Analytical Platform if you need to deploy your work. |
+|                         | * R Packages are the [fundamental unit of reproducable R code.](http://r-pkgs.had.co.nz/) |
++-------------------------+---------------------------------------------------------------+
+| Python                  |  * Follow [PEP8]
+|                         |  * Use Python 3                                               |
+|                         |  * Use pandas for data analysis                               |
+|                         |  * Use `loc` and `iloc` to write to data frames               |
+|                         | * Use Altair for basic data visualisation    |
+|                         | * Use Scikit Learn for machine learning |
+|                         | * Use SQLAlchemy and pandas for database interactions, rather than writing your own SQL |
++-------------------------+---------------------------------------------------------------+
+| Encoding and CSVs       | Use unicode.  This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output csvs should pass [this](https://csvlint.io/) csv linter.                 | 
++-------------------------+---------------------------------------------------------------+
+| SQL                     | Use Postgres or SQLite where possible, rather than other SQL database backends.        | 
++-------------------------+---------------------------------------------------------------+
+| GIS                     | * Use PostGIS as your GIS backend |
+|                         | * Prefer conducting your GIS analysis in code, e.g. using SQL, rather than point and click in a GUI |
+|                         | * Use QGIS if you need a GUI.       | 
++-------------------------+---------------------------------------------------------------+
+
+#### Coding Style {-#style}
+
+In addition to the above coding defaults, the following actions will help you to write understandable code.
+
+#### Naming conventions {#names}
+
+* Don’t be cute or jokey when naming things.
+* Names convey meaning - well-named functions & variables can remove the need for a comment and make life a little easier for other readers, including your future self!
+* Avoid meaningless names like ‘obj’ / ‘result’ / ‘foo’.
+* Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear
+
+
+#### Clear and concise code {#ccc}
+
+* Choose clarity over cleverness - use advanced language tricks with care.
+* Code should be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) - which stands for 'Don’t Repeat Yourself'. - The [‘Rule of Three’](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.  
+* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by ...
+* Use code comments judiciously:
+
+> Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
+
+Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date.  Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.
 
 #### Apply a linter {#linter}
 Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
@@ -108,40 +120,7 @@ In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and aut
 [12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
 [14]:http://adv-r.had.co.nz/Style.html
 
-#### Package name
-It's best practice to use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate().
-
-#### Names have power and purpose - use them wisely {#names}
-
-* Don’t be cute or jokey when naming things.
-* Names convey meaning - well-named functions & variables can remove the need for a comment and make life a little easier for other readers, including your future self!
-* Avoid meaningless names like ‘obj’ / ‘result’ / ‘foo’.
-* Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear
-
-#### Code should be correct, clear, concise - in that order {#ccc}
-
-* Correct means demonstrably correct - with tests (ideally) and / or documented [Quality Assurance](quality_assurance.md).  Automated tests are ideal because they allow the code to be refactored with confidence.
-* All fixes & new features should include tests to prevent regressions (i.e. reappearance of the bug you just fixed).
-* Choose clarity over cleverness - use advanced language tricks with care.
-* Code should be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) - which stands for 'Don’t Repeat Yourself'. - The [‘Rule of Three’](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.  
-* To help with clarity and establish patterns within the team, please use either the [PEP8](https://pypi.python.org/pypi/pep8) style guide (for Python) or [LintR](https://github.com/jimhester/lintr) (for R).  The relavant linters will help you with this.
-* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts.
-* Use code comments judiciously:
-
-> Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
-
-Code is appropriately commented. 
-[Comments are for explaining why something is needed, not how it works.] (https://github.com/moj-analytical-services/our-coding-standards/blob/7e751164d577b521e7f62484a68ee1861f8ae4ac/they_are_users_too.md#L4) 
-Appropriate use of comments means it is easier to understand how code works at a later date.  Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.
-
-
-#### Everything fails at some point {#errors}
+#### Helpful error messages {#errors}
 Accept this and code defensively when calling other services.
 Every HTTP call could error or hang - handle failures appropriately and fail fast. Don’t let long-running external calls impact your user experience.
 Aim to provide useful information to end users and people working on the code, when something fails.
-
-#### Other team members are users too - treat them with respect {#users}
-If you have to explain how your code works, then your code is not clear enough.
-Be nice to your future self (and assume that they will have forgotten the exact thought process that led to that bit of code you just wrote).
-Comments are for explaining why something is needed, not how it works.
-Make your commit messages as [informative as possible](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
