@@ -140,15 +140,15 @@
 
 This document contains the Data and Analytical Service Directorate's (DASD) coding principles. These have been developed to help DASD adopt a standard approach for coding projects, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively.
 
-These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve `best practice' in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encourage to contribute to the discussion.
+These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve `best practice' in our coding - there will always be edge cases, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encouraged to contribute to the discussion.
 
 \hypertarget{structure}{%
-\section*{Guidance structure}\label{structure}}
-\addcontentsline{toc}{section}{Guidance structure}
+\section*{Document structure}\label{structure}}
+\addcontentsline{toc}{section}{Document structure}
 
-The first part of this document contains the four coding principles, with details on the practical actions that can be taken to ensure projects follow the principles.
+The first part of this document contains the four \protect\hyperlink{principles}{coding principles}, with details on the practical actions that can be taken to help us follow the principles.
 
-The section part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
+The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project lifecycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
 
 \hypertarget{contributing}{%
 \section*{Contributing}\label{contributing}}
@@ -165,85 +165,16 @@ If you think that something is missing or not quite right you should either:\\
 \chapter*{Coding Principles}\label{principles}}
 \addcontentsline{toc}{chapter}{Coding Principles}
 
-The coding principles have been designed to help DASD adopt a unified/consistent approach to writing code, ensuring that our work is high quality, maintainable and reusable and that we are able to collaborate effectively across multiple projects {[}AMEND{]}.
-
-Note that the specific actions recommended within this document, although grouped under each of the four principles, do overlap between the principles - they have been placed where they were deemed to fit best.
-
-They are guidance, not The Law - there will always be edge cases, but you should expect to be challenged if you go your own way.
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-Coding practices should aim to create code that is:
-
-\begin{itemize}
-\tightlist
-\item
-  Reproducible
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Measures should be put in place to ensure that code can be run across different machines and over time to produce the same results.\\
-  \end{itemize}
-\item
-  Collaborative
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Projects should be structured in such a way that we can collaborate effectively across multiple projects
-  \item
-    Code should be structured efficiently so that others can re-use existing code. This ensures consistency in approach and reduces the need for new code to be written and quality assured.\\
-  \end{itemize}
-\item
-  Accurate
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Code should be error free and appropriately quality assured.\\
-  \end{itemize}
-\item
-  Understandable
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Code should be structured, commented and documented to ensure it can be understood easily by others and passed on to others with minimal additional instruction.
-  \end{itemize}
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-Code should be:
-{[}\textbf{Update after rewriting individual sections}{]}
+We want to aim for code that is:
 
 \textbf{1. \protect\hyperlink{understand}{Understandable}}
 
 \begin{itemize}
 \tightlist
 \item
-  Write a \protect\hyperlink{readme}{README} for your project\\
+  Projects should be \protect\hyperlink{structure2}{structured} with clear logical separation of parameters, assumptions, data and code, with appropriate documentation.\\
 \item
-  Use \protect\hyperlink{defaults}{sensible defaults} unless you have a great reason not to
-\item
-  Write \protect\hyperlink{functions}{functions} where needed\\
-\item
-  \protect\hyperlink{style}{Stylistic}:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Apply a \protect\hyperlink{linter}{linter}
-  \item
-    Ensure \protect\hyperlink{names}{variable names} are meaningful
-  \item
-    Code should be \protect\hyperlink{ccc}{correct, clear and concise}
-  \item
-    \protect\hyperlink{errors}{Handle errors}\\
-  \item
-    Other team members \protect\hyperlink{users}{are users too} - treat them with respect
-  \end{itemize}
+  As far as possible, code should follow the \protect\hyperlink{style}{style guidance} outlined.
 \end{itemize}
 
 \textbf{2. \protect\hyperlink{accurate}{Accurate}}
@@ -251,9 +182,9 @@ Code should be:
 \begin{itemize}
 \tightlist
 \item
-  Ensure code is \protect\hyperlink{review}{reviewed}
+  Projects should include \protect\hyperlink{unittest}{unit testing}.
 \item
-  Complete \protect\hyperlink{unittest}{unit testing}
+  All code should be \protect\hyperlink{review}{reviewed}.
 \end{itemize}
 
 \textbf{3. \protect\hyperlink{collaborate}{Collaborative}}
@@ -261,9 +192,9 @@ Code should be:
 \begin{itemize}
 \tightlist
 \item
-  Use the \protect\hyperlink{versioncontrol}{github workflow} across all projects\\
+  Projects should follow the \protect\hyperlink{versioncontrol}{github workflow}.
 \item
-  \protect\hyperlink{knowledge}{Share} the knowledge
+  Knowledge should be \protect\hyperlink{knowledge}{shared}.
 \end{itemize}
 
 \textbf{4. \protect\hyperlink{reproduce}{Reproducible}}
@@ -271,17 +202,17 @@ Code should be:
 \begin{itemize}
 \tightlist
 \item
-  Manage \protect\hyperlink{projdep}{project dependencies}
+  \protect\hyperlink{projdep}{Project dependencies} should be managed.
 \item
-  Optimise for \protect\hyperlink{change}{change}\\
+  The \protect\hyperlink{format}{format} of the output should be chosen with reproducibility in mind.
 \item
-  Analyses should be \protect\hyperlink{githash}{simple and easy to reproduce} on another machine.
+  Projects should be \protect\hyperlink{change}{optimized for change}.
 \end{itemize}
 
 \hypertarget{understand}{%
 \chapter{Understandable}\label{understand}}
 
-It is crucial that we write code in a way that is understandable - through making sure that it is structured, commented and documented appropriately. This will mean that it can be understood easily by others and passed on to other staff with minimal additional instruction. This is clearly aids collboration and accuracy. {[}Amend{]}
+It is crucial that we write code in a way that can be understood easily by others (and our future selves!) and passed on to other staff with minimal additional instruction.
 
 \hypertarget{structure2}{%
 \section{Code structure}\label{structure2}}
@@ -294,9 +225,9 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 \begin{itemize}
 \item
-  MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}Link to ap guidance{]}.
+  MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}\textbf{POPULATE} with link to ap guidance{]}.
 \item
-  Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csv containing assumptions, mock data for unit tests, lookup table) - these should be stored in a `data' folder within the project folder.{[}Link to github with example project structure{]}
+  Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a `data' folder within the project folder.{[}\textbf{POPULATE} with link to github with example project structure{]}
 \item
   Prefer text format (e.g.~csv) to Excel\\
 \item
@@ -311,37 +242,41 @@ There should be clear logical separation of parameters, assumptions, data and co
 \item
   Your project should include a README - by writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md}{here}.
 \item
-  You have added a description to your Github repository and tagged it with appropriate tags This will allow your project to be discoverable and reusable by others.
+  You should add a description to your Github repository and tag it with appropriate tags This will allow your project to be discoverable and reusable by others.
 \item
-  Any functions you create should have appropriate documentation
+  Any functions you create should have appropriate documentation {[}\textbf{POPULATE} with link to how to do this.{]}
 \item
-  Your code should be appropriately commented
+  Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works.
 \item
-  Try to make your commit messages as informative as possible
+  Try to make your commit messages as informative as possible.
 \end{itemize}
 
 \hypertarget{functions}{%
 \subsection*{Abstractions}\label{functions}}
 \addcontentsline{toc}{subsection}{Abstractions}
 
-Where appropriate, abstractions should be used if possible, e.g.~functions, packages, modules etc. This makes code easier to understand, maintain and extend.
+Abstractions (e.g.~functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
 
-For R, you should use packages as fundamental units of code. For Python, you should factor code out into modules. In javascript, you should generally be using multiple \texttt{.js} files. For visualisation code, there should be a separation of concerns between the data model, and the code that visualises your data.
+If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}. As a general rule, functions should be less than about 50 lines long.
 
-If you end up using a piece of code 3 times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}. As a general rule, functions should be less than about 50 lines long.
+All non trivial functions are documented using the programming language's accepted standard:\\
+* For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and particularly \href{https://www.python.org/dev/peps/pep-0257/}{PEP257}.\\
+* For R, use \texttt{roxygen2}.
+If your functions are short and well documented, there is often little need for additional code comments.
+{[}\textbf{AMEND} - check links here?{]}
 
-All non trivial functions are documented using the programming language's accepted standard.
-This means that other users can understand your code more easily. If your functions are short and well documented, there is often little need for additional code comments.
-For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and particularly \href{https://www.python.org/dev/peps/pep-0257/}{PEP257}.
-For R, use \texttt{roxygen2} to document your functions.
+\hypertarget{style}{%
+\section{Code style}\label{style}}
 
-\hypertarget{coding-style}{%
-\section{Coding style}\label{coding-style}}
+There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
 
 \hypertarget{defaults}{%
-\subsection{Defaults}\label{defaults}}
+\subsection*{Defaults}\label{defaults}}
+\addcontentsline{toc}{subsection}{Defaults}
 
-There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches. This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
+This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
+
+{[}\textbf{AMEND} - check accuracy of these suggestions - are they still in date?{]}
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -355,15 +290,29 @@ Defaults\strut
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 R\strut
 \end{minipage} & \begin{minipage}[t]{0.67\columnwidth}\raggedright
-Follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}
-* Default to packages from the \href{http://tidyverse.org/}{Tidyverse}, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: \href{http://r4ds.had.co.nz}{R for Data Science by Hadley Wickham}. For example:
-* Prefer tibbles to data.frames
-* Use ggplot2 rather than base graphics
-* Use the pipe \texttt{\%\textgreater{}\%} appropriately, but not always e.g.~see \href{https://twitter.com/hadleywickham/status/603883121197514752}{here}.
-* Prefer \texttt{purrr} to the \texttt{apply} family of functions. See \href{http://r4ds.had.co.nz/iteration.html\#the-map-functions}{here}
-* Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()
-* Use \href{https://rstudio.github.io/packrat/}{Packrat} for R dependencies - it's required by the Analytical Platform if you need to deploy your work.
-* R Packages are the \href{http://r-pkgs.had.co.nz/}{fundamental unit of reproducable R code.}\strut
+\begin{itemize}
+\tightlist
+\item
+  Follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}
+\item
+  Default to packages from the \href{http://tidyverse.org/}{Tidyverse}, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: \href{http://r4ds.had.co.nz}{R for Data Science by Hadley Wickham}. For example:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Prefer tibbles to data.frames
+  \item
+    Use ggplot2 rather than base graphics
+  \item
+    Use the pipe \texttt{\%\textgreater{}\%} appropriately, but not always e.g.~see \href{https://twitter.com/hadleywickham/status/603883121197514752}{here}.
+  \item
+    Prefer \texttt{purrr} to the \texttt{apply} family of functions. See \href{http://r4ds.had.co.nz/iteration.html\#the-map-functions}{here}
+  \end{itemize}
+\item
+  Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()
+\item
+  R Packages are the \href{http://r-pkgs.had.co.nz/}{fundamental unit of reproducable R code.}
+\end{itemize}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 Python\strut
@@ -412,14 +361,11 @@ GIS\strut
 \bottomrule
 \end{longtable}
 
-\hypertarget{style}{%
-\subsection*{Coding Style}\label{style}}
-\addcontentsline{toc}{subsection}{Coding Style}
-
 In addition to the above coding defaults, the following actions will help you to write understandable code.
 
 \hypertarget{names}{%
-\subsection{Naming conventions}\label{names}}
+\subsection*{Naming conventions}\label{names}}
+\addcontentsline{toc}{subsection}{Naming conventions}
 
 \begin{itemize}
 \tightlist
@@ -434,16 +380,17 @@ In addition to the above coding defaults, the following actions will help you to
 \end{itemize}
 
 \hypertarget{ccc}{%
-\subsection{Clear and concise code}\label{ccc}}
+\subsection*{Clear and concise code}\label{ccc}}
+\addcontentsline{toc}{subsection}{Clear and concise code}
 
 \begin{itemize}
 \tightlist
 \item
   Choose clarity over cleverness - use advanced language tricks with care.
 \item
-  Code should be \href{https://en.wikipedia.org/wiki/Don\%27t_repeat_yourself}{DRY} - which stands for `Don't Repeat Yourself'. - The \href{https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)}{`Rule of Three'} is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.\\
+  Code should be \href{https://en.wikipedia.org/wiki/Don\%27t_repeat_yourself}{DRY} - which stands for `Don't Repeat Yourself'. - The \href{https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)}{`Rule of Three'} is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity. {[}\textbf{AMEND} - remove? populate links?{]}
 \item
-  Ensure that your tests and linters run automatically on all pull requests, if that is possible, by \ldots{}
+  Ensure that your tests and linters run automatically on all pull requests, if that is possible, by \ldots{[}\textbf{POPULATE}{]}
 \item
   Use code comments judiciously:
 \end{itemize}
@@ -455,7 +402,8 @@ Good code is its own best documentation. As you're about to add a comment, ask y
 Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function's documentation than in a comment.
 
 \hypertarget{linter}{%
-\subsection{Apply a linter}\label{linter}}
+\subsection*{Linters}\label{linter}}
+\addcontentsline{toc}{subsection}{Linters}
 
 Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
 
@@ -466,15 +414,15 @@ In RStudio, the keyboard shortcut `ctrl+shift+A' will reformat your code and aut
 \item
   For R use \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} and follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}\\
 \item
-  For Python, use {[}pylint{]} and follow {[}PEP8{]}
+  For Python, use {[}pylint{]} and follow {[}PEP8{]} \textbf{POPULATE} links
 \end{itemize}
 
 \hypertarget{errors}{%
-\subsection{Helpful error messages}\label{errors}}
+\subsection*{Error messages}\label{errors}}
+\addcontentsline{toc}{subsection}{Error messages}
 
-Accept this and code defensively when calling other services.
-Every HTTP call could error or hang - handle failures appropriately and fail fast. Don't let long-running external calls impact your user experience.
-Aim to provide useful information to end users and people working on the code, when something fails.
+Errors will occur, so code defensively when calling other services.
+For example, every HTTP call could error or hang - handle failures appropriately and fail fast. Don't let long-running external calls impact your user experience. Aim to provide useful information to end users and people working on the code when something fails.
 
 \hypertarget{accurate}{%
 \chapter{Accurate}\label{accurate}}
@@ -484,44 +432,52 @@ Code should be error free and appropriately quality assured. Alongside simple se
 \hypertarget{unittest}{%
 \section{Unit testing}\label{unittest}}
 
-Testing our code helps to ensure that it is both correct and robust - unit tests help to give confidence that your code actually does what you think it does. For further guidance on what you should test, see the \href{https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06\%20Testing\%20as\%20part\%20of\%20an\%20Analytical\%20Project}{Coffee and Coding `Testing' session}. {[}AMEND{]} - do we need to expand beyond unit testing?
+Testing our code helps to ensure that it is both correct and robust. For further guidance on what you should test, see the \href{https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06\%20Testing\%20as\%20part\%20of\%20an\%20Analytical\%20Project}{Coffee and Coding `Testing' session}. {[}\textbf{AMEND} - do we need to expand this section beyond unit testing?{]}
 
-As a broad description, unit tests should exist to check that your actual results match your expected results, in particular, testing any functions you create.
+As a broad description, unit tests should exist to check that your actual results match your expected results.
 
-{[}AMEND{]} What exactly are we expecting people to test?
-Unit tests should test, as a minimum, any functions you create. Unit tests exist at the function level, which test a range of parameters. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided).
+{[}\textbf{AMEND}{]} What exactly are we expecting people to test?
 
-{[}AMEND{]}
-* Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up \href{https://travis-ci.org/}{TravisCI} on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
+Unit tests should test, as a minimum, any functions you create. The purpose of these granular tests is to ensure the code continues to give the correct answer in a range of cases, and even in edge cases (where unusual inputs are provided).
+
+{[}\textbf{AMEND} - this is no longer current{]}
+You should ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up \href{https://travis-ci.org/}{TravisCI} on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
 There are a number of tools to enable unit testing.
 
-\hypertarget{testing-in-r}{%
-\subsection*{Testing in R}\label{testing-in-r}}
-\addcontentsline{toc}{subsection}{Testing in R}
-
-In R, consider using the \href{https://github.com/r-lib/testthat}{testthat} package. For an introduction to using testthat, try reading this \href{https://katherinemwood.github.io/post/testthat/}{blog post} from Inattentional Coffee or this \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{Towards Data Science post}. For an example unit tests within a project, see \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here}.
-
-\hypertarget{testing-in-python}{%
-\subsection*{Testing in Python}\label{testing-in-python}}
-\addcontentsline{toc}{subsection}{Testing in Python}
-
-There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}
-
-\hypertarget{testing-in-javascript}{%
-\subsection*{Testing in Javascript}\label{testing-in-javascript}}
-\addcontentsline{toc}{subsection}{Testing in Javascript}
-
-See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript
-
-For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.21\columnwidth}\raggedright
+Language\strut
+\end{minipage} & \begin{minipage}[b]{0.73\columnwidth}\raggedright
+Tools\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.21\columnwidth}\raggedright
+R\strut
+\end{minipage} & \begin{minipage}[t]{0.73\columnwidth}\raggedright
+In R, consider using the \href{https://github.com/r-lib/testthat}{testthat} package. For an introduction to using testthat, try reading this \href{https://katherinemwood.github.io/post/testthat/}{blog post} from Inattentional Coffee or this \href{https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211}{Towards Data Science post}. For an example unit tests within a project, see \href{https://github.com/RobinL/costmodelr/tree/master/tests}{here}.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.21\columnwidth}\raggedright
+Python\strut
+\end{minipage} & \begin{minipage}[t]{0.73\columnwidth}\raggedright
+There are various approaches to unit testing in Python. Consider using \href{https://docs.python.org/3/library/unittest.html}{unittest} in the Python core library. Another option is \href{https://docs.pytest.org/en/latest/}{pytest}. See also \href{http://python-guide-pt-br.readthedocs.io/en/latest/writing/tests/}{here}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.21\columnwidth}\raggedright
+Javascript\strut
+\end{minipage} & \begin{minipage}[t]{0.73\columnwidth}\raggedright
+See \href{http://busypeoples.github.io/post/testing-d3-with-jasmine/}{here} for testing with javascript. For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures. Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g.~where values are set to 1, 0.5 etc.)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \hypertarget{review}{%
-\section{Project Review}\label{review}}
+\section{Project review}\label{review}}
 
 Code review provides additional assurance that code logic is correct, and also the review should provide comments on code and problem structuring. For smaller projects, the review only needs to be a simple read-through and sanity check.
 
-Code reviews should be initiated through the creation of a pull request {[}LINK{]}. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
+Code reviews should be initiated through the creation of a \protect\hyperlink{flow}{pull request}. The review should typically involve the reviewer pulling the code to their local machine, testing it, and leaving comments in the pull request.
 
 Remember that it's always easier (for both you and your reviewers) if you commit and push your changes regularly.You should merge branches into master regularly so that reviewers review little and often, rather than attempting to review your entire codebase all at once.
 
@@ -529,19 +485,19 @@ Remember that it's always easier (for both you and your reviewers) if you commit
 \subsection*{Performing good peer review}\label{performing-good-peer-review}}
 \addcontentsline{toc}{subsection}{Performing good peer review}
 
-When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start\ldots{}
+When you review someone's pull request you become the gatekeeper to the master branch - this is a \emph{very} important job! If you're tasked with this and you're wondering how to proceed asking yourself these questions is a good place to start:
 
-1: Do I understand what the code is doing? \protect\hyperlink{users}{Did it need to be explained} to me? \protect\hyperlink{ccc}{Could it be simpler}?
+1: Do I understand what the code is doing? \protect\hyperlink{ccc}{Did it need to be explained} to me? \protect\hyperlink{ccc}{Could it be simpler}?
 
 2: Are they using \protect\hyperlink{defaults}{packages / libraries sensibly}?
 
-3: Does it need to be \protect\hyperlink{ccc}{tested} (and is it tested with sufficient coverage)?
+3: Does it need to be \protect\hyperlink{unittest}{tested} (and is it tested with sufficient coverage)?
 
-4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?
+4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?(\#projdep)
 
-5: Are there edge cases that might \protect\hyperlink{errors}{break The Thing}?
+5: Are there edge cases that might \protect\hyperlink{unittest}{break} it?
 
-{[}AMEND{]}
+\textbf{AMEND} - update and merge with \protect\hyperlink{defaults}{section above}
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up \href{https://travis-ci.org/}{TravisCI} on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
 
 If you're reviewing the code of a more experienced coder, this is \textbf{a chance to learn} and you have \emph{every} right to ask for an explanation if there's something that is unclear. It's in everyone's interest that you understand what you're reading and it could well be that you don't yet understand it because the author has made a mistake or overcomplicated something. So \emph{don't hold back}.
@@ -553,41 +509,30 @@ If you're on the receiving end of feedback, from anyone at all, this is\ldots{} 
 
 It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
 
-Part of this is \protect\hyperlink{projdep}{managing dependencies} so projects can be run on another machine. Another key part is the use of Github for enabling code sharing. Checking the code into Github is a key part of the version control workflow.
+A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.
 
 \hypertarget{versioncontrol}{%
 \section{Version Control}\label{versioncontrol}}
 
-Code is version controlled using Git and checked into Github.
+Code should be version controlled using Git and checked into Github.
 You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
-You are able to maintain a continuously quality controlled `master' version of the code, whilst also being able to test new features and functionality.
 
-The `Master' branch is protected, and contains only QAed code
-When you create your git project using \texttt{git\ init}, immediately branch off to a development branch e.g.~using \texttt{git\ checkout\ -b\ dev}, and work on this branch.\\
-Merge code into master using pull requests in github. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. {[}\textbf{POPULATE} with a link?{]}
 
-We follow ``github flow'', to keep branches small and short-lived, and ensure knowledge is shared.
+\hypertarget{flow}{%
+\subsection*{Github-Flow}\label{flow}}
+\addcontentsline{toc}{subsection}{Github-Flow}
 
-\hypertarget{github-flow-is-a-working-practice-that-helps-to}{%
-\subsection*{Github-Flow is a working practice that helps to:}\label{github-flow-is-a-working-practice-that-helps-to}}
-\addcontentsline{toc}{subsection}{Github-Flow is a working practice that helps to:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Maintain overall code quality\\
-\item
-  Facilitate collaboration on a single project\\
-\item
-  Protect the codebase
-\end{enumerate}
+Github-Flow is a working practice that helps to:
+1. Maintain overall code quality\\
+2. Facilitate collaboration on a single project\\
+3. Protect the codebase
 
 We have tweaked it a little from what is \href{https://guides.github.com/introduction/flow/}{described on GitHub}
 
-\hypertarget{there-are-6-steps-to-our-process}{%
-\subsection*{There are 6 steps to our process:}\label{there-are-6-steps-to-our-process}}
-\addcontentsline{toc}{subsection}{There are 6 steps to our process:}
+{[}\textbf{AMEND} - check that this is all up-tp-date and correct. Update links where needed.{]}
+
+There are 6 steps to our process:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -685,15 +630,15 @@ Make sure that you reference the issue in your pull request, by using the hash (
   The version of master on Github is now ahead of the version of master on your local machine. Bring your local version up to date using \texttt{git\ checkout\ master}, \texttt{git\ pull}. You are now in sync with Github, and ready to start a new branch.
 \end{enumerate}
 
-The \textbf{master branch should be 100\% functional at all times}, on any machine. Please ensure it is \href{https://help.github.com/articles/about-protected-branches/}{protected} and that your tests and / or linters run automatically on all pull requests.
+The \textbf{master branch should be 100\% functional at all times}, on any machine. Please ensure it is \href{https://help.github.com/articles/about-protected-branches/}{protected} and that your tests and / or linters run automatically on all pull requests {[}\textbf{POPULATE} with linnk to automating tests and linters{]}. A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
 For some further reading we strongly suggest reading this \href{https://gist.github.com/blackfalcon/8428401}{article} that explains these git commands and others in a bit more detail.
 
-If you want to test this out, clone this repo and make a contribution :)
+If you want to test this out, clone this repo and make a contribution!
 
 \hypertarget{gitlink}{%
-\subsection*{Useful links for using github}\label{gitlink}}
-\addcontentsline{toc}{subsection}{Useful links for using github}
+\subsection*{Useful Github links}\label{gitlink}}
+\addcontentsline{toc}{subsection}{Useful Github links}
 
 \begin{itemize}
 \tightlist
@@ -708,7 +653,7 @@ If you want to test this out, clone this repo and make a contribution :)
 \hypertarget{knowledge}{%
 \section{Share the knowledge}\label{knowledge}}
 
-We also collaborate through sharing knowledge. If you produce something reusable, package it \& share it with others.
+We also collaborate through sharing knowledge. If you produce something reusable, please package it and share it with others.
 
 There are a number of channels through which coding knowledge is shared in DASD:\\
 * Slack channels (key channels are: \href{https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS}{\#data\_science}, \href{https://app.slack.com/client/T1PU1AP6D/C1PUCG719}{\#r}, \href{https://app.slack.com/client/T1PU1AP6D/C1Q09V86S}{\#python})\\
@@ -719,7 +664,7 @@ There are a number of channels through which coding knowledge is shared in DASD:
 \hypertarget{reproduce}{%
 \chapter{Reproducible}\label{reproduce}}
 
-We want to create reproducible code to ensure that it can be used by others, both for collaboration and to allow effective review and accountability, that it keeps working over time (protected from external changes) and so that it can be easily reused by others in their own projects (delete this last one?).
+We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and so that it can be easily reused by others in their own projects (\textbf{AMEND} - delete this last one?).
 
 There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
@@ -732,13 +677,38 @@ Your project will depend on an number of external factors, such as software or p
 \subsection*{Dependency management tools}\label{dependency-management-tools}}
 \addcontentsline{toc}{subsection}{Dependency management tools}
 
-For Python, use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}.
-For R, you can use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}, \href{https://rstudio.github.io/packrat/}{Packrat} or \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}.
-For javascript, include third party library dependencies in the project as \texttt{.js} files
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.20\columnwidth}\raggedright
+Language\strut
+\end{minipage} & \begin{minipage}[b]{0.74\columnwidth}\raggedright
+Tools\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.20\columnwidth}\raggedright
+R\strut
+\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright
+Use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}, \href{https://rstudio.github.io/packrat/}{Packrat} or \href{https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/}{Renv}. {[}\textbf{AMEND} - add comment on which is preferable?{]}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\raggedright
+Python\strut
+\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright
+Use \href{https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30\%20Conda/conda.pdf}{Conda}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\raggedright
+Javascript\strut
+\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright
+Include third party library dependencies in the project as \texttt{.js} files\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \hypertarget{githash}{%
 \subsection*{Include a git hash}\label{githash}}
 \addcontentsline{toc}{subsection}{Include a git hash}
+
+{[}\textbf{AMEND} - is this still relevant/current?{]}
 
 If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.
@@ -808,8 +778,8 @@ If the output is a report, the write up should be fully reproducible, or as clos
   Change can come in several forms, including hardware - your code will eventually be run on a colleague's machine or a server somewhere. Without overcomplicating things, write your code with this in mind. For example, use relative paths (e.g.~\texttt{./file\_in\_the\_project\_directory.R} rather than \texttt{/Users/my\_username/development/my\_project/file\_in\_the\_project\_directory.R})
 \end{itemize}
 
-\hypertarget{part-resources}{%
-\part{Resources}\label{part-resources}}
+\hypertarget{resources}{%
+\part{Resources}\label{resources}}
 
 \hypertarget{wf}{%
 \chapter{Workflow}\label{wf}}
