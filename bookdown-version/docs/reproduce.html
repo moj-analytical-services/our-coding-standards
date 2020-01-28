@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Reproducible | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Reproducible | DASD Coding Principles" />
   <meta property="og:type" content="book" />
@@ -52,9 +52,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,16 +63,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -159,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>3</b> Collaborative</a><ul>
-<li class="chapter" data-level="3.1" data-path="collaborate.html"><a href="collaborate.html#versioncontrol"><i class="fa fa-check"></i><b>3.1</b> Version Control</a><ul>
+<li class="chapter" data-level="3.1" data-path="collaborate.html"><a href="collaborate.html#versioncontrol"><i class="fa fa-check"></i><b>3.1</b> Version control</a><ul>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#flow"><i class="fa fa-check"></i>Github-Flow</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful Github links</a></li>
 </ul></li>
@@ -243,20 +241,20 @@ more reproducible, there is no ambiguity about the specific code that was used t
 <h4>R</h4>
 <p>You can access the git hash using either of the following code:
 snippets.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="reproduce.html#cb6-1"></a><span class="kw">library</span>(git2r)</span>
-<span id="cb6-2"><a href="reproduce.html#cb6-2"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
-<span id="cb6-3"><a href="reproduce.html#cb6-3"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(git2r)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</a></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="reproduce.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
 </div>
 <div id="python" class="section level4 unnumbered">
 <h4>Python</h4>
 <p>You can access the git hash using the following code:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="reproduce.html#cb8-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb8-2"><a href="reproduce.html#cb8-2"></a><span class="kw">def</span> get_git_revision_hash():</span>
-<span id="cb8-3"><a href="reproduce.html#cb8-3"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
-<span id="cb8-4"><a href="reproduce.html#cb8-4"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
-<span id="cb8-5"><a href="reproduce.html#cb8-5"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="im">import</span> subprocess</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">def</span> get_git_revision_hash():</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">def</span> get_git_revision_short_hash():</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</a></code></pre></div>
 </div>
 </div>
 </div>
@@ -274,7 +272,7 @@ snippets.</p>
 <ul>
 <li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
 <li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
-<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
+<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
 </ul>
 
 </div>
