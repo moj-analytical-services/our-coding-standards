@@ -17,32 +17,39 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 ### Data {-}
 
-* MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [**POPULATE** with link to ap guidance].  
+* Unpublished MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [**POPULATE** with link to ap guidance].  
 
 * Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a 'data' folder within the project folder.[**POPULATE** with link to Github with example project structure]  
 
 * Prefer text format (e.g. csv) to Excel  
+
 * It should be easy for others to change parameters and data without needed to understand the full codebase.  
 
 ### Documentation {-#readme}
 
 * Your project should include a README - by writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md).  
 
-* You should add a description to your Github repository and tag it with appropriate tags This will allow your project to be discoverable and reusable by others.  
+* You should add a description to your Github repository and tag it with appropriate [topics](https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics). This will allow your project to be discoverable and reusable by others. Github will also automatically tag it according to the [language](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-languages) used.  
 
 * Any functions you create should have appropriate documentation [**POPULATE** with link to how to do this.] 
 
-* Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works. 
+* Try to make your Git commit messages as informative as possible.  
 
-* Try to make your commit messages as informative as possible.
+* Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works. Note that there are no hard and fast rules on how to do this - [this blog](https://blog.ndepend.com/correct-way-comment-code/)) gives an overview on some of the differing opinions on this.
+[**INSERT EXAMPLE?**]
+
+> Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
+
 
 ### Abstractions {-#functions}
 
 Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
 
+It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. #r and #python in the [ASD workspace](asdslack.slack.com)
+
 If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
 
-All non trivial functions are documented using the programming language’s accepted standard:  
+All non trivial functions should be documented using the programming language’s accepted standard:  
 * For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).  
 * For R, use `roxygen2`.
 If your functions are short and well documented, there is often little need for additional code comments. 
@@ -66,14 +73,14 @@ This section sets out sensible defaults which you are expected to follow.  They 
 +-------------------------+---------------------------------------------------------------+
 | Language                | Defaults                                                      | 
 +=========================+===============================================================+
-| R                       | * Follow [Hadley's Style Guide][14]   |
+| R                       | * Follow [the Tidyverse Style Guide][14]   |
 |                         | * Default to packages from the [Tidyverse](http://tidyverse.org/), because they have been carefully designed to work together effectively as part of a modern data analysis workflow.  More info can be found here: [R for Data Science by Hadley Wickham](http://r4ds.had.co.nz).  For example:   |
 |                         |   * Prefer tibbles to data.frames   |
 |                         |   * Use ggplot2 rather than base graphics   |
 |                         |    * Use the pipe `%>%` appropriately, but not always e.g. see [here](https://twitter.com/hadleywickham/status/603883121197514752).    |
 |                         |     * Prefer `purrr` to the `apply` family of functions.  See [here](http://r4ds.had.co.nz/iteration.html#the-map-functions)   |
 |                         |  * Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()   |
-|                         | * R Packages are the [fundamental unit of reproducable R code.](http://r-pkgs.had.co.nz/)   |
+|                         | * R Packages are the [fundamental unit of reproducible R code.](http://r-pkgs.had.co.nz/)   |
 +-------------------------+---------------------------------------------------------------+
 | Python                  |  * Follow [PEP8]  
 |                         |  * Use Python 3                                               |
@@ -108,22 +115,18 @@ In addition to the above coding defaults, the following actions will help you to
 * Choose clarity over cleverness - use advanced language tricks with care.
 * Code should be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) - which stands for 'Don’t Repeat Yourself'. - The [‘Rule of Three’](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity.  [**AMEND** - remove? populate links?]
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by ...[**POPULATE**]
-* Use code comments judiciously:
-
-> Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
-
-Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date.  Before commenting, consider whether the comment fits better into the function’s documentation than in a comment.
+* Use code comments well (see [above](#readme))
 
 ### Linters {-#linter}
 Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
 
 In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
 
-* For R use [Lintr][12] and follow [Hadley's Style Guide][14]  
+* For R use [Lintr][12] and follow [the Tidyverse Style Guide][14]  
 * For Python, use [pylint] and follow [PEP8] **POPULATE** links
 
 [12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
-[14]:http://adv-r.had.co.nz/Style.html
+[14]:https://style.tidyverse.org/index.html
 
 ### Error messages {-#errors}
 Errors will occur, so code defensively when calling other services.
