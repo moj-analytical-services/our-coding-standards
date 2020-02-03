@@ -177,7 +177,7 @@ If your functions are short and well documented, there is often little need for 
 </div>
 <div id="style" class="section level2">
 <h2><span class="header-section-number">1.2</span> Code style</h2>
-<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.</p>
+<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is more commonality in our approaches.</p>
 <div id="defaults" class="section level3 unnumbered">
 <h3>Defaults</h3>
 <p>This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
@@ -223,7 +223,7 @@ If your functions are short and well documented, there is often little need for 
 </tr>
 <tr class="odd">
 <td>Encoding and CSVs</td>
-<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output CSVs should pass <a href="https://csvlint.io/">this</a> csv linter.</td>
+<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8.</td>
 </tr>
 <tr class="even">
 <td>SQL</td>
@@ -255,13 +255,13 @@ If your functions are short and well documented, there is often little need for 
 <ul>
 <li>Choose clarity over cleverness - use advanced language tricks with care.</li>
 <li>Code should be <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> - which stands for ‘Don’t Repeat Yourself’. - The <a href="https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)">‘Rule of Three’</a> is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity. [<strong>AMEND</strong> - remove? populate links?]</li>
-<li>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by …[<strong>POPULATE</strong>]</li>
+<li><del>Ensure that your tests and linters run automatically on all pull requests, if that is possible, by …</del>[<strong>POPULATE</strong>]</li>
 <li>Use code comments well (see <a href="understand.html#readme">above</a>)</li>
 </ul>
 </div>
 <div id="linter" class="section level3 unnumbered">
 <h3>Linters</h3>
-<p>Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.</p>
+<p>A linter is a tool that analyses code to check for programmatic and stylistic errors. You should apply a linter to review your code formatting, which will mean our coding style will be consistent across projects and make it easier for others to understand our code.</p>
 <p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
 <ul>
 <li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="https://style.tidyverse.org/index.html">the Tidyverse Style Guide</a><br />
