@@ -59,7 +59,11 @@ When you review someone's pull request you become the gatekeeper to the master b
 
 4: [Does it work](#ccc)? Does it work on my machine?(#projdep)
 
-5: Are there edge cases that might [break](#unittest) it?
+5: Are there any cases that might [break](#unittest) it?
+
+6: Is there sufficient [documentation](#readme)?
+
+7: Have they adopted a sensible [code style](#style)?
 
 **AMEND** - update and merge with [section above](#defaults)
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up [TravisCI](https://travis-ci.org/) on your repo.  This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
