@@ -17,13 +17,16 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 ### Data {-}
 
-* Unpublished MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [**POPULATE** with link to ap guidance].  
+* It should be easy for others to change parameters and data without needed to understand the full codebase. 
+
+* Where possible, it's generally best practice to use lookup/reference files as much as possible, rather than hard-coding variables. An alternative approach is to store all parameters in one script, making it easy for the variables to be located and updated.
 
 * Small data files that are not MOJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a 'data' folder within the project folder.[**POPULATE** with link to Github with example project structure]  
 
 * Prefer text format (e.g. csv) to Excel  
 
-* It should be easy for others to change parameters and data without needed to understand the full codebase.  
+* Please note that unpublished MOJ data should never be committed to the Github repository - even a 'private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. [**POPULATE** with link to ap guidance].  
+
 
 ### Documentation {-#readme}
 
@@ -31,7 +34,7 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 * You should add a description to your Github repository and tag it with appropriate [topics](https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics). This will allow your project to be discoverable and reusable by others. Github will also automatically tag it according to the [language](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-languages) used.  
 
-* Any functions you create should have appropriate documentation [**POPULATE** with link to how to do this.] 
+* Any functions you create should have appropriate documentation [**POPULATE** with link to how to do this.] If possible, any code that creates a function should include a clear explanation of the format of both the inputs and outputs. This makes it easier to understand what you can change if you want a different output.
 
 * Try to make your Git commit messages as informative as possible.  
 
@@ -39,23 +42,6 @@ There should be clear logical separation of parameters, assumptions, data and co
 [**INSERT EXAMPLE?**]
 
 > Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
-
-
-### Abstractions {-#functions}
-
-Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
-
-It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. #r and #python in the [ASD workspace](asdslack.slack.com)
-
-If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
-
-All non trivial functions should be documented using the programming language’s accepted standard:  
-* For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).  
-* For R, use `roxygen2`.
-If your functions are short and well documented, there is often little need for additional code comments. 
-[**AMEND** - check links here?]
-
-[13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
 
 ## Code style {#style}

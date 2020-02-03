@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Workflow | DASD Coding Principles</title>
+  <title>Workflow | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Workflow | DASD Coding Principles" />
+  <meta property="og:title" content="Workflow | DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Workflow | DASD Coding Principles" />
+  <meta name="twitter:title" content="Workflow | DASD Coding Principles" />
   
   <meta name="twitter:description" content="These are the DASD coding principles." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="reproduce.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="principles.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -134,13 +134,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Document structure</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
-<li class="part"><span><b>I Principles</b></span></li>
+<li class="part"><span><b>I Workflow</b></span></li>
+<li class="chapter" data-level="" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i>Workflow</a></li>
+<li class="part"><span><b>II Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
 <li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a><ul>
 <li class="chapter" data-level="1.1" data-path="understand.html"><a href="understand.html#structure2"><i class="fa fa-check"></i><b>1.1</b> Code structure</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#data"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#readme"><i class="fa fa-check"></i>Documentation</a></li>
-<li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#functions"><i class="fa fa-check"></i>Abstractions</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.2</b> Code style</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#defaults"><i class="fa fa-check"></i>Defaults</a></li>
@@ -169,13 +170,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#dependency-management-tools"><i class="fa fa-check"></i>Dependency management tools</a></li>
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#githash"><i class="fa fa-check"></i>Include a git hash</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#functions"><i class="fa fa-check"></i>Abstractions</a></li>
 <li class="chapter" data-level="4.2" data-path="reproduce.html"><a href="reproduce.html#format"><i class="fa fa-check"></i><b>4.2</b> Format</a></li>
 <li class="chapter" data-level="4.3" data-path="reproduce.html"><a href="reproduce.html#change"><i class="fa fa-check"></i><b>4.3</b> Optimize for change</a></li>
 </ul></li>
-<li class="part"><span><b>II Resources</b></span></li>
-<li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
-<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
-<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
+<li class="part"><span><b>III Resources</b></span></li>
+<li class="chapter" data-level="5" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>5</b> Project Checklist</a></li>
+<li class="chapter" data-level="6" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>6</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -196,8 +197,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="wf" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Workflow</h1>
+<div id="wf" class="section level1 unnumbered">
+<h1>Workflow</h1>
 <p>The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.</p>
 <ol style="list-style-type: decimal">
 <li><strong>Create/clone <a href="collaborate.html#versioncontrol">Github repo</a></strong><br />
@@ -254,13 +255,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="reproduce.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="principles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
