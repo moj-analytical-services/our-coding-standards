@@ -8,10 +8,12 @@ output: html_document
 **POPULATE** fully
 
 There are a number of channels through which coding knowledge is shared in DASD:  
+
 * Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233])  
 * Coffee and Coding (resources [here][234])  
 * [DASD training Trello][235]  
-* [R learning resources][236]
+* [R learning resources][236]  
+* [Online analytical training Trello][237]  
 
 **PLACEHOLDER** - something on cross-departmental resources/code.
 
@@ -21,4 +23,5 @@ There are a number of channels through which coding knowledge is shared in DASD:
 [234]: https://github.com/moj-analytical-services/Coffee-and-Coding
 [235]: https://trello.com/b/zAwm6sCc/dasd-training
 [236]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
+[237]: https://trello.com/b/D5pSkqnT/online-analytical-training
 
