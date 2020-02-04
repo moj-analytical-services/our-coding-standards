@@ -1,0 +1,19 @@
+---
+title: ''
+output: html_document
+---
+
+# Future Additions {#futureadd}
+
+The following future additions to this document are planned (by section):
+
+## Understandable {-}
+
+## Accurate {-}
+
+## Collaborative {-}
+* Notes on cross-team working
+
+## Reproducible {-}
+
+If you feel you are able to contribute to any of these areas, please clone this repo, make your changes on a branch and send a pull request for review.

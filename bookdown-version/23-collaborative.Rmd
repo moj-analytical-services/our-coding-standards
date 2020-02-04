@@ -5,26 +5,15 @@ output: html_document
 
 # Collaborative {#collaborate}
 
-It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.
-
-A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.
+It is vital that we're able to collaborate across projects, to share both workload and expertise, and that this collaboration is possible both simultaneously and over time.
 
 ## Version control {#versioncontrol}
 Code should be version controlled using Git and checked into Github.
-You can find a guide to using Git with R [here](http://happygitwithr.com/)
+You can find a guide to using Git with R [here](http://happygitwithr.com/). Within DASD we follow Github flow for our projects. 
 
-Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. [**POPULATE** with a link?]
+### Github flow{-#flow}  
 
-### Github-Flow{-#flow}  
-
-Github-Flow is a working practice that helps to:  
-1. Maintain overall code quality  
-2. Facilitate collaboration on a single project  
-3. Protect the codebase  
-
-We have tweaked it a little from what is [described on GitHub][4] 
-
-[**AMEND** - check that this is all up-to-date and correct. Update links where needed.]
+Github flow is a working practice that helps to maintain overall code quality, facilitate collaboration on a single project  and protect the codebase. We have tweaked it a little from what is [described on GitHub][4].
 
 There are 6 steps to our process:  
 
@@ -78,11 +67,9 @@ Make sure that you reference the issue in your pull request, by using the hash (
 
 8. The version of master on Github is now ahead of the version of master on your local machine.  Bring your local version up to date using `git checkout master`, `git pull`.  You are now in sync with Github, and ready to start a new branch.
 
-The **master branch should be 100% functional at all times**, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and / or linters run automatically on all pull requests [**POPULATE** with linnk to automating tests and linters].  A protected master branch guarantees that all pull requests have been reviewed before they are merged.
+The master branch should be 100% functional at all times, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and linters [run automatically on all pull requests](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).  A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
-For some further reading we strongly suggest reading this [article][5] that explains these git commands and others in a bit more detail.
-
-If you want to test this out, clone this repo and make a contribution!
+For some further reading suggest this [article][5] that explains these git commands and others in a bit more detail.
 
 [4]: https://guides.github.com/introduction/flow/
 [5]: https://gist.github.com/blackfalcon/8428401
@@ -96,19 +83,16 @@ If you want to test this out, clone this repo and make a contribution!
 * Github guide on [analytical platform guidance][7]  
 * List of basic [git commands][8] 
 
-## Cross-team working {#crossteamworking}
-
-**POPULATE THIS**
-
 ## Share the knowledge {#knowledge}
 
-We also collaborate through sharing knowledge. If you produce something reusable, please package it and share it with others.
+We also collaborate through sharing knowledge. There are a number of channels through which coding knowledge is shared in DASD:  
 
-There are a number of channels through which coding knowledge is shared in DASD:  
-* Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233])  
+* Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233], [#conda][237])  
 * Coffee and Coding (resources [here][234])  
 * [DASD training Trello][235]  
 * [R learning resources][236]
+
+Further resources can be found [here](#ksresources).
 
 [231]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
 [232]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
@@ -116,3 +100,4 @@ There are a number of channels through which coding knowledge is shared in DASD:
 [234]: https://github.com/moj-analytical-services/Coffee-and-Coding
 [235]: https://trello.com/b/zAwm6sCc/dasd-training
 [236]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
+[237]: https://app.slack.com/client/T1PU1AP6D/CSP8603CK

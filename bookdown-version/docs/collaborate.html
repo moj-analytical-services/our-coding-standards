@@ -160,11 +160,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>3</b> Collaborative</a><ul>
 <li class="chapter" data-level="3.1" data-path="collaborate.html"><a href="collaborate.html#versioncontrol"><i class="fa fa-check"></i><b>3.1</b> Version control</a><ul>
-<li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#flow"><i class="fa fa-check"></i>Github-Flow</a></li>
+<li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#flow"><i class="fa fa-check"></i>Github flow</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful Github links</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#crossteamworking"><i class="fa fa-check"></i><b>3.2</b> Cross-team working</a></li>
-<li class="chapter" data-level="3.3" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.3</b> Share the knowledge</a></li>
+<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
 <li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
@@ -178,6 +177,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
 <li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
 <li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
+<li class="chapter" data-level="8" data-path="futureadd.html"><a href="futureadd.html"><i class="fa fa-check"></i><b>8</b> Future Additions</a><ul>
+<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#understandable"><i class="fa fa-check"></i>Understandable</a></li>
+<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#accurate-1"><i class="fa fa-check"></i>Accurate</a></li>
+<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#collaborative"><i class="fa fa-check"></i>Collaborative</a></li>
+<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#reproducible"><i class="fa fa-check"></i>Reproducible</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -200,21 +205,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="collaborate" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Collaborative</h1>
-<p>It is vital that we’re able to collaborate across projects, to share both workload and expertise, and that this collaboration can occur both simultaneously and over time.</p>
-<p>A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.</p>
+<p>It is vital that we’re able to collaborate across projects, to share both workload and expertise, and that this collaboration is possible both simultaneously and over time.</p>
 <div id="versioncontrol" class="section level2">
 <h2><span class="header-section-number">3.1</span> Version control</h2>
 <p>Code should be version controlled using Git and checked into Github.
-You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a></p>
-<p>Within DASD we follow Github-Flow for our projects. Further information and guidance can be found here. [<strong>POPULATE</strong> with a link?]</p>
+You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a>. Within DASD we follow Github flow for our projects.</p>
 <div id="flow" class="section level3 unnumbered">
-<h3>Github-Flow</h3>
-<p>Github-Flow is a working practice that helps to:<br />
-1. Maintain overall code quality<br />
-2. Facilitate collaboration on a single project<br />
-3. Protect the codebase</p>
-<p>We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a></p>
-<p>[<strong>AMEND</strong> - check that this is all up-to-date and correct. Update links where needed.]</p>
+<h3>Github flow</h3>
+<p>Github flow is a working practice that helps to maintain overall code quality, facilitate collaboration on a single project and protect the codebase. We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a>.</p>
 <p>There are 6 steps to our process:</p>
 <ol style="list-style-type: decimal">
 <li>Create or clone a repo.</li>
@@ -260,9 +258,8 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 <li><p>Once peer review is complete, and any comments addressed, merge into the master branch using a <a href="https://github.com/blog/2243-rebase-and-merge-pull-requests">rebase</a>.</p></li>
 <li><p>The version of master on Github is now ahead of the version of master on your local machine. Bring your local version up to date using <code>git checkout master</code>, <code>git pull</code>. You are now in sync with Github, and ready to start a new branch.</p></li>
 </ol>
-<p>The <strong>master branch should be 100% functional at all times</strong>, on any machine. Please ensure it is <a href="https://help.github.com/articles/about-protected-branches/">protected</a> and that your tests and / or linters run automatically on all pull requests [<strong>POPULATE</strong> with linnk to automating tests and linters]. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
-<p>For some further reading we strongly suggest reading this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
-<p>If you want to test this out, clone this repo and make a contribution!</p>
+<p>The master branch should be 100% functional at all times, on any machine. Please ensure it is <a href="https://help.github.com/articles/about-protected-branches/">protected</a> and that your tests and linters <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions">run automatically on all pull requests</a>. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
+<p>For some further reading suggest this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
 </div>
 <div id="gitlink" class="section level3 unnumbered">
 <h3>Useful Github links</h3>
@@ -275,18 +272,19 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 </ul>
 </div>
 </div>
-<div id="crossteamworking" class="section level2">
-<h2><span class="header-section-number">3.2</span> Cross-team working</h2>
-<p><strong>POPULATE THIS</strong></p>
-</div>
 <div id="knowledge" class="section level2">
-<h2><span class="header-section-number">3.3</span> Share the knowledge</h2>
-<p>We also collaborate through sharing knowledge. If you produce something reusable, please package it and share it with others.</p>
-<p>There are a number of channels through which coding knowledge is shared in DASD:<br />
-* Slack channels (key channels are: <a href="https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS">#data_science</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1PUCG719">#r</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1Q09V86S">#python</a>)<br />
-* Coffee and Coding (resources <a href="https://github.com/moj-analytical-services/Coffee-and-Coding">here</a>)<br />
-* <a href="https://trello.com/b/zAwm6sCc/dasd-training">DASD training Trello</a><br />
-* <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit">R learning resources</a></p>
+<h2><span class="header-section-number">3.2</span> Share the knowledge</h2>
+<p>We also collaborate through sharing knowledge. There are a number of channels through which coding knowledge is shared in DASD:</p>
+<ul>
+<li>Slack channels (key channels are: <a href="https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS">#data_science</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1PUCG719">#r</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1Q09V86S">#python</a>)<br />
+</li>
+<li>Coffee and Coding (resources <a href="https://github.com/moj-analytical-services/Coffee-and-Coding">here</a>)<br />
+</li>
+<li><a href="https://trello.com/b/zAwm6sCc/dasd-training">DASD training Trello</a><br />
+</li>
+<li><a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit">R learning resources</a></li>
+</ul>
+<p>Further resources can be found <a href="ksresources.html#ksresources">here</a>.</p>
 
 </div>
 </div>
