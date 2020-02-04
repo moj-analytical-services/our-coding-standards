@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Accurate | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Accurate | DASD Coding Principles" />
   <meta property="og:type" content="book" />
@@ -52,9 +52,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,16 +136,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Document structure</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
-<li class="part"><span><b>I Workflow</b></span></li>
-<li class="chapter" data-level="" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i>Workflow</a></li>
-<li class="part"><span><b>II Principles</b></span></li>
+<li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
 <li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a><ul>
 <li class="chapter" data-level="1.1" data-path="understand.html"><a href="understand.html#structure2"><i class="fa fa-check"></i><b>1.1</b> Code structure</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#data"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#readme"><i class="fa fa-check"></i>Documentation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.2</b> Code style</a><ul>
+<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#functions"><i class="fa fa-check"></i><b>1.2</b> Abstractions</a></li>
+<li class="chapter" data-level="1.3" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.3</b> Code style</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#defaults"><i class="fa fa-check"></i>Defaults</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#names"><i class="fa fa-check"></i>Naming conventions</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#ccc"><i class="fa fa-check"></i>Clear and concise code</a></li>
@@ -170,13 +171,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#dependency-management-tools"><i class="fa fa-check"></i>Dependency management tools</a></li>
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#githash"><i class="fa fa-check"></i>Include a git hash</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#functions"><i class="fa fa-check"></i>Abstractions</a></li>
 <li class="chapter" data-level="4.2" data-path="reproduce.html"><a href="reproduce.html#format"><i class="fa fa-check"></i><b>4.2</b> Format</a></li>
 <li class="chapter" data-level="4.3" data-path="reproduce.html"><a href="reproduce.html#change"><i class="fa fa-check"></i><b>4.3</b> Optimize for change</a></li>
 </ul></li>
-<li class="part"><span><b>III Resources</b></span></li>
-<li class="chapter" data-level="5" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>5</b> Project Checklist</a></li>
-<li class="chapter" data-level="6" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>6</b> Knowledge Share Resources</a></li>
+<li class="part"><span><b>II Resources</b></span></li>
+<li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
+<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
+<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
