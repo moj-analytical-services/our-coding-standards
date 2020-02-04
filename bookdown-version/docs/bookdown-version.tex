@@ -80,6 +80,9 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -146,9 +149,11 @@ These coding principles are by no means a list of rules, but seek to provide gui
 \section*{Document structure}\label{structure}}
 \addcontentsline{toc}{section}{Document structure}
 
-The first part of this document contains the four \protect\hyperlink{principles}{coding principles}, with details on the practical actions that can be taken to help us follow the principles.
+The first part of this document contains the suggested \protect\hyperlink{wf}{project workflow} - this may be helpful in understanding where to apply the principles in the project life-cycle {[}\textbf{AMEND}{]}
 
-The second part of the document contains additional resources that may be helpful in understanding how to apply the principles to the project life-cycle. This includes an \protect\hyperlink{wf}{example workflow}, a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
+The second part of the documents contains the four \protect\hyperlink{principles}{coding principles}, with details on the practical actions that can be taken to follow the principles.
+
+The final part of the document contains additional resources that may be helpful in understanding how to apply the principles, including a \protect\hyperlink{checklist}{project checklist} and a \protect\hyperlink{ksresources}{knowledge share resource list}.
 
 \hypertarget{contributing}{%
 \section*{Contributing}\label{contributing}}
@@ -157,6 +162,112 @@ The second part of the document contains additional resources that may be helpfu
 If you think that something is missing or not quite right you should either:\\
 1. \protect\hyperlink{versioncontrol}{Contribute directly}\\
 2. \href{https://github.com/moj-analytical-services/our-coding-standards/issues}{Raise an issue}
+
+\hypertarget{part-workflow}{%
+\part{Workflow}\label{part-workflow}}
+
+\hypertarget{wf}{%
+\chapter*{Workflow}\label{wf}}
+\addcontentsline{toc}{chapter}{Workflow}
+
+The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Create/clone \protect\hyperlink{versioncontrol}{Github repo}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  By storing your code in a repo you're making it easier for others to collaborate on your project, to use pieces of your code elsewhere and ensures that your project will be accessible in the future.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Create \protect\hyperlink{versioncontrol}{issue}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Using issues to communicate what you're working on helps to coordinate tasks between team members and creates a record of completed work, useful for quality assurance purposes.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Create \protect\hyperlink{versioncontrol}{branch}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Creating a branch means that several people can work on a project simultaneously and protects the main codebase from any unwanted changes.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Set up \protect\hyperlink{projdep}{dependency management}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Managing your project dependencies means that your project is more likely to be re-runnable in the future and on others' machine.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \textbf{Build in \protect\hyperlink{unittest}{unit testing}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Unit tests provide confidence that your code is correct and can be used to pinpoint issues where they occur, making fixes quicker and easier.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  \textbf{Commit \protect\hyperlink{versioncontrol}{changes}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Committing your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \textbf{\protect\hyperlink{review}{Pull request and code review}}\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Ensuring that your code is reviewed provides confidence in the accuracy of your code and the opportunity to share knowledge with colleagues.
+\end{itemize}
 
 \hypertarget{part-principles}{%
 \part{Principles}\label{part-principles}}
@@ -225,13 +336,15 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 \begin{itemize}
 \item
-  MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}\textbf{POPULATE} with link to ap guidance{]}.
+  It should be easy for others to change parameters and data without needed to understand the full codebase.
+\item
+  Where possible, it's generally best practice to use lookup/reference files as much as possible, rather than hard-coding variables. An alternative approach is to store all parameters in one script, making it easy for the variables to be located and updated.
 \item
   Small data files that are not MOJ data can be committed to the Github repo (e.g.~parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a `data' folder within the project folder.{[}\textbf{POPULATE} with link to Github with example project structure{]}
 \item
-  Prefer text format (e.g.~csv) to Excel\\
+  Prefer text format (e.g.~csv) to Excel
 \item
-  It should be easy for others to change parameters and data without needed to understand the full codebase.
+  Please note that unpublished MOJ data should never be committed to the Github repository - even a `private' repo isn't secure. Instead, data should be stored in an s3 bucket or in Athena. {[}\textbf{POPULATE} with link to ap guidance{]}.
 \end{itemize}
 
 \hypertarget{readme}{%
@@ -242,33 +355,24 @@ There should be clear logical separation of parameters, assumptions, data and co
 \item
   Your project should include a README - by writing a README for your project you're helping others (and your future self) to be able to understand and run your project. Find our template README \href{https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md}{here}.
 \item
-  You should add a description to your Github repository and tag it with appropriate tags This will allow your project to be discoverable and reusable by others.
+  You should add a description to your Github repository and tag it with appropriate \href{https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics}{topics}. This will allow your project to be discoverable and reusable by others. Github will also automatically tag it according to the \href{https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-languages}{language} used.
 \item
-  Any functions you create should have appropriate documentation {[}\textbf{POPULATE} with link to how to do this.{]}
+  Any functions you create should have appropriate documentation {[}\textbf{POPULATE} with link to how to do this.{]} If possible, any code that creates a function should include a clear explanation of the format of both the inputs and outputs. This makes it easier to understand what you can change if you want a different output.
 \item
-  Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works.
+  Try to make your Git commit messages as informative as possible.
 \item
-  Try to make your commit messages as informative as possible.
+  Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works. Note that there are no hard and fast rules on how to do this - \href{https://blog.ndepend.com/correct-way-comment-code/}{this blog}) gives an overview on some of the differing opinions on this.
+  {[}\textbf{INSERT EXAMPLE?}{]}
 \end{itemize}
 
-\hypertarget{functions}{%
-\subsection*{Abstractions}\label{functions}}
-\addcontentsline{toc}{subsection}{Abstractions}
-
-Abstractions (e.g.~functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
-
-If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}. As a general rule, functions should be less than about 50 lines long.
-
-All non trivial functions are documented using the programming language's accepted standard:\\
-* For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and particularly \href{https://www.python.org/dev/peps/pep-0257/}{PEP257}.\\
-* For R, use \texttt{roxygen2}.
-If your functions are short and well documented, there is often little need for additional code comments.
-{[}\textbf{AMEND} - check links here?{]}
+\begin{quote}
+Good code is its own best documentation. As you're about to add a comment, ask yourself, ``How can I improve the code so that this comment isn't needed?'' Improve the code and then document it to make it even clearer.'' - Steve McConnell
+\end{quote}
 
 \hypertarget{style}{%
 \section{Code style}\label{style}}
 
-There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is less diversity in our approaches.
+There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is more commonality in our approaches.
 
 \hypertarget{defaults}{%
 \subsection*{Defaults}\label{defaults}}
@@ -293,7 +397,7 @@ R\strut
 \begin{itemize}
 \tightlist
 \item
-  Follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}
+  Follow \href{https://style.tidyverse.org/index.html}{the Tidyverse Style Guide}
 \item
   Default to packages from the \href{http://tidyverse.org/}{Tidyverse}, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: \href{http://r4ds.had.co.nz}{R for Data Science by Hadley Wickham}. For example:
 
@@ -311,7 +415,7 @@ R\strut
 \item
   Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()
 \item
-  R Packages are the \href{http://r-pkgs.had.co.nz/}{fundamental unit of reproducable R code.}
+  R Packages are the \href{http://r-pkgs.had.co.nz/}{fundamental unit of reproducible R code.}
 \end{itemize}\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
@@ -338,7 +442,7 @@ Python\strut
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 Encoding and CSVs\strut
 \end{minipage} & \begin{minipage}[t]{0.67\columnwidth}\raggedright
-Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8. Your output CSVs should pass \href{https://csvlint.io/}{this} csv linter.\strut
+Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.27\columnwidth}\raggedright
 SQL\strut
@@ -390,29 +494,23 @@ In addition to the above coding defaults, the following actions will help you to
 \item
   Code should be \href{https://en.wikipedia.org/wiki/Don\%27t_repeat_yourself}{DRY} - which stands for `Don't Repeat Yourself'. - The \href{https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)}{`Rule of Three'} is a good approach to managing duplication. Less code is usually better - but not at the expense of clarity. {[}\textbf{AMEND} - remove? populate links?{]}
 \item
-  Ensure that your tests and linters run automatically on all pull requests, if that is possible, by \ldots{[}\textbf{POPULATE}{]}
+  \sout{Ensure that your tests and linters run automatically on all pull requests, if that is possible, by \ldots{}}{[}\textbf{POPULATE}{]}
 \item
-  Use code comments judiciously:
+  Use code comments well (see \protect\hyperlink{readme}{above})
 \end{itemize}
-
-\begin{quote}
-Good code is its own best documentation. As you're about to add a comment, ask yourself, ``How can I improve the code so that this comment isn't needed?'' Improve the code and then document it to make it even clearer.'' - Steve McConnell
-\end{quote}
-
-Comments are for explaining why something is needed, not how it works. Appropriate use of comments means it is easier to understand how code works at a later date. Before commenting, consider whether the comment fits better into the function's documentation than in a comment.
 
 \hypertarget{linter}{%
 \subsection*{Linters}\label{linter}}
 \addcontentsline{toc}{subsection}{Linters}
 
-Apply a linter to easily review your code formatting. This means our coding style will be consistent across projects. It will also make it easier for others to understand our code.
+A linter is a tool that analyses code to check for programmatic and stylistic errors. You should apply a linter to review your code formatting, which will mean our coding style will be consistent across projects and make it easier for others to understand our code.
 
 In RStudio, the keyboard shortcut `ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
 
 \begin{itemize}
 \tightlist
 \item
-  For R use \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} and follow \href{http://adv-r.had.co.nz/Style.html}{Hadley's Style Guide}\\
+  For R use \href{https://cran.r-project.org/web/packages/lintr/readme/README.html}{Lintr} and follow \href{https://style.tidyverse.org/index.html}{the Tidyverse Style Guide}\\
 \item
   For Python, use {[}pylint{]} and follow {[}PEP8{]} \textbf{POPULATE} links
 \end{itemize}
@@ -495,7 +593,11 @@ When you review someone's pull request you become the gatekeeper to the master b
 
 4: \protect\hyperlink{ccc}{Does it work}? Does it work on my machine?(\#projdep)
 
-5: Are there edge cases that might \protect\hyperlink{unittest}{break} it?
+5: Are there any cases that might \protect\hyperlink{unittest}{break} it?
+
+6: Is there sufficient \protect\hyperlink{readme}{documentation}?
+
+7: Have they adopted a sensible \protect\hyperlink{style}{code style}?
 
 \textbf{AMEND} - update and merge with \protect\hyperlink{defaults}{section above}
 * Ensure that your tests and linters run automatically on all pull requests, if that is possible, by setting up \href{https://travis-ci.org/}{TravisCI} on your repo. This will probably be more complicated than it is worth if your repo is private due to restrictions that are applied to the free TravisCI accounts
@@ -512,7 +614,7 @@ It is vital that we're able to collaborate across projects, to share both worklo
 A key tool in enabling collaboration is Github, which can be used for sharing code. Checking the code into Github is part of the version control workflow.
 
 \hypertarget{versioncontrol}{%
-\section{Version Control}\label{versioncontrol}}
+\section{Version control}\label{versioncontrol}}
 
 Code should be version controlled using Git and checked into Github.
 You can find a guide to using Git with R \href{http://happygitwithr.com/}{here}
@@ -757,6 +859,22 @@ You can access the git hash using the following code:
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{functions}{%
+\section*{Abstractions}\label{functions}}
+\addcontentsline{toc}{section}{Abstractions}
+
+Abstractions (e.g.~functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
+
+It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g.~\#r and \#python in the \href{asdslack.slack.com}{ASD workspace}
+
+If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see \href{https://github.com/moj-analytical-services/writing_functions_in_r}{here}. As a general rule, functions should be less than about 50 lines long.
+
+All non trivial functions should be documented using the programming language's accepted standard:\\
+* For Python follow \href{https://www.python.org/dev/peps/pep-0008/}{PEP8} and particularly \href{https://www.python.org/dev/peps/pep-0257/}{PEP257}.\\
+* For R, use \texttt{roxygen2}.
+If your functions are short and well documented, there is often little need for additional code comments.
+{[}\textbf{AMEND} - check links here?{]}
+
 \hypertarget{format}{%
 \section{Format}\label{format}}
 
@@ -786,108 +904,6 @@ If the output is a report, the write up should be fully reproducible, or as clos
 \hypertarget{resources}{%
 \part{Resources}\label{resources}}
 
-\hypertarget{wf}{%
-\chapter{Workflow}\label{wf}}
-
-The following is the recommended workflow for coding projects in DASD. It has been included here to aid understanding of how the coding principles fit into the project life-cycle.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \textbf{Create/clone \protect\hyperlink{versioncontrol}{Github repo}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  By storing your code in a repo you're making it easier for others to collaborate on your project, to use pieces of your code elsewhere and ensures that your project will be accessible in the future.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  \textbf{Create \protect\hyperlink{versioncontrol}{issue}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Using issues to communicate what you're working on helps to coordinate tasks between team members and creates a record of completed work, useful for quality assurance purposes.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  \textbf{Create \protect\hyperlink{versioncontrol}{branch}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Creating a branch means that several people can work on a project simultaneously and protects the main codebase from any unwanted changes.\\
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  \textbf{Set up \protect\hyperlink{projdep}{dependency management}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Managing your project dependencies means that your project is more likely to be re-runnable in the future and on others' machine.\\
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  \textbf{Build in \protect\hyperlink{unittest}{unit testing}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Unit tests provide confidence that your code is correct and can be used to pinpoint issues where they occur, making fixes quicker and easier.\\
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
-\tightlist
-\item
-  \textbf{Commit \protect\hyperlink{versioncontrol}{changes}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Committing your changes means that you can recover your work if you make a mistake and provides a record of changes for your reviewer.\\
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  \textbf{\protect\hyperlink{review}{Pull request and code review}}\\
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  Ensuring that your code is reviewed provides confidence in the accuracy of your code and the opportunity to share knowledge with colleagues.
-\end{itemize}
-
 \hypertarget{checklist}{%
 \chapter{Project Checklist}\label{checklist}}
 
@@ -898,11 +914,21 @@ The following is the recommended workflow for coding projects in DASD. It has be
 
 \textbf{POPULATE} fully
 
-There are a number of channels through which coding knowledge is shared in DASD:\\
-* Slack channels (key channels are: \href{https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS}{\#data\_science}, \href{https://app.slack.com/client/T1PU1AP6D/C1PUCG719}{\#r}, \href{https://app.slack.com/client/T1PU1AP6D/C1Q09V86S}{\#python})\\
-* Coffee and Coding (resources \href{https://github.com/moj-analytical-services/Coffee-and-Coding}{here})\\
-* \href{https://trello.com/b/zAwm6sCc/dasd-training}{DASD training Trello}\\
-* \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}
+There are a number of channels through which coding knowledge is shared in DASD:
+
+\begin{itemize}
+\tightlist
+\item
+  Slack channels (key channels are: \href{https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS}{\#data\_science}, \href{https://app.slack.com/client/T1PU1AP6D/C1PUCG719}{\#r}, \href{https://app.slack.com/client/T1PU1AP6D/C1Q09V86S}{\#python})\\
+\item
+  Coffee and Coding (resources \href{https://github.com/moj-analytical-services/Coffee-and-Coding}{here})\\
+\item
+  \href{https://trello.com/b/zAwm6sCc/dasd-training}{DASD training Trello}\\
+\item
+  \href{https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit}{R learning resources}\\
+\item
+  \href{https://trello.com/b/D5pSkqnT/online-analytical-training}{Online analytical training Trello}
+\end{itemize}
 
 \textbf{PLACEHOLDER} - something on cross-departmental resources/code.
 

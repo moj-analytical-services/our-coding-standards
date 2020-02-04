@@ -11,7 +11,7 @@ We want to aim for code that is:
 
 **1. [Understandable](#understand)**  
 
-* Projects should be [structured](#structure2) with clear logical separation of parameters, assumptions, data and code, with appropriate documentation.  
+* Projects should be [structured](#structure2) with clear logical separation of parameters, assumptions, data and code, with appropriate documentation.
 * As far as possible, code should follow the [style guidance](#style) outlined.
 
 **2. [Accurate](#accurate)**  

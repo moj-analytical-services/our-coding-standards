@@ -63,21 +63,6 @@ def get_git_revision_short_hash():
     return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD'])
 ```
 
-## Abstractions {-#functions}
-
-Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
-
-It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. #r and #python in the [ASD workspace](asdslack.slack.com)
-
-If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
-
-All non trivial functions should be documented using the programming language’s accepted standard:  
-* For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).  
-* For R, use `roxygen2`.
-If your functions are short and well documented, there is often little need for additional code comments. 
-[**AMEND** - check links here?]
-
-[13]:https://github.com/moj-analytical-services/writing_functions_in_r
 
 
 ## Format {#format}

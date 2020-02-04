@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Reproducible | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Reproducible | DASD Coding Principles" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="collaborate.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="next" href="wf.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,9 +52,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,16 +136,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Document structure</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
 </ul></li>
-<li class="part"><span><b>I Workflow</b></span></li>
-<li class="chapter" data-level="" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i>Workflow</a></li>
-<li class="part"><span><b>II Principles</b></span></li>
+<li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
 <li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a><ul>
 <li class="chapter" data-level="1.1" data-path="understand.html"><a href="understand.html#structure2"><i class="fa fa-check"></i><b>1.1</b> Code structure</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#data"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#readme"><i class="fa fa-check"></i>Documentation</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.2</b> Code style</a><ul>
+<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#functions"><i class="fa fa-check"></i><b>1.2</b> Abstractions</a></li>
+<li class="chapter" data-level="1.3" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.3</b> Code style</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#defaults"><i class="fa fa-check"></i>Defaults</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#names"><i class="fa fa-check"></i>Naming conventions</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#ccc"><i class="fa fa-check"></i>Clear and concise code</a></li>
@@ -170,13 +171,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#dependency-management-tools"><i class="fa fa-check"></i>Dependency management tools</a></li>
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#githash"><i class="fa fa-check"></i>Include a git hash</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#functions"><i class="fa fa-check"></i>Abstractions</a></li>
 <li class="chapter" data-level="4.2" data-path="reproduce.html"><a href="reproduce.html#format"><i class="fa fa-check"></i><b>4.2</b> Format</a></li>
 <li class="chapter" data-level="4.3" data-path="reproduce.html"><a href="reproduce.html#change"><i class="fa fa-check"></i><b>4.3</b> Optimize for change</a></li>
 </ul></li>
-<li class="part"><span><b>III Resources</b></span></li>
-<li class="chapter" data-level="5" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>5</b> Project Checklist</a></li>
-<li class="chapter" data-level="6" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>6</b> Knowledge Share Resources</a></li>
+<li class="part"><span><b>II Resources</b></span></li>
+<li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
+<li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
+<li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -242,33 +243,22 @@ more reproducible, there is no ambiguity about the specific code that was used t
 <h4>R</h4>
 <p>You can access the git hash using either of the following code:
 snippets.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(git2r)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="reproduce.html#cb6-1"></a><span class="kw">library</span>(git2r)</span>
+<span id="cb6-2"><a href="reproduce.html#cb6-2"></a>repo &lt;-<span class="st"> </span><span class="kw">repository</span>(<span class="st">&quot;.&quot;</span>)</span>
+<span id="cb6-3"><a href="reproduce.html#cb6-3"></a><span class="kw">print</span>(<span class="kw">repository_head</span>(repo))</span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="reproduce.html#cb7-1"></a><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 </div>
 <div id="python" class="section level4 unnumbered">
 <h4>Python</h4>
 <p>You can access the git hash using the following code:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="im">import</span> subprocess</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">def</span> get_git_revision_hash():</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">def</span> get_git_revision_short_hash():</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="reproduce.html#cb8-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb8-2"><a href="reproduce.html#cb8-2"></a><span class="kw">def</span> get_git_revision_hash():</span>
+<span id="cb8-3"><a href="reproduce.html#cb8-3"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span>
+<span id="cb8-4"><a href="reproduce.html#cb8-4"></a><span class="kw">def</span> get_git_revision_short_hash():</span>
+<span id="cb8-5"><a href="reproduce.html#cb8-5"></a>    <span class="cf">return</span> subprocess.check_output([<span class="st">&#39;git&#39;</span>, <span class="st">&#39;rev-parse&#39;</span>, <span class="st">&#39;--short&#39;</span>, <span class="st">&#39;HEAD&#39;</span>])</span></code></pre></div>
 </div>
 </div>
-</div>
-<div id="functions" class="section level2 unnumbered">
-<h2>Abstractions</h2>
-<p>Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.</p>
-<p>It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you’re struggling to find what you’re looking for, it’s worth asking on the relevant slack channel (e.g. #r and #python in the <a href="asdslack.slack.com">ASD workspace</a></p>
-<p>If you end up using a piece of code three times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
-<p>All non trivial functions should be documented using the programming language’s accepted standard:<br />
-* For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.<br />
-* For R, use <code>roxygen2</code>.
-If your functions are short and well documented, there is often little need for additional code comments.
-[<strong>AMEND</strong> - check links here?]</p>
 </div>
 <div id="format" class="section level2">
 <h2><span class="header-section-number">4.2</span> Format</h2>
@@ -284,7 +274,7 @@ If your functions are short and well documented, there is often little need for 
 <ul>
 <li>Don’t try to solve every conceivable problem up-front, instead focus on making your code easy to change when needed.</li>
 <li>Don’t prematurely optimize - choose clarity over performance, unless there is a serious performance issue that needs to be addressed.</li>
-<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
+<li>Change can come in several forms, including hardware - your code will eventually be run on a colleague’s machine or a server somewhere. Without over-complicating things, write your code with this in mind. For example, use relative paths (e.g. <code>./file_in_the_project_directory.R</code> rather than <code>/Users/my_username/development/my_project/file_in_the_project_directory.R</code>)</li>
 </ul>
 
 </div>
@@ -299,7 +289,7 @@ If your functions are short and well documented, there is often little need for 
         </div>
       </div>
 <a href="collaborate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="wf.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
