@@ -5,7 +5,7 @@ output: html_document
 
 # Reproducible {#reproduce}
 
-We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and so that it can be easily reused by others in their own projects (**AMEND** - delete this last one?).
+We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and it can be easily reused by others in their own projects.
 
 There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
@@ -18,21 +18,19 @@ Your project will depend on an number of external factors, such as software or p
 +--------------+--------------------------------------------------------+
 | Language     | Tools                                  | 
 +==============+========================================================+
-| R            | Use [Conda][1], [Packrat][2] or [Renv][3]. [**AMEND** - add comment on which is preferable?] |
+| R            | We recommend using [Conda][241]. Other alternatives are [Packrat][242] and [Renv][243].  |
 +--------------+--------------------------------------------------------+
-| Python       | Use [Conda][1] |
+| Python       | We recommend using [Conda][241] |
 +--------------+--------------------------------------------------------+
 | Javascript   | Include third party library dependencies in the project as `.js` files |
 +--------------+--------------------------------------------------------+
 
-[1]:https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf
-[2]:https://rstudio.github.io/packrat/
-[3]:https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/
+[241]:https://user-guidance.services.alpha.mojanalytics.xyz/appendix/conda/#content
+[242]:https://rstudio.github.io/packrat/
+[243]:https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/
 
 
 ### Include a git hash {-#githash}
-
-[**AMEND** - is this still relevant/current?]
 
 If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.
