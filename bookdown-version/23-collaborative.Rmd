@@ -13,7 +13,7 @@ You can find a guide to using Git with R [here](http://happygitwithr.com/). With
 
 ### Github flow{-#flow}  
 
-Github flow is a working practice that helps to maintain overall code quality, facilitate collaboration on a single project  and protect the codebase. We have tweaked it a little from what is [described on GitHub][4].
+Github flow is a working practice that helps to maintain overall code quality, facilitate collaboration on a single project  and protect the codebase. We have tweaked it a little from what is [described on GitHub][231].
 
 There are 6 steps to our process:  
 
@@ -47,6 +47,7 @@ Write a descriptive commit message
 ```
 >**Note:**
 >If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: `:q!`. Then configure your default text editor for Git
+
 ```sh
 git config --global core.editor <my-favourite-text-editor>
  Then try again
@@ -59,6 +60,7 @@ push your branch to the remote repo
 git push origin my-new-sensibly-named-branch
 then go to Github, open a PR and invite at least one reviewer
 ```
+
 Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see [here](https://help.github.com/articles/autolinked-references-and-urls/) for further guidance.  This makes it easy in future to see what changes were made to the code in response to the issue.
 
 6. To make further changes, just make more commits on the same branch and push them to the remote repo again.
@@ -69,35 +71,35 @@ Make sure that you reference the issue in your pull request, by using the hash (
 
 The master branch should be 100% functional at all times, on any machine.  Please ensure it is [protected](https://help.github.com/articles/about-protected-branches/) and that your tests and linters [run automatically on all pull requests](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).  A protected master branch guarantees that all pull requests have been reviewed before they are merged.
 
-For some further reading suggest this [article][5] that explains these git commands and others in a bit more detail.
+For some further reading suggest this [article][232] that explains these git commands and others in a bit more detail.
 
-[4]: https://guides.github.com/introduction/flow/
-[5]: https://gist.github.com/blackfalcon/8428401
-[6]:https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html
-[7]:https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github
-[8]:https://guides.github.com/introduction/git-handbook/
+[231]: https://guides.github.com/introduction/flow/
+[232]: https://gist.github.com/blackfalcon/8428401
+[233]:https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html
+[234]:https://user-guidance.services.alpha.mojanalytics.xyz/github.html#creating-your-project-repo-on-github
+[235]:https://guides.github.com/introduction/git-handbook/
 
 ### Useful Github links {-#gitlink}
 
-* [A guide to getting started with github][6]  
-* Github guide on [analytical platform guidance][7]  
-* List of basic [git commands][8] 
+* [A guide to getting started with github][233]  
+* Github guide on [analytical platform guidance][234]  
+* List of basic [git commands][235] 
 
 ## Share the knowledge {#knowledge}
 
 We also collaborate through sharing knowledge. There are a number of channels through which coding knowledge is shared in DASD:  
 
-* Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233], [#conda][237])  
-* Coffee and Coding (resources [here][234])  
-* [DASD training Trello][235]  
-* [R learning resources][236]
+* Slack channels (key channels are: [#data_science][236], [#r][237], [#python][239], [#conda][2312])  
+* Coffee and Coding (resources [here][239])  
+* [DASD training Trello][2310]  
+* [R learning resources][2311]
 
 Further resources can be found [here](#ksresources).
 
-[231]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
-[232]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
-[233]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S
-[234]: https://github.com/moj-analytical-services/Coffee-and-Coding
-[235]: https://trello.com/b/zAwm6sCc/dasd-training
-[236]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
-[237]: https://app.slack.com/client/T1PU1AP6D/CSP8603CK
+[236]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
+[237]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
+[238]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S
+[239]: https://github.com/moj-analytical-services/Coffee-and-Coding
+[2310]: https://trello.com/b/zAwm6sCc/dasd-training
+[2311]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
+[2312]: https://app.slack.com/client/T1PU1AP6D/CSP8603CK

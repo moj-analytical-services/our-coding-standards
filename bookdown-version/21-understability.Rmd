@@ -48,7 +48,7 @@ Abstractions (e.g. functions, packages, modules etc.) should be used where possi
 
 It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. #r and #python in the [ASD workspace](asdslack.slack.com)).
 
-If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][13]. As a general rule, functions should be less than about 50 lines long. 
+If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][211]. As a general rule, functions should be less than about 50 lines long. 
 
 All non trivial functions should be documented using the programming language’s accepted standard:  
 * For Python follow [PEP8](https://www.python.org/dev/peps/pep-0008/) and particularly [PEP257](https://www.python.org/dev/peps/pep-0257/).  
@@ -56,7 +56,7 @@ All non trivial functions should be documented using the programming language’
 
 If your functions are short and well documented, there is often little need for additional code comments. See the [Tidyverse Style Guide](https://style.tidyverse.org/functions.html#naming) for some basic guidance on how to make your functions understandable.
 
-[13]:https://github.com/moj-analytical-services/writing_functions_in_r
+[211]:https://github.com/moj-analytical-services/writing_functions_in_r
 
 ## Code style {#style}
 
@@ -122,15 +122,15 @@ A linter is a tool that analyses code to check for programmatic and stylistic er
 
 In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
 
-* For R use [Lintr][12] and follow [the Tidyverse Style Guide][14].  
-* For Python, use [pylint][15] and follow [PEP8][16].
+* For R use [Lintr][212] and follow [the Tidyverse Style Guide][213].  
+* For Python, use [pylint][214] and follow [PEP8][215].
 
 If possible, set up your linters and tests to run automatically on all pull requests, using [Github Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).
 
-[12]:https://cran.r-project.org/web/packages/lintr/readme/README.html
-[14]:https://style.tidyverse.org/index.html
-[15]:http://pylint.pycqa.org/en/latest/
-[16]:https://www.python.org/dev/peps/pep-0008/
+[212]:https://cran.r-project.org/web/packages/lintr/readme/README.html
+[213]:https://style.tidyverse.org/index.html
+[214]:http://pylint.pycqa.org/en/latest/
+[215]:https://www.python.org/dev/peps/pep-0008/
 
 ### Error messages {-#errors}
 Errors will occur, so write your error messages in a way that provide useful information to end users and people working on the code.

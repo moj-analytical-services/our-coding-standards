@@ -9,7 +9,7 @@ Code should be error free and appropriately quality assured. Alongside simple se
 
 ## Testing {#unittest}
 
-Testing our code helps to ensure that it is both correct and robust. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][222].
+Testing our code helps to ensure that it is both correct and robust. For further guidance on what you should test, see the [Coffee and Coding 'Testing' session][221].
 
 As a broad description, unit tests should exist to check that your actual results match your expected results.
 
@@ -22,18 +22,18 @@ There are a number of tools to enable unit testing:
 +---------------+--------------------------------------------------------+
 | Language      | Tools                                  | 
 +===============+========================================================+
-| R             | In R, consider using the [testthat][221] package. For an introduction to using testthat, try reading this [blog post][9] from Inattentional Coffee or this [Towards Data Science post][10]. For an example unit tests within a project, see [here][11]. |
+| R             | In R, consider using the [testthat][222] package. For an introduction to using testthat, try reading this [blog post][223] from Inattentional Coffee or this [Towards Data Science post][224]. For an example unit tests within a project, see [here][225]. |
 +---------------+--------------------------------------------------------+
 | Python        | Consider using [unittest](https://docs.python.org/3/library/unittest.html) or [pytest](https://docs.pytest.org/en/latest/). |
 +---------------+--------------------------------------------------------+
 | Javascript    | See [here](http://busypeoples.github.io/post/testing-d3-with-jasmine/) for testing with javascript. For data vis in Javascript, you need unit tests of routines that manipulate your data or data structures.  Visual checks are sufficient of visualisation outputs, but you must make visual checks of the output against real data, and some test datasets that produce predictable output (e.g. where values are set to 1, 0.5 etc.). |
 +---------------+--------------------------------------------------------+
 
-[9]:https://katherinemwood.github.io/post/testthat/
-[10]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
-[11]:https://github.com/RobinL/costmodelr/tree/master/tests
-[221]: https://github.com/r-lib/testthat
-[222]: https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project
+[223]:https://katherinemwood.github.io/post/testthat/
+[224]:https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211
+[225]:https://github.com/RobinL/costmodelr/tree/master/tests
+[222]: https://github.com/r-lib/testthat
+[221]: https://github.com/moj-analytical-services/coffee-and-coding-public/tree/master/2019-12-06%20Testing%20as%20part%20of%20an%20Analytical%20Project
 
 
 ## Project review {#review}
