@@ -5,4 +5,11 @@ output: html_document
 
 # Project Checklist{#checklist}
 
-**POPULATE** project checklist
+[**AMEND** - work through existing document and add more detail]
+
+* [ ] Project follows the [Github workflow](#versioncontrol)
+* [ ] Project [dependencies](#projdep) are managed
+* [ ] Project structured well [**EXPAND**]
+* [ ] Project follows [style guidance](#style) outlined. [**EXPAND**]
+* [ ] Project contains [unit tests](#unittest)
+* [ ] All code has been reviewed

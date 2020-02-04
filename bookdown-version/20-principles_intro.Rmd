@@ -16,13 +16,13 @@ We want to aim for code that is:
 
 **2. [Accurate](#accurate)**  
 
-* Projects should include [unit testing](#unittest).
+* Projects should include [testing](#unittest).
 * All code should be [reviewed](#review).
 
 
 **3. [Collaborative](#collaborate)**  
 
-* Projects should follow the [github workflow](#versioncontrol).
+* Projects should follow the [Github workflow](#versioncontrol).
 * Knowledge should be [shared](#knowledge).  
 
 
