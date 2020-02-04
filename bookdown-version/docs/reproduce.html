@@ -163,8 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#flow"><i class="fa fa-check"></i>Github flow</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful Github links</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#crossteamworking"><i class="fa fa-check"></i><b>3.2</b> Cross-team working</a></li>
-<li class="chapter" data-level="3.3" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.3</b> Share the knowledge</a></li>
+<li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
 <li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
@@ -206,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="reproduce" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Reproducible</h1>
-<p>We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and so that it can be easily reused by others in their own projects (<strong>AMEND</strong> - delete this last one?).</p>
+<p>We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and it can be easily reused by others in their own projects.</p>
 <p>There are a number of steps that we can take to ensure that our code is as reproducible as possible.</p>
 <div id="projdep" class="section level2">
 <h2><span class="header-section-number">4.1</span> Manage project dependencies</h2>
@@ -227,11 +226,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td>R</td>
-<td>Use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>, <a href="https://rstudio.github.io/packrat/">Packrat</a> or <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>. [<strong>AMEND</strong> - add comment on which is preferable?]</td>
+<td>We recommend using <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a>. Other alternatives are <a href="https://rstudio.github.io/packrat/">Packrat</a> and <a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">Renv</a>.</td>
 </tr>
 <tr class="even">
 <td>Python</td>
-<td>Use <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a></td>
+<td>We recommend using <a href="https://github.com/moj-analytical-services/coffee-and-coding-public/blob/master/2019-10-30%20Conda/conda.pdf">Conda</a></td>
 </tr>
 <tr class="odd">
 <td>Javascript</td>
@@ -242,7 +241,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="githash" class="section level3 unnumbered">
 <h3>Include a git hash</h3>
-<p>[<strong>AMEND</strong> - is this still relevant/current?]</p>
 <p>If practical, the output of your code should include the git hash of the code that produced it. By doing so, the analysis should be
 more reproducible, there is no ambiguity about the specific code that was used to generate it.</p>
 <div id="r" class="section level4 unnumbered">
