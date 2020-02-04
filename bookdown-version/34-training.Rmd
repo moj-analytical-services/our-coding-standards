@@ -9,19 +9,19 @@ output: html_document
 
 There are a number of channels through which coding knowledge is shared in DASD:  
 
-* Slack channels (key channels are: [#data_science][231], [#r][232], [#python][233])  
-* Coffee and Coding (resources [here][234])  
-* [DASD training Trello][235]  
-* [R learning resources][236]  
-* [Online analytical training Trello][237]  
+* Slack channels (key channels are: [#data_science][341], [#r][342], [#python][343])  
+* Coffee and Coding (resources [here][344])  
+* [DASD training Trello][345]  
+* [R learning resources][346]  
+* [Online analytical training Trello][347]  
 
 **PLACEHOLDER** - something on cross-departmental resources/code.
 
-[231]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
-[232]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
-[233]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S
-[234]: https://github.com/moj-analytical-services/Coffee-and-Coding
-[235]: https://trello.com/b/zAwm6sCc/dasd-training
-[236]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
-[237]: https://trello.com/b/D5pSkqnT/online-analytical-training
+[341]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
+[342]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
+[343]: https://app.slack.com/client/T1PU1AP6D/C1Q09V86S
+[344]: https://github.com/moj-analytical-services/Coffee-and-Coding
+[345]: https://trello.com/b/zAwm6sCc/dasd-training
+[346]: https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit
+[347]: https://trello.com/b/D5pSkqnT/online-analytical-training
 

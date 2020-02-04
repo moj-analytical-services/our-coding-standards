@@ -31,7 +31,7 @@ If you're unfamiliar with the suggested workflow (particularly with regards to t
 
 ## Contributing {-#contributing}
 
-If you think that something is missing or not quite right you should either [contribute directly](#versioncontrol) or [raise an issue][1] on Github. 
+If you think that something is missing or not quite right you should either [contribute directly](#versioncontrol) or [raise an issue][01] on Github. 
 
-[1]: https://github.com/moj-analytical-services/our-coding-standards/issues
+[01]: https://github.com/moj-analytical-services/our-coding-standards/issues
 
