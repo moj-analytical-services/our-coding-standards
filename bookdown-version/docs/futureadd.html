@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Understandable | DASD Coding Principles</title>
+  <title>Chapter 8 Future Additions | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Understandable | DASD Coding Principles" />
+  <meta property="og:title" content="Chapter 8 Future Additions | DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Understandable | DASD Coding Principles" />
+  <meta name="twitter:title" content="Chapter 8 Future Additions | DASD Coding Principles" />
   
   <meta name="twitter:description" content="These are the DASD coding principles." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="principles.html"/>
-<link rel="next" href="accurate.html"/>
+<link rel="prev" href="ksresources.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -204,148 +204,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="understand" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Understandable</h1>
-<p>It is crucial that we write code in a way that can be understood easily by others (and our future selves) and passed on to other staff with minimal additional instruction.</p>
-<div id="structure2" class="section level2">
-<h2><span class="header-section-number">1.1</span> Code structure</h2>
-<p>There should be clear logical separation of parameters, assumptions, data and code, with appropriate documentation.</p>
-<div id="data" class="section level3 unnumbered">
-<h3>Data</h3>
+<div id="futureadd" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Future Additions</h1>
+<p>The following future additions to this document are planned (by section):</p>
+<div id="understandable" class="section level2 unnumbered">
+<h2>Understandable</h2>
+</div>
+<div id="accurate-1" class="section level2 unnumbered">
+<h2>Accurate</h2>
+</div>
+<div id="collaborative" class="section level2 unnumbered">
+<h2>Collaborative</h2>
 <ul>
-<li><p>It should be easy for others to change parameters and data without needing to understand the full codebase.</p></li>
-<li><p>Where possible, it’s best practice to use lookup/reference files as much as possible, rather than hard-coding variables. An alternative approach is to store all parameters in one script, making it easy for the variables to be located and updated.</p></li>
-<li><p>Small data files that are not MoJ data can be committed to the Github repo (e.g. parameters, csvs containing assumptions, mock data for unit tests, lookup tables) - these should be stored in a ‘data’ folder within the project folder.</p></li>
-<li><p>Prefer text format (e.g. csv) to Excel.</p></li>
-<li><p>Please note that unpublished MoJ data should never be committed to your Github repository - even a ‘private’ repo isn’t secure. Instead, data should be stored in an <a href="https://user-guidance.services.alpha.mojanalytics.xyz/amazon-s3.html#amazon-s3-2">S3 bucket</a> or in Athena.</p></li>
+<li>Notes on cross-team working</li>
 </ul>
 </div>
-<div id="readme" class="section level3 unnumbered">
-<h3>Documentation</h3>
-<ul>
-<li><p>Your project should include a README - by writing a README for your project you’re helping others (and your future self) to understand and run your project. Find our template README <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/README_template.md">here</a>.</p></li>
-<li><p>You should add a description to your Github repository and tag it with appropriate <a href="https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics">topics</a>. This will allow your project to be discoverable and reusable by others. Github will also automatically tag it according to the <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-languages">language</a> used.</p></li>
-<li><p>Any functions you create should have <a href="understand.html#functions">appropriate documentation</a>.</p></li>
-<li><p>Try to make your Git commit messages as informative as possible.</p></li>
-<li><p>Your code should be appropriately commented. Comments are for explaining why something is needed, not how it works. Note that there are no hard and fast rules on how to do this - <a href="https://blog.ndepend.com/correct-way-comment-code/">this blog</a> gives an overview on some of the differing opinions on this.</p></li>
-</ul>
-<blockquote>
-<p>Good code is its own best documentation. As you’re about to add a comment, ask yourself, “How can I improve the code so that this comment isn’t needed?” Improve the code and then document it to make it even clearer.” - Steve McConnell</p>
-</blockquote>
-</div>
-</div>
-<div id="functions" class="section level2">
-<h2><span class="header-section-number">1.2</span> Abstractions</h2>
-<p>Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.</p>
-<p>It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you’re struggling to find what you’re looking for, it’s worth asking on the relevant slack channel (e.g. #r and #python in the <a href="asdslack.slack.com">ASD workspace</a>).</p>
-<p>If you end up using a piece of code three times, it’s probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see <a href="https://github.com/moj-analytical-services/writing_functions_in_r">here</a>. As a general rule, functions should be less than about 50 lines long.</p>
-<p>All non trivial functions should be documented using the programming language’s accepted standard:<br />
-* For Python follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> and particularly <a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.<br />
-* For R, use <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen2</a>.</p>
-<p>If your functions are short and well documented, there is often little need for additional code comments. See the <a href="https://style.tidyverse.org/functions.html#naming">Tidyverse Style Guide</a> for some basic guidance on how to make your functions understandable.</p>
-</div>
-<div id="style" class="section level2">
-<h2><span class="header-section-number">1.3</span> Code style</h2>
-<p>There are often many ways of tackling a given problem. As a team, it makes sense to standardise our approach, not because one approach is necessarily better than all others, but because collaboration is easier if there is more commonality in our approaches.</p>
-<div id="defaults" class="section level3 unnumbered">
-<h3>Defaults</h3>
-<p>This section sets out sensible defaults which you are expected to follow. They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.</p>
-<p>[<strong>AMEND</strong> - check accuracy of these suggestions - are they still in date?]</p>
-<table>
-<colgroup>
-<col width="28%" />
-<col width="71%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Defaults</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>R</td>
-<td><ul>
-<li>Follow <a href="https://style.tidyverse.org/index.html">the Tidyverse Style Guide</a></li>
-<li>Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>, because they have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>. For example:
-<ul>
-<li>Prefer tibbles to data.frames</li>
-<li>Use ggplot2 rather than base graphics</li>
-<li>Use the pipe <code>%&gt;%</code> appropriately, but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>.</li>
-<li>Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a></li>
-</ul></li>
-<li>Use the package name when calling a function. For example, using dplyr::mutate() rather than just mutate()</li>
-<li>R Packages are the <a href="http://r-pkgs.had.co.nz/">fundamental unit of reproducible R code.</a></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Python</td>
-<td><ul>
-<li>Follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></li>
-<li>Use Python 3</li>
-<li>Use pandas for data analysis</li>
-<li>Use <code>loc</code> and <code>iloc</code> to write to data frames</li>
-<li>Use Altair for basic data visualisation</li>
-<li>Use Scikit Learn for machine learning</li>
-<li>Use SQLAlchemy and pandas for database interactions, rather than writing your own SQL</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>Encoding and CSVs</td>
-<td>Use unicode. This means you should convert inputs that include non-ASCII characters to unicode as early as possible in your data processing workflow. If you are outputting to text files, these should be encoded in utf-8.</td>
-</tr>
-<tr class="even">
-<td>SQL</td>
-<td>Use Postgres or SQLite where possible, rather than other SQL database backends.</td>
-</tr>
-<tr class="odd">
-<td>GIS</td>
-<td><ul>
-<li>Use PostGIS as your GIS backend</li>
-<li>Prefer conducting your GIS analysis in code, e.g. using SQL, rather than point and click in a GUI</li>
-<li>Use QGIS if you need a GUI.</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<p>In addition to the above coding defaults, the following actions will help you to write understandable code.</p>
-</div>
-<div id="names" class="section level3 unnumbered">
-<h3>Naming conventions</h3>
-<ul>
-<li>Use meaningful names - well-named functions and variables can remove the need for a comment and make life a little easier for other readers, including your future self. Avoid meaningless names like ‘obj’ / ‘result’ / ‘foo’.<br />
-</li>
-<li>Don’t be cute or jokey when naming things.</li>
-<li>Use single-letter variables only where the letter represents a well-known mathematical property (e.g. e = mc^2), or where their meaning is otherwise clear.</li>
-</ul>
-</div>
-<div id="ccc" class="section level3 unnumbered">
-<h3>Clear and concise code</h3>
-<ul>
-<li>Choose clarity over cleverness - use advanced language tricks with care.</li>
-<li>Avoid unnecessary repetition in you code. For example, if you end up using the same piece of code 3 times it’s probably worth turning it into a function.<br />
-</li>
-<li>Less code is usually better - but not at the expense of clarity.<br />
-</li>
-<li>Use code comments well (see <a href="understand.html#readme">above</a>).</li>
-</ul>
-</div>
-<div id="linter" class="section level3 unnumbered">
-<h3>Linters</h3>
-<p>A linter is a tool that analyses code to check for programmatic and stylistic errors. You should apply a linter to review your code formatting, which will mean our coding style will be consistent across projects and make it easier for others to understand.</p>
-<p>In RStudio, the keyboard shortcut ‘ctrl+shift+A’ will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.</p>
-<ul>
-<li>For R use <a href="https://cran.r-project.org/web/packages/lintr/readme/README.html">Lintr</a> and follow <a href="https://style.tidyverse.org/index.html">the Tidyverse Style Guide</a>.<br />
-</li>
-<li>For Python, use <a href="http://pylint.pycqa.org/en/latest/">pylint</a> and follow <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>.</li>
-</ul>
-<p>If possible, set up your linters and tests to run automatically on all pull requests, using <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions">Github Actions</a>.</p>
-</div>
-<div id="errors" class="section level3 unnumbered">
-<h3>Error messages</h3>
-<p>Errors will occur, so write your error messages in a way that provide useful information to end users and people working on the code.</p>
+<div id="reproducible" class="section level2 unnumbered">
+<h2>Reproducible</h2>
+<p>If you feel you are able to contribute to any of these areas, please clone this repo, make your changes on a branch and send a pull request for review.</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -353,8 +230,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="principles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="accurate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ksresources.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
