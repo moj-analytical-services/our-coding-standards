@@ -3,17 +3,32 @@ title: ''
 output: html_document
 ---
 
+# (PART) Development{-#dev}
+
 # Future Additions {#futureadd}
 
-The following future additions to this document are planned (by section):
+This section lists content that it would be helpful to add to this document in future. If you feel you are able to contribute to any of these areas, please clone this repo, make your changes on a branch and send a pull request for review.
 
-## Understandable {-}
+### Understandable {-}  
 
-## Accurate {-}
+* Is there a different code structure for a Shiny App? 
+For example can a shiny app be a package? Should most of the code be in a package and then a bare bones shiny app is made on top?  
+* When would you use Python rather than R? Are there certain things that each are better for?  
+* Template for project structure (in terms of folders etc.)
 
-## Collaborative {-}
+### Accurate {-}
+
+* Example project where unit tests are set up and working.  
+* Example project where linters and tests are set up to run automatically on pull requests (through Github Actions).  
+
+### Collaborative {-}
 * Notes on cross-team working
 
-## Reproducible {-}
+### Reproducible {-}
 
-If you feel you are able to contribute to any of these areas, please clone this repo, make your changes on a branch and send a pull request for review.
+* Example project with Conda set up for dependency management (and a few exercises for people to explore further).
+
+### Knowledge Share Resources {-}
+* Additional resources
+
+
