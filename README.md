@@ -1,6 +1,6 @@
 ## Our Coding Principles
 
-This repo contains the Data and Analytical Service Directorate’s (DASD) coding principles, accessed here: LINK
+This repo contains the Data and Analytical Service Directorate’s (DASD) coding principles, accessed here: https://moj-analytical-services.github.io/our-coding-standards/
 
 ## Contributing
 
