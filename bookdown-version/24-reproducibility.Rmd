@@ -5,7 +5,10 @@ output: html_document
 
 # Reproducible {#reproduce}
 
-We want our code to be reproducible so that: it can be used by others (both for collaboration and to allow effective review and accountability); it keeps working over time (protected from external changes); and it can be easily reused by others in their own projects.
+We want our code to be reproducible so that:  
+* it can be used by others (both for collaboration and to allow effective review and accountability);  
+* it keeps working over time (protected from external changes); 
+* it can be easily reused by others in their own projects.
 
 There are a number of steps that we can take to ensure that our code is as reproducible as possible.
 
