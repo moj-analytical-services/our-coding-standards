@@ -7,13 +7,13 @@ output: html_document
 
 In the same spirit as the coding principles, the checklist below has been designed to help you achieve 'best practice' in your project. Please note that the features listed below are recommendations and are not compulsory.
 
-* [ ] Project follows the [Github workflow](#versioncontrol)
-* [ ] Project repo has a description and is [tagged with topics](#readme)
-* [ ] Project repo contains a populated [README](#readme)
-* [ ] Project [dependencies](#projdep) are managed
-* [ ] [Sensible defaults](#style) have been used within the code
-* [ ] A [linter](#style) has been applied to the code
-* [ ] Functions are [documented](#functions)
-* [ ] Project contains [unit tests](#unittest)
-* [ ] Tests and linters [run automatically](#unittest) on pull requests
-* [ ] All code has been [reviewed](#review) by another person
+* Project follows the [Github workflow](#versioncontrol)
+* Project repo has a description and is [tagged with topics](#readme)
+* Project repo contains a populated [README](#readme)
+* Project [dependencies](#projdep) are managed
+* [Sensible defaults](#style) have been used within the code
+* A [linter](#style) has been applied to the code
+* Functions are [documented](#functions)
+* Project contains [unit tests](#unittest)
+* Tests and linters [run automatically](#unittest) on pull requests
+* All code has been [reviewed](#review) by another person
