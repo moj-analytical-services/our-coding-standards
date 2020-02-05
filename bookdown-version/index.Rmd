@@ -21,7 +21,7 @@ This document contains the Data and Analytical Service Directorate's (DASD) codi
 
 These coding principles are by no means a list of rules, but seek to provide guidance on how we can achieve 'best practice' in our coding - there will always be exceptions, but you should expect to be challenged if you go your own way. These ideas are always open to debate and you are encouraged to contribute to the discussion.
 
-## Document structure {-#structure}
+#### Document structure {-#structure}
 
 The first part of this document contains the four [coding principles](#principles), with details on some practical actions that can be taken to follow them.
 
@@ -29,7 +29,7 @@ The second part of the document contains additional resources that may be helpfu
 
 If you're unfamiliar with the suggested workflow (particularly with regards to the use of Github), we recommend that you read through the [workflow section](#wf) before reading through the coding principles. This is because an understanding of the overall structure of a project will aid understanding of how and where the coding principles should be applied.
 
-## Contributing {-#contributing}
+#### Contributing {-#contributing}
 
 If you think that something is missing or not quite right you should either [contribute directly](#versioncontrol) or [raise an issue][01] on Github. 
 
