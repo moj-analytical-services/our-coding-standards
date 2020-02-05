@@ -34,7 +34,7 @@ git checkout -b my-new-sensibly-named-branch
 
 4. Make some commits on the new branch.
 ```sh
-Make some changes then stage each file you've changed - e.g. file1.txt and file2.txt.
+Make some changes then stage each file you have changed - e.g. file1.txt and file2.txt.
 git add file1.txt
 git add file2.txt
 etc
