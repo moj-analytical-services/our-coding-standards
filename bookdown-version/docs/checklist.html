@@ -132,10 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">DASD Coding Standards</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>Document structure</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
 <li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a><ul>
@@ -178,13 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
 <li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
 <li class="part"><span><b>III Development</b></span></li>
-<li class="chapter" data-level="8" data-path="futureadd.html"><a href="futureadd.html"><i class="fa fa-check"></i><b>8</b> Future Additions</a><ul>
-<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#understandable"><i class="fa fa-check"></i>Understandable</a></li>
-<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#accurate-1"><i class="fa fa-check"></i>Accurate</a></li>
-<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#collaborative"><i class="fa fa-check"></i>Collaborative</a></li>
-<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#reproducible"><i class="fa fa-check"></i>Reproducible</a></li>
-<li class="chapter" data-level="" data-path="futureadd.html"><a href="futureadd.html#knowledge-share-resources"><i class="fa fa-check"></i>Knowledge Share Resources</a></li>
-</ul></li>
+<li class="chapter" data-level="8" data-path="futureadd.html"><a href="futureadd.html"><i class="fa fa-check"></i><b>8</b> Future Additions</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -207,20 +198,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="checklist" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Project Checklist</h1>
-<p>[<strong>AMEND</strong> - work through existing document and add more detail]</p>
+<p>In the same spirit as the coding principles, the checklist below has been designed to help you achieve ‘best practice’ in your project. Please note that the features listed below are recommendations and are not compulsory.</p>
 <ul>
 <li><input type="checkbox" disabled="" />
 Project follows the <a href="collaborate.html#versioncontrol">Github workflow</a></li>
 <li><input type="checkbox" disabled="" />
+Project repo has a description and is <a href="understand.html#readme">tagged with topics</a></li>
+<li><input type="checkbox" disabled="" />
+Project repo contains a populated <a href="understand.html#readme">README</a></li>
+<li><input type="checkbox" disabled="" />
 Project <a href="reproduce.html#projdep">dependencies</a> are managed</li>
 <li><input type="checkbox" disabled="" />
-Project structured well [<strong>EXPAND</strong>]</li>
+<a href="understand.html#style">Sensible defaults</a> have been used within the code</li>
 <li><input type="checkbox" disabled="" />
-Project follows <a href="understand.html#style">style guidance</a> outlined. [<strong>EXPAND</strong>]</li>
+A <a href="understand.html#style">linter</a> has been applied to the code</li>
+<li><input type="checkbox" disabled="" />
+Functions are <a href="understand.html#functions">documented</a></li>
 <li><input type="checkbox" disabled="" />
 Project contains <a href="accurate.html#unittest">unit tests</a></li>
 <li><input type="checkbox" disabled="" />
-All code has been <a href="accurate.html#review">reviewed</a></li>
+Tests and linters <a href="accurate.html#unittest">run automatically</a> on pull requests</li>
+<li><input type="checkbox" disabled="" />
+All code has been <a href="accurate.html#review">reviewed</a> by another person</li>
 </ul>
 
 </div>
