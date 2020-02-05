@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Collaborative | bookdown-version.utf8</title>
+  <title>Chapter 3 Collaborative | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Collaborative | bookdown-version.utf8" />
+  <meta property="og:title" content="Chapter 3 Collaborative | DASD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Collaborative | bookdown-version.utf8" />
+  <meta name="twitter:title" content="Chapter 3 Collaborative | DASD Coding Principles" />
   
   <meta name="twitter:description" content="These are the DASD coding principles." />
   
@@ -33,7 +33,6 @@
 <link rel="prev" href="accurate.html"/>
 <link rel="next" href="reproduce.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<script src="libs/elevate-section-attrs-2.0/elevate-section-attrs.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -53,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,18 +131,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="part-principles.html"><a href="part-principles.html"><i class="fa fa-check"></i>(PART) Principles</a></li>
+<li class="part"><span><b>I Principles</b></span></li>
 <li class="chapter" data-level="" data-path="principles.html"><a href="principles.html"><i class="fa fa-check"></i>Coding Principles</a></li>
-<li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="understand.html"><a href="understand.html#structure2"><i class="fa fa-check"></i><b>1.1</b> Code structure</a>
-<ul>
+<li class="chapter" data-level="1" data-path="understand.html"><a href="understand.html"><i class="fa fa-check"></i><b>1</b> Understandable</a><ul>
+<li class="chapter" data-level="1.1" data-path="understand.html"><a href="understand.html#structure2"><i class="fa fa-check"></i><b>1.1</b> Code structure</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#data"><i class="fa fa-check"></i>Data</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#readme"><i class="fa fa-check"></i>Documentation</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#functions"><i class="fa fa-check"></i>Abstractions</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.2</b> Code style</a>
-<ul>
+<li class="chapter" data-level="1.2" data-path="understand.html"><a href="understand.html#style"><i class="fa fa-check"></i><b>1.2</b> Code style</a><ul>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#defaults"><i class="fa fa-check"></i>Defaults</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#names"><i class="fa fa-check"></i>Naming conventions</a></li>
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#ccc"><i class="fa fa-check"></i>Clear and concise code</a></li>
@@ -152,38 +147,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="understand.html"><a href="understand.html#errors"><i class="fa fa-check"></i>Error messages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="accurate.html"><a href="accurate.html"><i class="fa fa-check"></i><b>2</b> Accurate</a>
-<ul>
+<li class="chapter" data-level="2" data-path="accurate.html"><a href="accurate.html"><i class="fa fa-check"></i><b>2</b> Accurate</a><ul>
 <li class="chapter" data-level="2.1" data-path="accurate.html"><a href="accurate.html#unittest"><i class="fa fa-check"></i><b>2.1</b> Testing</a></li>
-<li class="chapter" data-level="2.2" data-path="accurate.html"><a href="accurate.html#review"><i class="fa fa-check"></i><b>2.2</b> Project review</a>
-<ul>
+<li class="chapter" data-level="2.2" data-path="accurate.html"><a href="accurate.html#review"><i class="fa fa-check"></i><b>2.2</b> Project review</a><ul>
 <li class="chapter" data-level="" data-path="accurate.html"><a href="accurate.html#performing-good-peer-review"><i class="fa fa-check"></i>Performing good peer review</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>3</b> Collaborative</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="collaborate.html"><a href="collaborate.html#versioncontrol"><i class="fa fa-check"></i><b>3.1</b> Version control</a>
-<ul>
+<li class="chapter" data-level="3" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>3</b> Collaborative</a><ul>
+<li class="chapter" data-level="3.1" data-path="collaborate.html"><a href="collaborate.html#versioncontrol"><i class="fa fa-check"></i><b>3.1</b> Version control</a><ul>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#flow"><i class="fa fa-check"></i>Github flow</a></li>
 <li class="chapter" data-level="" data-path="collaborate.html"><a href="collaborate.html#gitlink"><i class="fa fa-check"></i>Useful Github links</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="collaborate.html"><a href="collaborate.html#knowledge"><i class="fa fa-check"></i><b>3.2</b> Share the knowledge</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a>
-<ul>
+<li class="chapter" data-level="4" data-path="reproduce.html"><a href="reproduce.html"><i class="fa fa-check"></i><b>4</b> Reproducible</a><ul>
+<li class="chapter" data-level="4.1" data-path="reproduce.html"><a href="reproduce.html#projdep"><i class="fa fa-check"></i><b>4.1</b> Manage project dependencies</a><ul>
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#dependency-management-tools"><i class="fa fa-check"></i>Dependency management tools</a></li>
 <li class="chapter" data-level="" data-path="reproduce.html"><a href="reproduce.html#githash"><i class="fa fa-check"></i>Include a git hash</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="reproduce.html"><a href="reproduce.html#format"><i class="fa fa-check"></i><b>4.2</b> Format</a></li>
 <li class="chapter" data-level="4.3" data-path="reproduce.html"><a href="reproduce.html#change"><i class="fa fa-check"></i><b>4.3</b> Optimize for change</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>(PART) Resources</a></li>
+<li class="part"><span><b>II Resources</b></span></li>
 <li class="chapter" data-level="5" data-path="wf.html"><a href="wf.html"><i class="fa fa-check"></i><b>5</b> Workflow</a></li>
 <li class="chapter" data-level="6" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>6</b> Project Checklist</a></li>
 <li class="chapter" data-level="7" data-path="ksresources.html"><a href="ksresources.html"><i class="fa fa-check"></i><b>7</b> Knowledge Share Resources</a></li>
-<li class="chapter" data-level="" data-path="dev.html"><a href="dev.html"><i class="fa fa-check"></i>(PART) Development</a></li>
+<li class="part"><span><b>III Development</b></span></li>
+<li class="chapter" data-level="8" data-path="futureadd.html"><a href="futureadd.html"><i class="fa fa-check"></i><b>8</b> Future Additions</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -196,7 +186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DASD Coding Principles</a>
           </h1>
         </div>
 
@@ -204,55 +194,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="collaborate" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> Collaborative</h1>
+<div id="collaborate" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Collaborative</h1>
 <p>It is vital that we’re able to collaborate across projects, to share both workload and expertise, and that this collaboration is possible both simultaneously and over time.</p>
-<div id="versioncontrol" class="section level2" number="3.1">
-<h2 number="3.1"><span class="header-section-number">3.1</span> Version control</h2>
+<div id="versioncontrol" class="section level2">
+<h2><span class="header-section-number">3.1</span> Version control</h2>
 <p>Code should be version controlled using Git and checked into Github.
 You can find a guide to using Git with R <a href="http://happygitwithr.com/">here</a>. Within DASD we follow Github flow for our projects.</p>
-<div id="flow" class="section level3 unnumbered" number="">
-<h3 class="unnumbered" number="">Github flow</h3>
+<div id="flow" class="section level3 unnumbered">
+<h3>Github flow</h3>
 <p>Github flow is a working practice that helps to maintain overall code quality, facilitate collaboration on a single project and protect the codebase. We have tweaked it a little from what is <a href="https://guides.github.com/introduction/flow/">described on GitHub</a>.</p>
 <p>There are 6 steps to our process:</p>
 <ol style="list-style-type: decimal">
 <li>Create or clone a repo.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="collaborate.html#cb1-1"></a><span class="ex">For</span> example, to clone this repo.</span>
-<span id="cb1-2"><a href="collaborate.html#cb1-2"></a><span class="fu">git</span> clone git@github.com:moj-analytical-services/our-coding-standards.git</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">For</span> example, to clone this repo.</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">git</span> clone git@github.com:moj-analytical-services/our-coding-standards.git</a></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Create an issue in Github that describes what you’re working on
 To create an issue, use <a href="https://guides.github.com/features/issues/">the Github website</a>.</p></li>
-<li><p>Create a new branch for the work you’re about to do, with a name corresponding to the issue</p></li>
+<li>Create a new branch for the work you’re about to do, with a name corresponding to the issue</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="collaborate.html#cb2-1"></a><span class="ex">To</span> create a new branch and switch onto it.</span>
-<span id="cb2-2"><a href="collaborate.html#cb2-2"></a><span class="fu">git</span> checkout -b my-new-sensibly-named-branch</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">To</span> create a new branch and switch onto it.</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fu">git</span> checkout -b my-new-sensibly-named-branch</a></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Make some commits on the new branch.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="collaborate.html#cb3-1"></a><span class="ex">Make</span> some changes then stage each file you have changed - e.g. file1.txt and file2.txt.</span>
-<span id="cb3-2"><a href="collaborate.html#cb3-2"></a><span class="fu">git</span> add file1.txt</span>
-<span id="cb3-3"><a href="collaborate.html#cb3-3"></a><span class="fu">git</span> add file2.txt</span>
-<span id="cb3-4"><a href="collaborate.html#cb3-4"></a><span class="ex">etc</span></span>
-<span id="cb3-5"><a href="collaborate.html#cb3-5"></a></span>
-<span id="cb3-6"><a href="collaborate.html#cb3-6"></a><span class="ex">Commit</span> your changes using a descriptive commit message.</span>
-<span id="cb3-7"><a href="collaborate.html#cb3-7"></a><span class="fu">git</span> commit</span>
-<span id="cb3-8"><a href="collaborate.html#cb3-8"></a></span>
-<span id="cb3-9"><a href="collaborate.html#cb3-9"></a><span class="ex">This</span> will take you into your default text editor</span>
-<span id="cb3-10"><a href="collaborate.html#cb3-10"></a><span class="ex">Write</span> a descriptive commit message</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">Make</span> some changes then stage each file you have changed - e.g. file1.txt and file2.txt.</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">git</span> add file1.txt</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="fu">git</span> add file2.txt</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">etc</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="ex">Commit</span> your changes using a descriptive commit message.</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="fu">git</span> commit</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="ex">This</span> will take you into your default text editor</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="ex">Write</span> a descriptive commit message</a></code></pre></div>
 <blockquote>
 <p><strong>Note:</strong>
 If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: <code>:q!</code>. Then configure your default text editor for Git</p>
 </blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="collaborate.html#cb4-1"></a><span class="fu">git</span> config --global core.editor <span class="op">&lt;</span>my-favourite-text-editor<span class="op">&gt;</span></span>
-<span id="cb4-2"><a href="collaborate.html#cb4-2"></a> <span class="ex">Then</span> try again</span>
-<span id="cb4-3"><a href="collaborate.html#cb4-3"></a><span class="fu">git</span> commit</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">git</span> config --global core.editor <span class="op">&lt;</span>my-favourite-text-editor<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"> <span class="ex">Then</span> try again</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="fu">git</span> commit</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>When you’re ready, submit a pull request and wait for peer-review.</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="collaborate.html#cb5-1"></a><span class="ex">push</span> your branch to the remote repo</span>
-<span id="cb5-2"><a href="collaborate.html#cb5-2"></a><span class="fu">git</span> push origin my-new-sensibly-named-branch</span>
-<span id="cb5-3"><a href="collaborate.html#cb5-3"></a><span class="kw">then</span> <span class="ex">go</span> to Github, open a PR and invite at least one reviewer</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">push</span> your branch to the remote repo</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="fu">git</span> push origin my-new-sensibly-named-branch</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">then</span> <span class="ex">go</span> to Github, open a PR and invite at least one reviewer</a></code></pre></div>
 <p>Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see <a href="https://help.github.com/articles/autolinked-references-and-urls/">here</a> for further guidance. This makes it easy in future to see what changes were made to the code in response to the issue.</p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>To make further changes, just make more commits on the same branch and push them to the remote repo again.</p></li>
@@ -262,8 +252,8 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 <p>The master branch should be 100% functional at all times, on any machine. Please ensure it is <a href="https://help.github.com/articles/about-protected-branches/">protected</a> and that your tests and linters <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions">run automatically on all pull requests</a>. A protected master branch guarantees that all pull requests have been reviewed before they are merged.</p>
 <p>For some further reading suggest this <a href="https://gist.github.com/blackfalcon/8428401">article</a> that explains these git commands and others in a bit more detail.</p>
 </div>
-<div id="gitlink" class="section level3 unnumbered" number="">
-<h3 class="unnumbered" number="">Useful Github links</h3>
+<div id="gitlink" class="section level3 unnumbered">
+<h3>Useful Github links</h3>
 <ul>
 <li><a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session2.4_github.html">A guide to getting started with github</a><br />
 </li>
@@ -273,8 +263,8 @@ If you have not configured your text editor, you may get stuck in Vim. You can e
 </ul>
 </div>
 </div>
-<div id="knowledge" class="section level2" number="3.2">
-<h2 number="3.2"><span class="header-section-number">3.2</span> Share the knowledge</h2>
+<div id="knowledge" class="section level2">
+<h2><span class="header-section-number">3.2</span> Share the knowledge</h2>
 <p>We also collaborate through sharing knowledge. There are a number of channels through which coding knowledge is shared in DASD:</p>
 <ul>
 <li>Slack channels (key channels are: <a href="https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS">#data_science</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1PUCG719">#r</a>, <a href="https://app.slack.com/client/T1PU1AP6D/C1Q09V86S">#python</a>, <a href="https://app.slack.com/client/T1PU1AP6D/CSP8603CK">#conda</a>)<br />
