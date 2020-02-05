@@ -42,11 +42,11 @@ There should be clear logical separation of parameters, assumptions, data and co
 
 > Good code is its own best documentation. As you're about to add a comment, ask yourself, "How can I improve the code so that this comment isn't needed?" Improve the code and then document it to make it even clearer.” - Steve McConnell
 
-## Abstractions {#functions}
+### Abstractions {-#functions}
 
 Abstractions (e.g. functions, packages, modules etc.) should be used where possible. This makes code easier to understand, maintain and extend.
 
-It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. #r and #python in the [ASD workspace](asdslack.slack.com)).
+It will often be the case that will be a pre-existing package or module that contains the functions you need for your project. The best way to find these is usually through a quick google search and, if you're struggling to find what you're looking for, it's worth asking on the relevant slack channel (e.g. [#r](https://app.slack.com/client/T1PU1AP6D/C1PUCG719) and [#python](https://app.slack.com/client/T1PU1AP6D/C1Q09V86S) in the ASD workspace).
 
 If you end up using a piece of code three times, it's probably worth turning it into a function and separating it out into a separate script. For more information on how to write functions, see [here][211]. As a general rule, functions should be less than about 50 lines long. 
 
@@ -73,7 +73,7 @@ This section sets out sensible defaults which you are expected to follow.  They 
 +-------------------------+---------------------------------------------------------------+
 | Language                | Defaults                                                      | 
 +=========================+===============================================================+
-| R                       | * Follow [the Tidyverse Style Guide][14]   |
+| R                       | * Follow the [Tidyverse Style Guide][213]   |
 |                         | * Default to packages from the [Tidyverse](http://tidyverse.org/), because they have been carefully designed to work together effectively as part of a modern data analysis workflow.  More info can be found here: [R for Data Science by Hadley Wickham](http://r4ds.had.co.nz).  For example:   |
 |                         |   * Prefer tibbles to data.frames   |
 |                         |   * Use ggplot2 rather than base graphics   |
@@ -122,7 +122,7 @@ A linter is a tool that analyses code to check for programmatic and stylistic er
 
 In RStudio, the keyboard shortcut 'ctrl+shift+A' will reformat your code and automate some of the process of passing the linter. If you apply the linter as you work, rather than at the end, you will find it much easier to write code that passes the linter first time.
 
-* For R use [Lintr][212] and follow [the Tidyverse Style Guide][213].  
+* For R use [Lintr][212] and follow the [Tidyverse Style Guide][213].  
 * For Python, use [pylint][214] and follow [PEP8][215].
 
 If possible, set up your linters and tests to run automatically on all pull requests, using [Github Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions).
