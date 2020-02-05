@@ -67,8 +67,6 @@ There are often many ways of tackling a given problem.  As a team, it makes sens
 
 This section sets out sensible defaults which you are expected to follow.  They are not strict rules, but you will be expected to explain the benefits of alternative approaches if you want to do something different.
 
-[**AMEND** - check accuracy of these suggestions - are they still in date?]
-
 
 +-------------------------+---------------------------------------------------------------+
 | Language                | Defaults                                                      | 

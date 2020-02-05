@@ -5,8 +5,6 @@ output: html_document
 
 # Knowledge Share Resources {#ksresources}
 
-**POPULATE** fully
-
 There are a number of channels through which coding knowledge is shared in DASD:  
 
 * Slack channels (key channels are: [#data_science][341], [#r][342], [#python][343], [#conda][348])  
@@ -14,8 +12,6 @@ There are a number of channels through which coding knowledge is shared in DASD:
 * [DASD training Trello][345]  
 * [R learning resources][346]  
 * [Online analytical training Trello][347]  
-
-**PLACEHOLDER** - something on cross-departmental resources/code.
 
 [341]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
 [342]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
