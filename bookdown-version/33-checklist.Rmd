@@ -12,4 +12,4 @@ output: html_document
 * [ ] Project structured well [**EXPAND**]
 * [ ] Project follows [style guidance](#style) outlined. [**EXPAND**]
 * [ ] Project contains [unit tests](#unittest)
-* [ ] All code has been reviewed
+* [ ] All code has been [reviewed](#review)

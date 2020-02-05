@@ -54,7 +54,7 @@ When performing peer review, asking yourself the following questions is a good p
 
 3: Does it need to be [tested](#unittest) (and is it tested with sufficient coverage)?
 
-4: [Does it work](#ccc)? [Does it work on my machine?](#projdep)
+4: Does it work? [Does it work on my machine?](#projdep)
 
 5: Are there any cases that might [break](#unittest) it?
 

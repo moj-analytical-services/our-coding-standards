@@ -89,7 +89,7 @@ For some further reading suggest this [article][232] that explains these git com
 
 We also collaborate through sharing knowledge. There are a number of channels through which coding knowledge is shared in DASD:  
 
-* Slack channels (key channels are: [#data_science][236], [#r][237], [#python][239], [#conda][2312])  
+* Slack channels (key channels are: [#data_science][236], [#r][237], [#python][238], [#conda][2312])  
 * Coffee and Coding (resources [here][239])  
 * [DASD training Trello][2310]  
 * [R learning resources][2311]

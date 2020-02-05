@@ -22,7 +22,7 @@ We want to aim for code that is:
 
 **3. [Collaborative](#collaborate)**  
 
-* Projects should follow the [Github workflow](#versioncontrol).
+* Projects should follow the [Github workflow](#flow).
 * Knowledge should be [shared](#knowledge).  
 
 
