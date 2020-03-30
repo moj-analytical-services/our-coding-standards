@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Collaborative | DASD Coding Principles</title>
   <meta name="description" content="These are the DASD coding principles." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Collaborative | DASD Coding Principles" />
   <meta property="og:type" content="book" />
@@ -52,9 +52,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -208,41 +210,41 @@ You can find a guide to using Git with R <a href="http://happygitwithr.com/">her
 <ol style="list-style-type: decimal">
 <li>Create or clone a repo.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">For</span> example, to clone this repo.</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">git</span> clone git@github.com:moj-analytical-services/our-coding-standards.git</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="collaborate.html#cb1-1"></a><span class="ex">For</span> example, to clone this repo.</span>
+<span id="cb1-2"><a href="collaborate.html#cb1-2"></a><span class="fu">git</span> clone git@github.com:moj-analytical-services/our-coding-standards.git</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Create an issue in Github that describes what you’re working on
 To create an issue, use <a href="https://guides.github.com/features/issues/">the Github website</a>.</p></li>
-<li>Create a new branch for the work you’re about to do, with a name corresponding to the issue</li>
+<li><p>Create a new branch for the work you’re about to do, with a name corresponding to the issue</p></li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">To</span> create a new branch and switch onto it.</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fu">git</span> checkout -b my-new-sensibly-named-branch</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="collaborate.html#cb2-1"></a><span class="ex">To</span> create a new branch and switch onto it.</span>
+<span id="cb2-2"><a href="collaborate.html#cb2-2"></a><span class="fu">git</span> checkout -b my-new-sensibly-named-branch</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Make some commits on the new branch.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">Make</span> some changes then stage each file you have changed - e.g. file1.txt and file2.txt.</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">git</span> add file1.txt</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="fu">git</span> add file2.txt</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">etc</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="ex">Commit</span> your changes using a descriptive commit message.</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="fu">git</span> commit</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="ex">This</span> will take you into your default text editor</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="ex">Write</span> a descriptive commit message</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="collaborate.html#cb3-1"></a><span class="ex">Make</span> some changes then stage each file you have changed - e.g. file1.txt and file2.txt.</span>
+<span id="cb3-2"><a href="collaborate.html#cb3-2"></a><span class="fu">git</span> add file1.txt</span>
+<span id="cb3-3"><a href="collaborate.html#cb3-3"></a><span class="fu">git</span> add file2.txt</span>
+<span id="cb3-4"><a href="collaborate.html#cb3-4"></a><span class="ex">etc</span></span>
+<span id="cb3-5"><a href="collaborate.html#cb3-5"></a></span>
+<span id="cb3-6"><a href="collaborate.html#cb3-6"></a><span class="ex">Commit</span> your changes using a descriptive commit message.</span>
+<span id="cb3-7"><a href="collaborate.html#cb3-7"></a><span class="fu">git</span> commit</span>
+<span id="cb3-8"><a href="collaborate.html#cb3-8"></a></span>
+<span id="cb3-9"><a href="collaborate.html#cb3-9"></a><span class="ex">This</span> will take you into your default text editor</span>
+<span id="cb3-10"><a href="collaborate.html#cb3-10"></a><span class="ex">Write</span> a descriptive commit message</span></code></pre></div>
 <blockquote>
 <p><strong>Note:</strong>
 If you have not configured your text editor, you may get stuck in Vim. You can exit using the following command: <code>:q!</code>. Then configure your default text editor for Git</p>
 </blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">git</span> config --global core.editor <span class="op">&lt;</span>my-favourite-text-editor<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"> <span class="ex">Then</span> try again</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="fu">git</span> commit</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="collaborate.html#cb4-1"></a><span class="fu">git</span> config --global core.editor <span class="op">&lt;</span>my-favourite-text-editor<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="collaborate.html#cb4-2"></a> <span class="ex">Then</span> try again</span>
+<span id="cb4-3"><a href="collaborate.html#cb4-3"></a><span class="fu">git</span> commit</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>When you’re ready, submit a pull request and wait for peer-review.</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">push</span> your branch to the remote repo</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="fu">git</span> push origin my-new-sensibly-named-branch</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">then</span> <span class="ex">go</span> to Github, open a PR and invite at least one reviewer</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="collaborate.html#cb5-1"></a><span class="ex">push</span> your branch to the remote repo</span>
+<span id="cb5-2"><a href="collaborate.html#cb5-2"></a><span class="fu">git</span> push origin my-new-sensibly-named-branch</span>
+<span id="cb5-3"><a href="collaborate.html#cb5-3"></a><span class="kw">then</span> <span class="ex">go</span> to Github, open a PR and invite at least one reviewer</span></code></pre></div>
 <p>Make sure that you reference the issue in your pull request, by using the hash (#) symbol - see <a href="https://help.github.com/articles/autolinked-references-and-urls/">here</a> for further guidance. This makes it easy in future to see what changes were made to the code in response to the issue.</p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>To make further changes, just make more commits on the same branch and push them to the remote repo again.</p></li>
