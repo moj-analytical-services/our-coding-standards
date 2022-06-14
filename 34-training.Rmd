@@ -11,14 +11,14 @@ There are a number of channels through which coding knowledge is shared in DASD:
 * Coffee and Coding (resources [here][344])  
 * [DASD training Trello][345]  
 * [R learning resources][346]  
-* [Online analytical training Trello][347]  
+* [Online analytical training Trello][347] 
 * MoJ R training:  
     * [Intro R training][349]  
     * [R Charting][350]
     * [R Markdown][351]
     * [Writing functions in R][352]
     * [Interfacing with Excel and R][353]
-    
+* [Quality Assurance of Code for Analysis and Research (Analysis function)] [354]
    
 [341]: https://app.slack.com/client/T1PU1AP6D/C1Z8Q18LS
 [342]: https://app.slack.com/client/T1PU1AP6D/C1PUCG719
@@ -33,4 +33,4 @@ There are a number of channels through which coding knowledge is shared in DASD:
 [351]: https://github.com/moj-analytical-services/rmarkdown_training
 [352]: https://github.com/moj-analytical-services/writing_functions_in_r
 [353]: https://github.com/moj-analytical-services/r-excel-training
-
+[354]: https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html
