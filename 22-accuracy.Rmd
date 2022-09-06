@@ -48,19 +48,31 @@ Remember that it’s always easier (for both you and your reviewers) if you comm
 
 When performing peer review, asking yourself the following questions is a good place to start:
 
-1: Do I understand what the code is doing? [Did it need to be explained](#ccc) to me? [Could it be simpler](#ccc)?
-
-2: Are they using [packages / libraries sensibly](#defaults)?
-
-3: Does it need to be [tested](#unittest) (and is it tested with sufficient coverage)?
-
-4: Does it work? [Does it work on my machine?](#projdep)
-
-5: Are there any cases that might [break](#unittest) it?
-
-6: Is there sufficient [documentation](#readme)?
-
-7: Have they adopted an understandable [coding style](#style)?
++----------------------------+---------------------------------------------------------------------------------------------+
+| Theme                      | Check                                                                                       |
++============================+=============================================================================================+
+| [Clear, concise code](#ccc)| - Did the code need to be explained to me?                                                  |
+|                            | - Is the code readable?                                                                     |
+|                            | - Could the same thing be achieved in a simpler way?                                        |
+|                            | - Does the code follow [style guidelines](#style)?                                          |
+|                            | - Are the names of functions and variables sensible and descriptive?                        |
++----------------------------+---------------------------------------------------------------------------------------------+
+| Packages                   | - Did the code run without [dependency issues](#projdep)?                                   |
+|                            | - Are [packages / libraries used sensibly](#defaults)?                                      |
++----------------------------+---------------------------------------------------------------------------------------------+
+| Validation                 | - Is the process doing what is needed?                                                      |
++----------------------------+---------------------------------------------------------------------------------------------+
+| Verification               | - Are the calculations correct?                                                             |
++----------------------------+---------------------------------------------------------------------------------------------+
+| Testing                    | - Are there [unit tests](#unittest) (if required)?                                          |
+|                            | - Is it tested with sufficient coverage?                                                    |
+|                            | - Are there any cases that might [break it](#unittest)?                                     |
++----------------------------+---------------------------------------------------------------------------------------------+
+| Documentation              | - Are the code comments sufficient?                                                         |
+|                            | - Have assumptions been documented?                                                         |
+|                            | - Has accompanying documentation (e.g. [readme](#readme),wiki) been updated (if required)?  |
+|                            | - Have AQA documents been updated (if required)?                                            |
++----------------------------+---------------------------------------------------------------------------------------------+
 
 If you're reviewing the code of a more experienced coder, it is a chance to learn and you have every right to ask for an explanation if there's something that is unclear.  It's in everyone's interest that you understand what you're reading and it could be that you don't understand it because the author has made a mistake or over-complicated something.
 
